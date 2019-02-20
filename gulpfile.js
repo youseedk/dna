@@ -40,6 +40,7 @@ const source = require('vinyl-source-stream');
 const browserify = require('browserify');
 const tinycolor = require('tinycolor2');
 const svgSprite = require('gulp-svg-sprite');
+const runSequence = require('run-sequence');
 
 const paths = {
   componentsSource: 'src/components/',
@@ -304,4 +305,9 @@ gulp.task('watch', function () {
   gulp.watch(['./fractal-theme-overrides/assets/scss/**/*.scss'], ['fractalTheme']);
 });
 
-gulp.task('default', ['svgSprites', 'fractalTheme', 'fractal:start', 'jsonToScss', 'css', 'images', 'scripts', 'icons', 'watch']);
+gulp.task('default', function(callback) {
+  runSequence('svgSprites',
+    ['fractalTheme', 'jsonToScss', 'css', 'images', 'scripts', 'watch'],
+    'fractal:start'
+  );
+});
