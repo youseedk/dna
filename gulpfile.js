@@ -11,7 +11,7 @@
 //   `gulp jsonToScss`
 //   `gulp images`
 //   `gulp fonts`
-//   `gulp icons`
+//   `gulp svgSprites`
 //   `gulp npmDist`
 //   `gulp fractalTheme`
 //   `gulp lint:scss`
@@ -44,6 +44,7 @@ const svgSprite = require('gulp-svg-sprite');
 const paths = {
   componentsSource: 'src/components/',
   assetsSource: 'src/assets/',
+  tokensSource: 'src/tokens/',
   destination: 'public/assets/',
   npmDestination: 'dist-npm'
 }
@@ -151,22 +152,8 @@ gulp.task('fonts', function () {
 
 
 /**
- *
- * Icons convert from hbs to svg
- *
- */
-gulp.task('icons', function () {
-  return gulp.src(paths.componentsSource + 'assets/icons/**/*.hbs')
-    .pipe(plugins.newer(paths.destination + 'svg'))
-    .pipe(plugins.rename({
-      extname: '.svg'
-    }))
-    .pipe(gulp.dest(paths.destination + 'svg'));
-});
-
-/**
  * 
- * Create SVG Sprites from assets
+ * Create SVG Sprites and JSON files from icon assets
  * 
  */
 const sprites = {
@@ -175,6 +162,7 @@ const sprites = {
 
 gulp.task('svgSprites', function () {
   sprites.sources.forEach(function (spriteSrc) {
+    // create sprites
     gulp.src(paths.assetsSource + '/svg/' + spriteSrc + '/*.svg')
     .pipe(svgSprite({
         mode: {
@@ -191,6 +179,11 @@ gulp.task('svgSprites', function () {
       }))
       .pipe(plugins.replace('id="', 'id="ys-' + spriteSrc + '-'))
       .pipe(gulp.dest(paths.destination + 'svg'));
+    // create json file lists
+    gulp.src(paths.assetsSource + 'svg/' + spriteSrc + '/*.svg')
+      .pipe(plugins.filelist(spriteSrc + '.json'))
+      .pipe(plugins.replace("src/assets/svg/" + spriteSrc + "/", ""))
+      .pipe(gulp.dest(paths.tokensSource + 'generated'));
   })
 })
 
@@ -311,4 +304,4 @@ gulp.task('watch', function () {
   gulp.watch(['./fractal-theme-overrides/assets/scss/**/*.scss'], ['fractalTheme']);
 });
 
-gulp.task('default', ['fractalTheme', 'fractal:start', 'jsonToScss', 'css', 'images', 'scripts', 'icons', 'watch']);
+gulp.task('default', ['svgSprites', 'fractalTheme', 'fractal:start', 'jsonToScss', 'css', 'images', 'scripts', 'icons', 'watch']);

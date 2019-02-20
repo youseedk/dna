@@ -23,6 +23,7 @@
     "cssnano": "^3.10.0",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
+    "gulp-filelist": "^1.1.1",
     "gulp-imagemin": "^4.1.0",
     "gulp-json-scss": "0.0.5",
     "gulp-load-plugins": "^1.5.0",
