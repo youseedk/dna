@@ -27,15 +27,15 @@
 const gulp = require('gulp');
 
 const plugins = require('gulp-load-plugins')({
-	pattern: ['gulp-*', 'gulp.*', '@*/gulp{-,.}*'],
-	replaceString: /\bgulp[\-.]/
+  pattern: ['gulp-*', 'gulp.*', '@*/gulp{-,.}*'],
+  replaceString: /\bgulp[\-.]/
 });
 
 const del = require('del');
 const reporter = require('postcss-reporter');
 const cssnext = require('postcss-cssnext');
 const cssnano = require('cssnano');
-const jsonSass = require('gulp-json-scss');// add to plugins
+const jsonSass = require('gulp-json-scss'); // add to plugins
 const source = require('vinyl-source-stream');
 const browserify = require('browserify');
 const tinycolor = require('tinycolor2');
@@ -47,7 +47,11 @@ const paths = {
   assetsSource: 'src/assets/',
   tokensSource: 'src/tokens/',
   destination: 'public/assets/',
-  npmDestination: 'dist-npm'
+  npmDestination: 'dist-npm',
+  fractal: {
+    scss: 'fractal-theme/scss',
+    js: 'fractal-theme/js'
+  }
 }
 
 /**
@@ -99,9 +103,10 @@ gulp.task('lint-scss', function () {
   return gulp
     .src(['src/**/*.scss', '!src/**/generated/**/*.scss'])
     .pipe(gulpStylelint({
-      reporters: [
-        { formatter: 'string', console: true }
-      ]
+      reporters: [{
+        formatter: 'string',
+        console: true
+      }]
     }));
 });
 
@@ -165,7 +170,7 @@ gulp.task('svgSprites', function () {
   sprites.sources.forEach(function (spriteSrc) {
     // create sprites
     gulp.src(paths.assetsSource + '/svg/' + spriteSrc + '/*.svg')
-    .pipe(svgSprite({
+      .pipe(svgSprite({
         mode: {
           symbol: {
             dest: 'sprites',
@@ -190,21 +195,6 @@ gulp.task('svgSprites', function () {
 
 
 /**
- *
- * Compile JavaScript to bundles
- *
- */
-gulp.task('scripts', () => {
-  const sourcefile = paths.assetsSource + 'js/colors.js';
-  return browserify({
-    entries: [sourcefile]
-  }).bundle()
-    .pipe(source('colors.js'))
-    .pipe(gulp.dest(paths.destination + 'js'));
-});
-
-
-/**
  * 
  * Copy files to npm distribution folder
  * 
@@ -216,23 +206,13 @@ gulp.task('npmDist', function () {
     .pipe(gulp.dest(paths.npmDestination + '/dist'));
 });
 
-/**
- * 
- * Build Fractal theming
- * 
- */
-gulp.task('fractalTheme', function () {
-  gulp.src('./fractal-theme-overrides/assets/scss/**/*.scss')
-    .pipe(plugins.sass().on('error', plugins.sass.logError))
-    .pipe(gulp.dest(paths.destination + '/theme/assets/css/'))
-})
 
 /**
  *
  *	Build assets
  *
  */
-gulp.task('compile-assets', ['jsonToScss', 'css', 'images', 'svgSprites', 'fonts', 'fractalTheme']);
+gulp.task('compile-assets', ['jsonToScss', 'css', 'images', 'svgSprites', 'fonts', 'fractal-assets']);
 
 
 /**
@@ -240,7 +220,7 @@ gulp.task('compile-assets', ['jsonToScss', 'css', 'images', 'svgSprites', 'fonts
  * Build fractal theming, web site and npm package
  *  
  */
-gulp.task('build', ['fractalTheme', 'compile-assets', 'fractal:build', 'npmDist']);
+gulp.task('build', ['fractal-assets', 'compile-assets', 'fractal:build', 'npmDist']);
 
 /*
  * Configure a Fractal instance.
@@ -299,15 +279,42 @@ gulp.task('fractal:build', function () {
 gulp.task('watch', function () {
   gulp.watch([paths.source + 'scss/**/*.scss'], ['css']);
   gulp.watch([paths.componentsSource + '**/*.scss'], ['css']);
-  gulp.watch([paths.source + 'js/**'], ['scripts']);
+  //gulp.watch([paths.source + 'js/**'], ['scripts']);
   gulp.watch([paths.source + 'images/**'], ['images']);
   gulp.watch([paths.assetsSource + 'svg/**'], ['svgSprites']);
-  gulp.watch(['./fractal-theme-overrides/assets/scss/**/*.scss'], ['fractalTheme']);
+  gulp.watch(['./fractal-theme-overrides/assets/scss/**/*.scss'], ['fractal-assets']);
 });
 
-gulp.task('default', function(callback) {
+gulp.task('default', function (callback) {
   runSequence('svgSprites',
-    ['fractalTheme', 'jsonToScss', 'css', 'images', 'scripts', 'watch'],
+    ['fractal-assets', 'jsonToScss', 'css', 'images', 'watch'],
     'fractal:start'
   );
 });
+
+
+/**
+ * 
+ * Build Fractal theme assets
+ * 
+ */
+gulp.task('fractal-scss', function () {
+  gulp.src(paths.fractal.scss + '/styles.scss')
+    .pipe(plugins.sass().on('error', plugins.sass.logError))
+    .pipe(gulp.dest(paths.destination + 'css'))
+})
+
+gulp.task('fractal-js', () => {
+  var babelify = require("babelify");
+  const sourcefile = paths.fractal.js + '/scripts.js';
+  return browserify({
+      entries: [sourcefile]
+    }).transform('babelify', {
+      presets: ['@babel/preset-env']
+    })
+    .bundle()
+    .pipe(source('scripts.js'))
+    .pipe(gulp.dest(paths.destination + 'js'));
+});
+
+gulp.task('fractal-assets', ['fractal-scss', 'fractal-js']);
