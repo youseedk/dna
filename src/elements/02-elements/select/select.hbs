@@ -1,0 +1,19 @@
+<div class="ys-select{{#if isInverted}} ys-select--light{{/if}}">
+    <label class="ys-input-field__label">
+        <span class="ys-select__label-text">Label for select</span>
+        <span class="ys-select__wrapper{{#if isDisabled}} ys-select__wrapper--disabled{{/if}}{{#if isAlternative}} ys-select__wrapper--alternative{{/if}}{{#if isInverted}} ys-select__wrapper--light{{/if}}">
+            <select class="ys-select__control" {{#if isDisabled}} disabled{{/if}}>
+                <option class="ys-select__option" value="1">Option 1</option>
+                <option class="ys-select__option" value="2">Option 2 which is very long which you will see</option>
+                <option class="ys-select__option" value="3">Option 3</option>
+                <option class="ys-select__option" value="4">Option 4</option>
+                <option class="ys-select__option" value="5">Option 5</option>
+                <option class="ys-select__option" value="6">Option 6</option>
+                <option class="ys-select__option" value="7">Option 7</option>
+            </select>
+        </span>
+    </label>
+    {{#if hasGuidance}}
+    <p class="ys-select__guidance{{#if isInvalid}} ys-select__guidance--error{{/if}}">Guidance message for select</p>
+    {{/if}}
+</div>

@@ -1,0 +1,8 @@
+<a href="#" class="ys-button{{#if modifierClass}} {{modifierClass}}{{/if}}{{#if hasIcon}}{{#if hasIconOnly}} ys-button--icon-only{{else}} ys-button--icon{{/if}}{{/if}}">
+    <span class="ys-button__text{{#if hasIconOnly}} ys-u-visuallyhidden{{/if}}">{{ button-text }}</span>
+    {{#if hasIcon}}
+    <span class="ys-button__icon" aria-hidden="true">
+        {{ render '@icon' }}
+    </span>
+    {{/if}}
+</a>

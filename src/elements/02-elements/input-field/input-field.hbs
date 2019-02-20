@@ -1,0 +1,22 @@
+<div class="ys-input-field{{#if isInverted}} ys-input-field--light{{/if}}">
+    <label class="ys-input-field__label">
+        <span class="ys-input-field__label-text">Label for input</span>
+        <span class="ys-input-field__wrapper{{#if isReadonly}} ys-input-field__wrapper--readonly{{/if}}{{#if isInvalid}} ys-input-field__wrapper--error{{/if}}{{#if isDisabled}} ys-input-field__wrapper--disabled{{/if}}">
+        {{#if hasIconPre}}
+            <span class="ys-input-field__icon">
+                {{ render '@icon--email' }}
+            </span>
+        {{/if}}
+        <input type="text" class="ys-input-field__control" {{#unless isDisabled}}placeholder="Placeholder text"{{/unless}}{{#if isDisabled}} disabled{{/if}}{{#if isReadonly}}readonly value="Non-editable text"{{/if}}{{#if isInvalid}}value="Invalid input"{{/if}} />
+        {{#if hasIconPost}}
+            <span class="ys-input-field__icon">
+                {{#if isValid}}{{ render '@icon--valid' }}{{/if}}
+                {{#if isInvalid}}{{ render '@icon--invalid' }}{{/if}}
+            </span>
+        {{/if}}
+        </span>
+    </label>
+    {{#if hasGuidance}}
+    <p class="ys-input-field__guidance{{#if isInvalid}} ys-input-field__guidance--error{{/if}}">Guidance message for input field</p>
+    {{/if}}
+</div>

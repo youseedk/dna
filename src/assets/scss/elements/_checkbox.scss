@@ -1,0 +1,92 @@
+@import './../../../assets/scss/settings/colors';
+@import './../../../assets/scss/tools/mixins';
+
+/* stylelint-disable no-descending-specificity */
+.ys-checkbox {
+
+  &__control {
+
+    &:focus {
+
+      & + .ys-checkbox__label::before {
+        border-color: $ys-color-digital-grass;
+      }
+    }
+
+    &:focus-visible {
+
+      & + .ys-checkbox__label {
+        @include customOutline;
+      }
+    }
+
+    &:checked {
+
+      & + .ys-checkbox__label::before {
+        border-color: $ys-color-digital-grass;
+        background-color: $ys-color-digital-grass;
+        background-image: url('data:image/svg+xml;utf8,%3Csvg%20viewBox%3D%22-1%20-2%2016%2016%22%20xmlns%3D%22http://www.w3.org/2000/svg%22%3E%20%20%3Cpath%20d%3D%22M1%206.2L5.7%2011%2013%201%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 14px 14px;
+      }
+    }
+
+    &:disabled {
+
+      & + .ys-checkbox__label {
+        color: $ys-color-grey-64;
+
+        &::before {
+          border-color: $ys-color-grey-64;
+          background-color: $ys-color-grey-94;
+        }
+      }
+    }
+  } // the actual control is hidden through the ys-u-visuallyhidden class
+
+  &__label {
+    position: relative;
+    display: inline-block;
+    font-size: rem(16);
+    line-height: 1.5;
+    padding-left: rem(36);
+    min-height: rem(24);
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: rem(24);
+      height: rem(24);
+      background-color: $ys-color-white;
+      border: 2px solid $ys-color-grey-22;
+      border-radius: rem(4);
+    }
+
+    &:hover {
+
+      &::before {
+        border-color: $ys-color-digital-grass;
+      }
+    }
+  }
+
+  &--light {
+
+    .ys-checkbox__label {
+      color: $ys-color-grey-98;
+
+      &:not(:hover)::before {
+        border-color: $ys-color-white;
+      }
+    }
+
+    .ys-checkbox__control:checked + .ys-checkbox__label::before {
+      border-color: $ys-color-digital-grass;
+    }
+  }
+}
+
+/* stylelint-enable */

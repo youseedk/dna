@@ -1,0 +1,66 @@
+@import './../../../assets/scss/tools/functions';
+@import './../../../assets/scss/tools/mixins';
+@import './../../../assets/scss/settings/colors';
+
+.ys-toggle-switch {
+  display: block;
+
+  &__label {
+    position: relative;
+    display: block;
+    min-height: rem(28);
+    line-height: 1.5;
+    padding-top: rem(2);
+    padding-right: rem(72); // width of toggle + 16px margin
+
+    /* toggle container */
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      right: 0;
+      top: 0;
+      width: rem(56);
+      height: rem(28);
+      background-color: $ys-color-grey-85;
+      border-radius: rem(14);
+      transition: all .2s ease;
+    }
+
+    /* toggle thumb */
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: 2;
+      right: rem(30);
+      top: rem(2);
+      width: rem(24);
+      height: rem(24);
+      border-radius: 50%;
+      background-color: $ys-color-white;
+      background-image: url('data:image/svg+xml;utf8,%3Csvg%20viewBox%3D%22-3%20-3%2016%2016%22%20xmlns%3D%22http://www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22%23484848%22%20fill-rule%3D%22evenodd%22%3E%3Cpath%20d%3D%22M9.6.9c.4.4.4%201%200%201.4l-7.8%207.8A1%201%200%200%201%20.4%208.7L8.2.9a1%201%200%200%201%201.4%200z%22/%3E%3Cpath%20d%3D%22M9.6%2010c.4-.3.4-1%200-1.3L1.8.9A1%201%200%200%200%20.4%202.3l7.8%207.8c.4.4%201%20.4%201.4%200z%22/%3E%3C/g%3E%3C/svg%3E');
+      background-repeat: no-repeat;
+      background-size: rem(14);
+      background-position: center;
+      color: $ys-color-grey-28;
+      box-shadow: 0 1px 4px 0 rgba($ys-color-black, .24);
+      transition: all .2s ease;
+    }
+  }
+
+  &__control {
+
+    &:checked + .ys-toggle-switch__label {
+
+      &::after {
+        background-color: $ys-color-digital-grass;
+      }
+
+      &::before {
+        color: $ys-color-digital-grass;
+        transform: translateX(#{rem(28)});
+        background-image: url('data:image/svg+xml;utf8,%3Csvg%20viewBox%3D%22-1%20-2%2016%2016%22%20xmlns%3D%22http://www.w3.org/2000/svg%22%3E%20%20%3Cpath%20d%3D%22M1%206.2L5.7%2011%2013%201%22%20stroke%3D%22%231fab2e%22%20stroke-width%3D%222%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E');
+      }
+    }
+  }
+}

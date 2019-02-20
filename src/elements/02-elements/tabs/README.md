@@ -1,0 +1,1 @@
+These tabs must always be implemented in an accessible manner — please refer to https://w3c.github.io/aria-practices/examples//tabs/tabs-1/tabs.html for HTML Structure and JavaScript functionality.

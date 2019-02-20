@@ -1,0 +1,100 @@
+@import './../../../assets/scss/settings/colors';
+@import './../../../assets/scss/tools/mixins';
+
+.ys-select {
+  color: $ys-color-grey-46;
+
+  &__label {
+    font-size: rem(12);
+    line-height: 1.33;
+  }
+
+  &__label-text {
+    @include labelText;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    height: rem(48);
+    padding: rem(0) rem(24);
+    border-radius: rem(24);
+    background-color: $ys-color-white;
+    color: $ys-color-grey-28;
+
+    &:not(.ys-select__wrapper--alternative) {
+      @include inputFieldShadow;
+      @include shadowTransition;
+    }
+
+    &:not(.ys-select__wrapper--disabled):not(.ys-select__wrapper--alternative):hover,
+    &:not(.ys-select__wrapper--disabled):not(.ys-select__wrapper--alternative):focus-within {
+      @include inputFieldShadow(hover); }
+
+    /* lobotimized owl selector for flexibility — makes sure that any element that is inserted gets a margin */
+    & > *[class^='ys-'] + *[class^='ys-'] {
+      margin-left: rem(8);
+    }
+
+    &--disabled {
+      box-shadow: 0 0 0 0 transparent;
+      background-color: $ys-color-grey-94;
+    }
+
+    &--alternative:not(.ys-select__wrapper--disabled) {
+      border: 2px solid $ys-color-grey-28;
+    }
+
+    &--alternative.ys-select__wrapper--light:not(.ys-select__wrapper--disabled) {
+      border-color: $ys-color-white;
+      background-color: $ys-color-grey-22;
+      color: $ys-color-white;
+    }
+  }
+
+  &__control {
+    flex: 0 1 100%;
+    max-width: 100%;
+    height: rem(44);
+    padding: rem(12) rem(24) rem(12) 0;
+    border: 0;
+    background-color: transparent;
+    background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox%3D%220%20-3%2016%2016%22%3E%3Cpath%20fill%3D%22%23484848%22%20fill-rule%3D%22evenodd%22%20d%3D%22M8%207.2l6.1-6c.4-.4%201.1-.4%201.6%200v.1a1%201%200%200%201%200%201.5L9%209.6c-.5.4-1.2.4-1.6%200v-.1L.3%202.7A1.1%201.1%200%200%201%202%201.1l6%206z%22/%3E%3C/svg%3E'), linear-gradient(to bottom, transparent 0%, transparent 100%);
+    background-repeat: no-repeat, repeat;
+    background-position: right 0 top 50%, 0 0;
+    background-size: rem(16), 100%;
+    color: currentColor;
+    font-size: rem(16);
+    line-height: 1.5;
+    border-radius: rem(24);
+    appearance: none;
+
+    &::-ms-expand {
+      display: none;
+    }
+
+    &:disabled {
+      background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox%3D%220%20-3%2016%2016%22%3E%3Cpath%20fill%3D%22%23a2a2a2%22%20fill-rule%3D%22evenodd%22%20d%3D%22M8%207.2l6.1-6c.4-.4%201.1-.4%201.6%200v.1a1%201%200%200%201%200%201.5L9%209.6c-.5.4-1.2.4-1.6%200v-.1L.3%202.7A1.1%201.1%200%200%201%202%201.1l6%206z%22/%3E%3C/svg%3E'), linear-gradient(to bottom, transparent 0%, transparent 100%);
+      color: $ys-color-grey-64;
+      box-shadow: 0 0 0 0 transparent;
+      cursor: not-allowed;
+    }
+
+    .ys-select__wrapper--light.ys-select__wrapper--alternative & {
+      background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox%3D%220%20-3%2016%2016%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20fill-rule%3D%22evenodd%22%20d%3D%22M8%207.2l6.1-6c.4-.4%201.1-.4%201.6%200v.1a1%201%200%200%201%200%201.5L9%209.6c-.5.4-1.2.4-1.6%200v-.1L.3%202.7A1.1%201.1%200%200%201%202%201.1l6%206z%22/%3E%3C/svg%3E'), linear-gradient(to bottom, transparent 0%, transparent 100%);
+    }
+  }
+
+  &__guidance {
+    color: $ys-color-grey-28;
+    @include guidanceText;
+
+    .ys-select--light & {
+      color: inherit;
+    }
+  }
+
+  &--light {
+    color: $ys-color-grey-98;
+  }
+}

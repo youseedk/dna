@@ -1,0 +1,7 @@
+node_modules
+public
+dist-site
+dist-npm
+.DS_Store
+src/**/generated
+src/assets/scss/settings/_colors.scss

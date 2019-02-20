@@ -1,0 +1,45 @@
+{
+  "ys-color": {
+    "primary": {
+      "digital-grass": "#1fab2e",
+      "white": "#fff",
+      "black": "#000"
+    },
+    "typography": {
+      "grey-28": "#484848"
+    },
+    "ui-details": {
+      "midnight-green": "#002219",
+      "digital-moss": "#0c4d33"
+    },
+    "splashes": {
+      "digital-turquoise": "#27a4d7",
+      "digital-sunset-yellow": "#ffb700"
+    },
+    "tags": {
+      "sand": "#edd6b5",
+      "sand-10": "#fdfaf7"
+    },
+    "feedback": {
+      "error-red": "#d31a20",
+      "error-red-10": "#fae8e8",
+      "warning-yellow": "#ff8a00",
+      "warning-yellow-10": "#fff7e5",
+      "info-blue": "#266df5",
+      "info-blue-10": "#e8f0ff"
+    },
+    "accent": {
+      "digital-grass-10": "#ebf9ec"
+    },
+    "accent-greys": {
+      "grey-10": "#191919",
+      "grey-22": "#383838",
+      "grey-46": "#767676",
+      "grey-57": "#929292",
+      "grey-64": "#a2a2a2",
+      "grey-85": "#d9d9d9",
+      "grey-94": "#f0f0f0",
+      "grey-98": "#fafafa"
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@import './../../../assets/scss/tools/functions';
+@import './../../../assets/scss/tools/mixins';
+@import './../../../assets/scss/settings/colors';
+
+.ys-main-title {
+  @include ys-main-title;
+}
+
+.ys-primary-title {
+  @include ys-primary-title;
+}
+
+.ys-secondary-title {
+  @include ys-secondary-title;
+}
+
+.ys-subtitle {
+  @include ys-subtitle;
+}
+
+.ys-body-text {
+  @include ys-body-text;
+}
+
+.ys-legal-text {
+  @include ys-legal-text;
+}
+
+.ys-list {
+  @include ys-list;
+
+  &__item {
+    @include ys-list-item;
+
+    /* make sure items have the right top margin */
+    & + & {
+      margin-top: rem(24);
+    }
+  }
+
+  .ys-list {
+    padding-top: rem(24);
+  }
+
+  &--ordered .ys-list__item::before {
+    @include ys-list-item-ordered;
+  }
+
+  &:not(.ys-list--ordered) &__item::before {
+    @include ys-list-item-unordered;
+  }
+
+  &--ordered &__item &__item::before {
+    @include ys-list-item-ordered-indented;
+  }
+
+  &:not(.ys-list--ordered) &__item &__item::before {
+    @include ys-list-item-unordered-indented;
+  }
+}

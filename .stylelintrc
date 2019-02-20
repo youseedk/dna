@@ -1,0 +1,151 @@
+{
+  "extends": "stylelint-config-recommended",
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "rules": {
+    "color-no-hex": true,
+    "declaration-no-important": true,
+    "font-weight-notation": "numeric",
+    "selector-max-id": 0,
+    "color-hex-case": "lower",
+    "color-hex-length": "short",
+    "color-named": "never",
+    "function-comma-space-after": "always",
+    "number-leading-zero": "never",
+    "number-max-precision": 5,
+    "number-no-trailing-zeros": true,
+    "length-zero-no-unit": true,
+    "unit-whitelist": [
+      "em",
+      "rem",
+      "s",
+      "px",
+      "%",
+      "deg",
+      "vw",
+      "vmin",
+      "vmax",
+      "vh",
+      "ms",
+      "fr"
+    ],
+    "unit-blacklist": [
+      "pt"
+    ],
+    "unit-case": "lower",
+    "value-keyword-case": "lower",
+    "value-list-comma-newline-after": "never-multi-line",
+    "value-list-comma-newline-before": "never-multi-line",
+    "value-list-comma-space-after": "always",
+    "value-list-comma-space-before": "never",
+    "shorthand-property-no-redundant-values": true,
+    "property-case": "lower",
+    "property-no-vendor-prefix": [
+      true,
+      {
+        "severity": "warning",
+        "message": "Remember that for most cases there is no need for prefixes."
+      }
+    ],
+    "declaration-bang-space-after": "never",
+    "declaration-bang-space-before": "always",
+    "declaration-colon-space-after": "always",
+    "declaration-colon-space-before": "never",
+    "declaration-block-semicolon-newline-after": "always",
+    "declaration-block-semicolon-space-before": "never",
+    "declaration-block-trailing-semicolon": "always",
+    "block-closing-brace-newline-after": [
+      "always",
+      {
+        "ignoreAtRules": [
+          "if",
+          "else"
+        ]
+      }
+    ],
+    "block-opening-brace-newline-after": "always",
+    "block-opening-brace-newline-before": "never-single-line",
+    "block-opening-brace-space-before": "always",
+    "selector-attribute-brackets-space-inside": "never",
+    "selector-attribute-operator-space-after": "never",
+    "selector-attribute-operator-space-before": "never",
+    "selector-combinator-space-after": "always",
+    "selector-combinator-space-before": "always",
+    "selector-no-qualifying-type": [
+      true,
+      {
+        "ignore": [
+          "attribute"
+        ]
+      }
+    ],
+    "selector-no-vendor-prefix": true,
+    "selector-pseudo-class-case": "lower",
+    "selector-pseudo-class-parentheses-space-inside": "never",
+    "selector-pseudo-element-case": "lower",
+    "selector-pseudo-element-colon-notation": "double",
+    "selector-type-case": "lower",
+    "selector-max-empty-lines": 0,
+    "selector-list-comma-newline-after": "always",
+    "selector-list-comma-newline-before": "never-multi-line",
+    "selector-list-comma-space-before": "never",
+    "string-quotes": "single",
+    "rule-empty-line-before": [
+      "always-multi-line",
+      {
+        "ignore": [
+          "after-comment"
+        ]
+      }
+    ],
+    "media-feature-colon-space-after": "always",
+    "media-feature-colon-space-before": "never",
+    "media-feature-range-operator-space-after": "always",
+    "media-feature-range-operator-space-before": "always",
+    "media-query-list-comma-space-after": "always",
+    "media-query-list-comma-space-before": "never",
+    "at-rule-empty-line-before": [
+      "always",
+      {
+        "ignore": [
+          "after-comment",
+          "inside-block"
+        ],
+        "except": [
+          "blockless-after-blockless"
+        ]
+      }
+    ],
+    "at-rule-name-case": "lower",
+    "at-rule-name-space-after": "always",
+    "at-rule-semicolon-newline-after": "always",
+    "at-rule-no-unknown": [true, {
+      "ignoreAtRules": [
+        "function",
+        "if",
+        "each",
+        "include",
+        "mixin",
+        "return",
+        "for",
+        "else",
+        "extend"
+      ]
+    }],
+    "comment-empty-line-before": "always",
+    "indentation": 2,
+    "max-empty-lines": 2,
+    "max-nesting-depth": [
+      5,
+      {
+        "ignore": [
+          "blockless-at-rules"
+        ],
+        "message": "Please try not to nest deeper than 3 levels"
+      }
+    ],
+    "no-eol-whitespace": true,
+    "function-name-case": "lower"
+  }
+}

@@ -1,0 +1,24 @@
+@import './../../../assets/scss/settings/colors';
+
+.ys-link {
+  color: $ys-color-digital-grass;
+  text-decoration: underline;
+
+  &:hover {
+    color: $ys-color-grey-28;
+  }
+
+  &--dark {
+
+    &:hover {
+      color: $ys-color-white;
+    }
+  }
+
+  /* stylelint-disable color-no-hex */
+  &:visited {
+    color: #609;
+  }
+
+  /* stylelint-enable */
+}

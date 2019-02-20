@@ -1,0 +1,29 @@
+@import './../../../assets/scss/settings/colors';
+@import './../../../assets/scss/settings/settings';
+@import './../../../assets/scss/tools/mixins';
+
+.ys-card {
+  display: block;
+  background-color: $ys-color-white;
+  border-radius: rem(16);
+  box-shadow: 0 0 24px 0 rgba($ys-color-black, .2);
+
+  &--dark {
+    background-color: $ys-color-grey-22;
+    color: $ys-color-white;
+    box-shadow: 0 10px 24px 0 rgba($ys-color-black, .1);
+  }
+
+  &--medium-corners {
+    border-radius: rem(8);
+  }
+
+  &--small-corners {
+    border-radius: rem(4);
+  }
+
+  &--bg-image {
+    background-size: cover;
+    background-position: 0 0;
+  }
+}

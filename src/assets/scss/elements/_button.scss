@@ -1,0 +1,148 @@
+@import './../../../assets/scss/settings/colors';
+@import './../../../assets/scss/settings/settings';
+@import './../../../assets/scss/tools/mixins';
+
+/* Default button is transparent with a dark border*/
+.ys-button {
+  display: inline-flex;
+  align-items: center;
+  flex-flow: row nowrap;
+  justify-content: center;
+
+  height: rem(48);
+  padding: 0 rem(48);
+
+  font-size: rem(20);
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none;
+  text-align: center;
+
+  background-color: transparent;
+  border: 0;
+  color: $ys-color-grey-28;
+  border-radius: rem(48);
+
+  appearance: none;
+  user-select: none;
+
+  box-shadow: inset 0 0 0 2px currentColor;
+
+  transition: all .25s ease-out;
+
+  /* Disabled button — use with caution */
+  &:disabled,
+  &.ys-disabled {
+    background-color: $ys-color-grey-94;
+    color: $ys-color-grey-64;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: 0; // disable the focus ring when the button is clicked with a mouse
+  }
+
+  &:not(:disabled):not(.ys-disabled):not([class*='ys-button--stripped']):hover {
+    box-shadow: inset 0 0 0 0 $ys-color-grey-28, 0 0 0 2px $ys-color-digital-grass;
+  }
+
+  /* icon size is the same in both buttons that contain icons */
+  &__icon {
+    width: rem(16);
+    height: rem(16);
+
+    > * {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  /* Transparent button with light border */
+  &--light {
+    color: $ys-color-white;
+  }
+
+  /* Green CTA button */
+  &--cta {
+    background-color: $ys-color-digital-grass;
+    color: $ys-color-white;
+
+    box-shadow: inset 0 0 0 0 transparent, 0 0 0 0 transparent;
+  }
+
+  /* Solid dark button with white text */
+  &--solid-dark {
+    background-color: $ys-color-grey-28;
+    color: $ys-color-white;
+
+    box-shadow: inset 0 0 0 transparent;
+
+    &:not(:disabled):not(.ys-disabled):not([class*='ys-button--stripped']):hover {
+      box-shadow: inset 0 0 0 0 transparent, 0 0 0 2px $ys-color-grey-28;
+    }
+  }
+
+  /* Solid light button with dark text */
+  &--solid-light {
+    background-color: $ys-color-white;
+    color: $ys-color-grey-28;
+
+    box-shadow: inset 0 0 0 0 transparent;
+
+    &:not(:disabled):not(.ys-disabled):not([class*='ys-button--stripped']):hover {
+      box-shadow: inset 0 0 0 0 transparent, 0 0 0 2px $ys-color-white;
+    }
+  }
+
+  /* Stripped button which resembles a link without an underline */
+  &--stripped-dark {
+    color: $ys-color-grey-28;
+  }
+
+  &--stripped-light {
+    color: $ys-color-white;
+  }
+
+  &--stripped-dark,
+  &--stripped-light {
+    padding: 0 rem(16);
+    background-color: transparent;
+    box-shadow: 0 0 0 0 transparent;
+
+    &:hover {
+      color: $ys-color-digital-grass;
+      box-shadow: 0 0 0 0 transparent;
+    }
+  }
+
+  /* block takes up 100% width of it's container */
+  &--block {
+    min-width: 100%;
+
+    &::before,
+    &::after {
+      content: '';
+      flex: 0 0 rem(48);
+    }
+  }
+
+  /* Button with icon */
+  &--icon {
+
+    .ys-button__text + .ys-button__icon,
+    .ys-button__text + .ys__button__text {
+      margin-left: rem(16);
+    }
+  }
+
+  /* Button that only DISPLAYS an icon - text is hidden using the ys-u-visuallyhidden class */
+  &--icon-only {
+    padding: 0 rem(16);
+  }
+
+  &__text {
+    white-space: nowrap;
+  }
+}

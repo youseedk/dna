@@ -1,0 +1,20 @@
+{{#unless isList}}
+<{{tagName}} class="{{className}}">{{textContent}}</{{tagName}}>
+{{/unless}}
+{{#if isList}}
+<{{tagName}} class="{{className}}">
+    <li class="ys-list__item">Some item right here</li>
+    <li class="ys-list__item">Some item right here</li>
+    <li class="ys-list__item">Some item right here
+        <{{tagName}} class="{{className}}">
+    <li class="ys-list__item">Some item right here</li>
+    <li class="ys-list__item">Some item right here</li>
+    <li class="ys-list__item">Some item right here</li>
+</{{tagName}}>
+</li>
+<li class="ys-list__item">Some item right here</li>
+<li class="ys-list__item">Some item right here</li>
+<li class="ys-list__item">Some item right here</li>
+<li class="ys-list__item">Some item right here</li>
+</{{tagName}}>
+{{/if}}
