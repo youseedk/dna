@@ -159,7 +159,9 @@ gulp.task('fonts', function () {
 
 /**
  * 
- * Create SVG Sprites and JSON files from icon assets
+ * Create SVG Sprites
+ * Create JSON file lists from icon assets
+ * Copy SVG files to public
  * 
  */
 const sprites = {
@@ -173,9 +175,9 @@ gulp.task('svgSprites', function () {
       .pipe(svgSprite({
         mode: {
           symbol: {
-            dest: 'sprites',
+            dest: 'sprite',
             prefix: 'ys-',
-            sprite: 'ys-' + spriteSrc + '.svg'
+            sprite: spriteSrc + '.svg'
           }
         },
         svg: {
@@ -190,6 +192,10 @@ gulp.task('svgSprites', function () {
       .pipe(plugins.filelist(spriteSrc + '.json'))
       .pipe(plugins.replace("src/assets/svg/" + spriteSrc + "/", ""))
       .pipe(gulp.dest(paths.tokensSource + 'generated'));
+    // copy svg files to public
+    gulp.src(paths.assetsSource + 'svg/' + spriteSrc + '/*.svg')
+      .pipe(plugins.newer(paths.destination + 'svg/' + spriteSrc))
+      .pipe(gulp.dest(paths.destination + '/svg/' + spriteSrc))
   })
 })
 
