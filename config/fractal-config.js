@@ -32,7 +32,7 @@ const YSDStheme = require('@frctl/mandelbrot')({
 
 const path = require('path');
 // specify a directory to hold the theme override templates
-YSDStheme.addLoadPath(path.join(__dirname, '../fractal-theme-overrides'));
+YSDStheme.addLoadPath(path.join(__dirname, '/fractal-theme'));
 fractal.web.theme(YSDStheme); // tell Fractal to use the configured theme by default
 
 // any other configuration or customisation here

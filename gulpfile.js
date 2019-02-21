@@ -279,10 +279,10 @@ gulp.task('fractal:build', function () {
 gulp.task('watch', function () {
   gulp.watch([paths.source + 'scss/**/*.scss'], ['css']);
   gulp.watch([paths.componentsSource + '**/*.scss'], ['css']);
-  //gulp.watch([paths.source + 'js/**'], ['scripts']);
   gulp.watch([paths.source + 'images/**'], ['images']);
   gulp.watch([paths.assetsSource + 'svg/**'], ['svgSprites']);
-  gulp.watch(['./fractal-theme-overrides/assets/scss/**/*.scss'], ['fractal-assets']);
+  gulp.watch([paths.fractal.scss + '/**/*.scss'], ['fractal-scss']);
+  gulp.watch([paths.fractal.js + '/**/*.js'], ['fractal-js']);
 });
 
 gulp.task('default', function (callback) {
