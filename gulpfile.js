@@ -79,7 +79,7 @@ gulp.task('css', function () {
     })
   ];
 
-  return gulp.src(paths.source + 'scss/*.scss')
+  return gulp.src(paths.assetsSource + 'scss/*.scss')
     .pipe(plugins.sass({
       sourceComments: 'normal'
     }).on('error', plugins.sass.logError))
@@ -139,7 +139,7 @@ gulp.task('jsonToScss', function () {
  *
  */
 gulp.task('images', function () {
-  return gulp.src(paths.source + 'img/**')
+  return gulp.src(paths.assetsSource + 'img/**')
     .pipe(plugins.newer(paths.destination + 'img'))
     .pipe(plugins.imagemin())
     .pipe(gulp.dest(paths.destination + 'img'));
@@ -151,7 +151,7 @@ gulp.task('images', function () {
  *
  */
 gulp.task('fonts', function () {
-  return gulp.src(paths.source + 'fonts/**')
+  return gulp.src(paths.assetsSource + 'fonts/**')
     .pipe(plugins.newer(paths.destination + 'fonts'))
     .pipe(gulp.dest(paths.destination + 'fonts'));
 });
@@ -277,9 +277,9 @@ gulp.task('fractal:build', function () {
  *
  */
 gulp.task('watch', function () {
-  gulp.watch([paths.source + 'scss/**/*.scss'], ['css']);
+  gulp.watch([paths.assetsSource + 'scss/**/*.scss'], ['css']);
   gulp.watch([paths.componentsSource + '**/*.scss'], ['css']);
-  gulp.watch([paths.source + 'images/**'], ['images']);
+  gulp.watch([paths.assetsSource + 'images/**'], ['images']);
   gulp.watch([paths.assetsSource + 'svg/**'], ['svgSprites']);
   gulp.watch([paths.fractal.scss + '/**/*.scss'], ['fractal-scss']);
   gulp.watch([paths.fractal.js + '/**/*.js'], ['fractal-js']);
@@ -301,7 +301,7 @@ gulp.task('default', function (callback) {
 gulp.task('fractal-scss', function () {
   gulp.src(paths.fractal.scss + '/styles.scss')
     .pipe(plugins.sass().on('error', plugins.sass.logError))
-    .pipe(gulp.dest(paths.destination + 'css'))
+    .pipe(gulp.dest(paths.destination + 'theme/css'))
 })
 
 gulp.task('fractal-js', () => {
@@ -314,7 +314,7 @@ gulp.task('fractal-js', () => {
     })
     .bundle()
     .pipe(source('scripts.js'))
-    .pipe(gulp.dest(paths.destination + 'js'));
+    .pipe(gulp.dest(paths.destination + 'theme/js'));
 });
 
 gulp.task('fractal-assets', ['fractal-scss', 'fractal-js']);
