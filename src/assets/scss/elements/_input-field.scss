@@ -94,6 +94,14 @@
     display: flex;
     width: rem(24);
     height: rem(24);
+
+    &--valid {
+      color: $ys-color-digital-grass;
+    }
+
+    &--invalid {
+      color: $ys-color-error-red;
+    }
   }
 
   &__guidance {
