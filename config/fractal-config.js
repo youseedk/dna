@@ -22,11 +22,11 @@ const YSDStheme = require('@frctl/mandelbrot')({
     "panels": ["html", "notes"],
     "styles": [
         "default",
-        "/assets/css/styles.css",
+        "/assets/theme/css/styles.css",
     ],
     "scripts": [
         "default",
-        "/assets/js/scripts.js"
+        "/assets/theme/js/scripts.js"
     ]
 });
 
