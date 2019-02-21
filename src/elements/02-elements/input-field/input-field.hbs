@@ -2,18 +2,17 @@
     <label class="ys-input-field__label">
         <span class="ys-input-field__label-text">Label for input</span>
         <span class="ys-input-field__wrapper{{#if isReadonly}} ys-input-field__wrapper--readonly{{/if}}{{#if isInvalid}} ys-input-field__wrapper--error{{/if}}{{#if isDisabled}} ys-input-field__wrapper--disabled{{/if}}">
-        {{#if hasIconPre}}
+            {{#if hasIconPre}}
             <span class="ys-input-field__icon">
-                {{ render '@icon--email' }}
+                {{ render '@icon-set--mail' }}
             </span>
-        {{/if}}
-        <input type="text" class="ys-input-field__control" {{#unless isDisabled}}placeholder="Placeholder text"{{/unless}}{{#if isDisabled}} disabled{{/if}}{{#if isReadonly}}readonly value="Non-editable text"{{/if}}{{#if isInvalid}}value="Invalid input"{{/if}} />
-        {{#if hasIconPost}}
-            <span class="ys-input-field__icon">
-                {{#if isValid}}{{ render '@icon--valid' }}{{/if}}
-                {{#if isInvalid}}{{ render '@icon--invalid' }}{{/if}}
+            {{/if}}
+            <input type="text" class="ys-input-field__control" {{#unless isDisabled}}placeholder="Placeholder text"{{/unless}}{{#if isDisabled}} disabled{{/if}}{{#if isReadonly}}readonly value="Non-editable text"{{/if}}{{#if isInvalid}}value="Invalid input"{{/if}} />
+            {{#if hasIconPost}}
+            <span class="ys-input-field__icon{{#if isValid}} ys-input-field__icon--valid{{/if}}{{#if isInvalid}} ys-input-field__icon--invalid{{/if}}">
+                {{#if isValid}}{{ render '@ui-icons--check-mark' }}{{/if}}{{#if isInvalid}}{{ render '@ui-icons--exclamation-mark' }}{{/if}}
             </span>
-        {{/if}}
+            {{/if}}
         </span>
     </label>
     {{#if hasGuidance}}
