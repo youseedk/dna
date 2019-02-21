@@ -21,5 +21,3 @@ A colour palette comprises primary and accent colours that can be used for illus
   </dl>
 {{/each}}
 </div>
-
-<script src="/assets/js/colors.js"></script>
