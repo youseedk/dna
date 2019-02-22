@@ -11,7 +11,7 @@
     "lint:scss": "gulp lint-scss"
   },
   "repository": {},
-  "author": "YouSee Digital Warehouse",
+  "author": "YouSee Digital Warehouse (https://github.com/youseedk/ysds/graphs/contributors)",
   "license": "ISC",
   "homepage": "https://projectname.yousee.dk",
   "dependencies": {
