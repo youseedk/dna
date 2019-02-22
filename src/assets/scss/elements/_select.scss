@@ -74,7 +74,7 @@
     }
 
     &:disabled {
-      background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox%3D%220%20-3%2016%2016%22%3E%3Cpath%20fill%3D%22%23a2a2a2%22%20fill-rule%3D%22evenodd%22%20d%3D%22M8%207.2l6.1-6c.4-.4%201.1-.4%201.6%200v.1a1%201%200%200%201%200%201.5L9%209.6c-.5.4-1.2.4-1.6%200v-.1L.3%202.7A1.1%201.1%200%200%201%202%201.1l6%206z%22/%3E%3C/svg%3E'), linear-gradient(to bottom, transparent 0%, transparent 100%);
+      background-image: url('/assets/svg/ui-icons/arrow-down-grey-64.svg'), linear-gradient(to bottom, transparent 0%, transparent 100%);
       color: $ys-color-grey-64;
       box-shadow: 0 0 0 0 transparent;
       cursor: not-allowed;
