@@ -2,27 +2,25 @@
   "name": "design.yousee.dk",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "",
+  "engines": {
+    "node": "^10"
+  },
   "scripts": {
     "start": "gulp",
-    "build": "gulp fractalTheme && gulp fractal:build",
     "lint:scss": "gulp lint-scss"
   },
   "repository": {},
-  "author": "Shift ApS",
+  "author": "YouSee Digital Warehouse (https://github.com/youseedk/ysds/graphs/contributors)",
   "license": "ISC",
-  "homepage": "",
+  "homepage": "https://projectname.yousee.dk",
   "dependencies": {
-    "@frctl/fractal": "^1.1.7",
-    "bootstrap": "^4.2.1",
-    "browserify": "^16.2.3",
-    "tinycolor2": "^1.4.1",
-    "vinyl-source-stream": "^2.0.0"
-  },
-  "devDependencies": {
     "@babel/core": "^7.3.3",
     "@babel/preset-env": "^7.3.1",
+    "@frctl/fractal": "^1.1.7",
     "babelify": "^10.0.0",
+    "bootstrap": "^4.2.1",
+    "browserify": "^16.2.3",
     "cssnano": "^3.10.0",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
@@ -44,6 +42,10 @@
     "postcss-reporter": "^5.0.0",
     "postcss-scss": "^2.0.0",
     "run-sequence": "^2.2.1",
+    "tinycolor2": "^1.4.1",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "devDependencies": {
     "stylelint": "^9.10.1",
     "stylelint-config-recommended": "^2.1.0",
     "stylelint-scss": "^3.5.1"
