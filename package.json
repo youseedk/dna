@@ -13,7 +13,7 @@
   "repository": {},
   "author": "YouSee Digital Warehouse",
   "license": "ISC",
-  "homepage": "https://github.com/youseedk/ysds",
+  "homepage": "https://projectname.yousee.dk",
   "dependencies": {
     "@babel/core": "^7.3.3",
     "@babel/preset-env": "^7.3.1",
