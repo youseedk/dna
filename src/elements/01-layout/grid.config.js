@@ -35,6 +35,6 @@ module.exports = {
     }
   ],
   "context": {
-    "inlineCss": "body{padding:0;}.row div{font-family:sans-serif;height:60px;line-height:60px;text-align:center;outline:1px solid #ccc;background-color:rgba(255,255,255,.5);}"
+    "inlineCss": "body{padding:0;margin:0}.row div{font-family:sans-serif;height:60px;line-height:60px;text-align:center;outline:1px solid #ccc;background-color:rgba(255,255,255,.5);}"
   }
 };
