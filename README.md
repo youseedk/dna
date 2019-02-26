@@ -1,4 +1,4 @@
-# YouSee Design System
+# DNA [![Build Status](https://travis-ci.org/youseedk/dna.svg?branch=master)](https://travis-ci.org/youseedk/dna)
 
 ## Getting started
 

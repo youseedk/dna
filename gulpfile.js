@@ -171,7 +171,7 @@ const sprites = {
 gulp.task('svgSprites', function () {
   sprites.sources.forEach(function (spriteSrc) {
     // create sprites
-    gulp.src(paths.assetsSource + '/svg/' + spriteSrc + '/*.svg')
+    gulp.src([paths.assetsSource + '/svg/' + spriteSrc + '/*.svg', '!' + paths.assetsSource + '/svg/' + spriteSrc + '/_*.svg'])
       .pipe(svgSprite({
         mode: {
           symbol: {
@@ -188,13 +188,16 @@ gulp.task('svgSprites', function () {
       .pipe(plugins.replace('id="', 'id="ys-' + spriteSrc + '-'))
       .pipe(gulp.dest(paths.destination + 'svg'));
     // create json file lists
-    gulp.src(paths.assetsSource + 'svg/' + spriteSrc + '/*.svg')
+    gulp.src([paths.assetsSource + '/svg/' + spriteSrc + '/*.svg', '!' + paths.assetsSource + '/svg/' + spriteSrc + '/_*.svg'])
       .pipe(plugins.filelist(spriteSrc + '.json'))
       .pipe(plugins.replace("src/assets/svg/" + spriteSrc + "/", ""))
       .pipe(gulp.dest(paths.tokensSource + 'generated'));
     // copy svg files to public
     gulp.src(paths.assetsSource + 'svg/' + spriteSrc + '/*.svg')
       .pipe(plugins.newer(paths.destination + 'svg/' + spriteSrc))
+      .pipe(plugins.rename(function (path) {
+        path.basename = path.basename.replace("_", "")
+      }))
       .pipe(gulp.dest(paths.destination + '/svg/' + spriteSrc))
   })
 })
@@ -226,8 +229,10 @@ gulp.task('compile-assets', ['jsonToScss', 'css', 'images', 'svgSprites', 'fonts
  * Build fractal theming, web site and npm package
  *  
  */
-gulp.task('build', ['fractal-assets', 'compile-assets', 'fractal:build', 'npmDist']);
 
+gulp.task('build', function (callback) {
+  runSequence('svgSprites', 'jsonToScss', 'fractal-assets', 'css', 'fractal:build');
+});
 /*
  * Configure a Fractal instance.
  *
