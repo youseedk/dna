@@ -229,8 +229,10 @@ gulp.task('compile-assets', ['jsonToScss', 'css', 'images', 'svgSprites', 'fonts
  * Build fractal theming, web site and npm package
  *  
  */
-gulp.task('build', ['fractal-assets', 'compile-assets', 'fractal:build', 'npmDist']);
 
+gulp.task('build', function (callback) {
+  runSequence('svgSprites', 'jsonToScss', 'fractal-assets', 'css', 'fractal:build');
+});
 /*
  * Configure a Fractal instance.
  *
