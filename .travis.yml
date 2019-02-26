@@ -4,7 +4,7 @@ node_js:
 script:
   - gulp build
 deploy:
-  local_dir: dist-site
+  local_dir: dist-site/
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
