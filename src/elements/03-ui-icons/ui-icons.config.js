@@ -5,13 +5,16 @@ const variants = uiIcons.reduce((acc, item, index) => {
   itemName = index == 0 ? 'default' : item;
   itemLabel = item;
 
-  acc.push({
-    name: itemName,
-    label: item,
-    context: {
-      svgId: 'ys-ui-icons-' + item
-    },
-  });
+  if(item != "logo") {
+    console.log(itemName);
+    acc.push({
+      name: itemName,
+      label: item,
+      context: {
+        svgId: 'ys-ui-icons-' + item
+      },
+    });
+  }
 
   return acc;
 }, []);
