@@ -6,7 +6,6 @@ const variants = uiIcons.reduce((acc, item, index) => {
   itemLabel = item;
 
   if(item != "logo") {
-    console.log(itemName);
     acc.push({
       name: itemName,
       label: item,
