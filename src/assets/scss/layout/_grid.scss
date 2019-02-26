@@ -3,7 +3,7 @@ This file is dependent on Bootstrap being available
 */
 
 /* Get YouSee Sizes */
-@import './../../assets/scss/settings/grid-settings';
+@import './../../assets/scss/settings/settings';
 
 /* Configure Bootstrap's grid settings */
 $enable-grid-classes: true;
@@ -33,14 +33,41 @@ $grid-gutter-width: $grid-column-sm-padding;
 @import './../../../node_modules/bootstrap/scss/mixins/grid';
 @import './../../../node_modules/bootstrap/scss/grid';
 
-/* NON-Bootstrap-variable */
-$fraction-unit: 8px;
+/* enable box sizing on grid */
+.container,
+.container-fluid,
+.row,
+.row > *[class*='col'] {
+  box-sizing: border-box;
+}
+
 
 /* Custom modifications to BS Grid */
 .container,
 .container-fluid {
   padding-left: $container-padding;
   padding-right: $container-padding;
+}
+
+@include media-breakpoint-up(sm) {
+
+  .container,
+  .container-fluid {
+    padding-left: $container-md-padding;
+    padding-right: $container-md-padding;
+  }
+
+  .container .row,
+  .container-fluid .row {
+    margin-left: -$container-md-padding;
+    margin-right: -$container-md-padding;
+  }
+
+  .container *[class*='col'],
+  .container-fluid *[class*='col'] {
+    padding-left: $container-md-padding;
+    padding-right: $container-md-padding;
+  }
 }
 
 @include media-breakpoint-up(md) {
@@ -57,63 +84,86 @@ $fraction-unit: 8px;
     margin-right: -$container-md-padding;
   }
 
-  .container *[class*='col-'],
-  .container-fluid *[class*='col-'] {
+  .container *[class*='col'],
+  .container-fluid *[class*='col'] {
     padding-left: $container-md-padding;
     padding-right: $container-md-padding;
   }
 }
 
-@include media-breakpoint-up(xl) {
+@include media-breakpoint-up(lg) {
 
   .container,
   .container-fluid {
-    padding-left: $container-padding;
-    padding-right: $container-padding;
+    padding-left: $container-lg-padding;
+    padding-right: $container-lg-padding;
   }
 
   .container .row,
   .container-fluid .row {
-    margin-left: -$container-padding;
-    margin-right: -$container-padding;
+    margin-left: -$container-lg-padding;
+    margin-right: -$container-lg-padding;
   }
 
-  .container *[class*='col-'],
-  .container-fluid *[class*='col-'] {
-    padding-left: $container-padding;
-    padding-right: $container-padding;
+  .container *[class*='col'],
+  .container-fluid *[class*='col'] {
+    padding-left: $container-lg-padding;
+    padding-right: $container-lg-padding;
+  }
+}
+
+
+@include media-breakpoint-up(xl) {
+
+  .container,
+  .container-fluid {
+    padding-left: $container-xl-padding;
+    padding-right: $container-xl-padding;
+    max-width: $grid-xl-maxwidth;
+  }
+
+  .container .row,
+  .container-fluid .row {
+    margin-left: -$container-xl-padding;
+    margin-right: -$container-xl-padding;
+  }
+
+  .container *[class*='col'],
+  .container-fluid *[class*='col'] {
+    padding-left: $container-xl-padding;
+    padding-right: $container-xl-padding;
   }
 }
 
 /* make vertical margin */
 .row--vertical-spacing-sm {
-  margin-top: -2*$fraction-unit; //16px;
+  margin-top: -2*$ys-fraction-unit; //16px;
 
   *[class*='col-'] {
-    margin-top: 2*$fraction-unit; //16px;
+    margin-top: 2*$ys-fraction-unit; //16px;
   }
 }
 
 .row--vertical-spacing-md {
-  margin-top: -3*$fraction-unit; //24px;
+  margin-top: -3*$ys-fraction-unit; //24px;
 
   *[class*='col-'] {
-    margin-top: 3*$fraction-unit; //24px;
+    margin-top: 3*$ys-fraction-unit; //24px;
   }
 }
 
 .row--vertical-spacing-lg {
-  margin-top: -4*$fraction-unit; //32px;
+  margin-top: -4*$ys-fraction-unit; //32px;
 
   *[class*='col-'] {
-    margin-top: 4*$fraction-unit; //32px;
+    margin-top: 4*$ys-fraction-unit; //32px;
   }
 }
 
 .row--vertical-spacing-xl {
-  margin-top: -6*$fraction-unit; //48px;
+  margin-top: -6*$ys-fraction-unit; //48px;
 
   *[class*='col-'] {
-    margin-top: 6*$fraction-unit; //48px;
+    margin-top: 6*$ys-fraction-unit; //48px;
   }
 }
