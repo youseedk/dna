@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+  <g fill="none" fill-rule="evenodd">
+    <rect width="19.43" height="3.7" x="10.25" y="18.65" fill="currentColor" fill-rule="nonzero" rx="1.85"/>
+    <path stroke="currentColor" stroke-linecap="square" stroke-width="2" d="M2.85 15.89v4.41c0 .43.15.85.42 1.18l3.95 4.81c.35.44.88.69 1.44.69h22.56c.55 0 1.07-.25 1.43-.68l4-4.82c.27-.33.43-.75.43-1.18v-4.41c0-1.03-.84-1.87-1.87-1.87H4.71c-1.03 0-1.86.84-1.86 1.87z"/>
+  </g>
+</svg>
