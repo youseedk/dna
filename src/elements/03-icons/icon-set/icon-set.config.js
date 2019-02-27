@@ -1,4 +1,4 @@
-const iconset = require('../../tokens/generated/icon-set.json');
+const iconset = require('../../../tokens/generated/icon-set.json');
 
 const variants = iconset.reduce((acc, item, index) => {
   item = item.replace(".svg", "");

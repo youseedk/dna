@@ -2,7 +2,7 @@
 
 const fractal = require('@frctl/fractal').create();
 
-fractal.set('project.title', 'YouSee Design System'); // title for the project
+fractal.set('project.title', 'DNA YouSee'); // title for the project
 fractal.set('project.version', 'v0.1');
 fractal.set('project.author', 'YouSee Digital Warehouse');
 fractal.web.set('builder.dest', 'dist-site'); // destination for the static export
