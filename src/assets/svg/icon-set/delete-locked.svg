@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+  <g fill="none" fill-rule="evenodd">
+    <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M30.02 19.86l.55-9.86H9l.94 22.08a2 2 0 0 0 2 1.92h7.13M14 15l1 14M20 15v14M26 15l-.4 5.47"/>
+    <path stroke="currentColor" stroke-linecap="square" stroke-width="2" d="M17 5h6a2 2 0 0 1 2 2v3H15V7c0-1.1.9-2 2-2z"/>
+    <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M34 10H6"/>
+    <g transform="translate(23 23)">
+      <rect width="12" height="9.57" y="5.43" fill="currentColor" rx="1.14"/>
+      <path stroke="currentColor" stroke-linecap="square" stroke-width="2" d="M9.14 3.58A3.1 3.1 0 0 0 6 .54a3.1 3.1 0 0 0-3.14 3.04v3.07h6.28V3.58z"/>
+    </g>
+  </g>
+</svg>
