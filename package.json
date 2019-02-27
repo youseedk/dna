@@ -6,14 +6,13 @@
   "engines": {
     "node": "^10"
   },
-  "scripts": {
-    "start": "gulp",
-    "lint:scss": "gulp lint-scss"
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/youseedk/dna.git"
   },
-  "repository": {},
-  "author": "YouSee Digital Warehouse (https://github.com/youseedk/ysds/graphs/contributors)",
+  "author": "YouSee Digital Warehouse (https://github.com/youseedk/dna/graphs/contributors)",
   "license": "ISC",
-  "homepage": "https://projectname.yousee.dk",
+  "homepage": "https://dna.yousee.dk",
   "dependencies": {
     "@babel/core": "^7.3.3",
     "@babel/preset-env": "^7.3.1",
