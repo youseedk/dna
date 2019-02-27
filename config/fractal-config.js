@@ -2,7 +2,7 @@
 
 const fractal = require('@frctl/fractal').create();
 
-fractal.set('project.title', 'DNA YouSee'); // title for the project
+fractal.set('project.title', 'YouSee DNA'); // title for the project
 fractal.set('project.version', 'v0.1');
 fractal.set('project.author', 'YouSee Digital Warehouse');
 fractal.web.set('builder.dest', 'dist-site'); // destination for the static export
@@ -15,7 +15,7 @@ fractal.components.set('label', 'Elements'); // default is 'Components'
 
 /* THEMING */
 // create a new instance with custom config options
-const YSDStheme = require('@frctl/mandelbrot')({
+const dnaTheme = require('@frctl/mandelbrot')({
     skin: "black",
     // any other theme configuration values here
     "nav": ["docs", "components"],
@@ -32,8 +32,8 @@ const YSDStheme = require('@frctl/mandelbrot')({
 
 const path = require('path');
 // specify a directory to hold the theme override templates
-YSDStheme.addLoadPath(path.join(__dirname, '/fractal-theme'));
-fractal.web.theme(YSDStheme); // tell Fractal to use the configured theme by default
+dnaTheme.addLoadPath(path.join(__dirname, '/fractal-theme'));
+fractal.web.theme(dnaTheme); // tell Fractal to use the configured theme by default
 
 // any other configuration or customisation here
 module.exports = fractal;
