@@ -1,4 +1,4 @@
-const uiIcons = require('../../tokens/generated/ui-icons.json');
+const uiIcons = require('../../../tokens/generated/ui-icons.json');
 
 const variants = uiIcons.reduce((acc, item, index) => {
   item = item.replace(".svg", "");
