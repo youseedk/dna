@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+  <g fill="none" fill-rule="evenodd">
+    <rect width="25" height="17" x="8" y="16" stroke="currentColor" stroke-linecap="square" stroke-width="2.0165" rx="2.0165"/>
+    <path fill="currentColor" d="M28.5005 22C29.328 22 30 21.3283 30 20.5s-.672-1.5-1.4995-1.5C27.672 19 27 19.6717 27 20.5s.672 1.5 1.5005 1.5"/>
+    <path stroke="currentColor" stroke-linecap="round" stroke-width="1.0083" d="M11.5 20.5h12"/>
+    <path stroke="currentColor" stroke-linecap="round" stroke-width="2.0165" d="M14 8l16 8"/>
+  </g>
+</svg>
