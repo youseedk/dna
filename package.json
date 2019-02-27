@@ -7,8 +7,8 @@
     "node": "^10"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/youseedk/dna.git"
+    "type": "git",
+    "url": "https://github.com/youseedk/dna.git"
   },
   "author": "YouSee Digital Warehouse (https://github.com/youseedk/dna/graphs/contributors)",
   "license": "ISC",

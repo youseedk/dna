@@ -164,49 +164,82 @@ gulp.task('fonts', function () {
  * Copy SVG files to public
  * 
  */
-const sprites = {
-  sources: ['ui-icons', 'icon-set']
-};
 
-gulp.task('svgSprites', function () {
-  sprites.sources.forEach(function (spriteSrc) {
-    // create sprites
-    gulp.src([
-      `${paths.assetsSource}/svg/${spriteSrc}/*.svg`,
-      `!${paths.assetsSource}/svg/${spriteSrc}/_*.svg`
+gulp.task('svgSprite1', function () {
+  // create sprites
+  gulp.src([
+      `${paths.assetsSource}/svg/icon-set/*.svg`,
+      `!${paths.assetsSource}/svg/icon-set/_*.svg`
     ])
-      .pipe(svgSprite({
-        mode: {
-          symbol: {
-            dest: 'sprite',
-            prefix: 'ys-',
-            sprite: spriteSrc + '.svg'
-          }
-        },
-        svg: {
-          xmlDeclaration: false,
-          namespaceIDs: true
+    .pipe(svgSprite({
+      mode: {
+        symbol: {
+          dest: 'sprite',
+          prefix: 'ys-',
+          sprite: 'icon-set' + '.svg'
         }
-      }))
-      .pipe(plugins.replace('id="', `id="ys-${spriteSrc}-`))
-      .pipe(gulp.dest(paths.destination + 'svg'));
-    // create json file lists
-    gulp.src([
-      `${paths.assetsSource}/svg/${spriteSrc}/*.svg`,
-      `!${paths.assetsSource}/svg/${spriteSrc}/_*.svg`
+      },
+      svg: {
+        xmlDeclaration: false,
+        namespaceIDs: true
+      }
+    }))
+    .pipe(plugins.replace('id="', `id="ys-icon-set-`))
+    .pipe(gulp.dest(paths.destination + 'svg'));
+  // create json file lists
+  return gulp.src([
+      `${paths.assetsSource}/svg/icon-set/*.svg`,
+      `!${paths.assetsSource}/svg/icon-set/_*.svg`
     ])
-      .pipe(plugins.filelist(`${spriteSrc}.json`))
-      .pipe(plugins.replace(`src/assets/svg/${spriteSrc}/`, ''))
-      .pipe(gulp.dest(`${paths.tokensSource}generated`));
-    // copy svg files to public
-    gulp.src(`${paths.assetsSource}svg/${spriteSrc}/*.svg`)
-      .pipe(plugins.newer(`${paths.destination}svg/${spriteSrc}`))
-      .pipe(plugins.rename(function (path) {
-        path.basename = path.basename.replace('_', '')
-      }))
-      .pipe(gulp.dest(`${paths.destination}/svg/${spriteSrc}`))
-  })
-})
+    .pipe(plugins.filelist(`icon-set.json`))
+    .pipe(plugins.replace(`src/assets/svg/icon-set/`, ''))
+    .pipe(gulp.dest(`${paths.tokensSource}generated`));
+  // copy svg files to public
+  return gulp.src(`${paths.assetsSource}svg/icon-set/*.svg`)
+    .pipe(plugins.newer(`${paths.destination}svg/icon-set`))
+    .pipe(plugins.rename(function (path) {
+      path.basename = path.basename.replace('_', '')
+    }))
+    .pipe(gulp.dest(`${paths.destination}/svg/icon-set`));
+});
+
+gulp.task('svgSprite2', function () {
+  // create sprites
+  gulp.src([
+      `${paths.assetsSource}/svg/ui-icons/*.svg`,
+      `!${paths.assetsSource}/svg/ui-icons/_*.svg`
+    ])
+    .pipe(svgSprite({
+      mode: {
+        symbol: {
+          dest: 'sprite',
+          prefix: 'ys-',
+          sprite: 'ui-icons' + '.svg'
+        }
+      },
+      svg: {
+        xmlDeclaration: false,
+        namespaceIDs: true
+      }
+    }))
+    .pipe(plugins.replace('id="', `id="ys-ui-icons-`))
+    .pipe(gulp.dest(paths.destination + 'svg'));
+  // create json file lists
+  return gulp.src([
+      `${paths.assetsSource}/svg/ui-icons/*.svg`,
+      `!${paths.assetsSource}/svg/ui-icons/_*.svg`
+    ])
+    .pipe(plugins.filelist(`ui-icons.json`))
+    .pipe(plugins.replace(`src/assets/svg/ui-icons/`, ''))
+    .pipe(gulp.dest(`${paths.tokensSource}generated`));
+  // copy svg files to public
+  return gulp.src(`${paths.assetsSource}svg/ui-icons/*.svg`)
+    .pipe(plugins.newer(`${paths.destination}svg/ui-icons`))
+    .pipe(plugins.rename(function (path) {
+      path.basename = path.basename.replace('_', '')
+    }))
+    .pipe(gulp.dest(`${paths.destination}/svg/ui-icons`));
+});
 
 
 /**
@@ -239,10 +272,10 @@ gulp.task('default', function (callback) {
 });
 
 
- /* BUILD */
- // CAUTION: Used by TRAVIS CI for automatic build and deployment - change only this task if you know what you are doing */
- gulp.task('build', function (cb) {
-  runSequence('svgSprites', 'jsonToScss', 'fractal-assets', 'css', 'fractal:build', cb);
+/* BUILD */
+// CAUTION: Used by TRAVIS CI for automatic build and deployment - change only this task if you know what you are doing */
+gulp.task('build', () => {
+  runSequence('svgSprite1', 'svgSprite2', 'jsonToScss', 'fractal-assets', 'css', 'fractal:build');
 });
 
 
