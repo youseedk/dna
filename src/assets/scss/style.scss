@@ -32,7 +32,7 @@
 }
 
 /* Files that don't render anything in the CSS */
-@import './settings/colors';
+@import './generated/colors';
 @import './settings/settings';
 @import './tools/functions';
 @import './tools/mixins';
