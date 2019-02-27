@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+  <g fill="none" fill-rule="evenodd">
+    <path stroke="currentColor" stroke-linecap="round" stroke-width="2.017" d="M24.223 33H7.068a2.009 2.009 0 0 1-2.017-2V18c0-1.105.903-2 2.017-2h21.178c1.113 0 2.017.895 2.017 2v2.963"/>
+    <path fill="currentColor" d="M25.725 22c.834 0 1.512-.672 1.512-1.5S26.56 19 25.725 19c-.836 0-1.513.672-1.513 1.5s.677 1.5 1.513 1.5"/>
+    <path stroke="currentColor" stroke-linecap="round" stroke-width="1.008" d="M8.58 20.5h12.102"/>
+    <path stroke="currentColor" stroke-linecap="round" stroke-width="2.017" d="M11.102 8l16.135 8"/>
+    <path stroke="currentColor" stroke-linecap="round" stroke-width="1.008" d="M27.237 35.752c.072-2.318 1.088-3.476 3.049-3.476h4.396c.403 0 .765.056 1.087.17"/>
+    <ellipse cx="32.253" cy="27.283" stroke="currentColor" stroke-width="1.008" rx="3.411" ry="3.283"/>
+    <path stroke="currentColor" stroke-linecap="round" stroke-width=".807" d="M37.448 35.017v-5.595c0-.156.11-.29.262-.32l1.42.793"/>
+    <ellipse cx="36.307" cy="35.179" stroke="currentColor" stroke-width=".807" rx="1.141" ry="1"/>
+  </g>
+</svg>
