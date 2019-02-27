@@ -116,7 +116,7 @@ gulp.task('lint-scss', function () {
  *
  */
 gulp.task('jsonToScss', function () {
-  gulp.src(['src/tokens/colors.json'])
+  gulp.src([`${paths.tokensSource}colors.json`])
     .pipe(jsonSass({
       ignoreJsonErrors: false,
     }))
@@ -129,7 +129,7 @@ gulp.task('jsonToScss', function () {
     .pipe(plugins.replace('-accent-greys', ''))
     .pipe(plugins.replace('color-accent-', 'color-'))
     .pipe(plugins.rename('_colors.scss'))
-    .pipe(gulp.dest('src/assets/scss/settings'))
+    .pipe(gulp.dest(`${paths.assetsSource}scss/generated`))
 });
 
 
@@ -171,7 +171,10 @@ const sprites = {
 gulp.task('svgSprites', function () {
   sprites.sources.forEach(function (spriteSrc) {
     // create sprites
-    gulp.src([paths.assetsSource + '/svg/' + spriteSrc + '/*.svg', '!' + paths.assetsSource + '/svg/' + spriteSrc + '/_*.svg'])
+    gulp.src([
+      `${paths.assetsSource}/svg/${spriteSrc}/*.svg`,
+      `!${paths.assetsSource}/svg/${spriteSrc}/_*.svg`
+    ])
       .pipe(svgSprite({
         mode: {
           symbol: {
@@ -185,20 +188,23 @@ gulp.task('svgSprites', function () {
           namespaceIDs: true
         }
       }))
-      .pipe(plugins.replace('id="', 'id="ys-' + spriteSrc + '-'))
+      .pipe(plugins.replace('id="', `id="ys-${spriteSrc}-`))
       .pipe(gulp.dest(paths.destination + 'svg'));
     // create json file lists
-    gulp.src([paths.assetsSource + '/svg/' + spriteSrc + '/*.svg', '!' + paths.assetsSource + '/svg/' + spriteSrc + '/_*.svg'])
-      .pipe(plugins.filelist(spriteSrc + '.json'))
-      .pipe(plugins.replace("src/assets/svg/" + spriteSrc + "/", ""))
-      .pipe(gulp.dest(paths.tokensSource + 'generated'));
+    gulp.src([
+      `${paths.assetsSource}/svg/${spriteSrc}/*.svg`,
+      `!${paths.assetsSource}/svg/${spriteSrc}/_*.svg`
+    ])
+      .pipe(plugins.filelist(`${spriteSrc}.json`))
+      .pipe(plugins.replace(`src/assets/svg/${spriteSrc}/`, ''))
+      .pipe(gulp.dest(`${paths.tokensSource}generated`));
     // copy svg files to public
-    gulp.src(paths.assetsSource + 'svg/' + spriteSrc + '/*.svg')
-      .pipe(plugins.newer(paths.destination + 'svg/' + spriteSrc))
+    gulp.src(`${paths.assetsSource}svg/${spriteSrc}/*.svg`)
+      .pipe(plugins.newer(`${paths.destination}svg/${spriteSrc}`))
       .pipe(plugins.rename(function (path) {
-        path.basename = path.basename.replace("_", "")
+        path.basename = path.basename.replace('_', '')
       }))
-      .pipe(gulp.dest(paths.destination + '/svg/' + spriteSrc))
+      .pipe(gulp.dest(`${paths.destination}/svg/${spriteSrc}`))
   })
 })
 
@@ -224,15 +230,36 @@ gulp.task('npmDist', function () {
 gulp.task('compile-assets', ['jsonToScss', 'css', 'images', 'svgSprites', 'fonts', 'fractal-assets']);
 
 
-/**
- * 
- * Build fractal theming, web site and npm package
- *  
- */
-
-gulp.task('build', function (callback) {
-  runSequence('svgSprites', 'jsonToScss', 'fractal-assets', 'css', 'fractal:build');
+//Default
+gulp.task('default', function (callback) {
+  runSequence('svgSprites',
+    ['fractal-assets', 'jsonToScss', 'css', 'images', 'watch'],
+    'fractal:start'
+  );
 });
+
+
+ /* BUILD */
+ // CAUTION: Used by TRAVIS CI for automatic build and deployment - change only this task if you know what you are doing */
+ gulp.task('build', function (cb) {
+  runSequence('svgSprites', 'jsonToScss', 'fractal-assets', 'css', 'fractal:build', cb);
+});
+
+
+/**
+ *
+ * Watch for changes
+ *
+ */
+gulp.task('watch', function () {
+  gulp.watch([paths.assetsSource + 'scss/**/*.scss'], ['css']);
+  gulp.watch([paths.componentsSource + '**/*.scss'], ['css']);
+  gulp.watch([paths.assetsSource + 'images/**'], ['images']);
+  gulp.watch([paths.assetsSource + 'svg/**'], ['svgSprites']);
+  gulp.watch([paths.fractal.scss + '/**/*.scss'], ['fractal-scss']);
+  gulp.watch([paths.fractal.js + '/**/*.js'], ['fractal-js']);
+});
+
 /*
  * Configure a Fractal instance.
  *
@@ -281,28 +308,6 @@ gulp.task('fractal:build', function () {
     logger.success('Fractal build completed!');
   });
 });
-
-/**
- *
- * Watch for changes
- *
- */
-gulp.task('watch', function () {
-  gulp.watch([paths.assetsSource + 'scss/**/*.scss'], ['css']);
-  gulp.watch([paths.componentsSource + '**/*.scss'], ['css']);
-  gulp.watch([paths.assetsSource + 'images/**'], ['images']);
-  gulp.watch([paths.assetsSource + 'svg/**'], ['svgSprites']);
-  gulp.watch([paths.fractal.scss + '/**/*.scss'], ['fractal-scss']);
-  gulp.watch([paths.fractal.js + '/**/*.js'], ['fractal-js']);
-});
-
-gulp.task('default', function (callback) {
-  runSequence('svgSprites',
-    ['fractal-assets', 'jsonToScss', 'css', 'images', 'watch'],
-    'fractal:start'
-  );
-});
-
 
 /**
  * 
