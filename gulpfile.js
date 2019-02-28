@@ -11,7 +11,7 @@
 //   `gulp jsonToScss`
 //   `gulp images`
 //   `gulp fonts`
-//   `gulp svgSprites`
+//   `gulp icons`
 //   `gulp npmDist`
 //   `gulp fractalTheme`
 //   `gulp lint:scss`
@@ -41,6 +41,7 @@ const browserify = require('browserify');
 const tinycolor = require('tinycolor2');
 const svgSprite = require('gulp-svg-sprite');
 const runSequence = require('run-sequence');
+const merge = require('merge-stream');
 
 const paths = {
   componentsSource: 'src/components/',
@@ -164,17 +165,14 @@ gulp.task('fonts', function () {
  * Copy SVG files to public
  * 
  */
-const sprites = {
-  sources: ['ui-icons', 'icon-set']
-};
+gulp.task('icons', function (cb) {
+  runSequence('uiIcons', 'iconSet', cb);
+});
 
-gulp.task('svgSprites', function () {
-  sprites.sources.forEach(function (spriteSrc) {
-    // create sprites
-    gulp.src([
-      `${paths.assetsSource}/svg/${spriteSrc}/*.svg`,
-      `!${paths.assetsSource}/svg/${spriteSrc}/_*.svg`
-    ])
+gulp.task('uiIcons', function () {
+  const spriteSrc = 'ui-icons';
+  let spriteCreation = gulp
+      .src([`${paths.assetsSource}/svg/${spriteSrc}/*.svg`, `!${paths.assetsSource}/svg/${spriteSrc}/_*.svg`])
       .pipe(svgSprite({
         mode: {
           symbol: {
@@ -190,23 +188,67 @@ gulp.task('svgSprites', function () {
       }))
       .pipe(plugins.replace('id="', `id="ys-${spriteSrc}-`))
       .pipe(gulp.dest(paths.destination + 'svg'));
+    
     // create json file lists
-    gulp.src([
-      `${paths.assetsSource}/svg/${spriteSrc}/*.svg`,
-      `!${paths.assetsSource}/svg/${spriteSrc}/_*.svg`
-    ])
+    let fileList = gulp
+      .src([`${paths.assetsSource}/svg/${spriteSrc}/*.svg`, `!${paths.assetsSource}/svg/${spriteSrc}/_*.svg`])
       .pipe(plugins.filelist(`${spriteSrc}.json`))
       .pipe(plugins.replace(`src/assets/svg/${spriteSrc}/`, ''))
       .pipe(gulp.dest(`${paths.tokensSource}generated`));
-    // copy svg files to public
-    gulp.src(`${paths.assetsSource}svg/${spriteSrc}/*.svg`)
+    
+      // copy svg files to public
+    let copyTask = gulp
+      .src(`${paths.assetsSource}svg/${spriteSrc}/*.svg`)
       .pipe(plugins.newer(`${paths.destination}svg/${spriteSrc}`))
       .pipe(plugins.rename(function (path) {
         path.basename = path.basename.replace('_', '')
       }))
       .pipe(gulp.dest(`${paths.destination}/svg/${spriteSrc}`))
-  })
+    
+    return merge(spriteCreation, fileList, copyTask);
 })
+
+gulp.task('iconSet', function () {
+  const spriteSrc = 'icon-set';
+  let spriteCreation = gulp
+      .src([`${paths.assetsSource}/svg/${spriteSrc}/*.svg`, `!${paths.assetsSource}/svg/${spriteSrc}/_*.svg`])
+      .pipe(svgSprite({
+        mode: {
+          symbol: {
+            dest: 'sprite',
+            prefix: 'ys-',
+            sprite: spriteSrc + '.svg'
+          }
+        },
+        svg: {
+          xmlDeclaration: false,
+          namespaceIDs: true
+        }
+      }))
+      .pipe(plugins.replace('id="', `id="ys-${spriteSrc}-`))
+      .pipe(gulp.dest(paths.destination + 'svg'));
+    
+    // create json file lists
+    let fileList = gulp
+      .src([`${paths.assetsSource}/svg/${spriteSrc}/*.svg`, `!${paths.assetsSource}/svg/${spriteSrc}/_*.svg`])
+      .pipe(plugins.filelist(`${spriteSrc}.json`))
+      .pipe(plugins.replace(`src/assets/svg/${spriteSrc}/`, ''))
+      .pipe(gulp.dest(`${paths.tokensSource}generated`));
+    
+      // copy svg files to public
+    let copyTask = gulp
+      .src(`${paths.assetsSource}svg/${spriteSrc}/*.svg`)
+      .pipe(plugins.newer(`${paths.destination}svg/${spriteSrc}`))
+      .pipe(plugins.rename(function (path) {
+        path.basename = path.basename.replace('_', '')
+      }))
+      .pipe(gulp.dest(`${paths.destination}/svg/${spriteSrc}`))
+    
+    return merge(spriteCreation, fileList, copyTask);
+})
+
+
+
 
 
 /**
@@ -227,12 +269,12 @@ gulp.task('npmDist', function () {
  *	Build assets
  *
  */
-gulp.task('compile-assets', ['jsonToScss', 'css', 'images', 'svgSprites', 'fonts', 'fractal-assets']);
+gulp.task('compile-assets', ['jsonToScss', 'css', 'images', 'icons', 'fonts', 'fractal-assets']);
 
 
 //Default
 gulp.task('default', function (callback) {
-  runSequence('svgSprites',
+  runSequence('icons',
     ['fractal-assets', 'jsonToScss', 'css', 'images', 'watch'],
     'fractal:start'
   );
@@ -242,7 +284,7 @@ gulp.task('default', function (callback) {
  /* BUILD */
  // CAUTION: Used by TRAVIS CI for automatic build and deployment - change only this task if you know what you are doing */
  gulp.task('build', function (cb) {
-  runSequence('svgSprites', 'jsonToScss', 'fractal-assets', 'css', 'fractal:build', cb);
+  runSequence('icons', 'jsonToScss', 'fractal-assets', 'css', 'fractal:build', cb);
 });
 
 
@@ -255,7 +297,7 @@ gulp.task('watch', function () {
   gulp.watch([paths.assetsSource + 'scss/**/*.scss'], ['css']);
   gulp.watch([paths.componentsSource + '**/*.scss'], ['css']);
   gulp.watch([paths.assetsSource + 'images/**'], ['images']);
-  gulp.watch([paths.assetsSource + 'svg/**'], ['svgSprites']);
+  gulp.watch([paths.assetsSource + 'svg/**'], ['icons']);
   gulp.watch([paths.fractal.scss + '/**/*.scss'], ['fractal-scss']);
   gulp.watch([paths.fractal.js + '/**/*.js'], ['fractal-js']);
 });
