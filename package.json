@@ -7,8 +7,8 @@
     "node": "^10"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/youseedk/dna.git"
+    "type": "git",
+    "url": "https://github.com/youseedk/dna.git"
   },
   "author": "YouSee Digital Warehouse (https://github.com/youseedk/dna/graphs/contributors)",
   "license": "ISC",
@@ -45,6 +45,7 @@
     "vinyl-source-stream": "^2.0.0"
   },
   "devDependencies": {
+    "merge-stream": "^1.0.1",
     "stylelint": "^9.10.1",
     "stylelint-config-recommended": "^2.1.0",
     "stylelint-scss": "^3.5.1"
