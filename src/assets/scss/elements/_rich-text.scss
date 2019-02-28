@@ -10,12 +10,22 @@
     box-sizing: border-box;
   }
 
-  font-size: rem(16);
   line-height: 1.5;
   color: $ys-color-grey-28;
 
   @media screen and (min-width: $ys-breakpoint-lg) {
     font-size: rem(20);
+  }
+
+  h1:not([class]),
+  h2:not([class]),
+  h3:not([class]),
+  h4:not([class]),
+  h5:not([class]),
+  h6:not([class]),
+  p:not([class]),
+  li:not([class]) {
+    max-width: 75ch;
   }
 
   h1:not([class]) {
@@ -84,10 +94,38 @@
 
   // lobotimized owl selector to set default top margins
   > *:not([class]) + *:not([class]) {
-    margin-top: .75em; /* use em to make sure that the elements fontsize is taken into consideration */
+    margin-top: 1em; /* use em to make sure that the elements fontsize is taken into consideration */
   }
 
   &--light {
     color: $ys-color-grey-98;
+  }
+
+  /* specific margins */
+  h1:not([class]) + h2:not([class]),
+  h2:not([class]) + h3:not([class]) {
+    @include ys-subtitle;
+    margin-top: .25em;
+  }
+
+  h3:not([class]) + h4:not([class]) {
+    margin-top: .5em;
+  }
+
+  p:not([class]),
+  ul:not([class]),
+  ol:not([class]) {
+    margin-bottom: 2em;
+  }
+
+  h4:not([class]) + *:not([class]),
+  h5:not([class]) + *:not([class]),
+  h6:not([class]) + *:not([class]) {
+    margin-top: 2em;
+  }
+
+  /* Disable editors' attempt at styling */
+  br + br {
+    display: none;
   }
 }
