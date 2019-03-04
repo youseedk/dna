@@ -48,10 +48,10 @@ const paths = {
   assetsSource: 'src/assets/',
   tokensSource: 'src/tokens/',
   destination: 'public/assets/',
-  npmDestination: 'dist-npm',
+  npmDestination: 'dist-npm/',
   fractal: {
-    scss: 'fractal-theme/scss',
-    js: 'fractal-theme/js'
+    scss: 'fractal-theme/scss/',
+    js: 'fractal-theme/js/'
   }
 }
 
@@ -81,9 +81,7 @@ gulp.task('css', function () {
   ];
 
   return gulp.src(paths.assetsSource + 'scss/*.scss')
-    .pipe(plugins.sass({
-      sourceComments: 'normal'
-    }).on('error', plugins.sass.logError))
+    .pipe(plugins.sass({outputStyle: 'expanded'}).on('error', plugins.sass.logError))
     .pipe(plugins.postcss(processors))
     .pipe(gulp.dest(paths.destination + 'css'))
     .pipe(plugins.postcss(minifying))
@@ -159,11 +157,11 @@ gulp.task('fonts', function () {
 
 
 /**
- * 
+ *
  * Create SVG Sprites
  * Create JSON file lists from icon assets
  * Copy SVG files to public
- * 
+ *
  */
 gulp.task('icons', function (cb) {
   runSequence('uiIcons', 'iconSet', cb);
@@ -188,14 +186,14 @@ gulp.task('uiIcons', function () {
       }))
       .pipe(plugins.replace('id="', `id="ys-${spriteSrc}-`))
       .pipe(gulp.dest(paths.destination + 'svg'));
-    
+
     // create json file lists
     let fileList = gulp
       .src([`${paths.assetsSource}/svg/${spriteSrc}/*.svg`, `!${paths.assetsSource}/svg/${spriteSrc}/_*.svg`])
       .pipe(plugins.filelist(`${spriteSrc}.json`))
       .pipe(plugins.replace(`src/assets/svg/${spriteSrc}/`, ''))
       .pipe(gulp.dest(`${paths.tokensSource}generated`));
-    
+
       // copy svg files to public
     let copyTask = gulp
       .src(`${paths.assetsSource}svg/${spriteSrc}/*.svg`)
@@ -204,7 +202,7 @@ gulp.task('uiIcons', function () {
         path.basename = path.basename.replace('_', '')
       }))
       .pipe(gulp.dest(`${paths.destination}/svg/${spriteSrc}`))
-    
+
     return merge(spriteCreation, fileList, copyTask);
 })
 
@@ -227,14 +225,14 @@ gulp.task('iconSet', function () {
       }))
       .pipe(plugins.replace('id="', `id="ys-${spriteSrc}-`))
       .pipe(gulp.dest(paths.destination + 'svg'));
-    
+
     // create json file lists
     let fileList = gulp
       .src([`${paths.assetsSource}/svg/${spriteSrc}/*.svg`, `!${paths.assetsSource}/svg/${spriteSrc}/_*.svg`])
       .pipe(plugins.filelist(`${spriteSrc}.json`))
       .pipe(plugins.replace(`src/assets/svg/${spriteSrc}/`, ''))
       .pipe(gulp.dest(`${paths.tokensSource}generated`));
-    
+
       // copy svg files to public
     let copyTask = gulp
       .src(`${paths.assetsSource}svg/${spriteSrc}/*.svg`)
@@ -243,7 +241,7 @@ gulp.task('iconSet', function () {
         path.basename = path.basename.replace('_', '')
       }))
       .pipe(gulp.dest(`${paths.destination}/svg/${spriteSrc}`))
-    
+
     return merge(spriteCreation, fileList, copyTask);
 })
 
@@ -252,15 +250,20 @@ gulp.task('iconSet', function () {
 
 
 /**
- * 
+ *
  * Copy files to npm distribution folder
- * 
+ *
  */
 gulp.task('npmDist', function () {
-  gulp.src([paths.assetsSource + '/**/*', '!' + paths.assetsSource + '/**/fonts{,/**}'])
-    .pipe(gulp.dest(paths.npmDestination + '/src'))
-  gulp.src(paths.destination + '/**/*')
-    .pipe(gulp.dest(paths.npmDestination + '/dist'));
+  let srcFolder = gulp
+    .src(`${paths.assetsSource}**/*`)
+    .pipe(gulp.dest(`${paths.npmDestination}src`));
+
+  let distFolder = gulp
+    .src([`${paths.destination}css/**/*.css`, `${paths.destination}svg/sprite/*.svg`])
+    .pipe(gulp.dest(`${paths.npmDestination}dist`));
+
+  return merge(srcFolder, distFolder);
 });
 
 
@@ -352,19 +355,19 @@ gulp.task('fractal:build', function () {
 });
 
 /**
- * 
+ *
  * Build Fractal theme assets
- * 
+ *
  */
 gulp.task('fractal-scss', function () {
-  gulp.src(paths.fractal.scss + '/styles.scss')
+  gulp.src(paths.fractal.scss + 'styles.scss')
     .pipe(plugins.sass().on('error', plugins.sass.logError))
     .pipe(gulp.dest(paths.destination + 'theme/css'))
 })
 
 gulp.task('fractal-js', () => {
   var babelify = require("babelify");
-  const sourcefile = paths.fractal.js + '/scripts.js';
+  const sourcefile = paths.fractal.js + 'scripts.js';
   return browserify({
       entries: [sourcefile]
     }).transform('babelify', {
