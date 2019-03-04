@@ -8,12 +8,7 @@ After cloning the repository run the following command to install node modules
 $ npm ci
 ```
 
-Once the above command has finished you start the development mode by running the following
-
-```bash
-$ npm start
-```
-# Or if you have gulp installed globally
+# Running the project
 ```bash
 $ gulp
 ```
