@@ -1,6 +1,6 @@
-@import './../../../assets/scss/tools/functions';
-@import './../../../assets/scss/tools/mixins';
-@import './../../../assets/scss/generated/colors';
+@import '../tools/functions';
+@import '../tools/mixins';
+@import '../generated/colors';
 
 .ys-main-title {
   @include ys-main-title;
