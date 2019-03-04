@@ -8,7 +8,7 @@ After cloning the repository run the following command to install node modules
 $ npm ci
 ```
 
-# Or if you have gulp installed globally
+# Running the project
 ```bash
 $ gulp
 ```
