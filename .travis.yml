@@ -1,5 +1,5 @@
 language: node_js
-node_js: 
+node_js:
   - '10'
 script:
   - gulp build
@@ -10,4 +10,5 @@ deploy:
   github_token: $GITHUB_TOKEN
   on:
     branch: master
-  
+after_deploy:
+  - gulp npmDist
