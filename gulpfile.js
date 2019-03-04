@@ -254,7 +254,7 @@ gulp.task('iconSet', function () {
  * Copy files to npm distribution folder
  *
  */
-gulp.task('npmDist', function () {
+gulp.task('build-package', function () {
   let srcFolder = gulp
     .src(`${paths.assetsSource}**/*`)
     .pipe(gulp.dest(`${paths.npmDestination}src`));
@@ -264,6 +264,10 @@ gulp.task('npmDist', function () {
     .pipe(gulp.dest(`${paths.npmDestination}dist`));
 
   return merge(srcFolder, distFolder);
+});
+
+gulp.task('npmDist', function() {
+  runSequence(['compile-assets'], 'build-package');
 });
 
 
