@@ -10,8 +10,8 @@ A colour palette comprises primary and accent colours that can be used for illus
       <dt class="frctl-palette-title">{{@key}}</dt>
       {{#each this}}
         <dd class="frctl-color">
-          <div class="frctl-color-swatch" style="background-color: {{@this}}">
-             <code class="frctl-color-name" data-bg-color="{{@this}}">{{@this}}</code>
+          <div class="frctl-color-swatch" style="background-color: {{@this}};">
+             <span class="frctl-color-name" data-bg-color="{{@this}}">{{@this}}</span>
           </div>
           <code class="frctl-color-variable-name">$ys-color-{{@key}}</code>
         </dd>
