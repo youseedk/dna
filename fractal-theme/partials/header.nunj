@@ -9,7 +9,7 @@
         <li class="Header-version">{{ frctl.get('project.version') }}</li>
         <li>
             <a href="https://github.com/youseedk/dna">
-                <img src="/assets/theme/images/github.svg" alt="View YouSee DNA Repository on GitHub" />
+                <img src="assets/theme/images/github.svg" alt="View YouSee DNA Repository on GitHub" />
             </a>
         </li>
     </ul>
