@@ -50,8 +50,9 @@ const paths = {
   destination: 'public/assets/',
   npmDestination: 'dist-npm/',
   fractal: {
-    scss: 'fractal-theme/scss/',
-    js: 'fractal-theme/js/'
+    scss: 'fractal-theme/assets/scss/',
+    js: 'fractal-theme/assets/js/',
+    images: 'fractal-theme/assets/images/'
   }
 }
 
@@ -382,4 +383,9 @@ gulp.task('fractal-js', () => {
     .pipe(gulp.dest(paths.destination + 'theme/js'));
 });
 
-gulp.task('fractal-assets', ['fractal-scss', 'fractal-js']);
+gulp.task('fractal-images', () => {
+  gulp.src(`${paths.fractal.images}**/*.*`)
+    .pipe(gulp.dest(`${paths.destination}theme/images`));
+})
+
+gulp.task('fractal-assets', ['fractal-scss', 'fractal-js', 'fractal-images']);

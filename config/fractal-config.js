@@ -2,8 +2,10 @@
 
 const fractal = require('@frctl/fractal').create();
 
+const projectPackage = require('../package.json');
+
 fractal.set('project.title', 'YouSee DNA'); // title for the project
-fractal.set('project.version', 'v0.1');
+fractal.set('project.version', projectPackage.version);
 fractal.set('project.author', 'YouSee Digital Warehouse');
 fractal.web.set('builder.dest', 'dist-site'); // destination for the static export
 fractal.web.set('static.path', 'public');
@@ -32,8 +34,8 @@ const dnaTheme = require('@frctl/mandelbrot')({
 
 const path = require('path');
 // specify a directory to hold the theme override templates
-dnaTheme.addLoadPath(path.join(__dirname, '/fractal-theme'));
-fractal.web.theme(dnaTheme); // tell Fractal to use the configured theme by default
+dnaTheme.addLoadPath(path.join(__dirname, '../fractal-theme'));
+fractal.web.theme(dnaTheme); // tell Fractal to use the dna theme
 
 // any other configuration or customisation here
 module.exports = fractal;
