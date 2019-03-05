@@ -255,16 +255,26 @@ gulp.task('iconSet', function () {
  * Copy files to npm distribution folder
  *
  */
-gulp.task('npmDist', function () {
+gulp.task('build-package', function () {
   let srcFolder = gulp
-    .src(`${paths.assetsSource}**/*`)
+    .src([`${paths.assetsSource}**/*`, `!${paths.assetsSource}scss/generated{,/**}`])
+    // change path to colors-file from generated to settings
+    .pipe(plugins.replace('../generated', '../settings'))
     .pipe(gulp.dest(`${paths.npmDestination}src`));
+
+  let colorsFile = gulp
+    .src(`${paths.assetsSource}scss/generated/_colors.scss`)
+    .pipe(gulp.dest(`${paths.npmDestination}src/scss/settings`));
 
   let distFolder = gulp
     .src([`${paths.destination}css/**/*.css`, `${paths.destination}svg/sprite/*.svg`])
     .pipe(gulp.dest(`${paths.npmDestination}dist`));
 
-  return merge(srcFolder, distFolder);
+  return merge(srcFolder, colorsFile, distFolder);
+});
+
+gulp.task('npmDist', function() {
+  runSequence(['compile-assets'], 'build-package');
 });
 
 
