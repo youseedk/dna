@@ -10,3 +10,5 @@ deploy:
   github_token: $GITHUB_TOKEN
   on:
     branch: master
+after_deploy:
+  - sudo cp dist-site dist-site/testing
