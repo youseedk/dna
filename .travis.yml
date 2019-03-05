@@ -11,4 +11,4 @@ deploy:
   on:
     branch: master
 after_deploy:
-  - gulp npmDist
+  - sudo cp dist-site testing
