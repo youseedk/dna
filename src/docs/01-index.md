@@ -2,5 +2,5 @@
 title: Overview
 ---
 <div class="frctl-overview">
-    <p>Last updated: <b class="frctl-last-build-time"></b></p>
+    <p>Last deployment: <b class="frctl-last-build-time"></b></p>
 </div>

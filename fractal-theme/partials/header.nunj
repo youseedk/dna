@@ -1,0 +1,16 @@
+<div class="Header">
+    <button class="Header-button Header-navToggle" data-action="toggle-sidebar">
+        {% include 'icons/close-nav.svg' %}
+        {% include 'icons/open-nav.svg' %}
+    </button>
+    <a href="{{ path('/') }}" class="Header-title" data-pjax>{{ frctl.get('project.title') | default('Component Library') }}</a>
+
+    <ul class="Header-menu">
+        <li class="Header-version">{{ frctl.get('project.version') }}</li>
+        <li>
+            <a href="https://github.com/youseedk/dna">
+                <img src="assets/theme/images/github.svg" alt="View YouSee DNA Repository on GitHub" />
+            </a>
+        </li>
+    </ul>
+</div>
