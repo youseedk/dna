@@ -1,0 +1,169 @@
+/*
+This file is dependent on Bootstrap being available
+*/
+
+/* Get YouSee Sizes */
+@import '../settings/ys-settings';
+
+/* Configure Bootstrap's grid settings */
+$enable-grid-classes: true;
+
+$grid-breakpoints: (
+  xs: $ys-breakpoint-xs,
+  sm: $ys-breakpoint-sm,
+  md: $ys-breakpoint-md,
+  lg: $ys-breakpoint-lg,
+  xl: $ys-breakpoint-xl
+);
+
+/* the above variables -32 to ensure there is "padding" on the page */
+$container-max-widths: (
+  sm: $grid-sm-maxwidth,
+  md: $grid-md-maxwidth,
+  lg: $grid-lg-maxwidth,
+  xl: $grid-xl-maxwidth
+);
+
+$grid-columns: 12;
+$grid-gutter-width: $grid-column-sm-padding;
+
+/* Import the bootstrap modules */
+@import './../../../node_modules/bootstrap/scss/mixins/breakpoints';
+@import './../../../node_modules/bootstrap/scss/mixins/grid-framework';
+@import './../../../node_modules/bootstrap/scss/mixins/grid';
+@import './../../../node_modules/bootstrap/scss/grid';
+
+/* enable box sizing on grid */
+.container,
+.container-fluid,
+.row,
+.row > *[class*='col'] {
+  box-sizing: border-box;
+}
+
+
+/* Custom modifications to BS Grid */
+.container,
+.container-fluid {
+  padding-left: $container-padding;
+  padding-right: $container-padding;
+}
+
+@include media-breakpoint-up(sm) {
+
+  .container,
+  .container-fluid {
+    padding-left: $container-md-padding;
+    padding-right: $container-md-padding;
+  }
+
+  .container .row,
+  .container-fluid .row {
+    margin-left: -$container-md-padding;
+    margin-right: -$container-md-padding;
+  }
+
+  .container *[class*='col'],
+  .container-fluid *[class*='col'] {
+    padding-left: $container-md-padding;
+    padding-right: $container-md-padding;
+  }
+}
+
+@include media-breakpoint-up(md) {
+
+  .container,
+  .container-fluid {
+    padding-left: $container-md-padding;
+    padding-right: $container-md-padding;
+  }
+
+  .container .row,
+  .container-fluid .row {
+    margin-left: -$container-md-padding;
+    margin-right: -$container-md-padding;
+  }
+
+  .container *[class*='col'],
+  .container-fluid *[class*='col'] {
+    padding-left: $container-md-padding;
+    padding-right: $container-md-padding;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+
+  .container,
+  .container-fluid {
+    padding-left: $container-lg-padding;
+    padding-right: $container-lg-padding;
+  }
+
+  .container .row,
+  .container-fluid .row {
+    margin-left: -$container-lg-padding;
+    margin-right: -$container-lg-padding;
+  }
+
+  .container *[class*='col'],
+  .container-fluid *[class*='col'] {
+    padding-left: $container-lg-padding;
+    padding-right: $container-lg-padding;
+  }
+}
+
+
+@include media-breakpoint-up(xl) {
+
+  .container,
+  .container-fluid {
+    padding-left: $container-xl-padding;
+    padding-right: $container-xl-padding;
+    max-width: $grid-xl-maxwidth;
+  }
+
+  .container .row,
+  .container-fluid .row {
+    margin-left: -$container-xl-padding;
+    margin-right: -$container-xl-padding;
+  }
+
+  .container *[class*='col'],
+  .container-fluid *[class*='col'] {
+    padding-left: $container-xl-padding;
+    padding-right: $container-xl-padding;
+  }
+}
+
+/* make vertical margin */
+.row--vertical-spacing-sm {
+  margin-top: -2*$ys-fraction-unit; //16px;
+
+  *[class*='col-'] {
+    margin-top: 2*$ys-fraction-unit; //16px;
+  }
+}
+
+.row--vertical-spacing-md {
+  margin-top: -3*$ys-fraction-unit; //24px;
+
+  *[class*='col-'] {
+    margin-top: 3*$ys-fraction-unit; //24px;
+  }
+}
+
+.row--vertical-spacing-lg {
+  margin-top: -4*$ys-fraction-unit; //32px;
+
+  *[class*='col-'] {
+    margin-top: 4*$ys-fraction-unit; //32px;
+  }
+}
+
+.row--vertical-spacing-xl {
+  margin-top: -6*$ys-fraction-unit; //48px;
+
+  *[class*='col-'] {
+    margin-top: 6*$ys-fraction-unit; //48px;
+  }
+}
