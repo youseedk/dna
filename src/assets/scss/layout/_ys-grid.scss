@@ -27,11 +27,11 @@ $container-max-widths: (
 $grid-columns: 12;
 $grid-gutter-width: $grid-column-sm-padding;
 
-/* Import the bootstrap modules */
-@import './../../../node_modules/bootstrap/scss/mixins/breakpoints';
-@import './../../../node_modules/bootstrap/scss/mixins/grid-framework';
-@import './../../../node_modules/bootstrap/scss/mixins/grid';
-@import './../../../node_modules/bootstrap/scss/grid';
+/* Import the bootstrap modules - check gulp file for include technique */
+@import 'mixins/breakpoints';
+@import 'mixins/grid-framework';
+@import 'mixins/grid';
+@import 'grid';
 
 /* enable box sizing on grid */
 .container,
