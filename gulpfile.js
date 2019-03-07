@@ -82,7 +82,10 @@ gulp.task('css', function () {
   ];
 
   return gulp.src(paths.assetsSource + 'scss/*.scss')
-    .pipe(plugins.sass({outputStyle: 'expanded'}).on('error', plugins.sass.logError))
+    .pipe(plugins.sass({
+      outputStyle: 'expanded',
+      includePaths: ['node_modules/bootstrap/scss/']
+    }).on('error', plugins.sass.logError))
     .pipe(plugins.postcss(processors))
     .pipe(gulp.dest(paths.destination + 'css'))
     .pipe(plugins.postcss(minifying))
@@ -128,7 +131,7 @@ gulp.task('jsonToScss', function () {
     .pipe(plugins.replace('color-feedback-', 'color-'))
     .pipe(plugins.replace('-accent-greys', ''))
     .pipe(plugins.replace('color-accent-', 'color-'))
-    .pipe(plugins.rename('_colors.scss'))
+    .pipe(plugins.rename('_ys-colors.scss'))
     .pipe(gulp.dest(`${paths.assetsSource}scss/generated`))
 });
 
@@ -259,11 +262,11 @@ gulp.task('build-package', function () {
   let srcFolder = gulp
     .src([`${paths.assetsSource}**/*`, `!${paths.assetsSource}scss/generated{,/**}`])
     // change path to colors-file from generated to settings
-    .pipe(plugins.replace('../generated', '../settings'))
+    .pipe(plugins.replace('./generated', './settings'))
     .pipe(gulp.dest(`${paths.npmDestination}src`));
 
   let colorsFile = gulp
-    .src(`${paths.assetsSource}scss/generated/_colors.scss`)
+    .src(`${paths.assetsSource}scss/generated/_ys-colors.scss`)
     .pipe(gulp.dest(`${paths.npmDestination}src/scss/settings`));
 
   let distFolder = gulp
