@@ -1,6 +1,6 @@
-@import '../tools/functions';
-@import '../generated/colors';
-@import '../tools/mixins';
+@import '../tools/ys-functions';
+@import '../generated/ys-colors';
+@import '../tools/ys-mixins';
 
 .ys-notification {
   display: flex;

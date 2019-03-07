@@ -32,37 +32,37 @@
 }
 
 /* Files that don't render anything in the CSS */
-@import './generated/colors';
-@import './settings/settings';
-@import './tools/functions';
-@import './tools/mixins';
+@import './generated/ys-colors';
+@import './settings/ys-settings';
+@import './tools/ys-functions';
+@import './tools/ys-mixins';
 
 /* "foundation" file including utils*/
-@import 'base';
+@import 'ys-base';
 
 /* layout */
-@import './layout/grid';
+@import './layout/ys-grid';
 
 /* icons */
-@import './icons/icons';
+@import './icons/ys-icons';
 
 /* elements */
-@import './elements/typography';
-@import './elements/link';
-@import './elements/rich-text';
-@import './elements/input-field';
-@import './elements/textarea';
-@import './elements/select';
-@import './elements/radio-button';
-@import './elements/checkbox';
-@import './elements/slider';
-@import './elements/toggle-switch';
-@import './elements/card';
-@import './elements/button';
-@import './elements/tooltip';
-@import './elements/splash';
-@import './elements/tag';
-@import './elements/progress';
-@import './elements/flow-steps';
-@import './elements/tabs';
-@import './elements/notification';
+@import './elements/ys-typography';
+@import './elements/ys-link';
+@import './elements/ys-rich-text';
+@import './elements/ys-input-field';
+@import './elements/ys-textarea';
+@import './elements/ys-select';
+@import './elements/ys-radio-button';
+@import './elements/ys-checkbox';
+@import './elements/ys-slider';
+@import './elements/ys-toggle-switch';
+@import './elements/ys-card';
+@import './elements/ys-button';
+@import './elements/ys-tooltip';
+@import './elements/ys-splash';
+@import './elements/ys-tag';
+@import './elements/ys-progress';
+@import './elements/ys-flow-steps';
+@import './elements/ys-tabs';
+@import './elements/ys-notification';
