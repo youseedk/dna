@@ -2,19 +2,20 @@ language: node_js
 node_js:
 - '10'
 script:
-- which gulp
 - gulp build
 - gulp npmDist
 deploy:
-  - provider: pages
-    local_dir: dist-site/
-    skip_cleanup: true
-    github_token: "$GITHUB_TOKEN"
-    on:
-      branch: master
-  - provider: npm
-    email: kim@shiftcph.dk
-    api_key:
-      secure: jmH8cEtjbVWIYjvBpBGZ2Wc3fZW5HSHIjzqlHjfLul4vwzf5LtqMZP9iggC5XguRK3yTKyrgUUAGibs9Iq3tMR49Mf5+hPTBFe/uyeZoTToXpx4dN0eWQj7Cp/CPNOVQ2PNpU7NHakEJUIyH9OOTEEfpUHLQA3RFhEvuhQYpUOS6NMBbOFCkmMD/8gXl6wSoOSFFbolTAjZEYJ03pfDK9IidAEhjHoEGPPNQOjyKouYfQespaGoNnfHkuxdpPXd5m1ANhfG5i7IezvJCJY2QXgziocK3uuo4sNjudB7cFE0jWlO98LiMVYObZkMd2H6twBoQi/PvpoUqNrnhtuV6R+roUM5s6tskEfS3PR+z3xKv3XnTS6z0eY+M+JN2qR8M7ZljP43nP9i+SR6v5NSZOyUqcJIrMr+Cxpnt4vZISmcqewMpC6v3E+Y99lh5TCgTzcEEBa/pPUn9IsmxeJV8JW/pvNUrY6RIDMiYT7o7DOZr3BhDIwwsPZFgbCxgTHChq5L1ClKL4bUGc2tNZCi8MlatGibsZVCW8FmCaxb6ngFMpGixkhXCmp5mRggywp3leTZALUdkaJ6sGdtHok5F1Xrs1P3X0Ud3sVCfLIrPxUezsQnA5GbLxcEyszp3+aindqws5G+EXrIDaAN3CZUzbMAykmkG9W+EPyh2mBheUds=
-    on:
-      tags: true
+- provider: pages
+  local_dir: dist-site/
+  skip_cleanup: true
+  github_token: "$GITHUB_TOKEN"
+  on:
+    branch: master
+- provider: npm
+  email: kim@shiftcph.dk
+  on:
+    tags: true
+    all_branches: true
+env:
+  global:
+    secure: tWpXq600cZUq2fUXmG3G1WhKXUPD5xjWs8Ed2O52EAHIUi7PFS399EeE5Lw5c7zDPH8myVBsILD51SLsk2eAqnWWxVp+hF4TvenT6ALylhUjeC9/Ui6xHwIL9xx+7Q2qHVv5hOlcHOITTnUyo2LlRTqUnT0FHBXD3j6fHe2zBgPF5YmqaFHRnwtD7ybtvWsT/OqvMDN59fPSu4CjBKr8PQbL0xmGzG5ECgI1A58APaChwN1pUzzXj//Km+eIYIc+CMo4TtUQlRFT1phHCYFV03NMAjMURDTIgFrUtweI8Rvz/6MwId3b4t9rniOVl+osN2/tOYayfcnGfLN0iXgPHG673vAMHNuKMCvzN1gSDlzPFIlB01f15JH1jMaEhZKTr9Ni4Qh2hza2dTFus4gJ2fpIB8uUDdooob7iT+xC3HqpYY8AmUDxZDz6nYUq/bQGsI647IEy4IvV1sg1/yJIKzTXwgLxgkyJDe939upUpZcXL1fzHjGK1SrbIsRiPOyt28hn6HaJuLEaw0w3jwZ5MPi3CNifUTLXAvQTkhBaBWYAQzEy6FrzxE5Voing6aaRh7bYz7BuXC2a1dCZzitRLRP/Y8l1jzeN0lzYBISbcM4DDyTuQVLi6uBdzVF5mmkiAKc4wuma57H6sImXZTYvH4MB/qjTDZ2N6eifcW+Dr2o=
