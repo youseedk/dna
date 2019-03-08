@@ -13,8 +13,7 @@ deploy:
       branch: master
   - provider: npm
     email: kim@shiftcph.dk
-    api_key:
-      secure: FSD7psHlfMOkn4FTDT2rgo5QFJ3u7dNcm7profgAj2p/DmJBSbswfLPm28bPYSUI+stYSmA8ipKL90YSqow6wqb+jX4KDRdk6iJrnVDzKbEsXuHDaxzOacW0MGAMCLYeBlV7XSOkOQglYrTdQf0Dk5CVAfr/ioWva2ndvX7/JRJ8Y4LsJEKbFRfXpANXDrDwLO5FRlFv98FMoyZFwdkqAsdJSBnJuKBqIlf74NOoeqG9gelUjqHVzt9z/IBgSOEs/ICVbd2Vj0NxQFT92PKQk8zO7jHqKbcbCO+aQPjQpbrWdJ0EGXM6W/Yll/vLm93Ots2lRYiY/FS9RnVU7f3NT6FGySihWfBGYZQ5M4AMCKEIH2AlP7kRo90MSTBekoIA0npBHfHMDi9ur4AjLpmdA+/HE0whnpetXzdkP4XmSddvSLHb60nwzXQNTzSvlGuklGn+SRS3AF10uT+RCpa1EXr6UHjGUn9tjWsJcAmwge9OWl3j4bHYL8E/eso3TPNvKSCB4qew9VsUWAhWEiF2rq/kqF+qd4D71DVM1inG/4i+tAtjcc1ooVgyFQtiqg2uBxCGDfLNB57J6Fv/KJKDUVA9FL4K5msQt5/WtXbc5jTYj+9b0mGQXQgvp9xua4lkql4j+gUAaQvmqfCXSAVaRQonvrYDiqtiPuPQWE165WM=
+    api_key: "$NPM_TOKEN"
     on:
       tags: true
       repo: youseedk/dna
