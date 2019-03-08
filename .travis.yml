@@ -2,6 +2,7 @@ language: node_js
 node_js:
 - '10'
 script:
+- which gulp
 - gulp build
 - gulp npmDist
 deploy:
@@ -14,8 +15,8 @@ deploy:
   - provider: npm
     email: kim@shiftcph.dk
     skip_cleanup: true
-    api_key:
-      secure: "jmH8cEtjbVWIYjvBpBGZ2Wc3fZW5HSHIjzqlHjfLul4vwzf5LtqMZP9iggC5XguRK3yTKyrgUUAGibs9Iq3tMR49Mf5+hPTBFe/uyeZoTToXpx4dN0eWQj7Cp/CPNOVQ2PNpU7NHakEJUIyH9OOTEEfpUHLQA3RFhEvuhQYpUOS6NMBbOFCkmMD/8gXl6wSoOSFFbolTAjZEYJ03pfDK9IidAEhjHoEGPPNQOjyKouYfQespaGoNnfHkuxdpPXd5m1ANhfG5i7IezvJCJY2QXgziocK3uuo4sNjudB7cFE0jWlO98LiMVYObZkMd2H6twBoQi/PvpoUqNrnhtuV6R+roUM5s6tskEfS3PR+z3xKv3XnTS6z0eY+M+JN2qR8M7ZljP43nP9i+SR6v5NSZOyUqcJIrMr+Cxpnt4vZISmcqewMpC6v3E+Y99lh5TCgTzcEEBa/pPUn9IsmxeJV8JW/pvNUrY6RIDMiYT7o7DOZr3BhDIwwsPZFgbCxgTHChq5L1ClKL4bUGc2tNZCi8MlatGibsZVCW8FmCaxb6ngFMpGixkhXCmp5mRggywp3leTZALUdkaJ6sGdtHok5F1Xrs1P3X0Ud3sVCfLIrPxUezsQnA5GbLxcEyszp3+aindqws5G+EXrIDaAN3CZUzbMAykmkG9W+EPyh2mBheUds="
     on:
       tags: true
       all_branches: true
+  api_key:
+      secure: jmH8cEtjbVWIYjvBpBGZ2Wc3fZW5HSHIjzqlHjfLul4vwzf5LtqMZP9iggC5XguRK3yTKyrgUUAGibs9Iq3tMR49Mf5+hPTBFe/uyeZoTToXpx4dN0eWQj7Cp/CPNOVQ2PNpU7NHakEJUIyH9OOTEEfpUHLQA3RFhEvuhQYpUOS6NMBbOFCkmMD/8gXl6wSoOSFFbolTAjZEYJ03pfDK9IidAEhjHoEGPPNQOjyKouYfQespaGoNnfHkuxdpPXd5m1ANhfG5i7IezvJCJY2QXgziocK3uuo4sNjudB7cFE0jWlO98LiMVYObZkMd2H6twBoQi/PvpoUqNrnhtuV6R+roUM5s6tskEfS3PR+z3xKv3XnTS6z0eY+M+JN2qR8M7ZljP43nP9i+SR6v5NSZOyUqcJIrMr+Cxpnt4vZISmcqewMpC6v3E+Y99lh5TCgTzcEEBa/pPUn9IsmxeJV8JW/pvNUrY6RIDMiYT7o7DOZr3BhDIwwsPZFgbCxgTHChq5L1ClKL4bUGc2tNZCi8MlatGibsZVCW8FmCaxb6ngFMpGixkhXCmp5mRggywp3leTZALUdkaJ6sGdtHok5F1Xrs1P3X0Ud3sVCfLIrPxUezsQnA5GbLxcEyszp3+aindqws5G+EXrIDaAN3CZUzbMAykmkG9W+EPyh2mBheUds=
