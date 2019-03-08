@@ -5,7 +5,6 @@ script:
 - gulp build
 - gulp npmDist
 deploy:
-  matrix:
   - provider: pages
     local_dir: dist-site/
     skip_cleanup: true
@@ -14,8 +13,9 @@ deploy:
       branch: master
   - provider: npm
     email: kim@shiftcph.dk
+    api_key:
+      secure: FSD7psHlfMOkn4FTDT2rgo5QFJ3u7dNcm7profgAj2p/DmJBSbswfLPm28bPYSUI+stYSmA8ipKL90YSqow6wqb+jX4KDRdk6iJrnVDzKbEsXuHDaxzOacW0MGAMCLYeBlV7XSOkOQglYrTdQf0Dk5CVAfr/ioWva2ndvX7/JRJ8Y4LsJEKbFRfXpANXDrDwLO5FRlFv98FMoyZFwdkqAsdJSBnJuKBqIlf74NOoeqG9gelUjqHVzt9z/IBgSOEs/ICVbd2Vj0NxQFT92PKQk8zO7jHqKbcbCO+aQPjQpbrWdJ0EGXM6W/Yll/vLm93Ots2lRYiY/FS9RnVU7f3NT6FGySihWfBGYZQ5M4AMCKEIH2AlP7kRo90MSTBekoIA0npBHfHMDi9ur4AjLpmdA+/HE0whnpetXzdkP4XmSddvSLHb60nwzXQNTzSvlGuklGn+SRS3AF10uT+RCpa1EXr6UHjGUn9tjWsJcAmwge9OWl3j4bHYL8E/eso3TPNvKSCB4qew9VsUWAhWEiF2rq/kqF+qd4D71DVM1inG/4i+tAtjcc1ooVgyFQtiqg2uBxCGDfLNB57J6Fv/KJKDUVA9FL4K5msQt5/WtXbc5jTYj+9b0mGQXQgvp9xua4lkql4j+gUAaQvmqfCXSAVaRQonvrYDiqtiPuPQWE165WM=
     on:
       tags: true
+      repo: youseedk/dna
       all_branches: true
-  api_key:
-    secure: lF5+gitEJpo0kQrqp32L8RfzL7WIrR+uPFUm7I06fWy952RAosoy0LPCGp4VcxYko0SBf4IzKMe3/KaD4d17WVcjKTIgTwQ3GUhKLFH8xD8Pq0KGSMYNyZjp79cUz+iVOOhb7BKgLNya4iJe6aJWuaRwwOYXRfHW/AVGLzJG4OC8mn9SSkoh77v+NzjvPvtkAwQuf+VPeg+kD3L0i0edEcoZODa9TvZv1Fch3rjTguVj6jXOjcgEuDkL5s6DRu671+uGs+3yutmfzO344g3Y4ON0zz/87NL7xpdvfwWQRGfvmgw6+AEjkbYxHEcC5CKvkz1c8ZyZgH07B/ULGdrERYRLiFxNV9HPRWRVCIVVrlrff3Fm5pY2Qu0Cp5YGjUaPa1bRCgkMlCZfgS4BgWPNq8C7dBleZlJ5zpk+OSWeJx5dPO1qwis6X9eonzGeFWL+71bUIkeKJSKGlHZcHjKtOO8e5j5bX9QemLb0ZxP9fNwX7vO3LSZfm0zNGeyg6dzuweSNIPGBKVt0Woc3kZW3IWLsSEeMAzNWym1bOKy9431M0oOnzQMSP4/5SOCIJtE7texy5CYwC6NKVByYEJFMJ1sI5xyYBjlHelUB02vrfIeTLw7rpMWg2zTTNZAyaUPDfisAJbphF8ACe69wgdcI5GqLCCEkbIub/P614HeyJEk=
