@@ -15,8 +15,6 @@ deploy:
   - provider: npm
     email: kim@shiftcph.dk
     skip_cleanup: true
-    api_key:
-      secure: QZPrJKWB8hBcDZSzttZO4ZIa1hUx3SMND9310Xl8MVSWxgJyP2wqoA9e5bd1XPe2ilZlp9egMwBnpJI+uN/6g3+kZeem7DE3S5qKSTd467vNdUEPfbnbntXn8Eq0wIOfpML9hIwLB7hRG6MvBJZ+hBiUtqKwON9pypnSPqqhbisS8oVsVn1vESr+le2eFRqMa42+M/96b3Evmdq5HXoM0napZU4pbWMDATGlQRg3cnoqTCr8aB6Jb9b9sbYTRDJ0hMDGbGg5DXWxsd7E9OC4rzQkkf70Ev4axxLClqQ8vuLgaNXGZh3BefaFjxDJFvsQnLMeZW9k5Qqy6OEg9js5cv6r97GIesdD61RpWt/9Q7GDNZYw4m2AuYHRcqIBdANl5HPOaqCDAUDMu6q9pEJDXl9Dx3Sj5ADY7kFcRa5Rbd82ajndL0zCNbRZAKptWx0m2PCCwJwfX/5g0VP14Ty1t5BoBzXD2/tchUrWQU0LXwq0WSStr6WnZ92pevMj5CxUCN2quE+/+sAWMDX1n/TL/vNY1H4TToQ8Bi7HRCamR1LeUv9p8SCb9AZl8yJSg7g3kOfM8SLtK3A9Wtr+UwUwwwrn8q6oJIdidDptflp78T1MkHBlmGHaArwLQGKBiC1fGGqYdgNmYA5bixzPYo5qihnurwJu6z/wi/MZuuFL2cE=
     on:
       tags: true
       all_branches: true
