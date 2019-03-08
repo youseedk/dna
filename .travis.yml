@@ -1,20 +1,21 @@
 language: node_js
 node_js:
-  - '10'
+- '10'
 script:
-  - gulp build
-  - gulp npmDist
+- gulp build
+- gulp npmDist
 deploy:
+  matrix:
   - provider: pages
     local_dir: dist-site/
     skip_cleanup: true
-    github_token: $GITHUB_TOKEN
+    github_token: "$GITHUB_TOKEN"
     on:
       branch: master
   - provider: npm
     email: kim@shiftcph.dk
-    api_key:
-      secure: DFmBPTYFnUO61mmYputRy5NRfA0EbCqBwIZFlrMTEnfAJusB7Jd9RNclxZ+6XK30RyGA3HyfHjibZW+UKHMqRdT0BZd4W496cTqdG6bqrW/Vj95coUkM3k//YEDjVoG8b3CrKqYHjSe1TEyZRoCctf0T/BcV1ZIgfz0m3bSjoSMJuKe6nKGeqjhg4VMMOR4TgaeL+oVQPwWmW1RbsEZhmbVxBdBXS1p2sycAhc0CiTBfrRcdBV8VfPDyZfb+5k3lMYkFv0XMeNMzpS77U0XDcYJnamiFKlMRrXqd2mH3izBHb+OkDoeMVp4GdHTv9uWlZmRJAsREkQ+HLBxdary2ktkjSh7/U6XkAPkO6ksWKVTSc+iLIubOnZCDG3AbGaGa1C6TvhOJNpBlQwBX+6h+fYgjwmIex1hcsE47iT+2hi696gUnMsth6vk1Y6ZIVawrvB32SsFX3SjhP2CCyMaNiU7QSSLmzvRZWqwvqcMM/ve48g1LUzfMwij2iyJVJmTGgzlPkJFT4lL9slBIF2jA65B/AAyfZITh5WFWsWREyTtg2S4Rw/gGaLvg6CmhiyT8H23A7+9TO/huYsbgqkMbUeEt8VCfK7SyHJeJYcOROQpiatsWuvruZsUamwqkvE6R/3KxuU4/X839w1BsdPJBQetZPzO5o0ew0LTWyhBa9R4=
     on:
       tags: true
       all_branches: true
+  api_key:
+    secure: jmH8cEtjbVWIYjvBpBGZ2Wc3fZW5HSHIjzqlHjfLul4vwzf5LtqMZP9iggC5XguRK3yTKyrgUUAGibs9Iq3tMR49Mf5+hPTBFe/uyeZoTToXpx4dN0eWQj7Cp/CPNOVQ2PNpU7NHakEJUIyH9OOTEEfpUHLQA3RFhEvuhQYpUOS6NMBbOFCkmMD/8gXl6wSoOSFFbolTAjZEYJ03pfDK9IidAEhjHoEGPPNQOjyKouYfQespaGoNnfHkuxdpPXd5m1ANhfG5i7IezvJCJY2QXgziocK3uuo4sNjudB7cFE0jWlO98LiMVYObZkMd2H6twBoQi/PvpoUqNrnhtuV6R+roUM5s6tskEfS3PR+z3xKv3XnTS6z0eY+M+JN2qR8M7ZljP43nP9i+SR6v5NSZOyUqcJIrMr+Cxpnt4vZISmcqewMpC6v3E+Y99lh5TCgTzcEEBa/pPUn9IsmxeJV8JW/pvNUrY6RIDMiYT7o7DOZr3BhDIwwsPZFgbCxgTHChq5L1ClKL4bUGc2tNZCi8MlatGibsZVCW8FmCaxb6ngFMpGixkhXCmp5mRggywp3leTZALUdkaJ6sGdtHok5F1Xrs1P3X0Ud3sVCfLIrPxUezsQnA5GbLxcEyszp3+aindqws5G+EXrIDaAN3CZUzbMAykmkG9W+EPyh2mBheUds=
