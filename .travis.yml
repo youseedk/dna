@@ -11,10 +11,10 @@ deploy:
     github_token: "$GITHUB_TOKEN"
     on:
       branch: master
-  - provider: npm
-    email: kim@shiftcph.dk
-    api_key: "$NPM_TOKEN"
-    on:
-      tags: true
-      repo: youseedk/dna
-      all_branches: true
+#  - provider: npm
+#    email: kim@shiftcph.dk
+#    api_key: "$NPM_TOKEN"
+#    on:
+#      tags: true
+#      repo: youseedk/dna
+#      all_branches: true
