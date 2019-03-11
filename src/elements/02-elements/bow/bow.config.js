@@ -3,7 +3,6 @@ module.exports = {
   preview: "@element-preview",
 	label: "Bow",
 	modifierClass: null,
-  darkBg: true,
   inlineStyle: null,
 	variants: [
 		{
