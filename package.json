@@ -1,5 +1,5 @@
 {
-  "name": "ys-dna",
+  "name": "@youseedk/dna",
   "version": "0.18.0-0",
   "description": "",
   "main": "dist-npm/dist/style.css",

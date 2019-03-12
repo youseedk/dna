@@ -2,5 +2,5 @@
 
 // Convert any px value into its rem equivalent.
 @function rem($number) {
-  @return ($number / $ys-basefont * 1rem);
+  @return ($number / $ys-basefont-size * 1rem);
 }
