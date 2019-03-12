@@ -20,7 +20,7 @@
     margin: 0;
     padding: 0;
 
-    /* lobotimized owl selector to ensure margin between elements */
+    // lobotimized owl selector to ensure margin between elements
     & + & {
       margin-top: rem(16);
     }
