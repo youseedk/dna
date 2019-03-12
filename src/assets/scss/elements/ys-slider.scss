@@ -1,0 +1,180 @@
+@import '../generated/ys-colors';
+@import '../settings/ys-settings';
+@import '../tools/ys-mixins';
+
+/* stylelint-disable no-descending-specificity */
+
+/* slider specific mixins */
+@mixin ys-slider-thumb() {
+  position: relative;
+  z-index: 2;
+  appearance: none;
+  width: rem(24);
+  height: rem(24);
+  border-radius: 50%;
+  border: 0;
+  background-color: $ys-color-digital-grass;
+  margin-top: rem(-10); // height(24) - trackHeight(4) / 2
+  box-shadow: 0 1px 4px 0 rgba($ys-color-black, .24);
+  transition: transform .2s ease;
+}
+
+@mixin ys-slider-thumb-active() {
+  transform: scale(1.15);
+  box-shadow: 0 8px 32px 0 rgba($ys-color-black, .2);
+}
+
+@mixin ys-slider-track() {
+  width: 100%;
+  height: rem(4);
+  background-color: $ys-color-digital-grass;
+  border-radius: 2px;
+  border: 0;
+}
+
+.ys-slider {
+
+  &__label {
+    font-size: rem(12);
+    line-height: 1.33;
+  }
+
+  &__label-text {
+    @include labelText;
+  }
+
+  &__control {
+    margin: 0;
+    width: 100%; /* Specific width is required for Firefox. */
+    vertical-align: middle;
+    appearance: none;
+    background: transparent; /* Otherwise white in Chrome */
+    min-height: rem(30);
+    cursor: ew-resize;
+
+    &::-webkit-slider-thumb {
+      @include ys-slider-thumb;
+    }
+
+    &::-moz-range-thumb {
+      @include ys-slider-thumb;
+    }
+
+    &::-ms-thumb {
+      @include ys-slider-thumb;
+      margin-top: 0;
+    }
+
+    &:hover::-webkit-slider-thumb,
+    &:focus::-webkit-slider-thumb {
+      @include ys-slider-thumb-active;
+    }
+
+    &:hover::-moz-range-thumb,
+    &:focus::-moz-range-thumb {
+      @include ys-slider-thumb-active;
+    }
+
+    &::-webkit-slider-runnable-track {
+      @include ys-slider-track;
+    }
+
+    &::-moz-range-track {
+      width: 100%;
+      height: rem(4);
+      background-color: $ys-color-digital-grass;
+      border-radius: 2px;
+      border: 0;
+    }
+
+    &::-ms-track {
+      @include ys-slider-track;
+
+      /* Hides the slider so custom styles can be added */
+      background: transparent;
+      border-color: transparent;
+    }
+
+    &::-ms-fill-lower { // first part of the track
+      background-color: $ys-color-digital-grass;
+      border-radius: 2px;
+    }
+
+    &::-ms-fill-upper {
+      background-color: $ys-color-grey-85;
+      border-radius: 2px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    margin-top: rem(8);
+    align-items: center;
+
+    .ys-slider__control-wrapper {
+      flex: 1 0 50%;
+      padding: 0 rem(16);
+    }
+  }
+
+  &__minmax-label {
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  &__data-set {
+    display: flex;
+    position: relative;
+    margin: rem(8) 0 0;
+    z-index: 2;
+  }
+
+  &__data-item {
+    flex: 2 0 10px;
+    position: relative;
+    text-align: center;
+    font-size: rem(12);
+    font-weight: 400;
+
+    // hide visual labels on small screens
+    @media screen and (max-width: $ys-breakpoint-sm) {
+      font-size: 0;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: calc(100% + #{rem(9)});
+      left: calc(50% - #{rem(6)});
+      width: rem(12);
+      height: rem(12);
+      border-radius: 50%;
+      background: $ys-color-digital-grass;
+
+      /* target IE10+*/
+      @media all and (-ms-high-contrast: none) {
+        top: 29px;
+      }
+    }
+
+    &:first-child,
+    &:last-child {
+      flex-grow: 1;
+      text-align: left;
+
+      &::after {
+        left: 0;//rem(-6);
+      }
+    }
+
+    &:last-child {
+      text-align: right;
+
+      &::after {
+        left: calc(100% - #{rem(12)});
+      }
+    }
+  }
+}
+
+/* stylelint-enable */
