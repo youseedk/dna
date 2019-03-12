@@ -37,8 +37,8 @@
 @import './tools/ys-functions';
 @import './tools/ys-mixins';
 
-// "foundation" file including utils*/
-@import 'ys-base';
+// "foundation" file including utils
+@import './base/ys-base';
 
 // layout
 @import './layout/ys-grid';

@@ -1,8 +1,12 @@
+@import '../generated/ys-colors';
+@import '../settings/ys-settings';
+@import '../tools/ys-mixins';
+
 [class*='ys'],
 [class*='ys']::before,
 [class*='ys']::after {
   box-sizing: border-box;
-  font-family: $ys-fontstack;
+  font-family: $ys-basefont-stack;
 }
 
 // UTILITY CLASSES

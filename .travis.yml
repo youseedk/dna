@@ -12,7 +12,6 @@ deploy:
     on:
       branch: master
   - provider: npm
-    email: kim@shiftcph.dk
     api_key: "$NPM_TOKEN"
     on:
       tags: true
