@@ -4,7 +4,7 @@
 
 /* stylelint-disable no-descending-specificity */
 
-/* slider specific mixins */
+// slider specific mixins
 @mixin ys-slider-thumb() {
   position: relative;
   z-index: 2;
@@ -45,10 +45,10 @@
 
   &__control {
     margin: 0;
-    width: 100%; /* Specific width is required for Firefox. */
+    width: 100%; // Specific width is required for Firefox.
     vertical-align: middle;
     appearance: none;
-    background: transparent; /* Otherwise white in Chrome */
+    background: transparent; // Otherwise white in Chrome
     min-height: rem(30);
     cursor: ew-resize;
 
@@ -90,7 +90,7 @@
     &::-ms-track {
       @include ys-slider-track;
 
-      /* Hides the slider so custom styles can be added */
+      // Hides the slider so custom styles can be added
       background: transparent;
       border-color: transparent;
     }
@@ -151,7 +151,7 @@
       border-radius: 50%;
       background: $ys-color-digital-grass;
 
-      /* target IE10+*/
+      // target IE10+
       @media all and (-ms-high-contrast: none) {
         top: 29px;
       }

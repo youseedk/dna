@@ -1,11 +1,5 @@
 @import './../settings/ys-settings';
 
-/**
- *
- *	Functions
- *
- */
-
 // Convert any px value into its rem equivalent.
 @function rem($number) {
   @return ($number / $ys-basefont * 1rem);

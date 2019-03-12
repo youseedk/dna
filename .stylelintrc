@@ -17,6 +17,7 @@
     "number-no-trailing-zeros": true,
     "length-zero-no-unit": true,
     "unit-whitelist": [
+      "ch",
       "em",
       "rem",
       "s",

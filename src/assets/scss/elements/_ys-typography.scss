@@ -32,7 +32,7 @@
   &__item {
     @include ys-list-item;
 
-    /* make sure items have the right top margin */
+    // make sure items have the right top margin
     & + & {
       margin-top: rem(24);
     }

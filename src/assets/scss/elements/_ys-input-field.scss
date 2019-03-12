@@ -25,7 +25,7 @@
     @include inputFieldShadow;
     @include shadowTransition;
 
-    /* lobotimized owl selector for flexibility — makes sure that any element that is inserted gets a margin */
+    // lobotimized owl selector for flexibility — makes sure that any element that is inserted gets a margin
     & > *[class^='ys-'] + *[class^='ys-'] {
       margin-left: rem(8);
     }
@@ -65,7 +65,7 @@
       opacity: 1;
     }
 
-    /* stylelint-disable */
+    // stylelint-disable
     &:-ms-input-placeholder {
       color: $ys-color-grey-64;
     }
@@ -73,7 +73,7 @@
     &::ms-input-placeholder {
       color: $ys-color-grey-64;
     }
-    /* stylelint-enable */
+    // stylelint-enable
 
     &:disabled,
     &[readonly] {
@@ -113,7 +113,7 @@
     }
   }
 
-  /* stylelint-disable no-descending-specificity */
+  // stylelint-disable no-descending-specificity
   &--light {
     color: $ys-color-grey-98;
 
@@ -127,5 +127,5 @@
     }
   }
 
-  /* stylelint-enable */
+  // stylelint-enable
 }
