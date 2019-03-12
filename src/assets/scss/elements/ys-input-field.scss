@@ -1,0 +1,131 @@
+@import '../generated/ys-colors';
+@import '../tools/ys-mixins';
+
+.ys-input-field {
+  color: $ys-color-grey-46;
+
+  &__label {
+    font-size: rem(12);
+    line-height: 1.33;
+  }
+
+  &__label-text {
+    @include labelText;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    background-color: $ys-color-white;
+    color: $ys-color-grey-28;
+    height: rem(48);
+    padding: rem(0) rem(24);
+    border-radius: rem(24);
+    border: 0;
+    @include inputFieldShadow;
+    @include shadowTransition;
+
+    /* lobotimized owl selector for flexibility — makes sure that any element that is inserted gets a margin */
+    & > *[class^='ys-'] + *[class^='ys-'] {
+      margin-left: rem(8);
+    }
+
+    &:not(.ys-input-field__wrapper--readonly):not(.ys-input-field__wrapper--disabled):hover,
+    &:not(.ys-input-field__wrapper--readonly):not(.ys-input-field__wrapper--disabled):focus-within {
+      @include inputFieldShadow(hover); }
+
+    &--error {
+      background-color: $ys-color-error-red-10;
+    }
+
+    &--disabled,
+    &--readonly {
+      background-color: $ys-color-grey-94;
+      box-shadow: 0 0 0 0 transparent;
+    }
+
+    &--disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  &__control {
+    border: 0;
+    padding: 0;
+    width: 100%;
+    height: rem(48);
+    font-size: rem(16);
+    line-height: rem(24);
+    background-color: transparent;
+    color: $ys-color-grey-28;
+    caret-color: $ys-color-digital-grass;
+
+    &::placeholder {
+      color: $ys-color-grey-64;
+      opacity: 1;
+    }
+
+    /* stylelint-disable */
+    &:-ms-input-placeholder {
+      color: $ys-color-grey-64;
+    }
+
+    &::ms-input-placeholder {
+      color: $ys-color-grey-64;
+    }
+    /* stylelint-enable */
+
+    &:disabled,
+    &[readonly] {
+      color: $ys-color-grey-64;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+
+    .ys-input-field__wrapper--error & {
+      color: $ys-color-error-red;
+    }
+  }
+
+  &__icon {
+    flex: 0 0 rem(24);
+    display: flex;
+    width: rem(24);
+    height: rem(24);
+
+    &--valid {
+      color: $ys-color-digital-grass;
+    }
+
+    &--invalid {
+      color: $ys-color-error-red;
+    }
+  }
+
+  &__guidance {
+    color: $ys-color-grey-28;
+    @include guidanceText;
+
+    .ys-input-field--light & {
+      color: inherit;
+    }
+  }
+
+  /* stylelint-disable no-descending-specificity */
+  &--light {
+    color: $ys-color-grey-98;
+
+    .ys-input-field__wrapper {
+      box-shadow: 0 0 0 0 $ys-color-white;
+
+      &:not(.ys-input-field__wrapper--readonly):not(.ys-input-field__wrapper--disabled):hover,
+      &:not(.ys-input-field__wrapper--readonly):not(.ys-input-field__wrapper--disabled):focus-within {
+        box-shadow: 0 0 0 2px $ys-color-white;
+      }
+    }
+  }
+
+  /* stylelint-enable */
+}

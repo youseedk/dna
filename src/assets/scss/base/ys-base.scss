@@ -1,0 +1,61 @@
+@import '../generated/ys-colors';
+@import '../settings/ys-settings';
+@import '../tools/ys-mixins';
+
+[class*='ys'],
+[class*='ys']::before,
+[class*='ys']::after {
+  box-sizing: border-box;
+  font-family: $ys-fontstack;
+}
+
+/* UTILITY CLASSES */
+
+/* Hide content visually*/
+.ys-u-visuallyhidden {
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  padding: 0;
+}
+
+/* mobile and desktop only */
+.ys-u-mobile-only {
+
+  @media screen and (min-width: $ys-breakpoint-md) {
+    display: none;
+  }
+}
+
+.ys-u-tablet-up {
+
+  @media screen and (max-width: $ys-breakpoint-md) {
+    display: none;
+  }
+}
+
+.ys-u-tablet-down {
+
+  @media screen and (min-width: $ys-breakpoint-md) {
+    display: none;
+  }
+}
+
+.ys-u-desktop-only {
+
+  @media screen and (max-width: $ys-breakpoint-lg) {
+    display: none;
+  }
+}
+
+/* completely neutral button */
+.ys-u-neutral-button {
+  background-color: transparent;
+  appearance: none;
+  padding: 0;
+  border: 0;
+}

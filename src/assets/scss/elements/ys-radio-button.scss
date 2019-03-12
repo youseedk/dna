@@ -1,0 +1,92 @@
+@import '../generated/ys-colors';
+@import '../tools/ys-mixins';
+
+/* stylelint-disable no-descending-specificity */
+.ys-radio-button {
+
+  &__label {
+    position: relative;
+    display: inline-block;
+    font-size: rem(16);
+    line-height: 1.5;
+    padding-left: rem(36);
+    min-height: rem(24);
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: rem(24);
+      height: rem(24);
+      background-color: $ys-color-white;
+      border: 2px solid $ys-color-grey-22;
+      border-radius: 50%;
+    }
+
+    &:hover {
+
+      &::before {
+        border-color: $ys-color-digital-grass;
+      }
+    }
+  }
+
+  &__control {
+
+    &:focus {
+
+      & + .ys-radio-button__label::before {
+        border-color: $ys-color-digital-grass;
+      }
+    }
+
+    &:focus-visible {
+
+      & + .ys-radio-button__label {
+        @include customOutline;
+      }
+    }
+
+    &:checked {
+
+      & + .ys-radio-button__label::before {
+        border-color: $ys-color-digital-grass;
+        background-color: $ys-color-digital-grass;
+        background-image: url('/assets/svg/ui-icons/check-mark-white.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 14px 14px;
+      }
+    }
+
+    &:disabled {
+
+      & + .ys-radio-button__label {
+        color: $ys-color-grey-64;
+
+        &::before {
+          border-color: $ys-color-grey-64;
+          background-color: $ys-color-grey-94;
+        }
+      }
+    }
+  } // the actual control is hidden through the ys-u-visuallyhidden class
+
+  &--light {
+
+    .ys-radio-button__label {
+      color: $ys-color-grey-98;
+
+      &:not(:hover)::before {
+        border-color: $ys-color-white;
+      }
+    }
+
+    .ys-radio-button__control:checked + .ys-radio-button__label::before {
+      border-color: $ys-color-digital-grass;
+    }
+  }
+}
+
+/* stylelint-enable */
