@@ -54,6 +54,6 @@
     "stylelint-scss": "^3.5.1"
   },
   "files": [
-    "/dist-npm"
+    "dist-npm"
   ]
 }
