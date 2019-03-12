@@ -25,7 +25,7 @@
       padding-top: rem(42);
     }
 
-    /* ::before is the line in the bg */
+    // ::before is the line in the bg
     &::before {
       content: '';
       position: absolute;
@@ -41,7 +41,7 @@
       display: none;
     }
 
-    /* ::after is the actual "bullets" */
+    // ::after is the actual "bullets"
     &::after {
       content: '';
       position: absolute;
@@ -62,12 +62,12 @@
 
     &--active {
 
-      /* Change color of line */
+      // Change color of line
       & ~ .ys-flow-steps__item::before {
         background-color: $ys-color-grey-28;
       }
 
-      /* Active "bullet" */
+      // Active "bullet"
       &::after {
         content: counter(progress-bullet);
         border-color: $ys-color-digital-grass;
@@ -76,7 +76,7 @@
         color: $ys-color-white;
       }
 
-      /* "Bullets" after the active "bullet" */
+      // "Bullets" after the active "bullet"
       & ~ .ys-flow-steps__item::after {
         content: counter(progress-bullet);
         background-color: $ys-color-white;
