@@ -31,7 +31,7 @@
     &:not(.ys-select__wrapper--disabled):not(.ys-select__wrapper--alternative):focus-within {
       @include inputFieldShadow(hover); }
 
-    /* lobotimized owl selector for flexibility — makes sure that any element that is inserted gets a margin */
+    // lobotimized owl selector for flexibility — makes sure that any element that is inserted gets a margin
     & > *[class^='ys-'] + *[class^='ys-'] {
       margin-left: rem(8);
     }

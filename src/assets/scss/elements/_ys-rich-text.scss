@@ -2,6 +2,7 @@
 @import '../tools/ys-mixins';
 @import '../generated/ys-colors';
 
+/* stylelint-disable no-descending-specificity */
 .ys-rich-text {
 
   *,
@@ -62,7 +63,7 @@
   li:not([class]) {
     @include ys-list-item;
 
-    /* make sure items have the right top margin */
+    // make sure items have the right top margin
     & + li:not([class]) {
       margin-top: rem(24);
     }
@@ -94,14 +95,14 @@
 
   // lobotimized owl selector to set default top margins
   > *:not([class]) + *:not([class]) {
-    margin-top: 1em; /* use em to make sure that the elements fontsize is taken into consideration */
+    margin-top: 1em; // use em to make sure that the elements fontsize is taken into consideration
   }
 
   &--light {
     color: $ys-color-grey-98;
   }
 
-  /* specific margins */
+  // specific margins
   h1:not([class]) + h2:not([class]),
   h2:not([class]) + h3:not([class]) {
     @include ys-subtitle;
@@ -124,8 +125,10 @@
     margin-top: 2em;
   }
 
-  /* Disable editors' attempt at styling */
+  // Disable editors' attempt at styling
   br + br {
     display: none;
   }
 }
+
+/* stylelint-enable */

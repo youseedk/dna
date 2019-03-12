@@ -13,7 +13,7 @@
     padding-top: rem(2);
     padding-right: rem(72); // width of toggle + 16px margin
 
-    /* toggle container */
+    // toggle container
     &::after {
       content: '';
       position: absolute;
@@ -27,7 +27,7 @@
       transition: all .2s ease;
     }
 
-    /* toggle thumb */
+    // toggle thumb
     &::before {
       content: '';
       position: absolute;
