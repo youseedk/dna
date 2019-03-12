@@ -65,8 +65,13 @@ gulp.task('clean:public', function () {
   return del(paths.destination);
 });
 
+/**
+ *
+ * Create CSS files from SCSS files
+ *
+ */
 gulp.task('css', function () {
-  var processors = [
+  let processors = [
     cssnext({
       browsers: '> 1% in DK',
       features: {
@@ -75,13 +80,14 @@ gulp.task('css', function () {
     })
   ];
 
-  var minifying = [
+  let minifying = [
     cssnano({
       autoprefixer: false
     })
   ];
 
-  return gulp.src(paths.assetsSource + 'scss/*.scss')
+  let ysBundle = gulp
+    .src(paths.assetsSource + 'scss/*.scss')
     .pipe(plugins.sass({
       outputStyle: 'expanded',
       includePaths: ['node_modules/bootstrap/scss/']
@@ -92,7 +98,23 @@ gulp.task('css', function () {
     .pipe(plugins.rename({
       extname: '.min.css'
     }))
-    .pipe(gulp.dest(paths.destination + 'css'))
+    .pipe(gulp.dest(paths.destination + 'css'));
+
+  let ysElements = gulp
+    .src([paths.assetsSource + 'scss/base/ys-base.scss', paths.assetsSource + 'scss/elements/*.scss', paths.assetsSource + 'scss/icons/*.scss', paths.assetsSource + 'scss/layout/*.scss'])
+    .pipe(plugins.sass({
+      outputStyle: 'expanded',
+      includePaths: ['node_modules/bootstrap/scss/']
+    }).on('error', plugins.sass.logError))
+    .pipe(plugins.postcss(processors))
+    //.pipe(gulp.dest(paths.destination + 'css'))
+    //.pipe(plugins.postcss(minifying))
+    //.pipe(plugins.rename({
+    //  extname: '.min.css'
+    //}))
+    .pipe(gulp.dest(paths.destination + 'src/css'));
+
+    return merge(ysBundle, ysElements);
 });
 
 /**
@@ -248,10 +270,6 @@ gulp.task('iconSet', function () {
 
     return merge(spriteCreation, fileList, copyTask);
 })
-
-
-
-
 
 /**
  *
