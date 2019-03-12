@@ -1,4 +1,4 @@
-/* IMPORT WEBFONTS HERE so elements can be used with different font loading strategies */
+// IMPORT WEBFONTS HERE so elements can be used with different font loading strategies
 @font-face {
   font-family: 'Etica';
   src: url('//s.c.dk/fonts/lft_etica_light-webfont.woff2') format('woff2'), url('//s.c.dk/fonts/lft_etica_light-webfont.woff') format('woff');
@@ -31,22 +31,22 @@
   font-display: swap;
 }
 
-/* Files that don't render anything in the CSS */
+// Files that don't render anything in the CSS
 @import './generated/ys-colors';
 @import './settings/ys-settings';
 @import './tools/ys-functions';
 @import './tools/ys-mixins';
 
-/* "foundation" file including utils*/
+// "foundation" file including utils*/
 @import 'ys-base';
 
-/* layout */
+// layout
 @import './layout/ys-grid';
 
-/* icons */
+// icons
 @import './icons/ys-icons';
 
-/* elements */
+// elements
 @import './elements/ys-typography';
 @import './elements/ys-link';
 @import './elements/ys-rich-text';

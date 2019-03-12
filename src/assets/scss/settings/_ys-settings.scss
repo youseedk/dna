@@ -1,9 +1,3 @@
-/**
- *
- *	Variables
- *
- */
-
 // Font-variables
 $ys-basefont: 16;
 $ys-fontstack: 'Etica', arial, helvetica, sans-serif;
@@ -18,7 +12,7 @@ $ys-breakpoint-xl: 1200px;
 // 8px grid unit
 $ys-fraction-unit: 8px;
 
-/* grid settings */
+// grid settings
 $grid-column-padding: $ys-fraction-unit * 1.5; // 12;
 $grid-column-sm-padding: $ys-fraction-unit * 3; // 24
 $grid-column-md-padding: $ys-fraction-unit * 3; // 24

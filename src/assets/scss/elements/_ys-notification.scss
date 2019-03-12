@@ -16,7 +16,7 @@
     border-left-width: rem(16);
   }
 
-  /* lobotimized owl selector for flexibility — makes sure that any element that is inserted gets a margin */
+  // lobotimized owl selector for flexibility — makes sure that any element that is inserted gets a margin
   & > *[class^='ys-'] + *[class^='ys-'] {
     margin-left: rem(16);
   }
