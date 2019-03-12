@@ -100,21 +100,20 @@ gulp.task('css', function () {
     }))
     .pipe(gulp.dest(paths.destination + 'css'));
 
-  let ysElements = gulp
-    .src([paths.assetsSource + 'scss/base/ys-base.scss', paths.assetsSource + 'scss/elements/*.scss', paths.assetsSource + 'scss/icons/*.scss', paths.assetsSource + 'scss/layout/*.scss'])
+  let ysParts = gulp
+    .src([paths.assetsSource + 'scss/**/*.scss'])
     .pipe(plugins.sass({
       outputStyle: 'expanded',
       includePaths: ['node_modules/bootstrap/scss/']
     }).on('error', plugins.sass.logError))
     .pipe(plugins.postcss(processors))
-    //.pipe(gulp.dest(paths.destination + 'css'))
-    //.pipe(plugins.postcss(minifying))
-    //.pipe(plugins.rename({
-    //  extname: '.min.css'
-    //}))
-    .pipe(gulp.dest(paths.destination + 'src/css'));
+    .pipe(plugins.postcss(minifying))
+    .pipe(plugins.rename({
+      extname: '.min.css'
+    }))
+    .pipe(gulp.dest(paths.destination + 'css'));
 
-    return merge(ysBundle, ysElements);
+    return merge(ysBundle, ysParts);
 });
 
 /**

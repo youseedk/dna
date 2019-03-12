@@ -1,11 +1,10 @@
-/*
-This file is dependent on Bootstrap being available
-*/
+// This file is dependent on Bootstrap being available
 
-/* Get YouSee Sizes */
+
+// Get YouSee Sizes
 @import '../settings/ys-settings';
 
-/* Configure Bootstrap's grid settings */
+// Configure Bootstrap's grid settings
 $enable-grid-classes: true;
 
 $grid-breakpoints: (
@@ -16,7 +15,7 @@ $grid-breakpoints: (
   xl: $ys-breakpoint-xl
 );
 
-/* the above variables -32 to ensure there is "padding" on the page */
+// the above variables -32 to ensure there is "padding" on the page
 $container-max-widths: (
   sm: $grid-sm-maxwidth,
   md: $grid-md-maxwidth,
@@ -27,7 +26,7 @@ $container-max-widths: (
 $grid-columns: 12;
 $grid-gutter-width: $grid-column-sm-padding;
 
-/* Import the bootstrap modules - check gulp file for include technique */
+// Import the bootstrap modules - check gulp file for include technique
 @import 'mixins/breakpoints';
 @import 'mixins/grid-framework';
 @import 'mixins/grid';
@@ -135,7 +134,7 @@ $grid-gutter-width: $grid-column-sm-padding;
   }
 }
 
-/* make vertical margin */
+/* make vertical margin modifiers */
 .row--vertical-spacing-sm {
   margin-top: -2*$ys-fraction-unit; //16px;
 

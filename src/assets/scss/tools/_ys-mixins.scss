@@ -1,4 +1,4 @@
-/* Shadows for input fields, textareas, selects */
+// Shadows for input fields, textareas, selects
 @mixin inputFieldShadow($type: default) {
   @if ($type == default) {
     box-shadow: 0 1px 4px 0 rgba($ys-color-black, .4);
@@ -7,12 +7,12 @@
   }
 }
 
-/* Small UI transition on shadow */
+// Small UI transition on shadow
 @mixin shadowTransition() {
   transition: box-shadow .2s ease-out;
 }
 
-/* Label Text for input field, select and textarea */
+// Label Text for input field, select and textarea
 @mixin labelText() {
   display: block;
   margin-bottom: rem(8);
@@ -21,7 +21,7 @@
   letter-spacing: 2px;
 }
 
-/* Guidance Text for input field, select and textarea */
+// Guidance Text for input field, select and textarea
 @mixin guidanceText() {
   margin: 0;
   padding: rem(8) rem(24) 0;
@@ -34,12 +34,12 @@
   }
 }
 
-/* Blue outline for custom elements (radio, checkbox etc) */
+// Blue outline for custom elements (radio, checkbox etc)
 @mixin customOutline() {
   outline: 5px auto rgba(0, 150, 255, 1);
 }
 
-/* Typography rules - reused for classes and rich text stuff */
+// Typography rules - reused for classes and rich text stuff
 @mixin ys-main-title() {
   margin: 0;
   font-size: rem(40);
