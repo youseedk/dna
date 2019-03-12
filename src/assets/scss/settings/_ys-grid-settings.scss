@@ -1,0 +1,20 @@
+// 8px grid unit
+$ys-fraction-unit: 8px;
+
+// grid settings
+$grid-column-padding: $ys-fraction-unit * 1.5; // 12;
+$grid-column-sm-padding: $ys-fraction-unit * 3; // 24
+$grid-column-md-padding: $ys-fraction-unit * 3; // 24
+$grid-column-lg-padding: $ys-fraction-unit * 2; // 16
+$grid-column-xl-padding: $ys-fraction-unit * 2; // 16
+
+$container-padding: 18px; // Maxwidth of container is 284;
+$container-sm-padding: 18px; // Maxwidth of container is 540;
+$container-md-padding: $ys-fraction-unit * 1.5; // 12
+$container-lg-padding: $ys-fraction-unit * 2; // 16
+$container-xl-padding: $ys-fraction-unit * 2; // 16
+
+$grid-sm-maxwidth: $ys-breakpoint-sm - 36px; // 540
+$grid-md-maxwidth: $ys-breakpoint-md - 48px; // 720
+$grid-lg-maxwidth: $ys-breakpoint-lg - 32px; // 960
+$grid-xl-maxwidth: $ys-breakpoint-xl - 60px; // 1140

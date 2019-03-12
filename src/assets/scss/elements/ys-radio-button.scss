@@ -53,7 +53,8 @@
       & + .ys-radio-button__label::before {
         border-color: $ys-color-digital-grass;
         background-color: $ys-color-digital-grass;
-        background-image: url('/assets/svg/ui-icons/check-mark-white.svg');
+        background-image: url('data:image/svg+xml,%3Csvg viewBox%3d%22-1 -2 16 16%22 xmlns%3d%22http://www.w3.org/2000/svg%22%3E%3Cpath fill%3d%22none%22 fill-rule%3d%22evenodd%22 stroke%3d%22%23fff%22 stroke-linecap%3d%22round%22 stroke-linejoin%3d%22round%22 stroke-width%3d%222%22 d%3d%22M1 6.16534L5.68013 11 13 1%22/%3E%3C/svg%3E');
+        background-repeat: no-repeat;
         background-repeat: no-repeat;
         background-position: center;
         background-size: 14px 14px;

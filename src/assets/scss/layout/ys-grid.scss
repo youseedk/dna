@@ -1,8 +1,7 @@
 // This file is dependent on Bootstrap being available
-
-
 // Get YouSee Sizes
 @import '../settings/ys-settings';
+@import '../settings/ys-grid-settings';
 
 // Configure Bootstrap's grid settings
 $enable-grid-classes: true;
