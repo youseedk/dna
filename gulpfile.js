@@ -270,8 +270,14 @@ gulp.task('iconSet', function () {
  *
  */
 gulp.task('build-package', function () {
-  let mandatoryFiles = gulp
-    .src(['package.json', 'README.md'])
+  let packageJsonFile = gulp
+    .src('package.json')
+    .pipe(plugins.replace(/\"dependencies\"\: \{([^}]*)\}/, '"dependencies": {}'))
+    .pipe(plugins.replace(/\"devDependencies\"\: \{([^}]*)\}/, '"devDependencies": {}'))
+    .pipe(gulp.dest(paths.npmDestination))
+
+  let readMeFile = gulp
+    .src('README.md')
     .pipe(gulp.dest(paths.npmDestination))
 
   let scssFiles = gulp
@@ -303,7 +309,7 @@ gulp.task('build-package', function () {
     .src(`${paths.destination}css/*.css`)
     .pipe(gulp.dest(`${paths.npmDestination}`));
 
-  return merge(mandatoryFiles, scssFiles, cssFiles, fontFiles, svgFiles, svgSprites, bundleFiles);
+  return merge(packageJsonFile, readMeFile, scssFiles, cssFiles, fontFiles, svgFiles, svgSprites, bundleFiles);
 });
 
 gulp.task('npmDist', function() {
