@@ -78,8 +78,8 @@ dna/
 │   ├── ui-icons-sprite.svg
 ├── ys-bundle.css
 └── ys-bundle.min.css
-
 ```
+
 The package is designed for two use cases:
 1. "As is" — you use `ys-bundle.min.css` which contains all YouSee elements and layout settings.
 2. "Custom" - you pick and mix what elements, svg files, font files etc. are needed and include them in a setup of your own choosing.
@@ -113,5 +113,3 @@ That will run the project in development mode and will watch the files for chang
 print the hostname and port for where the server is runnning.
 
 ## Contributing
-
-
