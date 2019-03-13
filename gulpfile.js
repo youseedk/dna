@@ -270,6 +270,10 @@ gulp.task('iconSet', function () {
  *
  */
 gulp.task('build-package', function () {
+  let mandatoryFiles = gulp
+    .src(['package.json', 'README.md'])
+    .pipe(gulp.dest(paths.npmDestination))
+
   let scssFiles = gulp
     .src([`${paths.assetsSource}scss/settings/_ys-settings.scss`, `${paths.assetsSource}scss/generated/_ys-colors.scss`])
     .pipe(gulp.dest(`${paths.npmDestination}scss`));
@@ -299,7 +303,7 @@ gulp.task('build-package', function () {
     .src(`${paths.destination}css/*.css`)
     .pipe(gulp.dest(`${paths.npmDestination}`));
 
-  return merge(scssFiles, cssFiles, fontFiles, svgFiles, svgSprites, bundleFiles);
+  return merge(mandatoryFiles, scssFiles, cssFiles, fontFiles, svgFiles, svgSprites, bundleFiles);
 });
 
 gulp.task('npmDist', function() {
