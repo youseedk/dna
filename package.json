@@ -4,8 +4,17 @@
     "access": "public"
   },
   "version": "0.29.0-0",
-  "description": "",
-  "main": "dist-npm/dist/style.css",
+  "keywords": [
+    "yousee",
+    "css",
+    "scss",
+    "svg",
+    "framework",
+    "web"
+  ],
+  "description": "A CSS Framework to create YouSee websites and applications",
+  "main": "ys-bundle.min.css",
+  "style": "ys-bundle.min.css",
   "engines": {
     "node": "^10"
   },
