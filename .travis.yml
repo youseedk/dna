@@ -4,6 +4,8 @@ node_js:
 script:
 - gulp build
 - gulp npmDist
+before_deploy:
+- cd dist-npm
 deploy:
   - provider: pages
     local_dir: dist-site/
