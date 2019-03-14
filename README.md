@@ -2,7 +2,7 @@
 <p align="center">
   A framework for building YouSee branded websites and applications.
   <br>
-  <a href="https://dna.yousee.dk"><strong>See YouSee DNA documentation</strong></a><br /><a href="https://github.com/youseedk/dna"><strong>YouSee DNA on GitHub</strong></a>
+  <a href="https://dna.yousee.dk"><strong>YouSee DNA documentation</strong></a> · <a href="https://github.com/youseedk/dna"><strong>YouSee DNA on GitHub</strong></a>
 </p>
 
 [![Build Status](https://travis-ci.org/youseedk/dna.svg?branch=master)](https://travis-ci.org/youseedk/dna)
@@ -11,17 +11,16 @@
 
 ## Table of contents
 
-- [Install with NPM](#install-with-npm)
+- [Install](#install)
 - [Contents](#contents)
 - [Browser Support](#browser-support)
 - [Documentation](#documentation)
 - [Local Documentation](#local-documentation)
 
-## Install with NPM
-Add YouSee DNA to your project:
-```bash
-npm install @youseedk/dna
-```
+## Install
+
+- Install with [npm](https://www.npmjs.com/): `npm install @youseedk/dna`
+- Install with [yarn](https://yarnpkg.com/): `yarn add @youseedk/dna`
 
 ## Contents
 In the downloaded package (found in `node_modules/@youseedk/`) you'll find the following directories and files:
