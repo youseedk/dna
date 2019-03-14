@@ -2,7 +2,7 @@
 <p align="center">
   A framework for building YouSee branded websites and applications.
   <br>
-  <a href="https://dna.yousee.dk"><strong>See YouSee DNA documentation</strong></a>
+  <a href="https://dna.yousee.dk"><strong>See YouSee DNA documentation</strong></a><br /><a href="https://github.com/youseedk/dna"><strong>YouSee DNA on GitHub</strong></a>
 </p>
 
 [![Build Status](https://travis-ci.org/youseedk/dna.svg?branch=master)](https://travis-ci.org/youseedk/dna)
@@ -13,6 +13,7 @@
 
 - [Install with NPM](#install-with-npm)
 - [Contents](#contents)
+- [Browser Support](#browser-support)
 - [Documentation](#documentation)
 - [Local Documentation](#local-documentation)
 
@@ -89,6 +90,20 @@ The package is designed for two use cases:
 If you choose option 2, "Custom", please be aware that it is required that you include `ys-base.css` before including any other elements.
 
 For further documentation, please visit the [documentation site](https://dna.yousee.dk)
+
+## Browser Support
+All contents in YouSee DNA is build for and tested in the following browsers:
+
+### Desktop
+- Internet Explorer 11
+- Chrome (2 latest versions) for Windows and MacOS
+- Firefox (2 latest versions) for Windows and MacOS
+- Safari (2 latest versions) for MacOS
+- Edge (2 latest versions) for Windows
+
+### Mobile/Tablet
+- Chrome (2 latest versions) for iOS and Android
+- Safari (2 latest versions) for iOS
 
 ## Documentation
 YouSee DNA's documentation is built with [Fractal](https://fractal.build/), deployed on [GitHub Pages](https://pages.github.com/) using [Travis CI](https://travis-ci.com).
