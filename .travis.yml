@@ -13,6 +13,7 @@ deploy:
     github_token: "$GITHUB_TOKEN"
     on:
       branch: master
+      all_branches: true
   - provider: npm
     email: kim@shiftcph.dk
     api_key: "$NPM_TOKEN"
@@ -21,3 +22,7 @@ deploy:
       tags: true
       repo: youseedk/dna
       all_branches: true
+notifications:
+  email:
+    on_success: never
+    on_failure: always
