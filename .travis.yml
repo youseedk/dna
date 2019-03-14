@@ -6,10 +6,6 @@ script:
 - npm run build:npm
 before_deploy:
 - cd dist-npm
-notifications:
-  email:
-    on_success: never
-    on_failure: always
 deploy:
   - provider: pages
     local_dir: dist-site/
@@ -17,7 +13,7 @@ deploy:
     github_token: "$GITHUB_TOKEN"
     on:
       branch: master
-    provider: npm
+  - provider: npm
     email: kim@shiftcph.dk
     api_key: "$NPM_TOKEN"
     skip_cleanup: true
@@ -25,4 +21,7 @@ deploy:
       tags: true
       repo: youseedk/dna
       all_branches: true
-
+notifications:
+  email:
+    on_success: never
+    on_failure: always
