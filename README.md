@@ -1,18 +1,20 @@
-<h3 align="center">YouSee DNA [![Build Status](https://travis-ci.org/youseedk/dna.svg?branch=master)](https://travis-ci.org/youseedk/dna)</h3>
+<h3 align="center">YouSee DNA </h3>
 <p align="center">
   A framework for building YouSee branded websites and applications.
   <br>
   <a href="https://dna.yousee.dk"><strong>See YouSee DNA documentation</strong></a>
 </p>
 
+[![Build Status](https://travis-ci.org/youseedk/dna.svg?branch=master)](https://travis-ci.org/youseedk/dna)
+[![npm version](https://img.shields.io/npm/v/@youseedk/dna.svg)](https://www.npmjs.com/package/@youseedk/dna)
+[![Last Commit](https://img.shields.io/github/last-commit/youseedk/dna/master.svg)](https://github.com/youseedk/dna)
+
 ## Table of contents
 
 - [Install with NPM](#install-with-npm)
 - [Contents](#contents)
-- [Bugs and feature requests](#bugs-and-feature-requests)
 - [Documentation](#documentation)
 - [Local Documentation](#local-documentation)
-- [Contributing](#contributing)
 
 ## Install with NPM
 Add YouSee DNA to your project:
@@ -88,10 +90,8 @@ If you choose option 2, "Custom", please be aware that it is required that you i
 
 For further documentation, please visit the [documentation site](https://dna.yousee.dk)
 
-## Bugs and feature requests
-
 ## Documentation
-YouSee DNA's documentation is built with [Fractal](https://fractal.build/).
+YouSee DNA's documentation is built with [Fractal](https://fractal.build/), deployed on [GitHub Pages](https://pages.github.com/) using [Travis CI](https://travis-ci.com).
 
 ## Local documentation
 Clone the repo:
@@ -106,10 +106,8 @@ $ npm ci
 
 Running the project
 ```bash
-$ gulp
+$ npm start
 ```
 
 That will run the project in development mode and will watch the files for changes. The command will also
 print the hostname and port for where the server is runnning.
-
-## Contributing
