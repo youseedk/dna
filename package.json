@@ -18,6 +18,13 @@
   "engines": {
     "node": "^10"
   },
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build",
+    "build:fractal": "gulp fractal:build",
+    "build:npm": "gulp npmDist",
+    "lint:scss": "gulp lint-scss"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/youseedk/dna.git"

@@ -1,4 +1,7 @@
 @import '../generated/ys-colors';
+@import '../settings/ys-settings';
+@import '../tools/ys-mixins';
+@import '../tools/ys-functions';
 
 .ys-tag {
   display: inline-block;
