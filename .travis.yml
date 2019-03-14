@@ -2,8 +2,8 @@ language: node_js
 node_js:
 - '10'
 script:
-- gulp build
-- gulp npmDist
+- npm run build
+- npm run build:npm
 before_deploy:
 - cd dist-npm
 deploy:
