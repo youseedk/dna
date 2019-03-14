@@ -22,3 +22,7 @@ deploy:
       tags: true
       repo: youseedk/dna
       all_branches: true
+notifications:
+  email:
+    on_success: never
+    on_failure: always
