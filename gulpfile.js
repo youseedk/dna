@@ -82,7 +82,8 @@ gulp.task('css', function () {
 
   let minifying = [
     cssnano({
-      autoprefixer: false
+      autoprefixer: false,
+      discardUnused: false
     })
   ];
 
@@ -322,7 +323,9 @@ gulp.task('npmDist', function() {
  *	Build assets
  *
  */
-gulp.task('compile-assets', ['jsonToScss', 'css', 'images', 'icons', 'fonts', 'fractal-assets']);
+gulp.task('compile-assets', function() {
+  runSequence(['jsonToScss'], 'css', 'images', 'icons', 'fonts', 'fractal-assets');
+});
 
 
 //Default
