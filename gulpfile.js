@@ -291,6 +291,17 @@ gulp.task('build-package', function () {
     .pipe(plugins.replace('./generated', './settings'))
     .pipe(gulp.dest(`${paths.npmDestination}css`));
 
+  let cssSettings = gulp
+    .src([`${paths.assetsSource}scss/generated/_ys-colors.scss`, `${paths.assetsSource}scss/settings/_ys-settings.scss`])
+    .pipe(plugins.replace('$', '  --'))
+    .pipe(plugins.insert.prepend(':root {\n'))
+    .pipe(plugins.insert.append('\n}'))
+    .pipe(plugins.rename(function (path) {
+      path.basename = path.basename.replace('_', ''),
+      path.extname = '.css'
+    }))
+    .pipe(gulp.dest(`${paths.npmDestination}css/settings`));
+
   let fontFiles = gulp
     .src(`${paths.assetsSource}fonts/**/*`)
     .pipe(gulp.dest(`${paths.npmDestination}/fonts`));
@@ -310,7 +321,7 @@ gulp.task('build-package', function () {
     .src(`${paths.destination}css/*.css`)
     .pipe(gulp.dest(`${paths.npmDestination}`));
 
-  return merge(packageJsonFile, readMeFile, scssFiles, cssFiles, fontFiles, svgFiles, svgSprites, bundleFiles);
+  return merge(packageJsonFile, readMeFile, scssFiles, cssFiles, cssSettings, fontFiles, svgFiles, svgSprites, bundleFiles);
 });
 
 gulp.task('npmDist', function() {

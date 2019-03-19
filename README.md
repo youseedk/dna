@@ -29,7 +29,8 @@ In the downloaded package (found in `node_modules/@youseedk/`) you'll find the f
 dna/
 ├── css/
 │   ├── base
-│   │   └── ys-base.css
+│   │   ├── ys-base.css
+│   │   └── ys-webfonts.css
 │   ├── elements
 │   │   ├── ys-bow.css
 │   │   ├── ys-button.css
@@ -55,6 +56,9 @@ dna/
 │   │   └── ys-icons.css
 │   ├── layout
 │   │   └── ys-grid.css
+│   ├── settings
+│   │   ├── ys-colors.css
+│   │   └── ys-settings.css
 ├── fonts/
 │   ├── ltf_etica_bold-webfont.woff
 │   ├── ltf_etica_bold-webfont.woff2
