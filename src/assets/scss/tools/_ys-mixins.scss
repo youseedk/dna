@@ -1,0 +1,154 @@
+// Shadows for input fields, textareas, selects
+@mixin inputFieldShadow($type: default) {
+  @if ($type == default) {
+    box-shadow: 0 1px 4px 0 rgba($ys-color-black, .4);
+  } @else {
+    box-shadow: 0 8px 32px 0 rgba($ys-color-black, .2);
+  }
+}
+
+// Small UI transition on shadow
+@mixin shadowTransition() {
+  transition: box-shadow .2s ease-out;
+}
+
+// Label Text for input field, select and textarea
+@mixin labelText() {
+  display: block;
+  margin-bottom: rem(8);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+// Guidance Text for input field, select and textarea
+@mixin guidanceText() {
+  margin: 0;
+  padding: rem(8) rem(24) 0;
+  font-size: rem(14);
+  font-weight: 200;
+  line-height: 1.5;
+
+  &--error {
+    color: $ys-color-error-red;
+  }
+}
+
+// Blue outline for custom elements (radio, checkbox etc)
+@mixin customOutline() {
+  outline: 5px auto rgba(0, 150, 255, 1);
+}
+
+// Typography rules - reused for classes and rich text stuff
+@mixin ys-main-title() {
+  margin: 0;
+  font-size: rem(40);
+  line-height: 1.2;
+  font-weight: 700;
+
+  @media screen and (min-width: $ys-breakpoint-lg) {
+    font-size: rem(56);
+    line-height: 1.28;
+  }
+}
+
+@mixin ys-primary-title() {
+  margin: 0;
+  font-size: rem(32);
+  line-height: 1.25;
+  font-weight: 700;
+
+  @media screen and (min-width: $ys-breakpoint-lg) {
+    font-size: rem(40);
+    line-height: 1.4;
+  }
+}
+
+@mixin ys-secondary-title() {
+  margin: 0;
+  font-size: rem(24);
+  line-height: 1.33;
+  font-weight: 700;
+
+  @media screen and (min-width: $ys-breakpoint-lg) {
+    line-height: 1.67;
+  }
+}
+
+@mixin ys-subtitle() {
+  margin: 0;
+  font-size: rem(24);
+  line-height: 1.25;
+  font-weight: 200;
+
+  @media screen and (min-width: $ys-breakpoint-lg) {
+    line-height: 1.67;
+  }
+}
+
+@mixin ys-body-text() {
+  margin: 0;
+  font-size: rem(16);
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+@mixin ys-legal-text() {
+  margin: 0;
+  font-size: rem(12);
+  line-height: 1.25;
+  font-weight: 400;
+}
+
+@mixin ys-list() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: list-item;
+}
+
+@mixin ys-list-item() {
+  position: relative;
+  padding-left: rem(24);
+  line-height: 1.5;
+  counter-increment: list-item;
+
+  @media screen and (min-width: $ys-breakpoint-lg) {
+    padding-left: rem(32);
+  }
+}
+
+@mixin ys-list-item-unordered() {
+  content: '';
+  position: absolute;
+  left: rem(8);
+  top: .475em;
+  width: rem(8);
+  height: rem(8);
+  background-color: currentColor;
+  border-radius: 50%;
+
+  @media screen and (min-width: $ys-breakpoint-lg) {
+    left: rem(16);
+  }
+}
+
+@mixin ys-list-item-unordered-indented() {
+  background: transparent;
+  border: 2px solid currentColor;
+}
+
+@mixin ys-list-item-ordered() {
+  content: counter(list-item) '.';
+  position: absolute;
+  left: 0;
+  width: rem(20);
+  text-align: right;
+  font-weight: 600;
+  padding-left: rem(4);
+}
+
+@mixin ys-list-item-ordered-indented() {
+  content: counter(list-item, lower-alpha) '.';
+  text-align: left;
+}

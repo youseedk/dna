@@ -65,8 +65,13 @@ gulp.task('clean:public', function () {
   return del(paths.destination);
 });
 
+/**
+ *
+ * Create CSS files from SCSS files
+ *
+ */
 gulp.task('css', function () {
-  var processors = [
+  let processors = [
     cssnext({
       browsers: '> 1% in DK',
       features: {
@@ -75,21 +80,38 @@ gulp.task('css', function () {
     })
   ];
 
-  var minifying = [
+  let minifying = [
     cssnano({
-      autoprefixer: false
+      autoprefixer: false,
+      discardUnused: false
     })
   ];
 
-  return gulp.src(paths.assetsSource + 'scss/*.scss')
-    .pipe(plugins.sass({outputStyle: 'expanded'}).on('error', plugins.sass.logError))
+  let ysBundle = gulp
+    .src(paths.assetsSource + 'scss/*.scss')
+    .pipe(plugins.sass({
+      outputStyle: 'expanded',
+      includePaths: ['node_modules/bootstrap/scss/']
+    }).on('error', plugins.sass.logError))
     .pipe(plugins.postcss(processors))
     .pipe(gulp.dest(paths.destination + 'css'))
     .pipe(plugins.postcss(minifying))
     .pipe(plugins.rename({
       extname: '.min.css'
     }))
-    .pipe(gulp.dest(paths.destination + 'css'))
+    .pipe(gulp.dest(paths.destination + 'css'));
+
+  let ysParts = gulp
+    .src([paths.assetsSource + 'scss/**/*.scss', '!' + paths.assetsSource + 'scss/ys-bundle.scss'])
+    .pipe(plugins.sass({
+      outputStyle: 'expanded',
+      includePaths: ['node_modules/bootstrap/scss/']
+    }).on('error', plugins.sass.logError))
+    .pipe(plugins.postcss(processors))
+    .pipe(plugins.postcss(minifying))
+    .pipe(gulp.dest(paths.destination + 'css'));
+
+  return merge(ysBundle, ysParts);
 });
 
 /**
@@ -116,7 +138,7 @@ gulp.task('lint-scss', function () {
  *
  */
 gulp.task('jsonToScss', function () {
-  gulp.src([`${paths.tokensSource}colors.json`])
+  return gulp.src([`${paths.tokensSource}colors.json`])
     .pipe(jsonSass({
       ignoreJsonErrors: false,
     }))
@@ -128,7 +150,7 @@ gulp.task('jsonToScss', function () {
     .pipe(plugins.replace('color-feedback-', 'color-'))
     .pipe(plugins.replace('-accent-greys', ''))
     .pipe(plugins.replace('color-accent-', 'color-'))
-    .pipe(plugins.rename('_colors.scss'))
+    .pipe(plugins.rename('_ys-colors.scss'))
     .pipe(gulp.dest(`${paths.assetsSource}scss/generated`))
 });
 
@@ -171,7 +193,7 @@ gulp.task('icons', function (cb) {
 gulp.task('uiIcons', function () {
   const spriteSrc = 'ui-icons';
   let spriteCreation = gulp
-      .src([`${paths.assetsSource}/svg/${spriteSrc}/*.svg`, `!${paths.assetsSource}/svg/${spriteSrc}/_*.svg`])
+      .src(`${paths.assetsSource}/svg/${spriteSrc}/*.svg`)
       .pipe(svgSprite({
         mode: {
           symbol: {
@@ -190,7 +212,7 @@ gulp.task('uiIcons', function () {
 
     // create json file lists
     let fileList = gulp
-      .src([`${paths.assetsSource}/svg/${spriteSrc}/*.svg`, `!${paths.assetsSource}/svg/${spriteSrc}/_*.svg`])
+      .src(`${paths.assetsSource}/svg/${spriteSrc}/*.svg`)
       .pipe(plugins.filelist(`${spriteSrc}.json`))
       .pipe(plugins.replace(`src/assets/svg/${spriteSrc}/`, ''))
       .pipe(gulp.dest(`${paths.tokensSource}generated`));
@@ -199,9 +221,6 @@ gulp.task('uiIcons', function () {
     let copyTask = gulp
       .src(`${paths.assetsSource}svg/${spriteSrc}/*.svg`)
       .pipe(plugins.newer(`${paths.destination}svg/${spriteSrc}`))
-      .pipe(plugins.rename(function (path) {
-        path.basename = path.basename.replace('_', '')
-      }))
       .pipe(gulp.dest(`${paths.destination}/svg/${spriteSrc}`))
 
     return merge(spriteCreation, fileList, copyTask);
@@ -246,25 +265,67 @@ gulp.task('iconSet', function () {
     return merge(spriteCreation, fileList, copyTask);
 })
 
-
-
-
-
 /**
  *
  * Copy files to npm distribution folder
  *
  */
-gulp.task('npmDist', function () {
-  let srcFolder = gulp
-    .src(`${paths.assetsSource}**/*`)
-    .pipe(gulp.dest(`${paths.npmDestination}src`));
+gulp.task('build-package', function () {
+  let packageJsonFile = gulp
+    .src('package.json')
+    .pipe(plugins.replace(/\"dependencies\"\: \{([^}]*)\}/, '"dependencies": {}'))
+    .pipe(plugins.replace(/\"devDependencies\"\: \{([^}]*)\}/, '"devDependencies": {}'))
+    .pipe(gulp.dest(paths.npmDestination))
 
-  let distFolder = gulp
-    .src([`${paths.destination}css/**/*.css`, `${paths.destination}svg/sprite/*.svg`])
-    .pipe(gulp.dest(`${paths.npmDestination}dist`));
+  let readMeFile = gulp
+    .src('README.md')
+    .pipe(gulp.dest(paths.npmDestination))
 
-  return merge(srcFolder, distFolder);
+  let scssFiles = gulp
+    .src([`${paths.assetsSource}scss/settings/_ys-settings.scss`, `${paths.assetsSource}scss/generated/_ys-colors.scss`])
+    .pipe(gulp.dest(`${paths.npmDestination}scss`));
+
+  let cssFiles = gulp
+    .src([`${paths.destination}css/**/*.*`, `!${paths.destination}css/*.css`])
+    // change path to colors-file from generated to settings
+    .pipe(plugins.replace('./generated', './settings'))
+    .pipe(gulp.dest(`${paths.npmDestination}css`));
+
+  let cssSettings = gulp
+    .src([`${paths.assetsSource}scss/generated/_ys-colors.scss`, `${paths.assetsSource}scss/settings/_ys-settings.scss`])
+    .pipe(plugins.replace('$', '  --'))
+    .pipe(plugins.insert.prepend(':root {\n'))
+    .pipe(plugins.insert.append('\n}'))
+    .pipe(plugins.rename(function (path) {
+      path.basename = path.basename.replace('_', ''),
+      path.extname = '.css'
+    }))
+    .pipe(gulp.dest(`${paths.npmDestination}css/settings`));
+
+  let fontFiles = gulp
+    .src(`${paths.assetsSource}fonts/**/*`)
+    .pipe(gulp.dest(`${paths.npmDestination}/fonts`));
+
+  let svgFiles = gulp
+    .src(`${paths.assetsSource}svg/**/*`)
+    .pipe(gulp.dest(`${paths.npmDestination}svg`));
+
+  let svgSprites = gulp
+    .src(`${paths.destination}svg/sprite/*.svg`)
+    .pipe(plugins.rename(function (path) {
+      path.basename = path.basename + '-sprite'
+    }))
+    .pipe(gulp.dest(`${paths.npmDestination}svg`));
+
+  let bundleFiles = gulp
+    .src(`${paths.destination}css/*.css`)
+    .pipe(gulp.dest(`${paths.npmDestination}`));
+
+  return merge(packageJsonFile, readMeFile, scssFiles, cssFiles, cssSettings, fontFiles, svgFiles, svgSprites, bundleFiles);
+});
+
+gulp.task('npmDist', function() {
+  runSequence(['compile-assets'], 'build-package');
 });
 
 
@@ -273,13 +334,15 @@ gulp.task('npmDist', function () {
  *	Build assets
  *
  */
-gulp.task('compile-assets', ['jsonToScss', 'css', 'images', 'icons', 'fonts', 'fractal-assets']);
+gulp.task('compile-assets', function() {
+  runSequence(['jsonToScss'], 'css', 'images', 'icons', 'fonts', 'fractal-assets');
+});
 
 
 //Default
 gulp.task('default', function (callback) {
-  runSequence('icons',
-    ['fractal-assets', 'jsonToScss', 'css', 'images', 'watch'],
+  runSequence('icons', 'jsonToScss',
+    ['fractal-assets', 'css', 'images', 'watch'],
     'fractal:start'
   );
 });

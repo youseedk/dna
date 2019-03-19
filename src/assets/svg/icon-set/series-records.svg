@@ -1,7 +1,2 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
-  <g fill="none" fill-rule="evenodd">
-    <path stroke="currentColor" stroke-dasharray="2.648 3.807" stroke-linecap="round" stroke-width="2" d="M20.3 11.827c4.3-3.811 10.94-3.788 15.215.187a10.806 10.806 0 0 1 .408 15.5 11.314 11.314 0 0 1-8.095 3.414 11.248 11.248 0 0 1-7.536-2.875"/>
-    <path stroke="currentColor" stroke-width="2" d="M12.225 9c6.135 0 11.107 4.908 11.107 10.964S18.36 30.928 12.225 30.928c-6.134 0-11.108-4.908-11.108-10.964S6.09 9 12.225 9z"/>
-    <path fill="currentColor" d="M12.225 15.925c2.26 0 4.092 1.808 4.092 4.04 0 2.23-1.833 4.038-4.092 4.038-2.26 0-4.093-1.808-4.093-4.039 0-2.23 1.833-4.04 4.093-4.04"/>
-  </g>
-</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><g fill="none" fill-rule="evenodd"><path stroke="currentColor" stroke-dasharray="2 4" stroke-linecap="round" stroke-width="2" d="M20.3 11.827c4.3-3.811 10.94-3.788 15.215.187a10.806 10.806 0 0 1 .408 15.5 11.314 11.314 0 0 1-8.095 3.414 11.248 11.248 0 0 1-7.536-2.875"/><path stroke="currentColor" stroke-width="2" d="M12.225 9c6.135 0 11.107 4.908 11.107 10.964S18.36 30.928 12.225 30.928c-6.134 0-11.108-4.908-11.108-10.964S6.09 9 12.225 9z"/><path fill="currentColor" d="M12.225 15.925c2.26 0 4.092 1.808 4.092 4.04 0 2.23-1.833 4.038-4.092 4.038-2.26 0-4.093-1.808-4.093-4.039 0-2.23 1.833-4.04 4.093-4.04"/></g></svg>
