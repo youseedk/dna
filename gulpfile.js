@@ -459,5 +459,4 @@ gulp.task('cname', () => {
     .pipe(gulp.dest('dist-site'));
 })
 
-
 gulp.task('fractal-assets', ['fractal-scss', 'fractal-js', 'fractal-images']);
