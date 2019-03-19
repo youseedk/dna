@@ -1,0 +1,6 @@
+@import '../settings/ys-settings';
+
+// Convert any px value into its rem equivalent.
+@function rem($number) {
+  @return ($number / $ys-basefont-size * 1rem);
+}

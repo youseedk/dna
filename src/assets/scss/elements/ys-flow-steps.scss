@@ -1,0 +1,100 @@
+@import '../generated/ys-colors';
+@import '../settings/ys-settings';
+@import '../tools/ys-mixins';
+@import '../tools/ys-functions';
+
+.ys-flow-steps {
+  color: $ys-color-grey-28;
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-flow: row;
+    counter-reset: progress-bullet;
+    text-align: center;
+  }
+
+  &__item {
+    position: relative;
+    flex: 1 0 10px;
+    padding-top: rem(34);
+    font-size: rem(14);
+    counter-increment: progress-bullet;
+
+    @media screen and (min-width: $ys-breakpoint-md) {
+      padding-top: rem(42);
+    }
+
+    // ::before is the line in the bg
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: rem(16);
+      left: -50%;
+      height: rem(2);
+      width: 100%;
+      background-color: $ys-color-digital-moss;
+    }
+
+    &:first-child::before {
+      display: none;
+    }
+
+    // ::after is the actual "bullets"
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: calc(50% - #{rem(17)});
+      width: rem(34);
+      height: rem(34);
+      border-radius: 50%;
+      background: $ys-color-digital-moss url('data:image/svg+xml,%3Csvg viewBox%3d%22-1 -2 16 16%22 xmlns%3d%22http://www.w3.org/2000/svg%22%3E%3Cpath fill%3d%22none%22 fill-rule%3d%22evenodd%22 stroke%3d%22%23fff%22 stroke-linecap%3d%22round%22 stroke-linejoin%3d%22round%22 stroke-width%3d%222%22 d%3d%22M1 6.16534L5.68013 11 13 1%22/%3E%3C/svg%3E') no-repeat center;
+      background-size: 14px 14px;
+      border: 2px solid $ys-color-digital-moss;
+      text-align: center;
+      font-size: rem(16);
+      line-height: rem(30);
+      font-weight: 600;
+    }
+
+    &--active {
+
+      // Change color of line
+      & ~ .ys-flow-steps__item::before {
+        background-color: $ys-color-grey-28;
+      }
+
+      // Active "bullet"
+      &::after {
+        content: counter(progress-bullet);
+        border-color: $ys-color-digital-grass;
+        background-color: $ys-color-digital-grass;
+        background-image: none;
+        color: $ys-color-white;
+      }
+
+      // "Bullets" after the active "bullet"
+      & ~ .ys-flow-steps__item::after {
+        content: counter(progress-bullet);
+        background-color: $ys-color-white;
+        background-image: none;
+        border-color: $ys-color-grey-28;
+        color: $ys-color-grey-28;
+      }
+    }
+  }
+
+  &__label {
+    font-weight: 600;
+    line-height: rem(20);
+
+    @media screen and (max-width: $ys-breakpoint-md) {
+      display: none;
+    }
+  }
+}
