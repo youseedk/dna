@@ -357,7 +357,7 @@ gulp.task('default', (cb) => {
  /* BUILD */
  // CAUTION: Used by TRAVIS CI for automatic build and deployment - change only this task if you know what you are doing */
  gulp.task('build', (cb) => {
-  runSequence('icons', 'jsonToScss', 'fractal-assets', 'css', 'fractal:build', cb);
+  runSequence('icons', 'jsonToScss', 'fractal-assets', 'css', 'fractal:build', 'cname', cb);
 });
 
 
@@ -452,5 +452,12 @@ gulp.task('fractal-images', () => {
   gulp.src(`${paths.fractal.images}**/*.*`)
     .pipe(gulp.dest(`${paths.destination}theme/images`));
 })
+
+/* Used for making custom domain "dns.yousee.dk" work with github pages */
+gulp.task('cname', () => {
+  gulp.src('config/CNAME')
+    .pipe(gulp.dest('dist-site'));
+})
+
 
 gulp.task('fractal-assets', ['fractal-scss', 'fractal-js', 'fractal-images']);
