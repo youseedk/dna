@@ -94,6 +94,13 @@ If you choose option 2, "Custom", please be aware that it is required that you i
 
 For further documentation, please visit the [documentation site](https://dna.yousee.dk)
 
+### CDN
+It is also possible to load the bundled css files from a CDN:
+`<link rel="stylesheet" type="text/css" href="https://unpkg.com/@youseedk/dna/ys-bundle.min.css" />` will always load the latest version.
+
+If a specific version is needed, insert the version number into the URL, ie.:
+`<link rel="stylesheet" type="text/css" href="https://unpkg.com/@youseedk/dna@1.0.0/ys-bundle.min.css" />` will load version 1.0.0.
+
 ## Browser Support
 All contents in YouSee DNA is build for and tested in the following browsers:
 
