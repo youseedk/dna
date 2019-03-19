@@ -8,4 +8,20 @@ a.Tree-entityLink {
 
 .Tree-collectionLabel {
   font-weight: bold;
+
+  /* make arrow centered in navigation */
+  span {
+    display: flex;
+    align-items: center;
+
+    &::before {
+      position: static;
+      top: 0;
+    }
+  }
+}
+
+// hide status in navbar
+.Navigation .Status {
+  display: none;
 }
