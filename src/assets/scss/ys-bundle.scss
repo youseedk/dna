@@ -1,43 +1,11 @@
-// IMPORT WEBFONTS HERE so elements can be used with different font loading strategies
-@font-face {
-  font-family: 'Etica';
-  src: url('//s.c.dk/fonts/lft_etica_light-webfont.woff2') format('woff2'), url('//s.c.dk/fonts/lft_etica_light-webfont.woff') format('woff');
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Etica';
-  src: url('//s.c.dk/fonts/lft_etica_reg-webfont.woff2') format('woff2'), url('//s.c.dk/fonts/lft_etica_reg-webfont.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Etica';
-  src: url('//s.c.dk/fonts/lft_etica_semibold-webfont.woff2') format('woff2'), url('//s.c.dk/fonts/lft_etica_semibold-webfont.woff') format('woff');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Etica';
-  src: url('//s.c.dk/fonts/lft_etica_bold-webfont.woff2') format('woff2'), url('//s.c.dk/fonts/lft_etica_bold-webfont.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
 // Files that don't render anything in the CSS
 @import './generated/ys-colors';
 @import './settings/ys-settings';
 @import './tools/ys-functions';
 @import './tools/ys-mixins';
 
-// "foundation" file including utils
+// webfonts and "foundation" file including utils
+@import './base/ys-webfonts';
 @import './base/ys-base';
 
 // layout
