@@ -1,4 +1,3 @@
-# Browser Support
 All contents in YouSee DNA is build for and tested in the browsers below. Any YouSee site or web application must be tested in the same browsers.
 
 ## Desktop
@@ -11,4 +10,3 @@ All contents in YouSee DNA is build for and tested in the browsers below. Any Yo
 ## Mobile/Tablet
 - Chrome (2 latest versions) for iOS and Android
 - Safari (2 latest versions) for iOS
-

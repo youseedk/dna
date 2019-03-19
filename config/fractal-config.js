@@ -13,7 +13,7 @@ fractal.docs.set('path', 'src/docs'); // location of the documentation directory
 fractal.components.set('path', 'src/elements'); // location of the component directory.
 fractal.components.set('default.preview', '@element-preview');
 fractal.components.set('default.status', 'wip');
-fractal.components.set('label', 'Elements'); // default is 'Components'
+fractal.components.set('label', 'Contents'); // default is 'Components'
 
 /* THEMING */
 // create a new instance with custom config options
