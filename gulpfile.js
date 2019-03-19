@@ -6,7 +6,6 @@
 //
 // Available tasks:
 //   `gulp`
-//   `gulp clean:public`
 //   `gulp css`
 //   `gulp jsonToScss`
 //   `gulp images`
@@ -58,20 +57,11 @@ const paths = {
 
 /**
  *
- *	Clean up public
- *
- */
-gulp.task('clean:public', function () {
-  return del(paths.destination);
-});
-
-/**
- *
  * Create CSS files from SCSS files
  *
  */
 gulp.task('css', function () {
-  let processors = [
+  const processors = [
     cssnext({
       browsers: '> 1% in DK',
       features: {
@@ -80,15 +70,15 @@ gulp.task('css', function () {
     })
   ];
 
-  let minifying = [
+  const minifying = [
     cssnano({
       autoprefixer: false,
       discardUnused: false
     })
   ];
 
-  let ysBundle = gulp
-    .src(paths.assetsSource + 'scss/*.scss')
+  const ysBundle = gulp
+    .src(`${paths.assetsSource}scss/*.scss`)
     .pipe(plugins.sass({
       outputStyle: 'expanded',
       includePaths: ['node_modules/bootstrap/scss/']
@@ -99,17 +89,17 @@ gulp.task('css', function () {
     .pipe(plugins.rename({
       extname: '.min.css'
     }))
-    .pipe(gulp.dest(paths.destination + 'css'));
+    .pipe(gulp.dest(`${paths.destination}css`));
 
-  let ysParts = gulp
-    .src([paths.assetsSource + 'scss/**/*.scss', '!' + paths.assetsSource + 'scss/ys-bundle.scss'])
+  const ysParts = gulp
+    .src([`${paths.assetsSource}scss/**/*.scss`, `!${paths.assetsSource}scss/ys-bundle.scss`])
     .pipe(plugins.sass({
       outputStyle: 'expanded',
       includePaths: ['node_modules/bootstrap/scss/']
     }).on('error', plugins.sass.logError))
     .pipe(plugins.postcss(processors))
     .pipe(plugins.postcss(minifying))
-    .pipe(gulp.dest(paths.destination + 'css'));
+    .pipe(gulp.dest(`${paths.destination}css`));
 
   return merge(ysBundle, ysParts);
 });
@@ -119,12 +109,10 @@ gulp.task('css', function () {
  *	Lint scss files
  *
  */
-gulp.task('lint-scss', function () {
-  const gulpStylelint = require('gulp-stylelint');
-
+gulp.task('lint-scss', () => {
   return gulp
     .src(['src/**/*.scss', '!src/**/generated/**/*.scss'])
-    .pipe(gulpStylelint({
+    .pipe(plugins.stylelint({
       reporters: [{
         formatter: 'string',
         console: true
@@ -138,7 +126,8 @@ gulp.task('lint-scss', function () {
  *
  */
 gulp.task('jsonToScss', function () {
-  return gulp.src([`${paths.tokensSource}colors.json`])
+  return gulp.
+    src([`${paths.tokensSource}colors.json`])
     .pipe(jsonSass({
       ignoreJsonErrors: false,
     }))
@@ -160,11 +149,12 @@ gulp.task('jsonToScss', function () {
  * Images
  *
  */
-gulp.task('images', function () {
-  return gulp.src(paths.assetsSource + 'img/**')
-    .pipe(plugins.newer(paths.destination + 'img'))
+gulp.task('images', () => {
+  return gulp
+    .src(`${paths.assetsSource}img/**`)
+    .pipe(plugins.newer(`${paths.destination}img`))
     .pipe(plugins.imagemin())
-    .pipe(gulp.dest(paths.destination + 'img'));
+    .pipe(gulp.dest(`${paths.destination}img`));
 });
 
 /**
@@ -172,10 +162,11 @@ gulp.task('images', function () {
  * Fonts
  *
  */
-gulp.task('fonts', function () {
-  return gulp.src(paths.assetsSource + 'fonts/**')
-    .pipe(plugins.newer(paths.destination + 'fonts'))
-    .pipe(gulp.dest(paths.destination + 'fonts'));
+gulp.task('fonts', () => {
+  return gulp
+    .src(`${paths.assetsSource}fonts/**`)
+    .pipe(plugins.newer(`${paths.destination}fonts`))
+    .pipe(gulp.dest(`${paths.destination}fonts`));
 });
 
 
@@ -186,12 +177,13 @@ gulp.task('fonts', function () {
  * Copy SVG files to public
  *
  */
-gulp.task('icons', function (cb) {
+gulp.task('icons', (cb) => {
   runSequence('uiIcons', 'iconSet', cb);
 });
 
-gulp.task('uiIcons', function () {
+gulp.task('uiIcons', () => {
   const spriteSrc = 'ui-icons';
+
   let spriteCreation = gulp
       .src(`${paths.assetsSource}/svg/${spriteSrc}/*.svg`)
       .pipe(svgSprite({
@@ -226,8 +218,9 @@ gulp.task('uiIcons', function () {
     return merge(spriteCreation, fileList, copyTask);
 })
 
-gulp.task('iconSet', function () {
+gulp.task('iconSet', () => {
   const spriteSrc = 'icon-set';
+
   let spriteCreation = gulp
       .src([`${paths.assetsSource}/svg/${spriteSrc}/*.svg`, `!${paths.assetsSource}/svg/${spriteSrc}/_*.svg`])
       .pipe(svgSprite({
@@ -267,31 +260,36 @@ gulp.task('iconSet', function () {
 
 /**
  *
- * Copy files to npm distribution folder
+ * Prepare and copy files to npm distribution folder
  *
  */
-gulp.task('build-package', function () {
-  let packageJsonFile = gulp
+gulp.task('build-package', () => {
+  // copy package.json file and remove dependencies and devDepencies
+  const packageJsonFile = gulp
     .src('package.json')
     .pipe(plugins.replace(/\"dependencies\"\: \{([^}]*)\}/, '"dependencies": {}'))
     .pipe(plugins.replace(/\"devDependencies\"\: \{([^}]*)\}/, '"devDependencies": {}'))
     .pipe(gulp.dest(paths.npmDestination))
 
-  let readMeFile = gulp
+  // copy readme file
+  const readMeFile = gulp
     .src('README.md')
     .pipe(gulp.dest(paths.npmDestination))
 
-  let scssFiles = gulp
+  // copy scss files with settings
+  const scssFiles = gulp
     .src([`${paths.assetsSource}scss/settings/_ys-settings.scss`, `${paths.assetsSource}scss/generated/_ys-colors.scss`])
     .pipe(gulp.dest(`${paths.npmDestination}scss`));
 
-  let cssFiles = gulp
+  // copy generated css files and rename generated folder
+  const cssFiles = gulp
     .src([`${paths.destination}css/**/*.*`, `!${paths.destination}css/*.css`])
-    // change path to colors-file from generated to settings
+    // change path to colors-file from generated to settings inside scss-files
     .pipe(plugins.replace('./generated', './settings'))
     .pipe(gulp.dest(`${paths.npmDestination}css`));
 
-  let cssSettings = gulp
+  // create file with css custom properties
+  const cssSettings = gulp
     .src([`${paths.assetsSource}scss/generated/_ys-colors.scss`, `${paths.assetsSource}scss/settings/_ys-settings.scss`])
     .pipe(plugins.replace('$', '  --'))
     .pipe(plugins.insert.prepend(':root {\n'))
@@ -302,30 +300,36 @@ gulp.task('build-package', function () {
     }))
     .pipe(gulp.dest(`${paths.npmDestination}css/settings`));
 
-  let fontFiles = gulp
+  // copy font files
+  const fontFiles = gulp
     .src(`${paths.assetsSource}fonts/**/*`)
     .pipe(gulp.dest(`${paths.npmDestination}/fonts`));
 
-  let svgFiles = gulp
+  // copy svg files
+  const svgFiles = gulp
     .src(`${paths.assetsSource}svg/**/*`)
     .pipe(gulp.dest(`${paths.npmDestination}svg`));
 
-  let svgSprites = gulp
+  // copy svg sprites
+  const svgSprites = gulp
     .src(`${paths.destination}svg/sprite/*.svg`)
     .pipe(plugins.rename(function (path) {
       path.basename = path.basename + '-sprite'
     }))
     .pipe(gulp.dest(`${paths.npmDestination}svg`));
 
-  let bundleFiles = gulp
+  // copy compiled bundle files
+  const bundleFiles = gulp
     .src(`${paths.destination}css/*.css`)
     .pipe(gulp.dest(`${paths.npmDestination}`));
 
   return merge(packageJsonFile, readMeFile, scssFiles, cssFiles, cssSettings, fontFiles, svgFiles, svgSprites, bundleFiles);
 });
 
-gulp.task('npmDist', function() {
-  runSequence(['compile-assets'], 'build-package');
+gulp.task('npmDist', () => {
+  runSequence(['compile-assets'],
+    'build-package'
+  );
 });
 
 
@@ -334,13 +338,15 @@ gulp.task('npmDist', function() {
  *	Build assets
  *
  */
-gulp.task('compile-assets', function() {
-  runSequence(['jsonToScss'], 'css', 'images', 'icons', 'fonts', 'fractal-assets');
+gulp.task('compile-assets', () => {
+  runSequence(['jsonToScss'],
+    'css', 'images', 'icons', 'fonts', 'fractal-assets'
+  );
 });
 
 
 //Default
-gulp.task('default', function (callback) {
+gulp.task('default', (cb) => {
   runSequence('icons', 'jsonToScss',
     ['fractal-assets', 'css', 'images', 'watch'],
     'fractal:start'
@@ -350,7 +356,7 @@ gulp.task('default', function (callback) {
 
  /* BUILD */
  // CAUTION: Used by TRAVIS CI for automatic build and deployment - change only this task if you know what you are doing */
- gulp.task('build', function (cb) {
+ gulp.task('build', (cb) => {
   runSequence('icons', 'jsonToScss', 'fractal-assets', 'css', 'fractal:build', cb);
 });
 
@@ -360,13 +366,13 @@ gulp.task('default', function (callback) {
  * Watch for changes
  *
  */
-gulp.task('watch', function () {
-  gulp.watch([paths.assetsSource + 'scss/**/*.scss'], ['css']);
-  gulp.watch([paths.componentsSource + '**/*.scss'], ['css']);
-  gulp.watch([paths.assetsSource + 'images/**'], ['images']);
-  gulp.watch([paths.assetsSource + 'svg/**'], ['icons']);
-  gulp.watch([paths.fractal.scss + '/**/*.scss'], ['fractal-scss']);
-  gulp.watch([paths.fractal.js + '/**/*.js'], ['fractal-js']);
+gulp.task('watch', () => {
+  gulp.watch([`${paths.assetsSource}scss/**/*.scss`], ['css']);
+  gulp.watch([`${paths.componentsSource}**/*.scss`], ['css']);
+  gulp.watch([`${paths.assetsSource}images/**`], ['images']);
+  gulp.watch([`${paths.assetsSource}svg/**`], ['icons']);
+  gulp.watch([`${paths.fractal.scss}/**/*.scss`], ['fractal-scss']);
+  gulp.watch([`${paths.fractal.js}/**/*.js`], ['fractal-js']);
 });
 
 /*
@@ -388,7 +394,7 @@ const logger = fractal.cli.console; // keep a reference to the fractal CLI conso
  *
  * This task will also log any errors to the console.
  */
-gulp.task('fractal:start', ['compile-assets'], function () {
+gulp.task('fractal:start', ['compile-assets'], () => {
   const server = fractal.web.server({
     sync: true
   });
@@ -409,7 +415,7 @@ gulp.task('fractal:start', ['compile-assets'], function () {
  * The build destination will be the directory specified in the 'builder.dest'
  * configuration option set above.
  */
-gulp.task('fractal:build', function () {
+gulp.task('fractal:build', () => {
   const builder = fractal.web.builder();
   builder.on('progress', (completed, total) => logger.update(`Exported ${completed} of ${total} items`, 'info'));
   builder.on('error', err => logger.error(err.message));
@@ -423,10 +429,10 @@ gulp.task('fractal:build', function () {
  * Build Fractal theme assets
  *
  */
-gulp.task('fractal-scss', function () {
-  gulp.src(paths.fractal.scss + 'styles.scss')
+gulp.task('fractal-scss', () => {
+  gulp.src(`${paths.fractal.scss}styles.scss`)
     .pipe(plugins.sass().on('error', plugins.sass.logError))
-    .pipe(gulp.dest(paths.destination + 'theme/css'))
+    .pipe(gulp.dest(`${paths.destination}theme/css`));
 })
 
 gulp.task('fractal-js', () => {
