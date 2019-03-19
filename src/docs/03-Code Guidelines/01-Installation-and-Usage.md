@@ -2,12 +2,6 @@
 - Install with [npm](https://www.npmjs.com/): `npm install @youseedk/dna`
 - Install with [yarn](https://yarnpkg.com/): `yarn add @youseedk/dna`
 
-## CDN
-The YouSee CDN always contains the latest version and it can be included in your project using this code snippet:
-```
-<link rel="stylesheet" type="text/css" href="https://s.c.dk/styles/dna/ys-bundle.min.css" />
-```
-
 ## Usage
 The package is designed for two use cases:
 
@@ -16,16 +10,29 @@ The package is designed for two use cases:
 
 If you choose option 2, "Custom", please be aware that it is required that you include ys-base.css before including any other elements.
 
+### CDN
+It is also possible to load the bundled css files from a CDN:
+```html
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/@youseedk/dna/ys-bundle.min.css" />
+```
+will always load the latest version.
+
+If a specific version is needed, insert the version number into the URL, ie.:
+```html
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/@youseedk/dna@1.0.0/ys-bundle.min.css" />
+```
+will load version 1.0.0.
+
 ## Contents of package
 The package is organized in the following structure:
-```text
+```plaintext
 dna/
 ├── css/
 │   ├── base
 │   ├── elements
 │   ├── icons
 │   ├── layout
-│   ├── s&#x200b;ettings
+│   ├── settings
 ├── fonts/
 ├── scss/
 ├── svg/
