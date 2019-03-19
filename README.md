@@ -5,7 +5,7 @@
   <a href="https://dna.yousee.dk"><strong>YouSee DNA documentation</strong></a> · <a href="https://github.com/youseedk/dna"><strong>YouSee DNA on GitHub</strong></a>
 </p>
 
-[![Build Status](https://travis-ci.org/youseedk/dna.svg?branch=master)](https://travis-ci.org/youseedk/dna)
+[![Build Status](https://travis-ci.com/youseedk/dna.svg?branch=master)](https://travis-ci.com/youseedk/dna)
 [![npm version](https://img.shields.io/npm/v/@youseedk/dna.svg)](https://www.npmjs.com/package/@youseedk/dna)
 [![Last Commit](https://img.shields.io/github/last-commit/youseedk/dna/master.svg)](https://github.com/youseedk/dna)
 
