@@ -1,0 +1,15 @@
+<link rel="icon" type="image/png" href="https://s.c.dk/images/yousee/favicon.png"/>
+{% include 'partials/stylesheets.nunj' %}
+
+{% if page.title == "Welcome" %} {# <-- This needs to match the homepage title #}
+    <title>{{ frctl.get('project.title') }}</title>
+{% else %}
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ frctl.get('project.title') }}</title>
+{% endif %}
+
+{# We remove below items in localStorage that Fractal sets default.
+   This is to always collapse the tree in leftmenu on location.reload #}
+<script>
+    localStorage.removeItem('tree.tree-docs.state');
+    localStorage.removeItem('tree.tree-components.state');
+</script>
