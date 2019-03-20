@@ -74,9 +74,8 @@ const paths = {
 gulp.task('css', function () {
   const processors = [
     cssnext({
-      browsers: '> 1% in DK',
       features: {
-        calc: false,
+        calc: false
       }
     })
   ];
