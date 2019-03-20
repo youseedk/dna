@@ -7,8 +7,9 @@
     <title>{% if page.title %}{{ page.title }} | {% endif %}{{ frctl.get('project.title') }}</title>
 {% endif %}
 
-{# We remove below items in localStorage that Fractal sets default. This is to always collapse the tree in leftmenu on location.reload #}
+{# We remove below items in localStorage that Fractal sets default.
+   This is to always collapse the tree in leftmenu on location.reload #}
 <script>
     localStorage.removeItem('tree.tree-docs.state');
     localStorage.removeItem('tree.tree-components.state');
-</Script>
+</script>
