@@ -23,9 +23,9 @@ $container-max-widths: (
 );
 
 $grid-columns: 12;
-$grid-gutter-width: $grid-column-sm-padding;
+$grid-gutter-width: $grid-column-padding;
 
-// Import the bootstrap modules - check gulp file for include technique
+// Import the bootstrap modules
 @import 'mixins/breakpoints';
 @import 'mixins/grid-framework';
 @import 'mixins/grid';
@@ -51,20 +51,20 @@ $grid-gutter-width: $grid-column-sm-padding;
 
   .container,
   .container-fluid {
-    padding-left: $container-md-padding;
-    padding-right: $container-md-padding;
+    padding-left: $container-sm-padding;
+    padding-right: $container-sm-padding;
   }
 
   .container .row,
   .container-fluid .row {
-    margin-left: -$container-md-padding;
-    margin-right: -$container-md-padding;
+    margin-left: -$grid-column-sm-padding / 2;
+    margin-right: -$grid-column-sm-padding / 2;
   }
 
   .container *[class*='col'],
   .container-fluid *[class*='col'] {
-    padding-left: $container-md-padding;
-    padding-right: $container-md-padding;
+    padding-left: $grid-column-sm-padding / 2;
+    padding-right: $grid-column-sm-padding / 2;
   }
 }
 
@@ -78,14 +78,14 @@ $grid-gutter-width: $grid-column-sm-padding;
 
   .container .row,
   .container-fluid .row {
-    margin-left: -$container-md-padding;
-    margin-right: -$container-md-padding;
+    margin-left: -$grid-column-md-padding / 2;
+    margin-right: -$grid-column-md-padding / 2;
   }
 
   .container *[class*='col'],
   .container-fluid *[class*='col'] {
-    padding-left: $container-md-padding;
-    padding-right: $container-md-padding;
+    padding-left: $grid-column-md-padding / 2;
+    padding-right: $grid-column-md-padding / 2;
   }
 }
 
