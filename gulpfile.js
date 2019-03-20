@@ -44,9 +44,20 @@ const merge = require('merge-stream');
 
 const paths = {
   componentsSource: 'src/components/',
-  assetsSource: 'src/assets/',
+  assetsSource: {
+    fonts: 'src/assets/fonts/',
+    images: 'src/assets/images/',
+    scss: 'src/assets/scss/',
+    svg: 'src/assets/svg/'
+  },
   tokensSource: 'src/tokens/',
-  destination: 'public/assets/',
+  destination: {
+    css: 'public/assets/css/',
+    fonts: 'public/assets/fonts/',
+    images: 'public/assetsimages/',
+    svg: 'public/assets/svg/',
+    theme: 'public/assets/theme/'
+  },
   npmDestination: 'dist-npm/',
   fractal: {
     scss: 'fractal-theme/assets/scss/',
@@ -78,28 +89,28 @@ gulp.task('css', function () {
   ];
 
   const ysBundle = gulp
-    .src(`${paths.assetsSource}scss/*.scss`)
+    .src(`${paths.assetsSource.scss}/*.scss`)
     .pipe(plugins.sass({
       outputStyle: 'expanded',
       includePaths: ['node_modules/bootstrap/scss/']
     }).on('error', plugins.sass.logError))
     .pipe(plugins.postcss(processors))
-    .pipe(gulp.dest(paths.destination + 'css'))
+    .pipe(gulp.dest(paths.destination.css))
     .pipe(plugins.postcss(minifying))
     .pipe(plugins.rename({
       extname: '.min.css'
     }))
-    .pipe(gulp.dest(`${paths.destination}css`));
+    .pipe(gulp.dest(paths.destination.css));
 
   const ysParts = gulp
-    .src([`${paths.assetsSource}scss/**/*.scss`, `!${paths.assetsSource}scss/ys-bundle.scss`])
+    .src([`${paths.assetsSource.scss}/**/*.scss`, `!${paths.assetsSource.scss}/ys-bundle.scss`])
     .pipe(plugins.sass({
       outputStyle: 'expanded',
       includePaths: ['node_modules/bootstrap/scss/']
     }).on('error', plugins.sass.logError))
     .pipe(plugins.postcss(processors))
     .pipe(plugins.postcss(minifying))
-    .pipe(gulp.dest(`${paths.destination}css`));
+    .pipe(gulp.dest(paths.destination.css));
 
   return merge(ysBundle, ysParts);
 });
@@ -140,7 +151,7 @@ gulp.task('jsonToScss', function () {
     .pipe(plugins.replace('-accent-greys', ''))
     .pipe(plugins.replace('color-accent-', 'color-'))
     .pipe(plugins.rename('_ys-colors.scss'))
-    .pipe(gulp.dest(`${paths.assetsSource}scss/generated`))
+    .pipe(gulp.dest(`${paths.assetsSource.scss}/generated`))
 });
 
 
@@ -151,10 +162,10 @@ gulp.task('jsonToScss', function () {
  */
 gulp.task('images', () => {
   return gulp
-    .src(`${paths.assetsSource}img/**`)
-    .pipe(plugins.newer(`${paths.destination}img`))
+    .src(`${paths.assetsSource.images}/**`)
+    .pipe(plugins.newer(paths.destination.images))
     .pipe(plugins.imagemin())
-    .pipe(gulp.dest(`${paths.destination}img`));
+    .pipe(gulp.dest(paths.destination.images));
 });
 
 /**
@@ -164,9 +175,9 @@ gulp.task('images', () => {
  */
 gulp.task('fonts', () => {
   return gulp
-    .src(`${paths.assetsSource}fonts/**`)
-    .pipe(plugins.newer(`${paths.destination}fonts`))
-    .pipe(gulp.dest(`${paths.destination}fonts`));
+    .src(`${paths.assetsSource.fonts}/**`)
+    .pipe(plugins.newer(paths.destination.fonts))
+    .pipe(gulp.dest(paths.destination.fonts));
 });
 
 
@@ -185,7 +196,7 @@ gulp.task('uiIcons', () => {
   const spriteSrc = 'ui-icons';
 
   let spriteCreation = gulp
-      .src(`${paths.assetsSource}/svg/${spriteSrc}/*.svg`)
+      .src(`${paths.assetsSource.svg}/${spriteSrc}/*.svg`)
       .pipe(svgSprite({
         mode: {
           symbol: {
@@ -200,20 +211,20 @@ gulp.task('uiIcons', () => {
         }
       }))
       .pipe(plugins.replace('id="', `id="ys-${spriteSrc}-`))
-      .pipe(gulp.dest(paths.destination + 'svg'));
+      .pipe(gulp.dest(paths.destination.svg));
 
     // create json file lists
     let fileList = gulp
-      .src(`${paths.assetsSource}/svg/${spriteSrc}/*.svg`)
+      .src(`${paths.assetsSource.svg}/${spriteSrc}/*.svg`)
       .pipe(plugins.filelist(`${spriteSrc}.json`))
       .pipe(plugins.replace(`src/assets/svg/${spriteSrc}/`, ''))
       .pipe(gulp.dest(`${paths.tokensSource}generated`));
 
       // copy svg files to public
     let copyTask = gulp
-      .src(`${paths.assetsSource}svg/${spriteSrc}/*.svg`)
-      .pipe(plugins.newer(`${paths.destination}svg/${spriteSrc}`))
-      .pipe(gulp.dest(`${paths.destination}/svg/${spriteSrc}`))
+      .src(`${paths.assetsSource.svg}/${spriteSrc}/*.svg`)
+      .pipe(plugins.newer(`${paths.destination.svg}/${spriteSrc}`))
+      .pipe(gulp.dest(`${paths.destination.svg}/${spriteSrc}`))
 
     return merge(spriteCreation, fileList, copyTask);
 })
@@ -222,7 +233,7 @@ gulp.task('iconSet', () => {
   const spriteSrc = 'icon-set';
 
   let spriteCreation = gulp
-      .src([`${paths.assetsSource}/svg/${spriteSrc}/*.svg`, `!${paths.assetsSource}/svg/${spriteSrc}/_*.svg`])
+      .src([`${paths.assetsSource.svg}/${spriteSrc}/*.svg`, `!${paths.assetsSource.svg}/${spriteSrc}/_*.svg`])
       .pipe(svgSprite({
         mode: {
           symbol: {
@@ -237,23 +248,23 @@ gulp.task('iconSet', () => {
         }
       }))
       .pipe(plugins.replace('id="', `id="ys-${spriteSrc}-`))
-      .pipe(gulp.dest(paths.destination + 'svg'));
+      .pipe(gulp.dest(paths.destination.svg));
 
     // create json file lists
     let fileList = gulp
-      .src([`${paths.assetsSource}/svg/${spriteSrc}/*.svg`, `!${paths.assetsSource}/svg/${spriteSrc}/_*.svg`])
+      .src([`${paths.assetsSource.svg}/${spriteSrc}/*.svg`, `!${paths.assetsSource.svg}/${spriteSrc}/_*.svg`])
       .pipe(plugins.filelist(`${spriteSrc}.json`))
       .pipe(plugins.replace(`src/assets/svg/${spriteSrc}/`, ''))
       .pipe(gulp.dest(`${paths.tokensSource}generated`));
 
-      // copy svg files to public
+    // copy svg files to public
     let copyTask = gulp
-      .src(`${paths.assetsSource}svg/${spriteSrc}/*.svg`)
-      .pipe(plugins.newer(`${paths.destination}svg/${spriteSrc}`))
+      .src(`${paths.assetsSource.svg}/${spriteSrc}/*.svg`)
+      .pipe(plugins.newer(`${paths.destination.svg}/${spriteSrc}`))
       .pipe(plugins.rename(function (path) {
         path.basename = path.basename.replace('_', '')
       }))
-      .pipe(gulp.dest(`${paths.destination}/svg/${spriteSrc}`))
+      .pipe(gulp.dest(`${paths.destination.svg}/${spriteSrc}`))
 
     return merge(spriteCreation, fileList, copyTask);
 })
@@ -278,19 +289,19 @@ gulp.task('build-package', () => {
 
   // copy scss files with settings
   const scssFiles = gulp
-    .src([`${paths.assetsSource}scss/settings/_ys-settings.scss`, `${paths.assetsSource}scss/generated/_ys-colors.scss`])
+    .src([`${paths.assetsSource.scss}/settings/_ys-settings.scss`, `${paths.assetsSource.scss}/generated/_ys-colors.scss`])
     .pipe(gulp.dest(`${paths.npmDestination}scss`));
 
   // copy generated css files and rename generated folder
   const cssFiles = gulp
-    .src([`${paths.destination}css/**/*.*`, `!${paths.destination}css/*.css`])
+    .src([`${paths.destination.css}/**/*.*`, `!${paths.destination.css}/*.css`])
     // change path to colors-file from generated to settings inside scss-files
     .pipe(plugins.replace('./generated', './settings'))
     .pipe(gulp.dest(`${paths.npmDestination}css`));
 
   // create file with css custom properties
   const cssSettings = gulp
-    .src([`${paths.assetsSource}scss/generated/_ys-colors.scss`, `${paths.assetsSource}scss/settings/_ys-settings.scss`])
+    .src([`${paths.assetsSource.scss}/generated/_ys-colors.scss`, `${paths.assetsSource.scss}/settings/_ys-settings.scss`])
     .pipe(plugins.replace('$', '  --'))
     .pipe(plugins.insert.prepend(':root {\n'))
     .pipe(plugins.insert.append('\n}'))
@@ -302,17 +313,17 @@ gulp.task('build-package', () => {
 
   // copy font files
   const fontFiles = gulp
-    .src(`${paths.assetsSource}fonts/**/*`)
+    .src(`${paths.assetsSource.fonts}/**/*`)
     .pipe(gulp.dest(`${paths.npmDestination}/fonts`));
 
   // copy svg files
   const svgFiles = gulp
-    .src(`${paths.assetsSource}svg/**/*`)
+    .src(`${paths.assetsSource.svg}/**/*`)
     .pipe(gulp.dest(`${paths.npmDestination}svg`));
 
   // copy svg sprites
   const svgSprites = gulp
-    .src(`${paths.destination}svg/sprite/*.svg`)
+    .src(`${paths.destination.svg}/sprite/*.svg`)
     .pipe(plugins.rename(function (path) {
       path.basename = path.basename + '-sprite'
     }))
@@ -320,7 +331,7 @@ gulp.task('build-package', () => {
 
   // copy compiled bundle files
   const bundleFiles = gulp
-    .src(`${paths.destination}css/*.css`)
+    .src(`${paths.destination.css}/*.css`)
     .pipe(gulp.dest(`${paths.npmDestination}`));
 
   return merge(packageJsonFile, readMeFile, scssFiles, cssFiles, cssSettings, fontFiles, svgFiles, svgSprites, bundleFiles);
@@ -367,10 +378,10 @@ gulp.task('default', (cb) => {
  *
  */
 gulp.task('watch', () => {
-  gulp.watch([`${paths.assetsSource}scss/**/*.scss`], ['css']);
+  gulp.watch([`${paths.assetsSource.scss}/**/*.scss`], ['css']);
   gulp.watch([`${paths.componentsSource}**/*.scss`], ['css']);
-  gulp.watch([`${paths.assetsSource}images/**`], ['images']);
-  gulp.watch([`${paths.assetsSource}svg/**`], ['icons']);
+  gulp.watch([`${paths.assetsSource.images}/**`], ['images']);
+  gulp.watch([`${paths.assetsSource.svg}/**`], ['icons']);
   gulp.watch([`${paths.fractal.scss}/**/*.scss`], ['fractal-scss']);
   gulp.watch([`${paths.fractal.js}/**/*.js`], ['fractal-js']);
 });
@@ -432,12 +443,12 @@ gulp.task('fractal:build', () => {
 gulp.task('fractal-scss', () => {
   gulp.src(`${paths.fractal.scss}styles.scss`)
     .pipe(plugins.sass().on('error', plugins.sass.logError))
-    .pipe(gulp.dest(`${paths.destination}theme/css`));
+    .pipe(gulp.dest(`${paths.destination.theme}/css`));
 })
 
 gulp.task('fractal-js', () => {
   var babelify = require("babelify");
-  const sourcefile = paths.fractal.js + 'scripts.js';
+  const sourcefile = `${paths.fractal.js}/scripts.js`;
   return browserify({
       entries: [sourcefile]
     }).transform('babelify', {
@@ -445,15 +456,15 @@ gulp.task('fractal-js', () => {
     })
     .bundle()
     .pipe(source('scripts.js'))
-    .pipe(gulp.dest(paths.destination + 'theme/js'));
+    .pipe(gulp.dest(`${paths.destination.theme}/js`));
 });
 
 gulp.task('fractal-images', () => {
   gulp.src(`${paths.fractal.images}**/*.*`)
-    .pipe(gulp.dest(`${paths.destination}theme/images`));
+    .pipe(gulp.dest(`${paths.destination.theme}/images`));
 })
 
-/* Used for making custom domain "dns.yousee.dk" work with github pages */
+/* Used for making custom domain "dna.yousee.dk" work with github pages */
 gulp.task('cname', () => {
   gulp.src('config/CNAME')
     .pipe(gulp.dest('dist-site'));
