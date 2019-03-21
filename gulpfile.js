@@ -7,7 +7,7 @@
 // Available tasks:
 //   `gulp css`
 //   `gulp lint-scss``
-//   `gulp importChangelogFile`
+//   `gulp import-changelog-file`
 //   `gulp jsonToScss`
 //   `gulp images`
 //   `gulp fonts`
@@ -146,7 +146,7 @@ gulp.task('lint-scss', () => {
  * Import Github releases json file
  *
  */
-gulp.task('importChangelogFile', () => {
+gulp.task('import-changelog-file', () => {
   return request({
     url: 'https://api.github.com/repos/youseedk/dna/releases',
     headers: {
@@ -385,7 +385,7 @@ gulp.task('compile-assets', () => {
 
 //Default
 gulp.task('default', (cb) => {
-  runSequence('icons', 'jsonToScss', 'importChangelogFile',
+  runSequence('icons', 'jsonToScss', 'import-changelog-file',
     ['fractal-assets', 'css', 'images', 'watch'],
     'fractal:start'
   );
@@ -395,7 +395,7 @@ gulp.task('default', (cb) => {
  /* BUILD */
  // CAUTION: Used by TRAVIS CI for automatic build and deployment - change only this task if you know what you are doing */
  gulp.task('build', (cb) => {
-  runSequence('importChangelogFile', 'icons', 'jsonToScss', 'fractal-assets', 'css', 'fractal:build', 'cname', cb);
+  runSequence('import-changelog-file', 'icons', 'jsonToScss', 'fractal-assets', 'css', 'fractal:build', 'cname', cb);
 });
 
 
