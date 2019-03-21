@@ -5,19 +5,28 @@
 // *************************************
 //
 // Available tasks:
-//   `gulp`
 //   `gulp css`
+//   `gulp lint-scss``
+//   `gulp import-changelog-file`
 //   `gulp jsonToScss`
 //   `gulp images`
 //   `gulp fonts`
 //   `gulp icons`
+//   `gulp uiIcons`
+//   `gulp buildPackage`
 //   `gulp npmDist`
-//   `gulp fractalTheme`
-//   `gulp lint:scss`
 //   `gulp compile-assets`
+//   `gulp`
 //   `gulp build`
 //   `gulp watch`
+//   `gulp fractal:start`
 //   `gulp fractal:build`
+//   `gulp fractal-scss`
+//   `gulp fractal-js`
+//   `gulp fractal-images`
+//   `gulp fractal-favicon`
+//   `gulp cname`
+//   `gulp fractal-assets`
 //
 // *************************************
 
@@ -41,6 +50,7 @@ const tinycolor = require('tinycolor2');
 const svgSprite = require('gulp-svg-sprite');
 const runSequence = require('run-sequence');
 const merge = require('merge-stream');
+const request = require('request');
 
 const paths = {
   componentsSource: 'src/components/',
@@ -72,7 +82,7 @@ const paths = {
  * Create CSS files from SCSS files
  *
  */
-gulp.task('css', function () {
+gulp.task('css', () => {
   const processors = [
     cssnext({
       features: {
@@ -133,10 +143,27 @@ gulp.task('lint-scss', () => {
 
 /**
  *
+ * Import Github releases json file
+ *
+ */
+gulp.task('import-changelog-file', () => {
+  return request({
+    url: 'https://api.github.com/repos/youseedk/dna/releases',
+    headers: {
+        'User-Agent': 'request'
+    }
+  })
+  .pipe(source('github-releases.json'))
+  .pipe(gulp.dest(`${paths.tokensSource}/generated`));
+})
+
+
+/**
+ *
  *	Convert colors.json file to .scss-file
  *
  */
-gulp.task('jsonToScss', function () {
+gulp.task('jsonToScss', () => {
   return gulp.
     src([`${paths.tokensSource}colors.json`])
     .pipe(jsonSass({
@@ -261,7 +288,7 @@ gulp.task('iconSet', () => {
     let copyTask = gulp
       .src(`${paths.assetsSource.svg}/${spriteSrc}/*.svg`)
       .pipe(plugins.newer(`${paths.destination.svg}/${spriteSrc}`))
-      .pipe(plugins.rename(function (path) {
+      .pipe(plugins.rename( (path) => {
         path.basename = path.basename.replace('_', '')
       }))
       .pipe(gulp.dest(`${paths.destination.svg}/${spriteSrc}`))
@@ -305,7 +332,7 @@ gulp.task('build-package', () => {
     .pipe(plugins.replace('$', '  --'))
     .pipe(plugins.insert.prepend(':root {\n'))
     .pipe(plugins.insert.append('\n}'))
-    .pipe(plugins.rename(function (path) {
+    .pipe(plugins.rename( (path) => {
       path.basename = path.basename.replace('_', ''),
       path.extname = '.css'
     }))
@@ -324,7 +351,7 @@ gulp.task('build-package', () => {
   // copy svg sprites
   const svgSprites = gulp
     .src(`${paths.destination.svg}/sprite/*.svg`)
-    .pipe(plugins.rename(function (path) {
+    .pipe(plugins.rename( (path) => {
       path.basename = path.basename + '-sprite'
     }))
     .pipe(gulp.dest(`${paths.npmDestination}svg`));
@@ -358,7 +385,7 @@ gulp.task('compile-assets', () => {
 
 //Default
 gulp.task('default', (cb) => {
-  runSequence('icons', 'jsonToScss',
+  runSequence('icons', 'jsonToScss', 'import-changelog-file',
     ['fractal-assets', 'css', 'images', 'watch'],
     'fractal:start'
   );
@@ -368,7 +395,7 @@ gulp.task('default', (cb) => {
  /* BUILD */
  // CAUTION: Used by TRAVIS CI for automatic build and deployment - change only this task if you know what you are doing */
  gulp.task('build', (cb) => {
-  runSequence('icons', 'jsonToScss', 'fractal-assets', 'css', 'fractal:build', 'cname', cb);
+  runSequence('import-changelog-file', 'icons', 'jsonToScss', 'fractal-assets', 'css', 'fractal:build', 'cname', cb);
 });
 
 
