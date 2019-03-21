@@ -2,7 +2,7 @@ The CSS codebase is a Sass solution (we use the SCSS syntax) with BEM as naming 
 
 We use stylelint to test for possible errors and formatting issues. You can install tools like stylelint for Visual Studio Code to give you instant feedback on your code. You may also run the gulp task "stylelint" to test your scss code for errors.
 
-We encougare you to follow these guidelines. If you fail to do so your code will properly;
+We encourage you to follow these guidelines. If you fail to do so your code will probably;
 
 -  make the code base less consistent
 -  add unnecessary time to your pull request reviewers (because of comments)
