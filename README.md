@@ -39,6 +39,7 @@ dna/
 │   │   ├── ys-flow-steps.css
 │   │   ├── ys-input-field.css
 │   │   ├── ys-link.css
+│   │   ├── ys-logo.css
 │   │   ├── ys-notification.css
 │   │   ├── ys-progress.css
 │   │   ├── ys-radio-button.css
