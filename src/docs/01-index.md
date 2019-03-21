@@ -2,6 +2,4 @@
 title: Welcome
 ---
 
-<div class="frctl-overview">
-    <p>Last deployment: <b class="frctl-last-build-time"></b></p>
-</div>
+<p>Last deployment: <b>{{date "now" "DD MMM YYYY HH:mm:ss"}}</b></p>

@@ -1,9 +1,7 @@
 import colorHexMatches from './src/colors';
-import lastBuild from './src/overview';
 
 const modules = [
   {selector: '.frctl-example', init: colorHexMatches},
-  {selector: '.frctl-overview', init: lastBuild},
 ];
 
 modules.forEach((module) => {

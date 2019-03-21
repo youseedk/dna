@@ -65,6 +65,7 @@
   },
   "devDependencies": {
     "gulp-insert": "^0.5.0",
+    "handlebars-helpers": "^0.10.0",
     "merge-stream": "^1.0.1",
     "request": "^2.88.0",
     "stylelint": "^9.10.1",
