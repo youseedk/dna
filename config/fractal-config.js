@@ -1,8 +1,13 @@
 'use strict';
 
 const fractal = require('@frctl/fractal').create();
-
 const projectPackage = require('../package.json');
+const instance = fractal.docs.engine();
+
+const helpers = require('handlebars-helpers');
+helpers({
+    handlebars: instance.handlebars
+});
 
 fractal.set('project.title', 'YouSee DNA'); // title for the project
 fractal.set('project.version', projectPackage.version);
