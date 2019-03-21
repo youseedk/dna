@@ -7,6 +7,7 @@
 // Available tasks:
 //   `gulp`
 //   `gulp css`
+//   `gulp importChangelogFile`
 //   `gulp jsonToScss`
 //   `gulp images`
 //   `gulp fonts`
@@ -41,6 +42,7 @@ const tinycolor = require('tinycolor2');
 const svgSprite = require('gulp-svg-sprite');
 const runSequence = require('run-sequence');
 const merge = require('merge-stream');
+const request = require('request');
 
 const paths = {
   componentsSource: 'src/components/',
@@ -129,6 +131,23 @@ gulp.task('lint-scss', () => {
       }]
     }));
 });
+
+/**
+ *
+ * Import Github releases json file
+ *
+ */
+gulp.task('importChangelogFile', () => {
+  return request({
+    url: 'https://api.github.com/repos/youseedk/dna/releases',
+    headers: {
+        'User-Agent': 'request'
+    }
+  })
+  .pipe(source('github-releases.json'))
+  .pipe(gulp.dest(`${paths.tokensSource}/generated`));
+})
+
 
 /**
  *
@@ -357,7 +376,7 @@ gulp.task('compile-assets', () => {
 
 //Default
 gulp.task('default', (cb) => {
-  runSequence('icons', 'jsonToScss',
+  runSequence('icons', 'jsonToScss', 'importChangelogFile',
     ['fractal-assets', 'css', 'images', 'watch'],
     'fractal:start'
   );
@@ -367,7 +386,7 @@ gulp.task('default', (cb) => {
  /* BUILD */
  // CAUTION: Used by TRAVIS CI for automatic build and deployment - change only this task if you know what you are doing */
  gulp.task('build', (cb) => {
-  runSequence('icons', 'jsonToScss', 'fractal-assets', 'css', 'fractal:build', 'cname', cb);
+  runSequence('importChangelogFile', 'icons', 'jsonToScss', 'fractal-assets', 'css', 'fractal:build', 'cname', cb);
 });
 
 

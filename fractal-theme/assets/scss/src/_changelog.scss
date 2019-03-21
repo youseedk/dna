@@ -1,0 +1,68 @@
+.changelog {}
+
+.changelog-item {
+  position: relative;
+  border: 1px solid #ccc;
+}
+
+.changelog-item + .changelog-item {
+  margin-top: 24px;
+}
+
+.changelog-item:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.changelog-avatar,
+.changelog-details {
+  margin: 12px;
+}
+
+.changelog-avatar {
+  float: right;
+  width: 40px;
+  height: 40px;
+}
+
+@media screen and (min-width: 576px) {
+  .changelog-avatar {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.changelog-avatar img {
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+}
+
+.changelog-details {
+  width: calc(100% - 100px);
+}
+
+h2.changelog-title {
+  font-size: 1.25em;
+  margin: 0 0 .5em;
+}
+
+.changelog-desc {
+  margin: 0;
+  width: 100%;
+  height: 1.5em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.changelog-released {
+  font-size: 12px;
+  line-height: 1.33;
+  position: absolute;
+  left: 16px;
+  top: -8px;
+  background-color: #fff;
+  outline: 2px solid #fff;
+}
