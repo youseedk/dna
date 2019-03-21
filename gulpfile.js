@@ -62,7 +62,8 @@ const paths = {
   fractal: {
     scss: 'fractal-theme/assets/scss/',
     js: 'fractal-theme/assets/js/',
-    images: 'fractal-theme/assets/images/'
+    images: 'fractal-theme/assets/images/',
+    favicons: 'fractal-theme/assets/favicon/'
   }
 }
 
@@ -461,7 +462,12 @@ gulp.task('fractal-js', () => {
 gulp.task('fractal-images', () => {
   gulp.src(`${paths.fractal.images}**/*.*`)
     .pipe(gulp.dest(`${paths.destination.theme}/images`));
-})
+});
+
+gulp.task('fractal-favicon', () => {
+  gulp.src(`${paths.fractal.favicons}/*.*`)
+    .pipe(gulp.dest(`${paths.destination.theme}/favicon`));
+});
 
 /* Used for making custom domain "dna.yousee.dk" work with github pages */
 gulp.task('cname', () => {
@@ -469,4 +475,4 @@ gulp.task('cname', () => {
     .pipe(gulp.dest('dist-site'));
 })
 
-gulp.task('fractal-assets', ['fractal-scss', 'fractal-js', 'fractal-images']);
+gulp.task('fractal-assets', ['fractal-scss', 'fractal-js', 'fractal-images', 'fractal-favicon']);
