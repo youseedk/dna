@@ -5,7 +5,6 @@
 -  [Lower case elements and attributes](#lower-case-elements-and-attributes)
 -  [Quote attribute values](#quote-attribute-values)
 -  [Image attributes](#image-attributes)
--  [Spaces and equal signs](#spaces-and-equal-signs)
 -  [Boolean attributes](#boolean-attributes)
 -  [Break spaces](#break-spaces)
 -  [Break element](#break-element)
@@ -90,18 +89,6 @@ Informative elements should aim for short, descriptive alternate text. Decorativ
       <img src="sc.png" alt="" /> <!-- Screenreaders will skip/ignore this image. Useful if the image is only decorative -->
       <img src="sc.png" alt="Sitecore" /> <!-- Screenreaders will read the alternative text "Sitecore" -->
 
-## Spaces and equal signs
-
-Spaces around equal signs is Bad example
-
-**Bad example**
-
-      <link rel ="stylesheet" href="styles.css">
-
-**Good example**
-
-      <link rel="stylesheet" href="styles.css">
-
 ## Boolean attributes
 
 Please use attribute minimization when you can.
@@ -124,6 +111,7 @@ Use CSS to add padding or margin instead.
 
 ## Break element
 
-Usage of the `<br>` element should be avoided. This element/tag is something WYSIWYG editors inserts do do a linebreak in parapgraphs.
+Usage of the `<br>` element should be avoided. This element/tag is something WYSIWYG editors inserts to do a linebreak in parapgraphs.
+Use CSS to add padding or margin instead.
 
 
