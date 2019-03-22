@@ -77,6 +77,9 @@ const paths = {
   }
 }
 
+const githubClientId = process.env.GITHUB_AUTH_CLIENTID;
+const githubClientSecret = process.env.GITHUB_AUTH_SECRET;
+
 /**
  *
  * Create CSS files from SCSS files
@@ -147,22 +150,31 @@ gulp.task('lint-scss', () => {
  *
  */
 gulp.task('import-changelog-file', () => {
-  return request({
-    url: 'https://api.github.com/repos/youseedk/dna/releases',
-    headers: {
-        'User-Agent': 'request'
+  let url = "https://api.github.com/repos/youseedk/dna/releases";
+  if(githubClientId && githubClientSecret) {
+    url = `${url}?client_id=${githubClientId}&client_secret=${githubClientSecret}`;
+  }
+  return request(
+    {
+      url: url,
+      method: "get",
+      headers: {
+        "user-agent": "User-Agent"
+      }
+    },
+    function(error, response, body) {
+      if(error) {
+        console.error(error);
+      }
     }
-  })
-  .on('response', (response) => {
-    console.log(response.statusCode);
-  })
+  )
   .pipe(source('github-releases.json'))
   .pipe(gulp.dest(`${paths.tokensSource}/generated`));
 })
 
 
 /**
- *
+
  *	Convert colors.json file to .scss-file
  *
  */
