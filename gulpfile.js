@@ -77,6 +77,9 @@ const paths = {
   }
 }
 
+const githubClientId = process.env.GITHUB_AUTH_CLIENTID;
+const githubClientSecret = process.env.GITHUB_AUTH_SECRET;
+
 /**
  *
  * Create CSS files from SCSS files
@@ -147,9 +150,13 @@ gulp.task('lint-scss', () => {
  *
  */
 gulp.task('import-changelog-file', () => {
+  let url = "https://api.github.com/repos/youseedk/dna/releases";
+  if(githubClientId && githubClientSecret) {
+    url = `${url}?client_id=${githubClientId}&client_secret=${githubClientSecret}`;
+  }
   return request(
     {
-      url: "https://api.github.com/repos/youseedk/dna/releases",
+      url: url,
       method: "get",
       headers: {
         "user-agent": "User-Agent"
@@ -158,10 +165,7 @@ gulp.task('import-changelog-file', () => {
     function(error, response, body) {
       if(error) {
         console.error(error);
-      } else {
-        console.log(body);
       }
-
     }
   )
   .pipe(source('github-releases.json'))
