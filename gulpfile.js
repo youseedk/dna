@@ -153,6 +153,9 @@ gulp.task('import-changelog-file', () => {
         'User-Agent': 'request'
     }
   })
+  .on('response', (response) => {
+    console.log(response.statusCode);
+  })
   .pipe(source('github-releases.json'))
   .pipe(gulp.dest(`${paths.tokensSource}/generated`));
 })
@@ -395,7 +398,7 @@ gulp.task('default', (cb) => {
  /* BUILD */
  // CAUTION: Used by TRAVIS CI for automatic build and deployment - change only this task if you know what you are doing */
  gulp.task('build', (cb) => {
-  runSequence('import-changelog-file', 'icons', 'jsonToScss', 'fractal-assets', 'css', 'fractal:build', 'cname', cb);
+  runSequence(['import-changelog-file', 'jsonToScss'], 'icons', 'fractal-assets', 'css', 'fractal:build', 'cname', cb);
 });
 
 
