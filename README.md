@@ -102,20 +102,6 @@ It is also possible to load the bundled css files from a CDN:
 If a specific version is needed, insert the version number into the URL, ie.:
 `<link rel="stylesheet" type="text/css" href="https://unpkg.com/@youseedk/dna@1.0.0/ys-bundle.min.css" />` will load version 1.0.0.
 
-## Browser Support
-All contents in YouSee DNA is build for and tested in the following browsers:
-
-### Desktop
-- Internet Explorer 11
-- Chrome (2 latest versions) for Windows and MacOS
-- Firefox (2 latest versions) for Windows and MacOS
-- Safari (2 latest versions) for MacOS
-- Edge (2 latest versions) for Windows
-
-### Mobile/Tablet
-- Chrome (2 latest versions) for iOS and Android
-- Safari (2 latest versions) for iOS
-
 ## Documentation
 YouSee DNA's documentation is built with [Fractal](https://fractal.build/), deployed on [GitHub Pages](https://pages.github.com/) using [Travis CI](https://travis-ci.com).
 
