@@ -13,7 +13,6 @@
 
 - [Install](#install)
 - [Contents](#contents)
-- [Browser Support](#browser-support)
 - [Documentation](#documentation)
 - [Local Documentation](#local-documentation)
 
