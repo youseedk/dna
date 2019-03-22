@@ -147,22 +147,30 @@ gulp.task('lint-scss', () => {
  *
  */
 gulp.task('import-changelog-file', () => {
-  return request({
-    url: 'https://api.github.com/repos/youseedk/dna/releases',
-    headers: {
-        'User-Agent': 'request'
+  return request(
+    {
+      url: "https://api.github.com/repos/youseedk/dna/releases",
+      method: "get",
+      headers: {
+        "user-agent": "User-Agent"
+      }
+    },
+    function(error, response, body) {
+      if(error) {
+        console.error(error);
+      } else {
+        console.log(body);
+      }
+
     }
-  })
-  .on('response', (response) => {
-    console.log(response.statusCode);
-  })
+  )
   .pipe(source('github-releases.json'))
   .pipe(gulp.dest(`${paths.tokensSource}/generated`));
 })
 
 
 /**
- *
+
  *	Convert colors.json file to .scss-file
  *
  */
