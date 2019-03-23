@@ -1,33 +1,27 @@
 /* Palette container */
-.colors {
+.icons {
   box-sizing: border-box;
-
-  &__palette {
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-
-    & + & {
-      margin-top: 12px;
-    }
-  }
-
-  &__title {
-    flex: 0 0 100%;
-    font-size: 20px;
-    text-transform: capitalize;
-
-    &:first-child {
-      margin-top: 20px;
-    }
-  }
+  display: flex;
+  flex-wrap: wrap;
 
   &__item {
-    display: block;
-    margin: 12px 12px 0 0;
-    width: 150px;
-    border-radius: 8px;
-    overflow: hidden;
+    margin: 10px;
+    border: 1px solid #ddd;
+    width: 100px;
+    height: 100px;
+  }
+
+  &__icon {
+
+    svg {
+      color: red;
+      width: 100%;
+      heiht: 100%;
+    }
+  }
+
+  &__name {
+    color: blue;
   }
 
   &__color-swatch {

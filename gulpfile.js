@@ -260,6 +260,7 @@ gulp.task('uiIcons', () => {
       .src(`${paths.assetsSource.svg}/${spriteSrc}/*.svg`)
       .pipe(plugins.filelist(`${spriteSrc}.json`))
       .pipe(plugins.replace(`src/assets/svg/${spriteSrc}/`, ''))
+      .pipe(plugins.replace('.svg', ''))
       .pipe(gulp.dest(`${paths.tokensSource}generated`));
 
       // copy svg files to public
@@ -297,6 +298,7 @@ gulp.task('iconSet', () => {
       .src([`${paths.assetsSource.svg}/${spriteSrc}/*.svg`, `!${paths.assetsSource.svg}/${spriteSrc}/_*.svg`])
       .pipe(plugins.filelist(`${spriteSrc}.json`))
       .pipe(plugins.replace(`src/assets/svg/${spriteSrc}/`, ''))
+      .pipe(plugins.replace('.svg', ''))
       .pipe(gulp.dest(`${paths.tokensSource}generated`));
 
     // copy svg files to public
