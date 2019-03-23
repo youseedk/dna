@@ -1,58 +1,72 @@
 /* Palette container */
-.frctl-colors {
+.colors {
   box-sizing: border-box;
-}
 
-.frctl-palette {
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
+  &__palette {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
 
-  & + & {
-    margin-top: 32px;
+    & + & {
+      margin-top: 12px;
+    }
   }
-}
 
-.frctl-palette-title {
-  flex: 0 0 100%;
-  font-size: 32px;
-  text-transform: capitalize;
-}
+  &__title {
+    flex: 0 0 100%;
+    font-size: 20px;
+    text-transform: capitalize;
 
-.frctl-color {
-  flex: 0 0 calc(25% - 8px);
-  margin: 8px 4px;
-  max-width: 250px;
-}
+    &:first-child {
+      margin-top: 20px;
+    }
+  }
 
-.frctl-color-swatch {
-  position: relative;
-  display: block;
-  height: 100px;
-  border: 1px solid #eee;
-  border-radius: 8px;
-}
+  &__item {
+    display: block;
+    margin: 12px 12px 0 0;
+    width: 140px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
 
-.frctl-color-name { 
-  display: block;
-  position: absolute;
-  text-align: center;
-  width: 100%;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  height: 18px;
-  background: none !important;
-  font-size: 14px;
-}
+  &__color-swatch {
+    position: relative;
+    display: block;
+    height: 80px;
+  }
 
-.frctl-color-variable-name {
-  display: block;
-  text-align: center;
-  padding: 8px 0;
-  border-radius: 8px;
-  margin-top: 8px;
-  border: 1px solid #DEE2E6;
-  font-size: 12px;
-  background-color: #eee !important;
+  &__color-name {
+    display: block;
+    text-align: center;
+    background: none !important;
+    font: normal 14px/1.5 "Open Sans", Helvetica, Arial, sans-serif;
+    line-height: 80px;
+    cursor: copy;
+
+    &::selection {
+      background: #FFFF00;
+    }
+  }
+
+  &__variable-name {
+    display: block;
+    text-align: center;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 9px;
+    color: #000;
+  }
+
+  &__variable-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    cursor: copy;
+
+    &::selection {
+      background: #FFFF00;
+    }
+  }
 }
