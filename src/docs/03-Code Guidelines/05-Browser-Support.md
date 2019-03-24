@@ -14,11 +14,6 @@ All contents in YouSee DNA is build for and tested in the browsers below. Any Yo
 - Samsung Internet (latest version) for Android <sup>[[3]](#ref3)</sup>
 
 
-## No support
-- Internet Explorer 10 and older
-- Opera and Opera Mini
-- Console and Television based browsers
-
 
 ## Notes
 Latest version cover only the major release version, patches and minor updates is not taken into consideration.
