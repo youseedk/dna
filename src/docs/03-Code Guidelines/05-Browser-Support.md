@@ -26,7 +26,9 @@ All contents in YouSee DNA is build for and tested in the browsers below. Any Yo
 ## Notes
 Latest version cover only the major release version, patches and minor updates is not taken into consideration.
 
-1. <a name="ref1"></a>Chrome, Firefox and Edge has a short regular release cycle, support for 2 prior version is necessarily.
-2. <a name="ref2"></a>Safari has a longer release cycle, therefor only one prior version is necessarily to be supported.
-3. <a name="ref3"></a>Samsung Internet is the new wildcard in the browser realm, luckily based on Chromium, however possible never updated by the consumer. As the result, only the latest release can be supported.
-4. <a name="ref4"></a>Partial support, means that small visuel bugs are acceptable, given that you can read and interact with the content.
+<ol>
+    <li id="ref1"></a>Chrome, Firefox and Edge has a short regular release cycle, support for 2 prior version is necessarily.</li>
+    <li id="ref2"></a>Safari has a longer release cycle, therefor only one prior version is necessarily to be supported.</li>
+    <li id="ref3"></a>Samsung Internet is the new wildcard in the browser realm, luckily based on Chromium, however possible never updated by the consumer. As the result, only the latest release can be supported.</li>
+    <li id="ref4"></a>Partial support, means that small visuel bugs are acceptable, given that you can read and interact with the content.</li>
+</ol>
