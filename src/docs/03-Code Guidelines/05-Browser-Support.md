@@ -28,7 +28,7 @@ Latest version cover only the major release version, patches and minor updates i
 
 <ol>
     <li id="ref1"></a>Chrome, Firefox and Edge has a short regular release cycle, support for 2 prior version is necessarily.</li>
-    <li id="ref2"></a>Safari has a longer release cycle, therefor only one prior version is necessarily to be supported.</li>
-    <li id="ref3"></a>Samsung Internet is the new wildcard in the browser realm, luckily based on Chromium, however possible never updated by the consumer. As the result, only the latest release can be supported.</li>
-    <li id="ref4"></a>Partial support, means that small visuel bugs are acceptable, given that you can read and interact with the content.</li>
+    <li id="ref2"></a>Safari has a longer release cycle, therefore support for only one prior version is necessary.</li>
+    <li id="ref3"></a>Samsung Internet is the new wildcard in the browser realm, luckily based on Chromium, however possibly never updated by the consumer. As a result, only the latest release can be supported.</li>
+    <li id="ref4"></a>Partial support, means that small visual bugs are acceptable, given that you can read and interact with the content.</li>
 </ol>
