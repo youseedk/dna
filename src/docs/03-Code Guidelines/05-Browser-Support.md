@@ -7,13 +7,10 @@ All contents in YouSee DNA is build for and tested in the browsers below. Any Yo
 - Edge (3 latest versions) for Windows <sup>[[1]](#ref1)</sup>
 - Internet Explorer 11 for Windows <sup>[[4]](#ref4)</sup>
 
-
 ## Phone & Tablet
 - Chrome (3 latest versions) for Android and iOS <sup>[[1]](#ref1)</sup>
 - Safari (2 latest versions) for iOS <sup>[[2]](#ref2)</sup>
 - Samsung Internet (latest version) for Android <sup>[[3]](#ref3)</sup>
-
-
 
 ## Notes
 Latest version cover only the major release version, patches and minor updates is not taken into consideration.
