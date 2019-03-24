@@ -13,6 +13,7 @@
 
 - [Install](#install)
 - [Contents](#contents)
+- [Browser Support](#browser-support)
 - [Documentation](#documentation)
 - [Local Documentation](#local-documentation)
 
@@ -100,6 +101,9 @@ It is also possible to load the bundled css files from a CDN:
 
 If a specific version is needed, insert the version number into the URL, ie.:
 `<link rel="stylesheet" type="text/css" href="https://unpkg.com/@youseedk/dna@1.0.0/ys-bundle.min.css" />` will load version 1.0.0.
+
+## Browser Support
+Please visit the [documentation site](https://dna.yousee.dk/docs/code-guidelines/browser-support.html)
 
 ## Documentation
 YouSee DNA's documentation is built with [Fractal](https://fractal.build/), deployed on [GitHub Pages](https://pages.github.com/) using [Travis CI](https://travis-ci.com).
