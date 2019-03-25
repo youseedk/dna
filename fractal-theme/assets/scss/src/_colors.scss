@@ -1,6 +1,48 @@
 /* Palette container */
 .colors {
-  box-sizing: border-box;
+
+  &__section {
+    box-sizing: border-box;
+  }
+
+  &__convert-list {
+    display: flex;
+    padding-left: 5px !important; // important needed to override fractal theme
+    margin-top: 40px;
+
+    @media screen and (min-width: 400px) {
+      padding-left: 10px !important; // important needed to override fractal theme
+    }
+  }
+
+  &__convert-item {
+    list-style: none !important; // important needed to override fractal theme
+
+    &:first-child .colors__convert-button {
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+    }
+
+    &:last-child .colors__convert-button {
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+      border-right: 1px solid #ddd;
+    }
+  }
+
+  &__convert-button {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    padding: 6px 12px;
+
+    &:hover,
+    &:focus {
+      outline: 0;
+      background-color: #333;
+      color: #fff;
+    }
+  }
 
   &__palette {
     margin: 0;
@@ -16,9 +58,14 @@
     flex: 0 0 100%;
     font-size: 20px;
     text-transform: capitalize;
+    margin-left: 5px;
 
     &:first-child {
       margin-top: 20px;
+    }
+
+    @media screen and (min-width: 400px) {
+      margin-left: 10px;
     }
   }
 
