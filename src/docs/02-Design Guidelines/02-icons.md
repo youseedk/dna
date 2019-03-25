@@ -13,7 +13,7 @@ These are the official icons we use for yousee.dk. The purpose for this list is 
                     </svg>
                 </figure>
                 <div class="icons__download">
-                    <a class="icons__download-link" href="/assets/svg/icon-set/{{@this}}.svg" target="_blank" download>Download SVG</a>
+                    <a class="icons__download-link" href="/assets/svg/icon-set/{{@this}}.svg" target="_blank" download aria-label="Download {{@this}}.svg">Download SVG</a>
                 </div>
             </div>
         {{/each}}
