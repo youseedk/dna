@@ -1,3 +1,5 @@
+Note: these utility classes can be combined, ie.: `<div class="ys-u-from-md ys-u-until-xl">` will only be shown between 768px and 1200px.
+
 Please be careful when using the device-specific utility classes:
 - assistive technologies will not be able to access the hidden content
 - search engines might not be able to index the hidden content
