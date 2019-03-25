@@ -1,10 +1,10 @@
 import tinycolor from 'tinycolor2';
 
 function colorConverter() {
-  const domToHex = document.getElementById('toHex')
-  const domToRgb = document.getElementById('toRgb')
-  const domToHsl = document.getElementById('toHsl')
-  const domToScss = document.getElementById('toScss')
+  const domToHex = document.getElementById('toHex');
+  const domToRgb = document.getElementById('toRgb');
+  const domToHsl = document.getElementById('toHsl');
+  const domToScss = document.getElementById('toScss');
   const color = [...document.querySelectorAll('.colors__color-name')];
 
   color.forEach(function (el) {
