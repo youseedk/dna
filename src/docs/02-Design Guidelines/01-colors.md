@@ -6,16 +6,13 @@ A colour palette comprises primary and accent colours that can be used for illus
     <div class="colors__convert">
         <ul class="colors__convert-list">
             <li class="colors__convert-item">
-                <button type="button" id="toHex" class="colors__convert-button" active>Hex</button>
+                <button type="button" id="toHex" class="colors__convert-button" active aria-label="Convert color codes to hex">Hex</button>
             </li>
             <li class="colors__convert-item">
-                <button type="button" id="toRgb" class="colors__convert-button">RGB</button>
+                <button type="button" id="toRgb" class="colors__convert-button" aria-label="Convert color codes to RGB">RGB</button>
             </li>
             <li class="colors__convert-item">
-                <button type="button" id="toHsl" class="colors__convert-button">HSL</button>
-            </li>
-            <li class="colors__convert-item">
-                <button type="button" id="toScss" class="colors__convert-button">SCSS</button>
+                <button type="button" id="toHsl" class="colors__convert-button" aria-label="Convert color codes to HSL">HSL</button>
             </li>
         </ul>
     </div>
