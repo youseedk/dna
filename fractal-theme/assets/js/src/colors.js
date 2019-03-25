@@ -4,7 +4,6 @@ function colorConverter() {
   const domToHex = document.getElementById('toHex');
   const domToRgb = document.getElementById('toRgb');
   const domToHsl = document.getElementById('toHsl');
-  const domToScss = document.getElementById('toScss');
   const color = [...document.querySelectorAll('.colors__color-name')];
 
   color.forEach(function (el) {
@@ -20,7 +19,6 @@ function colorConverter() {
     domToHex.addEventListener('click', () => el.innerText = hexMatches);
     domToRgb.addEventListener('click', () => el.innerText = tinycolor(hexMatches).toRgbString());
     domToHsl.addEventListener('click', () => el.innerText = tinycolor(hexMatches).toHslString());
-    domToScss.addEventListener('click', () => el.innerText = el.getAttribute('data-scss-code'));
   });
 }
 
