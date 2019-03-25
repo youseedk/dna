@@ -1,7 +1,7 @@
-import colorHexMatches from './src/colors';
+import colorConverter from './src/colors';
 
 const modules = [
-  {selector: '.colors', init: colorHexMatches},
+  {selector: '.colors', init: colorConverter},
 ];
 
 modules.forEach((module) => {

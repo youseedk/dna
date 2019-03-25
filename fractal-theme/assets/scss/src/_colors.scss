@@ -1,6 +1,48 @@
 /* Palette container */
 .colors {
-  box-sizing: border-box;
+
+  &__section {
+    box-sizing: border-box;
+  }
+
+  &__convert-list {
+    display: flex;
+    padding-left: 5px !important; // important needed to override fractal theme
+    margin-top: 40px;
+
+    @media screen and (min-width: 400px) {
+      padding-left: 10px !important; // important needed to override fractal theme
+    }
+  }
+
+  &__convert-item {
+    list-style: none !important; // important needed to override fractal theme
+
+    &:first-child .colors__convert-button {
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+    }
+
+    &:last-child .colors__convert-button {
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+      border-right: 1px solid #ddd;
+    }
+  }
+
+  &__convert-button {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    padding: 6px 12px;
+
+    &:hover,
+    &:focus {
+      outline: 0;
+      background-color: #333;
+      color: #fff;
+    }
+  }
 
   &__palette {
     margin: 0;
@@ -16,24 +58,43 @@
     flex: 0 0 100%;
     font-size: 20px;
     text-transform: capitalize;
+    margin-left: 5px;
 
     &:first-child {
       margin-top: 20px;
+    }
+
+    @media screen and (min-width: 400px) {
+      margin-left: 10px;
     }
   }
 
   &__item {
     display: block;
-    margin: 12px 12px 0 0;
-    width: 140px;
+    margin: 5px;
+    width: 100%;
     border-radius: 8px;
     overflow: hidden;
+    border: 1px solid #eee;
+
+
+    @media screen and (min-width: 400px) {
+      width: calc(50% - 20px);
+      margin: 10px;
+    }
+
+    @media screen and (min-width: 600px) {
+      width: calc(33.33% - 20px);
+    }
+
+    @media screen and (min-width: 1000px) {
+      width: 190px;
+    }
   }
 
   &__color-swatch {
     position: relative;
     display: block;
-    height: 80px;
   }
 
   &__color-name {
@@ -41,11 +102,17 @@
     text-align: center;
     background: none !important;
     font: normal 14px/1.5 "Open Sans", Helvetica, Arial, sans-serif;
-    line-height: 80px;
+    height: 40px;
+    line-height: 40px;
     cursor: copy;
 
+    @media screen and (min-width: 400px) {
+      height: 80px;
+      line-height: 80px;
+    }
+
     &::selection {
-      background: #FFFF00;
+      background: #FF0;
     }
   }
 
@@ -53,20 +120,29 @@
     display: block;
     text-align: center;
     padding: 0 5px;
-    height: 40px;
-    font-size: 9px;
+    background-color: #fff !important; // important needed to override theme
+    font-size: 12px;
     color: #000;
+
+    @media screen and (min-width: 400px) {
+      height: 40px;
+    }
   }
 
   &__variable-text {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 40px;
+    height: 25px;
+    line-height: 1.3;
     cursor: copy;
 
+    @media screen and (min-width: 400px) {
+      height: 40px;
+    }
+
     &::selection {
-      background: #FFFF00;
+      background: #FF0;
     }
   }
 }
