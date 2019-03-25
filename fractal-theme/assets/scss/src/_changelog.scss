@@ -1,11 +1,12 @@
 .Prose {
+
   .changelog {
 
     &__item {
       position: relative;
       border: 1px solid #ccc;
 
-      & + & {
+      & + .changelog__item {
         margin-top: 24px;
       }
 
