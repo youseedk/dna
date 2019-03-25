@@ -31,7 +31,7 @@ $grid-gutter-width: $grid-column-padding;
 @import 'mixins/grid';
 @import 'grid';
 
-/* enable box sizing on grid */
+// enable box sizing on grid
 .container,
 .container-fluid,
 .row,
@@ -40,7 +40,7 @@ $grid-gutter-width: $grid-column-padding;
 }
 
 
-/* Custom modifications to BS Grid */
+// Custom modifications to BS Grid
 .container,
 .container-fluid {
   padding-left: $container-padding;
@@ -133,7 +133,7 @@ $grid-gutter-width: $grid-column-padding;
   }
 }
 
-/* make vertical margin modifiers */
+// make vertical margin modifiers
 .row--vertical-spacing-sm {
   margin-top: -2*$ys-fraction-unit; //16px;
 
