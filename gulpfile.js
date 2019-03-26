@@ -49,7 +49,6 @@ const tinycolor = require('tinycolor2');
 const svgSprite = require('gulp-svg-sprite');
 const runSequence = require('run-sequence');
 const merge = require('merge-stream');
-const request = require('request');
 
 const paths = {
   componentsSource: 'src/components/',
