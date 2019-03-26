@@ -8,13 +8,13 @@
 //   `gulp css`
 //   `gulp lint-scss``
 //   `gulp import-changelog-file`
-//   `gulp jsonToScss`
+//   `gulp json-to-scss`
 //   `gulp images`
 //   `gulp fonts`
 //   `gulp icons`
-//   `gulp uiIcons`
+//   `gulp ui-icons`
 //   `gulp buildPackage`
-//   `gulp npmDist`
+//   `gulp npm-dist`
 //   `gulp compile-assets`
 //   `gulp`
 //   `gulp build`
@@ -172,7 +172,7 @@ gulp.task('import-changelog-file', () => {
  *	Convert colors.json file to .scss-file
  *
  */
-gulp.task('jsonToScss', () => {
+gulp.task('json-to-scss', () => {
   return gulp.
   src([`${paths.tokensSource}colors.json`])
     .pipe(jsonSass({
@@ -223,10 +223,10 @@ gulp.task('fonts', () => {
  *
  */
 gulp.task('icons', (cb) => {
-  runSequence('uiIcons', 'iconSet', cb);
+  runSequence('ui-icons', 'icon-set', cb);
 });
 
-gulp.task('uiIcons', () => {
+gulp.task('ui-icons', () => {
   const spriteSrc = 'ui-icons';
   const spriteCreation = gulp
     .src(`${paths.assetsSource.svg}/${spriteSrc}/*.svg`)
@@ -263,7 +263,7 @@ gulp.task('uiIcons', () => {
   return merge(spriteCreation, fileList, copyTask);
 });
 
-gulp.task('iconSet', () => {
+gulp.task('icon-set', () => {
   const spriteSrc = 'icon-set';
   const spriteCreation = gulp
     .src([`${paths.assetsSource.svg}/${spriteSrc}/*.svg`, `!${paths.assetsSource.svg}/${spriteSrc}/_*.svg`])
@@ -371,7 +371,7 @@ gulp.task('build-package', () => {
   return merge(packageJsonFile, readMeFile, scssFiles, cssFiles, cssSettings, fontFiles, svgFiles, svgSprites, bundleFiles);
 });
 
-gulp.task('npmDist', () => {
+gulp.task('npm-dist', () => {
   runSequence(['compile-assets'],
     'build-package'
   );
@@ -383,14 +383,14 @@ gulp.task('npmDist', () => {
  *
  */
 gulp.task('compile-assets', () => {
-  runSequence(['jsonToScss'],
+  runSequence(['json-to-scss'],
     'css', 'images', 'icons', 'fonts', 'fractal-assets'
   );
 });
 
 //Default
 gulp.task('default', () => {
-  runSequence('icons', 'jsonToScss', 'import-changelog-file',
+  runSequence('icons', 'json-to-scss', 'import-changelog-file',
     ['fractal-assets', 'css', 'images', 'watch'],
     'fractal:start'
   );
@@ -399,7 +399,7 @@ gulp.task('default', () => {
 /* BUILD */
 // CAUTION: Used by TRAVIS CI for automatic build and deployment - change only this task if you know what you are doing */
 gulp.task('build', (cb) => {
-  runSequence(['import-changelog-file', 'jsonToScss'], 'icons', 'fractal-assets', 'css', 'fractal:build', 'cname', cb);
+  runSequence(['import-changelog-file', 'json-to-scss'], 'icons', 'fractal-assets', 'css', 'fractal:build', 'cname', cb);
 });
 
 /**
