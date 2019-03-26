@@ -152,19 +152,19 @@ gulp.task('import-changelog-file', () => {
     url = `${url}?client_id=${githubClientId}&client_secret=${githubClientSecret}`;
   }
   return request({
-        url: url,
-        method: 'get',
-        headers: {
-          'user-agent': 'User-Agent'
-        }
-      },
-      function (error) {
-        if (error) {
-          console.error(error);
-        }
-      })
-    .pipe(source('github-releases.json'))
-    .pipe(gulp.dest(`${paths.tokensSource}/generated`));
+    url: url,
+    method: 'get',
+    headers: {
+      'user-agent': 'User-Agent'
+    }
+  },
+  function (error) {
+    if (error) {
+      console.error(error);
+    }
+  })
+  .pipe(source('github-releases.json'))
+  .pipe(gulp.dest(`${paths.tokensSource}/generated`));
 });
 
 /**
@@ -173,8 +173,8 @@ gulp.task('import-changelog-file', () => {
  *
  */
 gulp.task('json-to-scss', () => {
-  return gulp.
-  src([`${paths.tokensSource}colors.json`])
+  return gulp
+    .src([`${paths.tokensSource}colors.json`])
     .pipe(jsonSass({
       ignoreJsonErrors: false,
     }))
@@ -467,7 +467,8 @@ gulp.task('fractal:build', () => {
  *
  */
 gulp.task('fractal-scss', () => {
-  gulp.src(`${paths.fractal.scss}styles.scss`)
+  gulp
+    .src(`${paths.fractal.scss}styles.scss`)
     .pipe(plugins.sass().on('error', plugins.sass.logError))
     .pipe(gulp.dest(`${paths.destination.theme}/css`));
 });
@@ -486,18 +487,21 @@ gulp.task('fractal-js', () => {
 });
 
 gulp.task('fractal-images', () => {
-  gulp.src(`${paths.fractal.images}**/*.*`)
+  gulp
+    .src(`${paths.fractal.images}**/*.*`)
     .pipe(gulp.dest(`${paths.destination.theme}/images`));
 });
 
 gulp.task('fractal-favicon', () => {
-  gulp.src(`${paths.fractal.favicons}/*.*`)
+  gulp
+    .src(`${paths.fractal.favicons}/*.*`)
     .pipe(gulp.dest(`${paths.destination.theme}/favicon`));
 });
 
 /* Used for making custom domain "dna.yousee.dk" work with github pages */
 gulp.task('cname', () => {
-  gulp.src('config/CNAME')
+  gulp
+    .src('config/CNAME')
     .pipe(gulp.dest('dist-site'));
 });
 
