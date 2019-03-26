@@ -17,8 +17,8 @@ function createCORSRequest(method, url) {
 
 // Make the actual CORS request.
 function makeCorsRequest(url) {
-  let url = url;
-  const xhr = createCORSRequest('GET', url);
+  let apiUrl = url;
+  const xhr = createCORSRequest('GET', apiUrl);
 
   if (!xhr) {
     console.log('CORS failed');
@@ -43,6 +43,9 @@ function createInnerHTML(obj) {
   const innerHTMLTarget = document.querySelector('.changelog');
 
   obj.forEach((release) => {
+    let timestamp = new Date(Date.parse(release.published_at.toLocaleString('de-DE'))).toUTCString();
+
+
     htmlString +=
       `<article class="changelog__item">
         <figure class="changelog__avatar">
@@ -51,7 +54,7 @@ function createInnerHTML(obj) {
         <div class="changelog__details">
             <h2 class="changelog__title"><a href="${release.html_url}">${release.name}</a> (${release.tag_name})</h2>
             <p class="changelog__desc">${release.body}</p>
-            <span class="changelog__released">${release.published_at}</span>
+            <span class="changelog__released">${timestamp}</span>
         </div>
     </article>`;
   });
