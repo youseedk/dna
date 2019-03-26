@@ -7,7 +7,6 @@
 // Available tasks:
 //   `gulp css`
 //   `gulp lint-scss``
-//   `gulp import-changelog-file`
 //   `gulp jsonToScss`
 //   `gulp images`
 //   `gulp fonts`
@@ -143,34 +142,6 @@ gulp.task('lint-scss', () => {
       }]
     }));
 });
-
-/**
- *
- * Import Github releases json file
- *
- */
-gulp.task('import-changelog-file', () => {
-  let url = "https://api.github.com/repos/youseedk/dna/releases";
-  if(githubClientId && githubClientSecret) {
-    url = `${url}?client_id=${githubClientId}&client_secret=${githubClientSecret}`;
-  }
-  return request(
-    {
-      url: url,
-      method: "get",
-      headers: {
-        "user-agent": "User-Agent"
-      }
-    },
-    function(error, response, body) {
-      if(error) {
-        console.error(error);
-      }
-    }
-  )
-  .pipe(source('github-releases.json'))
-  .pipe(gulp.dest(`${paths.tokensSource}/generated`));
-})
 
 
 /**
@@ -402,7 +373,7 @@ gulp.task('compile-assets', () => {
 
 //Default
 gulp.task('default', (cb) => {
-  runSequence('icons', 'jsonToScss', 'import-changelog-file',
+  runSequence('icons', 'jsonToScss',
     ['fractal-assets', 'css', 'images', 'watch'],
     'fractal:start'
   );
@@ -412,7 +383,7 @@ gulp.task('default', (cb) => {
  /* BUILD */
  // CAUTION: Used by TRAVIS CI for automatic build and deployment - change only this task if you know what you are doing */
  gulp.task('build', (cb) => {
-  runSequence(['import-changelog-file', 'jsonToScss'], 'icons', 'fractal-assets', 'css', 'fractal:build', 'cname', cb);
+  runSequence(['jsonToScss'], 'icons', 'fractal-assets', 'css', 'fractal:build', 'cname', cb);
 });
 
 
