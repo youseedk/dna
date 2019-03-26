@@ -341,7 +341,7 @@ gulp.task('build-package', () => {
     .pipe(plugins.insert.append('\n}'))
     .pipe(plugins.rename( (path) => {
       path.basename = path.basename.replace('_', ''),
-        path.extname = '.css'
+      path.extname = '.css'
     }))
     .pipe(gulp.dest(`${paths.npmDestination}css/settings`));
 
