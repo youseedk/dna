@@ -1,10 +1,10 @@
 // Create the XHR object.
 function createCORSRequest(method, url) {
-  const xhr = new XMLHttpRequest();
-  if ("withCredentials" in xhr) {
+  let xhr = new XMLHttpRequest();
+  if ('withCredentials' in xhr) {
     // XHR for Chrome/Firefox/Opera/Safari.
     xhr.open(method, url, true);
-  } else if (typeof XDomainRequest != "undefined") {
+  } else if (typeof XDomainRequest != 'undefined') {
     // XDomainRequest for IE.
     xhr = new XDomainRequest();
     xhr.open(method, url);
@@ -17,7 +17,7 @@ function createCORSRequest(method, url) {
 
 // Make the actual CORS request.
 function makeCorsRequest(url) {
-  let apiUrl = url;
+  const apiUrl = url;
   const xhr = createCORSRequest('GET', apiUrl);
 
   if (!xhr) {
@@ -39,11 +39,11 @@ function makeCorsRequest(url) {
 }
 
 function createInnerHTML(obj) {
-  let htmlString = ``;
+  let htmlString = '';
   const innerHTMLTarget = document.querySelector('.changelog');
 
   obj.forEach((release) => {
-    const timestamp = new Date(Date.parse(release.published_at.toLocaleString('de-DE'))).toUTCString();
+    const timestamp = new Date(Date.parse(release.published_at.toLocaleString('da-DK'))).toUTCString();
 
     htmlString +=
       `<article class="changelog__item">
@@ -51,11 +51,11 @@ function createInnerHTML(obj) {
           <img width="60" height="60" src="${release.author.avatar_url}" alt="Authored by ${release.author.login}" />
         </figure>
         <div class="changelog__details">
-            <h2 class="changelog__title"><a href="${release.html_url}">${release.name}</a> (${release.tag_name})</h2>
-            <p class="changelog__desc">${release.body}</p>
-            <span class="changelog__released">${timestamp}</span>
+          <h2 class="changelog__title"><a href="${release.html_url}">${release.name}</a> (${release.tag_name})</h2>
+          <p class="changelog__desc">${release.body}</p>
+          <time class="changelog__released" datetime="${timestamp}">${timestamp}</time>
         </div>
-    </article>`;
+      </article>`;
   });
 
   innerHTMLTarget.innerHTML = htmlString;
