@@ -22,7 +22,7 @@
     "start": "gulp",
     "build": "gulp build",
     "build:fractal": "gulp fractal:build",
-    "build:npm": "gulp npmDist",
+    "build:npm": "gulp npm-dist",
     "lint:scss": "gulp lint-scss"
   },
   "repository": {
