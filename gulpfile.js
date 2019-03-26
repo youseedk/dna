@@ -295,7 +295,7 @@ gulp.task('iconSet', () => {
   const copyTask = gulp
     .src(`${paths.assetsSource.svg}/${spriteSrc}/*.svg`)
     .pipe(plugins.newer(`${paths.destination.svg}/${spriteSrc}`))
-    .pipe(plugins.rename((path) => {
+    .pipe(plugins.rename( (path) => {
       path.basename = path.basename.replace('_', '');
     }))
     .pipe(gulp.dest(`${paths.destination.svg}/${spriteSrc}`));
@@ -339,7 +339,7 @@ gulp.task('build-package', () => {
     .pipe(plugins.replace('$', '  --'))
     .pipe(plugins.insert.prepend(':root {\n'))
     .pipe(plugins.insert.append('\n}'))
-    .pipe(plugins.rename((path) => {
+    .pipe(plugins.rename( (path) => {
       path.basename = path.basename.replace('_', ''),
         path.extname = '.css'
     }))
@@ -473,7 +473,7 @@ gulp.task('fractal-scss', () => {
 });
 
 gulp.task('fractal-js', () => {
-  //const babelify = require("babelify");
+  const babelify = require("babelify");
   const sourcefile = `${paths.fractal.js}/scripts.js`;
   return browserify({
       entries: [sourcefile]
@@ -503,10 +503,3 @@ gulp.task('cname', () => {
 
 gulp.task('fractal-assets', ['fractal-scss', 'fractal-js', 'fractal-images', 'fractal-favicon']);
 
-
-gulp.task('old-to-png', function () {
-  const svg2png = require('gulp-svg2png');
-  gulp.src(`${paths.assetsSource.svg}icon-set/*.svg`)
-    .pipe(svg2png())
-    .pipe(gulp.dest('dist-site/assets/png/icon-set'));
-});
