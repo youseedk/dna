@@ -13,7 +13,7 @@
 //   `gulp fonts`
 //   `gulp icons`
 //   `gulp ui-icons`
-//   `gulp buildPackage`
+//   `gulp build-package`
 //   `gulp npm-dist`
 //   `gulp compile-assets`
 //   `gulp`
