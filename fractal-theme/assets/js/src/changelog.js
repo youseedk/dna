@@ -43,8 +43,7 @@ function createInnerHTML(obj) {
   const innerHTMLTarget = document.querySelector('.changelog');
 
   obj.forEach((release) => {
-    let timestamp = new Date(Date.parse(release.published_at.toLocaleString('de-DE'))).toUTCString();
-
+    const timestamp = new Date(Date.parse(release.published_at.toLocaleString('de-DE'))).toUTCString();
 
     htmlString +=
       `<article class="changelog__item">
