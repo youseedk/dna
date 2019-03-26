@@ -1,5 +1,5 @@
 .Header {
-  background-color: #484848;
+  background-color: #222;
 }
 
 .Header-button {
@@ -10,16 +10,21 @@
 }
 
 .Header-title {
-  padding: 0 16px;
+  padding: 0 18px;
+  line-height: 1;
+
+  @media screen and (min-width: 768px) {
+    padding: 0 22px;
+  }
 }
 
 .Header-title img {
-  width: 117px;
-  height: 32px;
+  width: 105px;
+  height: auto;
 
   @media screen and (min-width: 768px) {
-    width: 176px;
-    height: 48px;
+    width: 150px;
+    height: auto;
   }
 }
 
