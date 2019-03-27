@@ -72,9 +72,6 @@ const paths = {
   }
 };
 
-const githubClientId = process.env.GITHUB_AUTH_CLIENTID;
-const githubClientSecret = process.env.GITHUB_AUTH_SECRET;
-
 /**
  *
  * Create CSS files from SCSS files
