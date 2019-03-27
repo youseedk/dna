@@ -363,7 +363,7 @@ gulp.task('compile-assets', () => {
 
 //Default
 gulp.task('default', (cb) => {
-  runSequence('icons', 'jsonToScss',
+  runSequence('icons', 'json-to-scss',
     ['fractal-assets', 'css', 'images', 'watch'],
     'fractal:start'
   );
@@ -373,7 +373,7 @@ gulp.task('default', (cb) => {
  /* BUILD */
  // CAUTION: Used by TRAVIS CI for automatic build and deployment - change only this task if you know what you are doing */
  gulp.task('build', (cb) => {
-  runSequence(['jsonToScss'], 'icons', 'fractal-assets', 'css', 'fractal:build', 'cname', cb);
+  runSequence(['json-to-scss'], 'icons', 'fractal-assets', 'css', 'fractal:build', 'cname', cb);
 });
 
 /**
