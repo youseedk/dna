@@ -3,6 +3,7 @@ import linkPrettifier from './src/navigation'
 
 const modules = [
   {selector: '.colors', init: colorConverter},
+  {selector: '.changelog', init: changeLog},
   {selector: '.Navigation', init: linkPrettifier},
 ];
 
