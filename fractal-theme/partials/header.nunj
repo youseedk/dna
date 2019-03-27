@@ -3,7 +3,9 @@
         {% include 'icons/close-nav.svg' %}
         {% include 'icons/open-nav.svg' %}
     </button>
-    <a href="{{ path('/') }}" class="Header-title" data-pjax>{{ frctl.get('project.title') | default('Component Library') }}</a>
+    <a href="{{ path('/') }}" class="Header-title" data-pjax>
+        <img src="/assets/theme/images/dna-logo.svg" class="Header-logo" alt="YouSee DNA" />
+    </a>
 
     <ul class="Header-menu">
         <li class="Header-version">{{ frctl.get('project.version') }}</li>
