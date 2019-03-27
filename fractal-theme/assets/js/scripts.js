@@ -1,5 +1,6 @@
 import colorConverter from './src/colors';
-import linkPrettifier from './src/navigation'
+import changeLog from './src/changelog';
+import linkPrettifier from './src/navigation';
 
 const modules = [
   {selector: '.colors', init: colorConverter},
