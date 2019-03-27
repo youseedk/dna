@@ -10,7 +10,7 @@
         margin-top: 24px;
       }
 
-      &:after {
+      &::after {
         content: '';
         display: block;
         clear: both;
@@ -44,7 +44,7 @@
     }
 
     &__title {
-      font-size: 1.25em;
+      font-size: 1rem;
       margin: 0 0 .5em;
     }
 
