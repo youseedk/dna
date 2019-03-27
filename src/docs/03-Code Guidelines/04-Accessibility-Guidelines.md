@@ -1,4 +1,4 @@
-We want to make sure our web sites can be used by all users. This mean we have a responsibility to make sure all content is accessible. To ensure this all YouSee sites and web applications must adhere to the [WCAG 2.1 AA guidelines](https://www.w3.org/TR/WCAG21/).
+We want to make sure our products can be used by all users. This mean we have a responsibility to make our websites accessible too. To ensure this all YouSee sites and web applications must adhere to the [WCAG 2.1 AA guidelines](https://www.w3.org/TR/WCAG21/).
 
 ## Common Failures
 
@@ -28,7 +28,10 @@ Some buttons or links might only visually contain an icon or an image, but they 
   <span class="visually-hidden">Download file</span>
 </button>
 ```
-While this could also be solved using the `aria-label` attribute, it is preferable to use textual content, as this will also be visible if the CSS fails to apply correctly.
+While this could also be solved using the `aria-label` attribute, textual content is  considered as best practice for many reasons:
+- If CSS fails to load or apply correctly, using real text will still be accessible.
+- Textual content is best for search engines. Aria-labels is only considered as alternative text for screen reader users and not preferable when it comes to SEO.
+- Screen readers such as NVDA, JAWS, VoiceOver, Win-Eyes, Dolphin and	SaToGo has different reliability. Many of them don't suppport aria-label if it's used on some elements such as `<input>`, `<span>`, `<a>` and `<div>` elements.
 
 ### Form labeling
 All form inputs (`<input>`, `<textarea>`, `<select>` etc.) must have an associated `<label>` element. This can be done either explicitly (through an `id` attribute) or implicitly (`<input>` is inside the `<label>`). The `<placeholder>`-attribute is NEVER an acceptable substitute for the `<label>` element and is generally considered bad for usability and accessibility.
