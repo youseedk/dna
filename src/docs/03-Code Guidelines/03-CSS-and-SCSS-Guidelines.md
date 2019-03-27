@@ -1,3 +1,7 @@
+---
+title: CSS & SCSS Guidelines
+---
+
 The CSS codebase is a Sass solution (we use the SCSS syntax) with BEM as naming convention. For a quick intro to BEM, please read this excellent article by Harry Roberts: MindBEMding – getting your head ’round BEM syntax
 
 We use stylelint to test for possible errors and formatting issues. You can install tools like stylelint for Visual Studio Code to give you instant feedback on your code. You may also run the gulp task "stylelint" to test your scss code for errors.
