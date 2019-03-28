@@ -10,9 +10,17 @@
 
     &:focus {
 
-      & + .ys-checkbox__label::before {
-        border-color: $ys-color-digital-grass;
+      & + .ys-checkbox__label {
+        @include customOutline;
+
+        &::before {
+          border-color: $ys-color-digital-grass;
+        }
       }
+    }
+
+    &:focus:not(:focus-visible) + .ys-checkbox__label {
+      outline: 0;
     }
 
     &:focus-visible {
@@ -80,9 +88,7 @@
     .ys-checkbox__label {
       color: $ys-color-grey-98;
 
-      &:not(:hover)::before {
-        border-color: $ys-color-white;
-      }
+
     }
 
     .ys-checkbox__control:checked + .ys-checkbox__label::before {
