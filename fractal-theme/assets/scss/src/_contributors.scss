@@ -3,9 +3,9 @@
   flex-flow: row wrap;
 
   &__image {
-    flex: 0 0 70px;
-    margin-right: 10px;
-    margin-bottom: 10px;
+    flex: 0 0 60px;
+    margin: 5px;
+    text-align: center;
 
     img {
       vertical-align: middle;
@@ -16,7 +16,8 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    width: 70px;
+    width: 60px;
     font-size: 12px;
+    text-align: center;
   }
 }
