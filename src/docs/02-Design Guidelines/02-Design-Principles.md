@@ -1,4 +1,3 @@
-# Design Principles
 The Design Principles are the set of qualities that we want customers to associate with the brand every time they interact with it in a digital environment.
 
 ## Alive
