@@ -1,0 +1,22 @@
+.contributors {
+  display: flex;
+  flex-flow: row wrap;
+
+  &__image {
+    flex: 0 0 70px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+
+    img {
+      vertical-align: middle;
+    }
+  }
+
+  &__name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 70px;
+    font-size: 12px;
+  }
+}
