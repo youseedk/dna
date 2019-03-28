@@ -36,6 +36,7 @@
 
 // Blue outline for custom elements (radio, checkbox etc)
 @mixin customOutline() {
+  outline: 5px solid rgba(0, 150, 255, .65); // Edge doesn't support the "auto" keyword
   outline: 5px auto rgba(0, 150, 255, 1);
 }
 

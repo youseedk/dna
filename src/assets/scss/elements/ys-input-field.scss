@@ -86,9 +86,16 @@
       cursor: not-allowed;
     }
 
+    &:focus {
+      @include customOutline; // force focus on edge
+    }
+
     .ys-input-field__wrapper--error & {
       color: $ys-color-error-red;
     }
+
+
+
   }
 
   &__icon {
