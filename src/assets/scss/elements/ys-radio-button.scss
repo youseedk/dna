@@ -38,9 +38,17 @@
 
     &:focus {
 
-      & + .ys-radio-button__label::before {
-        border-color: $ys-color-digital-grass;
+      & + .ys-radio-button__label {
+        @include customOutline;
+
+        &::before {
+          border-color: $ys-color-digital-grass;
+        }
       }
+    }
+
+    &:focus:not(:focus-visible) + .ys-radio-button__label {
+      outline: 0;
     }
 
     &:focus-visible {
@@ -79,10 +87,6 @@
 
     .ys-radio-button__label {
       color: $ys-color-grey-98;
-
-      &:not(:hover)::before {
-        border-color: $ys-color-white;
-      }
     }
 
     .ys-radio-button__control:checked + .ys-radio-button__label::before {
