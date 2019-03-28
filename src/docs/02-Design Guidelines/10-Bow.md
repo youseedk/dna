@@ -1,5 +1,4 @@
-# The Bow
-Use the Curved Horizon as a breaker or to introduce the next block of content. It consists of a circle inside a mask.
+Use the Curved Horizon (Bow)  as a breaker or to introduce the next block of content. It consists of a circle inside a mask.
 
 ## When to use the bow
 - In the TOP Tile / Hero Image (to add a clear separation of content)
