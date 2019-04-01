@@ -100,6 +100,13 @@ gulp.task('css', () => {
       includePaths: ['node_modules/bootstrap/scss/']
     }).on('error', plugins.sass.logError))
     .pipe(plugins.postcss(processors))
+    // rename bootstrap classes
+    .pipe(plugins.replace('.container','.ys-container'))
+    .pipe(plugins.replace('.row','.ys-row'))
+    .pipe(plugins.replace('.col-','.ys-col-'))
+    .pipe(plugins.replace('.order-','.ys-order-'))
+    .pipe(plugins.replace('.offset-','.ys-offset-'))
+    .pipe(plugins.replace('.no-gutters','.ys-no-gutters'))
     .pipe(gulp.dest(paths.destination.css))
     .pipe(plugins.postcss(minifying))
     .pipe(plugins.rename({
@@ -114,6 +121,13 @@ gulp.task('css', () => {
       includePaths: ['node_modules/bootstrap/scss/']
     }).on('error', plugins.sass.logError))
     .pipe(plugins.postcss(processors))
+    // rename bootstrap classes
+    .pipe(plugins.replace('.container','.ys-container'))
+    .pipe(plugins.replace('.row','.ys-row'))
+    .pipe(plugins.replace('.col-','.ys-col-'))
+    .pipe(plugins.replace('.order-','.ys-order-'))
+    .pipe(plugins.replace('.offset-','.ys-offset-'))
+    .pipe(plugins.replace('.no-gutters','.ys-no-gutters'))
     .pipe(plugins.postcss(minifying))
     .pipe(gulp.dest(paths.destination.css));
 

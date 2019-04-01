@@ -11,6 +11,6 @@ module.exports = {
     }
   ],
   "context": {
-    "inlineCss": "body{padding:0;margin:0}.row span{display:flex;justify-content:center;align-items:center;font-family:sans-serif;height:60px;text-align:center;border:1px solid #ccc;background-color:rgba(255,255,255,.75);}"
+    "inlineCss": "body{padding:0;margin:0}.ys-row span{display:flex;justify-content:center;align-items:center;font-family:sans-serif;height:60px;text-align:center;border:1px solid #ccc;background-color:rgba(255,255,255,.75);}"
   }
 };

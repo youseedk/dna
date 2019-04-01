@@ -1,4 +1,3 @@
-# Accessibility Rules
 For too long, accessibility has been misunderstood as building sites for a small group of users of assistive technology — a blind person using a screen reader for example — and far too o!en dismissed as too complex, too time-consuming, or “not our customers.” Accessibility, however, is not just for a single, small group, but for an estimated 15% of people worldwide who have some level of temporary visual, auditory, motor, and cognitive impairments.
 
 ## Color contrast
