@@ -1,4 +1,3 @@
-# Typography
 Typographic hierarchy organizes type and establishes an order of importance within the content and this helps the user to easily find what they are looking for and navigate the content without hesitation.
 
 > For accessibility reasons we should aim for a line-height adhering to the 8 point grid, which means rounding up numbers to meet the grid specs.

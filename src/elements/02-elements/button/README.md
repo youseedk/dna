@@ -17,12 +17,12 @@ Which can be combined with three different shapes
 Furthermore there is also the option of making the button 100% wide relative to it's container element:
  - **block**
 
- The colorsways can be combined with the shapes in all thinkable ways, so a button can be both **Solid Dark** _AND_ **circle with icon only**.  
+ The colorsways can be combined with the shapes in all thinkable ways, so a button can be both **Solid Dark** _AND_ **circle with icon only**.
 
  Lastly there is the **Neutral Button**, which has no visual appearance at all — this is meant for those cases where you want to display a clickable icon without any other design. Please be careful when using this, as it should be obvious for any user what's clickable. This button has no size by nature but will size itself according to the content.
 
 ### Disabled buttons
-The button will change it's visual appearance if you add the `ys-disabled` class or if you use the HTML attribute `disabled`.
+The button will change it's visual appearance if you add the `ys-button--disabled` class or if you use the HTML attribute `disabled`.
 
 ## UX and Design Guidelines
 ### CTA Usage
