@@ -10,7 +10,8 @@
   &__tab {
     appearance: none;
     border: 0;
-    flex: 0 1 50%;
+    margin: 0;
+    flex: 1 1 1px;
     font-size: rem(14);
     padding: rem(10) rem(32);
     line-height: 1.5;
