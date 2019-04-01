@@ -71,7 +71,10 @@
     appearance: none;
 
     &::-ms-expand {
-      display: none;
+      background: none;
+      border: 0;
+      width: 20px;
+      height: 20px;
     }
 
     &:disabled {
