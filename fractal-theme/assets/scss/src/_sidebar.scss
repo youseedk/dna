@@ -1,30 +1,36 @@
 [dir="ltr"] { // here for specificity purposes
 
   .Frame-panel--sidebar {
+    position: relative;
     background-color: #f0f0f0;
+    border: 0;
+    padding: 0;
+    box-shadow: inset -8px 0 24px rgba(0, 0, 0, .08);
 
     // Navigation section headers
     .Tree-title {
-      font-size: 1.12rem;
+      font-size: 1.5rem;
       font-weight: 600;
       color: #484848;
       text-transform: capitalize;
       letter-spacing: 0;
-      padding-left: 2rem;
+      padding: 2rem 0 .5rem;
+      margin: 2rem;
+      border-bottom: 2px solid #1fab2e;
+      margin-top: 0;
     }
 
     // Navigation item
-    .Tree-depth-1 .Tree-collectionLabel,
-    .Tree-depth-2 .Tree-collectionLabel,
     .Tree-collectionLabel,
-    .Tree-depth-1 .Tree-entityLink,
-    .Tree-depth-2 .Tree-entityLink,
     a.Tree-entityLink {
       font-weight: light;
       font-size: 1.12rem;
       color: #484848;
       position: relative;
-      padding: .15rem 2rem;
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: .15rem;
+      padding-bottom: .15rem;
     }
 
     .Tree-collectionLabel span {
@@ -34,13 +40,39 @@
       margin-inline-start: 0rem;
     }
 
-    // Navigation item in subnav
-    .Tree-depth-2 {
-
-      .Tree-entityLink {
-        padding-left: 3rem;
-      }
+    // Level 1
+    .Tree-depth-1 > .Tree-item > a {
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
+
+    .Tree-depth-2 > .Tree-collectionLabel > span {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    // Level 2
+    .Tree-depth-2 > .Tree-collectionItems > .Tree-item > a {
+      padding-left: 3rem;
+      padding-right: 2rem;
+    }
+
+    .Tree-depth-3 > .Tree-collectionLabel > span {
+      padding-left: 3rem;
+      padding-right: 2rem;
+    }
+
+    // Level 3
+    .Tree-depth-3 > .Tree-collectionItems > .Tree-item > a {
+      padding: .35rem 2rem .35rem 4.5rem;
+      font-size: 1rem;
+      line-height: 1.25;
+    }
+
+    .Tree-depth-3 > .Tree-collectionItems {
+      padding: 0 0 24px;
+    }
+
 
     // Current Nav item
     .is-current .Tree-entityLink {
@@ -68,13 +100,14 @@
     .Tree-item span {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      white-space: normal;
 
       &::before {
         position: static;
         top: 0;
         background-size: 12px;
-        order: 2;
+        width: 1rem;
+        margin-right: .5rem;
       }
     }
 
