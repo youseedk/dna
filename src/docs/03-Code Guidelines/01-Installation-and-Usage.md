@@ -14,6 +14,9 @@ The package is designed for two use cases:
 
 If you choose option 2, "Custom", please be aware that it is required that you include ys-base.css before including any other elements.
 
+### Requirements
+- Due to accessibility reasons, all font sizing is set using the `rem` unit — however, this requires that the font size on the `html` element is set to `16px` (default in all modern browsers).
+
 ### CDN
 It is also possible to load the bundled css files from a CDN:
 ```html
