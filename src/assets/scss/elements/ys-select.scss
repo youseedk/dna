@@ -68,11 +68,13 @@
     color: currentColor;
     font-size: rem(16);
     line-height: 1.5;
-    border-radius: rem(24);
     appearance: none;
 
     &::-ms-expand {
-      display: none;
+      background: none;
+      border: 0;
+      width: 20px;
+      height: 20px;
     }
 
     &:disabled {

@@ -7,7 +7,6 @@
 // Available tasks:
 //   `gulp css`
 //   `gulp lint-scss``
-//   `gulp import-changelog-file`
 //   `gulp json-to-scss`
 //   `gulp images`
 //   `gulp fonts`
@@ -47,7 +46,6 @@ const browserify = require('browserify');
 const svgSprite = require('gulp-svg-sprite');
 const runSequence = require('run-sequence');
 const merge = require('merge-stream');
-const request = require('request');
 
 const paths = {
   componentsSource: 'src/components/',
@@ -73,9 +71,6 @@ const paths = {
     favicons: 'fractal-theme/assets/favicon/'
   }
 };
-
-const githubClientId = process.env.GITHUB_AUTH_CLIENTID;
-const githubClientSecret = process.env.GITHUB_AUTH_SECRET;
 
 /**
  *
@@ -105,6 +100,13 @@ gulp.task('css', () => {
       includePaths: ['node_modules/bootstrap/scss/']
     }).on('error', plugins.sass.logError))
     .pipe(plugins.postcss(processors))
+    // rename bootstrap classes
+    .pipe(plugins.replace('.container','.ys-container'))
+    .pipe(plugins.replace('.row','.ys-row'))
+    .pipe(plugins.replace('.col-','.ys-col-'))
+    .pipe(plugins.replace('.order-','.ys-order-'))
+    .pipe(plugins.replace('.offset-','.ys-offset-'))
+    .pipe(plugins.replace('.no-gutters','.ys-no-gutters'))
     .pipe(gulp.dest(paths.destination.css))
     .pipe(plugins.postcss(minifying))
     .pipe(plugins.rename({
@@ -119,6 +121,13 @@ gulp.task('css', () => {
       includePaths: ['node_modules/bootstrap/scss/']
     }).on('error', plugins.sass.logError))
     .pipe(plugins.postcss(processors))
+    // rename bootstrap classes
+    .pipe(plugins.replace('.container','.ys-container'))
+    .pipe(plugins.replace('.row','.ys-row'))
+    .pipe(plugins.replace('.col-','.ys-col-'))
+    .pipe(plugins.replace('.order-','.ys-order-'))
+    .pipe(plugins.replace('.offset-','.ys-offset-'))
+    .pipe(plugins.replace('.no-gutters','.ys-no-gutters'))
     .pipe(plugins.postcss(minifying))
     .pipe(gulp.dest(paths.destination.css));
 
@@ -141,31 +150,6 @@ gulp.task('lint-scss', () => {
     }));
 });
 
-/**
- *
- * Import Github releases json file
- *
- */
-gulp.task('import-changelog-file', () => {
-  let url = 'https://api.github.com/repos/youseedk/dna/releases';
-  if (githubClientId && githubClientSecret) {
-    url = `${url}?client_id=${githubClientId}&client_secret=${githubClientSecret}`;
-  }
-  return request({
-    url: url,
-    method: 'get',
-    headers: {
-      'user-agent': 'User-Agent'
-    }
-  },
-  function (error) {
-    if (error) {
-      console.error(error);
-    }
-  })
-  .pipe(source('github-releases.json'))
-  .pipe(gulp.dest(`${paths.tokensSource}/generated`));
-});
 
 /**
  *
@@ -389,17 +373,18 @@ gulp.task('compile-assets', () => {
 });
 
 //Default
-gulp.task('default', () => {
-  runSequence('icons', 'json-to-scss', 'import-changelog-file',
+gulp.task('default', (cb) => {
+  runSequence('icons', 'json-to-scss',
     ['fractal-assets', 'css', 'images', 'watch'],
     'fractal:start'
   );
 });
 
-/* BUILD */
-// CAUTION: Used by TRAVIS CI for automatic build and deployment - change only this task if you know what you are doing */
-gulp.task('build', (cb) => {
-  runSequence(['import-changelog-file', 'json-to-scss'], 'icons', 'fractal-assets', 'css', 'fractal:build', 'cname', cb);
+
+ /* BUILD */
+ // CAUTION: Used by TRAVIS CI for automatic build and deployment - change only this task if you know what you are doing */
+ gulp.task('build', (cb) => {
+  runSequence(['json-to-scss'], 'icons', 'fractal-assets', 'css', 'fractal:build', 'cname', cb);
 });
 
 /**
@@ -506,4 +491,3 @@ gulp.task('cname', () => {
 });
 
 gulp.task('fractal-assets', ['fractal-scss', 'fractal-js', 'fractal-images', 'fractal-favicon']);
-
