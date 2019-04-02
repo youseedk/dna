@@ -12,13 +12,18 @@ helpers({
 fractal.set('project.title', 'YouSee DNA'); // title for the project
 fractal.set('project.version', projectPackage.version);
 fractal.set('project.author', 'YouSee Digital Warehouse');
+
 fractal.web.set('builder.dest', 'dist-site'); // destination for the static export
 fractal.web.set('static.path', 'public');
+
 fractal.docs.set('path', 'src/docs'); // location of the documentation directory.
+fractal.docs.set('label', 'Guidelines'); // default is 'Documentation'
+
 fractal.components.set('path', 'src/elements'); // location of the component directory.
 fractal.components.set('default.preview', '@element-preview');
 fractal.components.set('default.status', 'wip');
-fractal.components.set('label', 'Contents'); // default is 'Components'
+fractal.components.set('label', 'Elements'); // default is 'Components'
+
 
 /* THEMING */
 // create a new instance with custom config options
