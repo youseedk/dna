@@ -1,0 +1,43 @@
+[dir="ltr"] {
+
+  .Prose {
+    font-size: 1.25rem;
+
+    h2 {
+      font-size: 1.25rem;
+    }
+
+    h3 {
+      opacity: 1;
+      font-size: 1rem;
+    }
+
+    blockquote {
+      padding: .5rem 2rem;
+      border: 0;
+      position: relative;
+      opacity: 1;
+      font-style: italic;
+      font-weight: 600;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background-color: #484848;
+        border-radius: 4px;
+      }
+    }
+
+    & > *:not(.frctl-example) {
+      max-width: 70ch;
+    }
+
+    & > *:not(:last-child) {
+      margin-bottom: 1.5em;
+    }
+  }
+}
