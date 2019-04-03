@@ -48,5 +48,10 @@
         margin: 0;
       }
     }
+
+    // hide empty p elements that markdown renders
+    p:empty {
+      display: none;
+    }
   }
 }
