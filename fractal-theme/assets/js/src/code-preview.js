@@ -1,8 +1,6 @@
 function addCopyButton(parent) {
 
   const buttonText = 'Copy to Clipboard';
-  console.log(`${parent.className}--${buttonText}`)
-
   const button = document.createElement('button');
   button.textContent = buttonText;
   button.classList.add('element-preview__button');
@@ -16,7 +14,7 @@ function addCopyButton(parent) {
   button.addEventListener('click', (event) => {
     const elToCopy = copyField;
     elToCopy.select();
-    document.execCommand("copy");
+    document.execCommand('copy');
   })
 
   parent.appendChild(button);
@@ -36,8 +34,6 @@ function codePreview() {
   codePreviews.forEach(element => {
     addCopyButton(element);
   })
-
-  //addButton(parentEl.parentNode, btnText);
 }
 
 export default codePreview;
