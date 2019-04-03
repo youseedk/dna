@@ -44,27 +44,29 @@
     .Tree-depth-1 > .Tree-item > a {
       padding-left: 2rem;
       padding-right: 2rem;
+      font-weight: bold;
     }
 
     .Tree-depth-2 > .Tree-collectionLabel > span {
       padding-left: 2rem;
       padding-right: 2rem;
+      font-weight: bold;
     }
 
     // Level 2
     .Tree-depth-2 > .Tree-collectionItems > .Tree-item > a {
-      padding-left: 3rem;
+      padding-left: 3.5rem;
       padding-right: 2rem;
     }
 
     .Tree-depth-3 > .Tree-collectionLabel > span {
-      padding-left: 3rem;
+      padding-left: 3.5rem;
       padding-right: 2rem;
     }
 
     // Level 3
     .Tree-depth-3 > .Tree-collectionItems > .Tree-item > a {
-      padding: .35rem 2rem .35rem 4.5rem;
+      padding: .25rem 2rem .25rem 5rem;
       font-size: 1rem;
       line-height: 1.25;
     }
