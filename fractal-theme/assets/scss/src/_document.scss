@@ -1,0 +1,43 @@
+[dir="ltr"] {
+  .Document {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    ul,
+    ol {
+      color: #484848;
+    }
+
+    @media screen and (min-width: 768px) {
+      padding: 40px 48px;
+    }
+
+    @media screen and (min-width: 1024px) {
+      padding: 80px 96px;
+    }
+
+    .Document-header {
+      padding: 0;
+      margin: 0;
+      border: 0;
+
+      & + .Document-content {
+        margin-top: 56px;
+      }
+    }
+
+    .Document-title {
+      font-size: 2.5rem;
+    }
+
+
+
+  }
+
+
+}

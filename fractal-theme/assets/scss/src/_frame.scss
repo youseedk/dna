@@ -1,0 +1,13 @@
+.Frame-inner {
+  background-color: #fff;
+}
+
+.Frame-body {
+
+  // Make sure nav is always visible on desktop sized screens
+  @media screen and (min-width: 1024px) {
+    transform: none!important;
+    margin-right: 0!important;
+  }
+
+}
