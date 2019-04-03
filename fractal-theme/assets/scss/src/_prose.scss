@@ -5,6 +5,7 @@
 
     h2 {
       font-size: 1.25rem;
+      margin-bottom: .5em;
     }
 
     h3 {
@@ -32,12 +33,20 @@
       }
     }
 
-    & > *:not(.frctl-example) {
+    & > *:not(.element-preview) {
       max-width: 70ch;
     }
 
     & > *:not(:last-child) {
       margin-bottom: 1.5em;
+    }
+
+    code {
+      position: relative;
+
+      pre {
+        margin: 0;
+      }
     }
   }
 }

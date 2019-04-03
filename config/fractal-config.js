@@ -30,7 +30,7 @@ fractal.components.set('label', 'Elements'); // default is 'Components'
 const dnaTheme = require('@frctl/mandelbrot')({
     skin: "black",
     // any other theme configuration values here
-    "nav": ["components", "docs"],
+    "nav": ["docs"],
     "panels": ["html", "notes"],
     "styles": [
         "default",
