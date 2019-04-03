@@ -25,7 +25,7 @@ function codePreview() {
 
   // wrap preview code in containers
   preEls.forEach((parentEl) => {
-    parentEl.outerHTML = `<div class="code-preview">${parentEl.outerHTML}</div>`;
+    parentEl.parentNode.outerHTML = `<div class="code-preview">${parentEl.parentNode.outerHTML}</div>`;
   });
 
   // add Copy button to all containers — notice: using the live preview here
