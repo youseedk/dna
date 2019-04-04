@@ -1,19 +1,18 @@
 function addCopyButton(parent) {
 
-  const buttonText = 'Copy to Clipboard';
+  const buttonText = 'Copy code to Clipboard';
   const button = document.createElement('button');
   button.textContent = buttonText;
   button.classList.add('element-preview__button');
 
   const copyField = document.createElement('input');
-  const textValue = parent.innerHTML;
+  const textValue = parent.parentNode.querySelector('.element-preview__inner').innerHTML;
   copyField.value = textValue;
   copyField.classList.add('element-preview__input');
   parent.appendChild(copyField);
 
   button.addEventListener('click', (event) => {
-    const elToCopy = copyField;
-    elToCopy.select();
+    copyField.select();
     document.execCommand('copy');
   })
 
@@ -21,10 +20,10 @@ function addCopyButton(parent) {
 }
 
 function codePreview() {
-  const preEls = document.querySelectorAll('.Prose code pre');
+  const preElements = document.querySelectorAll('.Prose code pre');
 
   // wrap preview code in containers
-  preEls.forEach((parentEl) => {
+  preElements.forEach((parentEl) => {
     parentEl.parentNode.outerHTML = `<div class="code-preview">${parentEl.parentNode.outerHTML}</div>`;
   });
 
