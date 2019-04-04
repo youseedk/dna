@@ -9,7 +9,7 @@
 # Examples
 ## Select
 <div class="element-preview">
-  {{render '@toggle-switch'}}
+  <div class="element-preview__inner">{{render '@toggle-switch'}}</div>
 </div>
 ```html
 {{render '@toggle-switch'}}

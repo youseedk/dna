@@ -2,18 +2,31 @@
 
   .Prose {
     font-size: 1.25rem;
+    max-width: 100%;
 
-    h2 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    li,
+    blockquote {
+      color: inherit;
+      opacity: 1;
+    }
+
+    > h2 {
       font-size: 1.25rem;
       margin-bottom: .5em;
     }
 
-    h3 {
-      opacity: 1;
+    > h3 {
       font-size: 1rem;
     }
 
-    blockquote {
+    > blockquote {
       padding: .5rem 2rem;
       border: 0;
       position: relative;
@@ -50,8 +63,19 @@
     }
 
     // hide empty p elements that markdown renders
-    p:empty {
+    > p:empty {
       display: none;
+    }
+
+    // reinstate scrollbars removed by black.css (fractal base theme)
+    ::-webkit-scrollbar {
+      -webkit-appearance: none;
+      width: 7px;
+    }
+    ::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background-color: rgba(0,0,0,.5);
+        -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
     }
   }
 }

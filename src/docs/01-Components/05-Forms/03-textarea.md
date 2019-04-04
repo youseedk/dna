@@ -10,7 +10,7 @@
 # Examples
 ## Textarea
 <div class="element-preview">
-  {{render '@textarea'}}
+  <div class="element-preview__inner">{{render '@textarea'}}</div>
 </div>
 
 ```html
@@ -19,7 +19,7 @@
 
 ## Textarea on dark background
 <div class="element-preview element-preview--dark">
-  {{render '@textarea--textarea-on-dark-background'}}
+  <div class="element-preview__inner">{{render '@textarea--textarea-on-dark-background'}}</div>
 </div>
 
 ```html
@@ -28,7 +28,7 @@
 
 ## Textarea with guidance text
 <div class="element-preview">
-  {{render '@textarea--textarea-with-guidance-text'}}
+  <div class="element-preview__inner">{{render '@textarea--textarea-with-guidance-text'}}</div>
 </div>
 
 ```html
@@ -37,7 +37,7 @@
 
 ## Disabled textarea
 <div class="element-preview">
-  {{render '@textarea--disabled-textarea'}}
+  <div class="element-preview__inner">{{render '@textarea--disabled-textarea'}}</div>
 </div>
 
 ```html
@@ -46,7 +46,7 @@
 
 ## Readonly textarea
 <div class="element-preview">
-  {{render '@textarea--readonly-textarea'}}
+  <div class="element-preview__inner">{{render '@textarea--readonly-textarea'}}</div>
 </div>
 
 ```html
