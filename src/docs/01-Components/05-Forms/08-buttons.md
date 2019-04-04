@@ -12,7 +12,7 @@ Buttons are used to make common actions immediately visible and easy to perform 
 # Examples
 ## Default button
 <div class="element-preview">
-  {{render '@button'}}
+  <div class="element-preview__inner">{{render '@button'}}</div>
 </div>
 
 ```html
@@ -22,7 +22,7 @@ Buttons are used to make common actions immediately visible and easy to perform 
 
 ## Default button, light
 <div class="element-preview element-preview--dark">
-  {{render '@button--light'}}
+  <div class="element-preview__inner">{{render '@button--light'}}</div>
 </div>
 
 ```html
@@ -31,7 +31,7 @@ Buttons are used to make common actions immediately visible and easy to perform 
 
 ## CTA
 <div class="element-preview">
-  {{render '@button--call-to-action'}}
+  <div class="element-preview__inner">{{render '@button--call-to-action'}}</div>
 </div>
 
 ```html
@@ -40,7 +40,7 @@ Buttons are used to make common actions immediately visible and easy to perform 
 
 ## Solid
 <div class="element-preview">
-  {{render '@button--solid-dark'}}
+  <div class="element-preview__inner">{{render '@button--solid-dark'}}</div>
 </div>
 
 ```html
@@ -49,7 +49,7 @@ Buttons are used to make common actions immediately visible and easy to perform 
 
 ## Solid, light
 <div class="element-preview element-preview--dark">
-  {{render '@button--solid-light'}}
+  <div class="element-preview__inner">{{render '@button--solid-light'}}</div>
 </div>
 
 ```html
@@ -58,7 +58,7 @@ Buttons are used to make common actions immediately visible and easy to perform 
 
 ## Stripped
 <div class="element-preview">
-  {{render '@button--stripped-dark'}}
+  <div class="element-preview__inner">{{render '@button--stripped-dark'}}</div>
 </div>
 
 ```html
@@ -67,7 +67,7 @@ Buttons are used to make common actions immediately visible and easy to perform 
 
 ## Stripped, light
 <div class="element-preview element-preview--dark">
-  {{render '@button--stripped-light'}}
+  <div class="element-preview__inner">{{render '@button--stripped-light'}}</div>
 </div>
 
 ```html
@@ -77,7 +77,7 @@ Buttons are used to make common actions immediately visible and easy to perform 
 ## Button with icon
 All of the above can be include an icon, ie. the *default* button:
 <div class="element-preview">
-  {{render '@button--with-icon'}}
+  <div class="element-preview__inner">{{render '@button--with-icon'}}</div>
 </div>
 
 ```html
@@ -87,7 +87,7 @@ All of the above can be include an icon, ie. the *default* button:
 ## Icon only button
 All button colorways can be displayed with an icon only, ie. the *default* button:
 <div class="element-preview">
-  {{render '@button--icon-only'}}
+  <div class="element-preview__inner">{{render '@button--icon-only'}}</div>
 </div>
 
 ```html

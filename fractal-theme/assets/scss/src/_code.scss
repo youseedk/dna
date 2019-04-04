@@ -2,6 +2,8 @@
 
   .code-preview {
     max-width: 100%;
+    max-height: 240px;
+    overflow-y: scroll;
   }
 
   code {
@@ -9,16 +11,12 @@
     position: relative;
 
     pre {
-      padding: .5rem;
+      border: 8px solid #2b2b2b;
       background-color: #2b2b2b;
       color: #fff;
     }
   }
-
-
 }
-
-
 
 // highlight js
 /*

@@ -15,7 +15,7 @@ Input fields should always follow these requirements:
 # Examples
 ## Input field
 <div class="element-preview">
-  {{render '@input-field'}}
+  <div class="element-preview__inner">{{render '@input-field'}}</div>
 </div>
 
 ```html
@@ -24,7 +24,7 @@ Input fields should always follow these requirements:
 
 ## Input field on dark background
 <div class="element-preview element-preview--dark">
-  {{render '@input-field--input-on-dark-background'}}
+  <div class="element-preview__inner">{{render '@input-field--input-on-dark-background'}}</div>
 </div>
 
 ```html
@@ -33,7 +33,7 @@ Input fields should always follow these requirements:
 
 ## Input field with guidance text
 <div class="element-preview">
-  {{render '@input-field--input-with-guidance-text'}}
+  <div class="element-preview__inner">{{render '@input-field--input-with-guidance-text'}}</div>
 </div>
 
 ```html
@@ -42,7 +42,7 @@ Input fields should always follow these requirements:
 
 ## Input field with icon
 <div class="element-preview">
-  {{render '@input-field--input-with-icon'}}
+  <div class="element-preview__inner">{{render '@input-field--input-with-icon'}}</div>
 </div>
 
 ```html
@@ -51,7 +51,7 @@ Input fields should always follow these requirements:
 
 ## Input field with valid input
 <div class="element-preview">
-  {{render '@input-field--input-with-valid-input'}}
+  <div class="element-preview__inner">{{render '@input-field--input-with-valid-input'}}</div>
 </div>
 
 ```html
@@ -60,7 +60,7 @@ Input fields should always follow these requirements:
 
 ## Input field with invalid input
 <div class="element-preview">
-  {{render '@input-field--input-with-invalid-input'}}
+  <div class="element-preview__inner">{{render '@input-field--input-with-invalid-input'}}</div>
 </div>
 
 ```html
@@ -69,7 +69,7 @@ Input fields should always follow these requirements:
 
 ## Disabled input field
 <div class="element-preview">
-  {{render '@input-field--disabled-input'}}
+  <div class="element-preview__inner">{{render '@input-field--disabled-input'}}</div>
 </div>
 
 ```html
@@ -78,7 +78,7 @@ Input fields should always follow these requirements:
 
 ## Readonly input field
 <div class="element-preview">
-  {{render '@input-field--readonly-input'}}
+  <div class="element-preview__inner">{{render '@input-field--readonly-input'}}</div>
 </div>
 
 ```html

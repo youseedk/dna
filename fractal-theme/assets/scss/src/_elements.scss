@@ -3,17 +3,21 @@
   .element-preview {
     position: relative;
     margin: 0;
-    padding: 1em;
     max-width: 100%;
     background-size: 20px 20px;
     background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
-    max-height: 240px;
     background-color: #fff;
     background-image: linear-gradient(45deg, #eee 25%, transparent 25%), linear-gradient(-45deg, #eee 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #eee 75%), linear-gradient(-45deg, transparent 75%, #eee 75%);
 
     &--dark {
       background-color: #111;
       background-image: linear-gradient(45deg, #222 25%, transparent 25%), linear-gradient(-45deg, #222 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #222 75%), linear-gradient(-45deg, transparent 75%, #222 75%);
+    }
+
+    &__inner {
+      padding: 1em;
+      max-height: 240px;
+      overflow-y: scroll;
     }
 
     &__input {// used for copy functionality
@@ -24,7 +28,7 @@
     &__button {// copy to clipboard button
       position: absolute;
       right: 0;
-      top: 100%;
+      bottom: 100%;
       font-size: 14px;
       background-color: #d9d9d9;
       padding: 4px 8px;
@@ -49,10 +53,6 @@
       list-style: none;
       margin: 0;
       padding: 0;
-    }
-
-    &__item {
-
     }
   }
 }

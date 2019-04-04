@@ -10,7 +10,7 @@
 # Examples
 ## Select
 <div class="element-preview">
-  {{render '@select'}}
+  <div class="element-preview__inner">{{render '@select'}}</div>
 </div>
 ```html
 {{render '@select'}}
@@ -18,7 +18,7 @@
 
 ## Select on dark background
 <div class="element-preview element-preview--dark">
-  {{render '@select--select-on-dark-background'}}
+  <div class="element-preview__inner">{{render '@select--select-on-dark-background'}}</div>
 </div>
 
 ```html
@@ -28,7 +28,7 @@
 
 ## Select with guidance text
 <div class="element-preview">
-  {{render '@select--select-with-guidance-text'}}
+  <div class="element-preview__inner">{{render '@select--select-with-guidance-text'}}</div>
 </div>
 
 ```html
@@ -38,7 +38,7 @@
 
 ## Disabled select
 <div class="element-preview">
-  {{render '@select--select-(disabled)'}}
+  <div class="element-preview__inner">{{render '@select--select-(disabled)'}}</div>
 </div>
 
 ```html
@@ -47,7 +47,7 @@
 
 ## Select, alternative
 <div class="element-preview">
-  {{render '@select--alternative'}}
+  <div class="element-preview__inner">{{render '@select--alternative'}}</div>
 </div>
 ```html
 {{render '@select--alternative'}}
@@ -55,7 +55,7 @@
 
 ## Select, alternative on dark background
 <div class="element-preview element-preview--dark">
-  {{render '@select--alternative-on-dark-background'}}
+  <div class="element-preview__inner">{{render '@select--alternative-on-dark-background'}}</div>
 </div>
 
 ```html
@@ -64,7 +64,7 @@
 
 ## Disabled select, alternative
 <div class="element-preview">
-  {{render '@select--alternative-(disabled)'}}
+  <div class="element-preview__inner">{{render '@select--alternative-(disabled)'}}</div>
 </div>
 ```html
 {{render '@select--alternative-(disabled)'}}
