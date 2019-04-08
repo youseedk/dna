@@ -49,11 +49,11 @@ module.exports = {
 			}
 		},
 		{
-			name: 'Legal Text',
+			name: 'Small Text',
 			context: {
 				tagName: "p",
-        className: "ys-legal-text",
-        textContent: "Legal Text"
+        className: "ys-small-text",
+        textContent: "Small Text"
 			}
 		},
 		{
