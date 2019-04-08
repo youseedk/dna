@@ -3,7 +3,7 @@
 @import '../tools/ys-mixins';
 @import '../tools/ys-functions';
 
-.ys-tooltip {
+html:not(#ys-specificity) .ys-tooltip {
   position: relative;
   display: inline-block;
   min-width: rem(160);

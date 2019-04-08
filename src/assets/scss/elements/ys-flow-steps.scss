@@ -3,7 +3,7 @@
 @import '../tools/ys-mixins';
 @import '../tools/ys-functions';
 
-.ys-flow-steps {
+html:not(#ys-specificity) .ys-flow-steps {
   color: $ys-color-grey-28;
 
   &__list {

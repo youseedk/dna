@@ -3,7 +3,7 @@
 @import '../tools/ys-mixins';
 @import '../tools/ys-functions';
 
-.ys-input-field {
+html:not(#ys-specificity) .ys-input-field {
   color: $ys-color-grey-46;
 
   &__label {
