@@ -14,7 +14,7 @@ deploy:
     on:
       branch: master
   - provider: npm
-    email: kim@shiftcph.dk
+    email: opensource@yousee.dk
     api_key: "$NPM_TOKEN"
     skip_cleanup: true
     on:
