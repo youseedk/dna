@@ -4,6 +4,7 @@
 @import '../tools/ys-functions';
 
 html:not(#ys-specificity) {
+
   .ys-main-title {
     @include ys-main-title;
   }
@@ -24,9 +25,9 @@ html:not(#ys-specificity) {
     @include ys-body-text;
   }
 
-  .ys-legal-text {
-    @include ys-legal-text;
-  }
+.ys-small-text {
+  @include ys-small-text;
+}
 
   .ys-list {
     @include ys-list;

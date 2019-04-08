@@ -101,6 +101,10 @@ html:not(#ys-specificity) .ys-rich-text {
 
   &--light {
     color: $ys-color-grey-98;
+
+    & > *:not([class]) {
+      color: inherit;
+    }
   }
 
   // specific margins

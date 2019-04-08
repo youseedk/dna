@@ -82,7 +82,7 @@ html:not(#ys-specificity) .ys-button {
   }
 
   // Solid dark button with white text
-  &--solid-dark {
+  &--secondary-dark {
     background-color: $ys-color-grey-28;
     color: $ys-color-white;
     box-shadow: inset 0 0 0 transparent;
@@ -94,7 +94,7 @@ html:not(#ys-specificity) .ys-button {
   }
 
   // Solid light button with dark text
-  &--solid-light {
+  &--secondary-light {
     background-color: $ys-color-white;
     color: $ys-color-grey-28;
     box-shadow: inset 0 0 0 0 transparent;
@@ -106,16 +106,16 @@ html:not(#ys-specificity) .ys-button {
   }
 
   // Stripped button which resembles a link without an underline
-  &--stripped-dark {
+  &--tertiary-dark {
     color: $ys-color-grey-28;
   }
 
-  &--stripped-light {
+  &--tertiary-light {
     color: $ys-color-white;
   }
 
-  &--stripped-dark,
-  &--stripped-light {
+  &--tertiary-dark,
+  &--tertiary-light {
     padding: 0 rem(16);
     background-color: transparent;
     box-shadow: 0 0 0 0 transparent;
