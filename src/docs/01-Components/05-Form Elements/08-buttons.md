@@ -38,40 +38,40 @@ Buttons are used to make common actions immediately visible and easy to perform 
 ```
 
 
-## Solid
+## Secondary button
 <div class="element-preview">
-  <div class="element-preview__inner">{{render '@button--solid-dark'}}</div>
+  <div class="element-preview__inner">{{render '@button--secondary-dark'}}</div>
 </div>
 
 ```html
-{{render '@button--solid-dark'}}
+{{render '@button--secondary-dark'}}
 ```
 
-## Solid, light
+## Secondary button, light
 <div class="element-preview element-preview--dark">
-  <div class="element-preview__inner">{{render '@button--solid-light'}}</div>
+  <div class="element-preview__inner">{{render '@button--secondary-light'}}</div>
 </div>
 
 ```html
-{{render '@button--solid-light'}}
+{{render '@button--secondary-light'}}
 ```
 
-## Stripped
+## Tertiary button
 <div class="element-preview">
-  <div class="element-preview__inner">{{render '@button--stripped-dark'}}</div>
+  <div class="element-preview__inner">{{render '@button--tertiary-dark'}}</div>
 </div>
 
 ```html
-{{render '@button--stripped-dark'}}
+{{render '@button--tertiary-dark'}}
 ```
 
-## Stripped, light
+## Tertiary button, light
 <div class="element-preview element-preview--dark">
-  <div class="element-preview__inner">{{render '@button--stripped-light'}}</div>
+  <div class="element-preview__inner">{{render '@button--tertiary-light'}}</div>
 </div>
 
 ```html
-{{render '@button--stripped-light'}}
+{{render '@button--tertiary-light'}}
 ```
 
 ## Button with icon
