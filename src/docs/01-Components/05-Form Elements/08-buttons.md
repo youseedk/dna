@@ -10,6 +10,15 @@ Buttons are used to make common actions immediately visible and easy to perform 
 </nav>
 
 # Examples
+## CTA
+<div class="element-preview">
+  <div class="element-preview__inner">{{render '@button--call-to-action'}}</div>
+</div>
+
+```html
+{{render '@button--call-to-action'}}
+```
+
 ## Default button
 <div class="element-preview">
   <div class="element-preview__inner">{{render '@button'}}</div>
@@ -18,7 +27,6 @@ Buttons are used to make common actions immediately visible and easy to perform 
 ```html
 {{render '@button'}}
 ```
-
 
 ## Default button, light
 <div class="element-preview element-preview--dark">
@@ -29,14 +37,6 @@ Buttons are used to make common actions immediately visible and easy to perform 
 {{render '@button--light'}}
 ```
 
-## CTA
-<div class="element-preview">
-  <div class="element-preview__inner">{{render '@button--call-to-action'}}</div>
-</div>
-
-```html
-{{render '@button--call-to-action'}}
-```
 
 ## Solid
 <div class="element-preview">
