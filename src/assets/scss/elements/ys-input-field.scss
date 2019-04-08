@@ -60,7 +60,6 @@ html:not(#ys-specificity) .ys-input-field {
     line-height: rem(24);
     background-color: transparent;
     color: $ys-color-grey-28;
-    caret-color: $ys-color-digital-grass;
 
     &::placeholder {
       color: $ys-color-grey-64;

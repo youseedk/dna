@@ -22,6 +22,7 @@ html:not(#ys-specificity) .ys-flow-steps {
     padding-top: rem(34);
     font-size: rem(14);
     counter-increment: progress-bullet;
+    list-style-type: none;
 
     @media screen and (min-width: $ys-breakpoint-md) {
       padding-top: rem(42);
@@ -31,7 +32,7 @@ html:not(#ys-specificity) .ys-flow-steps {
     &::before {
       content: '';
       position: absolute;
-      z-index: -1;
+      z-index: 0;
       top: rem(16);
       left: -50%;
       height: rem(2);

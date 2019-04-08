@@ -24,28 +24,28 @@ module.exports = {
 			}
 		},
 		{
-			name: 'solid-dark',
+			name: 'secondary-dark',
 			context: {
-				modifierClass: "ys-button--solid-dark",
+				modifierClass: "ys-button--secondary-dark",
 			}
 		},
 		{
-			name: 'solid-light',
+			name: 'secondary-light',
 			context: {
-				modifierClass: "ys-button--solid-light",
+				modifierClass: "ys-button--secondary-light",
 				darkBg: true,
 			}
 		},
 		{
-			name: 'stripped-dark',
+			name: 'tertiary-dark',
 			context: {
-				modifierClass: "ys-button--stripped-dark"
+				modifierClass: "ys-button--tertiary-dark"
 			}
 		},
 		{
-			name: 'stripped-light',
+			name: 'tertiary-light',
 			context: {
-				modifierClass: "ys-button--stripped-light",
+				modifierClass: "ys-button--tertiary-light",
 				darkBg: true,
 			}
 		},

@@ -1,27 +1,131 @@
-.Frame-panel--sidebar {
-  background-color: #d9d9d9;
-}
+[dir="ltr"] { // here for specificity purposes
 
-a.Tree-entityLink {
-  color: #191919;
-}
+  .Frame-panel--sidebar {
+    position: relative;
+    background-color: #f0f0f0;
+    border: 0;
+    padding: 2rem 0;
+    box-shadow: inset -8px 0 24px rgba(0, 0, 0, .08);
 
-.Tree-collectionLabel {
-  font-weight: bold;
+    // Navigation section headers
+    .Tree-title {
+      display: none;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #484848;
+      text-transform: capitalize;
+      letter-spacing: 0;
+      padding: 2rem 0 .5rem;
+      margin: 2rem;
+      border-bottom: 2px solid #1fab2e;
+      margin-top: 0;
+    }
 
-  /* make arrow centered in navigation */
-  span {
-    display: flex;
-    align-items: center;
+    // Navigation item
+    .Tree-collectionLabel,
+    a.Tree-entityLink {
+      font-weight: light;
+      font-size: 1.12rem;
+      color: #484848;
+      position: relative;
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: .15rem;
+      padding-bottom: .15rem;
+    }
 
-    &::before {
-      position: static;
-      top: 0;
+    .Tree-collectionLabel span {
+      -webkit-padding-start: 0rem;
+      padding-inline-start: 0rem;
+      -webkit-margin-start: 0rem;
+      margin-inline-start: 0rem;
+    }
+
+    // Level 1
+    .Tree-depth-1 > .Tree-item > a {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      font-weight: bold;
+    }
+
+    .Tree-depth-2 > .Tree-collectionLabel > span {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      font-weight: bold;
+    }
+
+    // Level 2
+    .Tree-depth-2 > .Tree-collectionItems > .Tree-item > a {
+      padding-left: 3.5rem;
+      padding-right: 2rem;
+    }
+
+    .Tree-depth-3 > .Tree-collectionLabel > span {
+      padding-left: 3.5rem;
+      padding-right: 2rem;
+    }
+
+    // Level 3
+    .Tree-depth-3 > .Tree-collectionItems > .Tree-item > a {
+      padding: .25rem 2rem .25rem 5.5rem;
+      font-size: 1rem;
+      line-height: 1.25;
+    }
+
+    .Tree-depth-3 > .Tree-collectionItems {
+      padding: 0 0 24px;
+    }
+
+
+    // Current Nav item
+    .is-current .Tree-entityLink {
+      font-weight: 800;
+      background-color: rgba(0, 0, 0, 0);
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 16px;
+        top: 4px;
+        bottom: 4px;
+        width: 4px;
+        background-color: #1fab2e;
+        border-radius: 4px;
+      }
+    }
+
+    // list of items in subnav
+    .Tree-collectionItems {
+      padding: 0 0 2rem;
+    }
+
+    // align arrow to center and move it right
+    .Tree-item span {
+      display: flex;
+      align-items: baseline;
+      white-space: normal;
+
+      &::before {
+        position: static;
+        top: 0;
+        background-size: 12px;
+        width: 1rem;
+        margin-right: .5rem;
+      }
+    }
+
+    // replace bg image (arrow)
+    .Tree-collection.is-closed .Tree-collectionLabel span::before {
+      background-image: url('data:image/svg+xml,%3Csvg viewBox%3d%22-3 0 16 16%22 xmlns%3d%22http://www.w3.org/2000/svg%22%3E%3Cpath fill%3d%22%23191919%22 fill-rule%3d%22evenodd%22 d%3d%22M6.343 8.027L.36 1.95a1.11 1.11 0 0 1 0-1.553L.435.322a1.069 1.069 0 0 1 1.528 0l6.728 6.834.065.06c.443.443.443 1.16 0 1.603l-6.821 6.822a1.133 1.133 0 0 1-1.603-1.603l6.01-6.011z%22/%3E%3C/svg%3E');
+    }
+
+    .Tree-collection .Tree-collectionLabel span::before {
+      background-image: url('data:image/svg+xml,%3Csvg viewBox%3d%220 -3 16 16%22 xmlns%3d%22http://www.w3.org/2000/svg%22%3E%3Cpath fill%3d%22%23191919%22 fill-rule%3d%22evenodd%22 d%3d%22M7.973 7.29884l6.0772-5.98225c.42883-.42212 1.12409-.42212 1.5529 0l.07528.0741a1.069 1.069 0 0 1 0 1.52864L8.844 9.64693a1.149 1.149 0 0 1-.0604.06524c-.44258.44259-1.16015.44259-1.60273 0L.35925 2.89057c-.44258-.4426-.44258-1.16016 0-1.60274.44259-.44259 1.16016-.44259 1.60274 0l6.01101 6.011z%22/%3E%3C/svg%3E');
     }
   }
-}
 
-// hide status in navbar
-.Navigation .Status {
-  display: none;
+  // hide status icons in navbar
+  .Navigation .Status {
+    display: none;
+  }
 }

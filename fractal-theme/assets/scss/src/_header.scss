@@ -1,11 +1,17 @@
 .Header {
-  background-color: #222;
+  background-color: #002219;
 }
 
 .Header-button {
   @media screen and (min-width: 768px) {
     height: 4rem;
     width: 4rem;
+  }
+
+  // Make sure nav button is hidden on desktop sized screens
+  @media screen and (min-width: 1024px) {
+    width: 0;
+    overflow: hidden;
   }
 }
 
