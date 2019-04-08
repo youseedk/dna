@@ -2,9 +2,9 @@
 @import '../settings/ys-settings';
 @import '../tools/ys-mixins';
 
-html:not(#ys-specificity) [class*='ys'],
-html:not(#ys-specificity) [class*='ys']::before,
-html:not(#ys-specificity) [class*='ys']::after {
+html:not(#ys-specificity) [class^='ys'],
+html:not(#ys-specificity) [class^='ys']::before,
+html:not(#ys-specificity) [class^='ys']::after {
   box-sizing: border-box;
   font-family: $ys-basefont-stack;
 }
