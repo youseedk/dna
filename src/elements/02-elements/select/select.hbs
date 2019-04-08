@@ -2,7 +2,7 @@
     <label class="ys-input-field__label">
         <span class="ys-select__label-text">Label for select</span>
         <span class="ys-select__wrapper{{#if isDisabled}} ys-select__wrapper--disabled{{/if}}{{#if isAlternative}} ys-select__wrapper--alternative{{/if}}{{#if isInverted}} ys-select__wrapper--light{{/if}}">
-            <select class="ys-select__control" {{#if isDisabled}} disabled{{/if}}>
+            <select class="ys-select__control" {{#if isDisabled}} disabled{{/if}}{{#if hasGuidance}} aria-labelledby="select-guidance-text"{{/if}}>
                 <option class="ys-select__option" value="1">Option 1</option>
                 <option class="ys-select__option" value="2">Option 2 which is very long which you will see</option>
                 <option class="ys-select__option" value="3">Option 3</option>
@@ -14,6 +14,6 @@
         </span>
     </label>
     {{#if hasGuidance}}
-    <p class="ys-select__guidance{{#if isInvalid}} ys-select__guidance--error{{/if}}">Guidance message for select</p>
+    <p class="ys-select__guidance{{#if isInvalid}} ys-select__guidance--error{{/if}}" id="select-guidance-text">Guidance message for select</p>
     {{/if}}
 </div>
