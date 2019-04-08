@@ -8,7 +8,7 @@
     </a>
 
     <ul class="Header-menu">
-        <li class="Header-version">{{ frctl.get('project.version') }}</li>
+        <li class="Header-version">v{{ frctl.get('project.version') }}</li>
         <li>
             <a href="https://github.com/youseedk/dna">
                 <img src="/assets/theme/images/github.svg" alt="View YouSee DNA Repository on GitHub" />

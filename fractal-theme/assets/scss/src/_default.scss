@@ -1,8 +1,18 @@
-.Prose {
-  max-width: 100%;
-  font-feature-settings: normal;
-}
-
-.Prose > *:not(.frctl-example) {
-  max-width: 70ch;
+// Change font to Helvetica everywhere
+html,
+.Tree-title,
+.Tree-collectionLabel,
+.Tree-item,
+.Document-title,
+.Prose,
+.Prose h1,
+.Prose h2,
+.Prose h3,
+.Prose h4,
+.Prose h5,
+.Prose h6,
+.Prose p,
+.Prose ul,
+.Prose ol {
+  font-family: 'helvetica neue', helvetica, arial, sans-serif;
 }

@@ -1,7 +1,17 @@
+// Fractal overrides
 @import './src/default';
-@import './src/colors';
+@import './src/frame';
 @import './src/sidebar';
 @import './src/header';
+@import './src/document';
+@import './src/prose';
+
+// Custom pages
+@import './src/colors';
 @import './src/changelog';
 @import './src/icons';
 @import './src/contributors';
+
+// Preview and code preview
+@import './src/elements';
+@import './src/code';
