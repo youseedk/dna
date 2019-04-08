@@ -12,9 +12,11 @@
 <div class="element-preview">
   <div class="element-preview__inner">{{render '@select'}}</div>
 </div>
+
 ```html
 {{render '@select'}}
 ```
+
 
 ## Select on dark background
 <div class="element-preview element-preview--dark">
@@ -49,6 +51,7 @@
 <div class="element-preview">
   <div class="element-preview__inner">{{render '@select--alternative'}}</div>
 </div>
+
 ```html
 {{render '@select--alternative'}}
 ```
@@ -66,6 +69,7 @@
 <div class="element-preview">
   <div class="element-preview__inner">{{render '@select--alternative-(disabled)'}}</div>
 </div>
+
 ```html
 {{render '@select--alternative-(disabled)'}}
 ```
