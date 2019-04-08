@@ -50,8 +50,8 @@ A set of typographic rules have been determined and implemented:
     <td colspan="2" style="text-align: center">Font size: 16px<br>Line height: 24px (1.5)<br>font weight: normal (400)</td>
   </tr>
   <tr>
-    <th scope="row">Legal Text<br />`.ys-legal-text`</th>
-    <td colspan="2" style="text-align: center">Font size: 12px<br>Line height: 15px (1.25)<br>font weight: normal (400)</td>
+    <th scope="row">Small Text<br />`.ys-small-text`</th>
+    <td colspan="2" style="text-align: center">Font size: 12px<br>Line height: 15px (1.25)<br>font weight: normal (400)<br>Font style: italic</td>
 </table>
 
 #### Notes

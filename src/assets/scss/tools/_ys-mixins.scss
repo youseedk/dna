@@ -94,11 +94,12 @@
   font-weight: 400;
 }
 
-@mixin ys-legal-text() {
+@mixin ys-small-text() {
   margin: 0;
   font-size: rem(12);
   line-height: 1.25;
   font-weight: 400;
+  font-style: italic;
 }
 
 @mixin ys-list() {
