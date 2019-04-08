@@ -31,7 +31,7 @@
     &::before {
       content: '';
       position: absolute;
-      z-index: -1;
+      z-index: 0;
       top: rem(16);
       left: -50%;
       height: rem(2);
