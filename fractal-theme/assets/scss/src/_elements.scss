@@ -2,7 +2,7 @@
 
   .element-preview {
     position: relative;
-    margin: 0;
+    margin: .5rem 0 0;
     max-width: 100%;
     background-size: 20px 20px;
     background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
@@ -31,20 +31,27 @@
       position: absolute;
       right: 0;
       bottom: 100%;
-      font-size: 14px;
-      background-color: #d9d9d9;
-      padding: 4px 8px;
-      z-index: 99;
+      font-size: 20px;
+      background-color: #94b4a3;
+      color: #fff;
+      padding: .25rem 3rem .25rem 1rem;
+      border-radius: 4px 4px 0 0;
+
+      background-image: url('data:image/svg+xml,%3Csvg viewBox%3D%220 0 18 18%22 xmlns%3D%22http://www.w3.org/2000/svg%22%3E%3Cg transform%3D%22translate(1 1)%22 stroke%3D%22%23FFF%22 stroke-width%3D%221.6%22 fill%3D%22none%22 fill-rule%3D%22evenodd%22 stroke-linecap%3D%22round%22 stroke-linejoin%3D%22round%22%3E%3Crect y%3D%223.2%22 width%3D%2212.8%22 height%3D%2212.8%22 rx%3D%221.6%22/%3E%3Cpath d%3D%22M8.8 0H13c1.77 0 3 1.04 3 3v4.2%22/%3E%3C/g%3E%3C/svg%3E');
+      background-size: 18px;
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
 
       &:hover {
-        background-color: #ccc;
+        background-color: #484848;
       }
     }
   }
 
   .element-navigation {
+    margin-top: 2em;
     padding-bottom: 1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2em;
     border-bottom: 1px solid #484848;
 
     &__title {
@@ -55,6 +62,30 @@
       list-style: none;
       margin: 0;
       padding: 0;
+    }
+
+    &__item {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+    }
+
+    &__item::before {
+      content: '';
+      margin: 0 8px;
+      width: 10px;
+      height: 18px;
+      background-size: 10px 18px;
+      background-image: url('data:image/svg+xml,%3Csvg viewBox%3d%22-3 0 16 16%22 xmlns%3d%22http://www.w3.org/2000/svg%22%3E%3Cpath fill%3d%22%23191919%22 fill-rule%3d%22evenodd%22 d%3d%22M6.343 8.027L.36 1.95a1.11 1.11 0 0 1 0-1.553L.435.322a1.069 1.069 0 0 1 1.528 0l6.728 6.834.065.06c.443.443.443 1.16 0 1.603l-6.821 6.822a1.133 1.133 0 0 1-1.603-1.603l6.01-6.011z%22/%3E%3C/svg%3E');
+    }
+
+    a {
+      color: #484848;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 }

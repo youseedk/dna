@@ -11,20 +11,40 @@
     > h5,
     > h6,
     > p,
+    > ol,
+    > ul,
     > ol li,
     > ul li,
     > blockquote {
       color: inherit;
       opacity: 1;
+      margin-top: 2em;
+      margin-bottom: 0;
+    }
+
+    > h1 {
+      font-size: 2.5rem;
     }
 
     > h2 {
-      font-size: 1.25rem;
-      margin-bottom: .5em;
+      font-size: 1.5rem;
     }
 
     > h3 {
+      font-size: 1.25rem;
+    }
+
+    > h4 {
       font-size: 1rem;
+    }
+
+    > p {
+      margin-top: 1.5em;
+    }
+
+    > ul li,
+    > ol li {
+      margin-top: .5em;
     }
 
     > blockquote {
@@ -51,8 +71,8 @@
       max-width: 70ch;
     }
 
-    & > *:not(:last-child) {
-      margin-bottom: 1.5em;
+    & > *:first-child {
+      margin-top: 0;
     }
 
     code {
