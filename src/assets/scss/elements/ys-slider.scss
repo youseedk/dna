@@ -33,7 +33,7 @@
   border: 0;
 }
 
-.ys-slider {
+html:not(#ys-specificity) .ys-slider {
 
   &__label {
     font-size: rem(12);

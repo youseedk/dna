@@ -3,7 +3,7 @@
 @import '../tools/ys-mixins';
 @import '../tools/ys-functions';
 
-.ys-toggle-switch {
+html:not(#ys-specificity) .ys-toggle-switch {
   display: block;
 
   &__label {

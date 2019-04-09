@@ -3,7 +3,7 @@
 @import '../tools/ys-mixins';
 @import '../tools/ys-functions';
 
-.ys-tabs {
+html:not(#ys-specificity) .ys-tabs {
   display: flex;
   overflow-x: auto;
 

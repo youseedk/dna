@@ -3,7 +3,7 @@
 @import '../tools/ys-mixins';
 @import '../tools/ys-functions';
 
-.ys-select {
+html:not(#ys-specificity) .ys-select {
   color: $ys-color-grey-46;
 
   &__label {
