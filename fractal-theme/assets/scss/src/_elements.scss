@@ -40,6 +40,16 @@
         background-color: #ccc;
       }
     }
+
+    /* EXAMPLES for code */
+    [class*='ys-col'] {
+      padding: .5rem;
+      background-color: #dbdbdb;
+      border: 1px solid #ccc;
+      text-align: center;
+      font-size: 1rem;
+    }
+
   }
 
   .element-navigation {
