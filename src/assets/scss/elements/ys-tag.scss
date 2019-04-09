@@ -3,7 +3,7 @@
 @import '../tools/ys-mixins';
 @import '../tools/ys-functions';
 
-.ys-tag {
+html:not(#ys-specificity) .ys-tag {
   display: inline-block;
   padding: 0 rem(12);
   font-size: rem(12);

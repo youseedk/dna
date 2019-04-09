@@ -3,7 +3,7 @@
 @import '../tools/ys-mixins';
 @import '../tools/ys-functions';
 
-.ys-progress {
+html:not(#ys-specificity) .ys-progress {
   color: $ys-color-grey-28;
 
   &__bar,

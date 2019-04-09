@@ -1,5 +1,5 @@
 <div class="Header">
-    <button class="Header-button Header-navToggle" data-action="toggle-sidebar">
+    <button class="Header-button Header-navToggle" data-action="toggle-sidebar" aria-label="Toggle navigation">
         {% include 'icons/close-nav.svg' %}
         {% include 'icons/open-nav.svg' %}
     </button>
@@ -8,10 +8,11 @@
     </a>
 
     <ul class="Header-menu">
-        <li class="Header-version">v{{ frctl.get('project.version') }}</li>
+
         <li>
-            <a href="https://github.com/youseedk/dna">
-                <img src="/assets/theme/images/github.svg" alt="View YouSee DNA Repository on GitHub" />
+            <a href="https://github.com/youseedk/dna" aria-label="View YouSee DNA Repository on GitHub" class="Header-version">
+                <span>{{ frctl.get('project.version') }}</span>
+                <img src="/assets/theme/images/github.svg" alt="" />
             </a>
         </li>
     </ul>
