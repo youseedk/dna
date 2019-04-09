@@ -4,10 +4,12 @@ function addCopyButton(parent) {
   const button = document.createElement('button');
   button.textContent = buttonText;
   button.classList.add('element-preview__button');
+  button.setAttribute('aria-label', 'copy-button');
 
   const copyField = document.createElement('input');
   const textValue = parent.parentNode.querySelector('.element-preview__inner').innerHTML;
   copyField.value = textValue;
+  copyField.setAttribute('aria-label', 'copy-field');
   copyField.classList.add('element-preview__input');
   parent.appendChild(copyField);
 

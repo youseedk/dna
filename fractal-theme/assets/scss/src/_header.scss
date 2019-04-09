@@ -1,8 +1,12 @@
 .Header {
-  background-color: #002219;
+  background-color: #f0f0f0;
+  box-shadow: none;
+  color: #484848;
 }
 
 .Header-button {
+  background-color: #000;
+
   @media screen and (min-width: 768px) {
     height: 4rem;
     width: 4rem;
@@ -13,14 +17,19 @@
     width: 0;
     overflow: hidden;
   }
+
+  &:hover {
+    background-color: #111;
+  }
 }
 
 .Header-title {
   padding: 0 18px;
   line-height: 1;
 
-  @media screen and (min-width: 768px) {
-    padding: 0 22px;
+  @media screen and (min-width: 1024px) {
+    padding: 0 32px;
+    margin: 32px 0;
   }
 }
 
@@ -29,6 +38,10 @@
 
   @media screen and (min-width: 768px) {
     width: 150px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 220px;
   }
 }
 
@@ -46,7 +59,6 @@
 }
 
 .Header-menu img {
-  vertical-align: middle;
   width: 2rem;
   height: 2rem;
 }
@@ -55,3 +67,43 @@
   margin-left: 1em;
 }
 
+.Header-menu a {
+  color: #484848;
+  text-decoration: none;
+
+  &:hover {
+    color: #191919;
+  }
+}
+
+.Header-version {
+  display: flex;
+  justify-content: center;
+  height: 32px;
+  line-height: 32px;
+
+  span {
+    margin-right: 1rem;
+
+    &::before {
+      content: 'v';
+    }
+  }
+
+
+
+  @media screen and (min-width: 1024px) {
+    line-height: 1rem;
+
+    span {
+      font-weight: bold;
+    }
+
+    span::before {
+      display: block;
+      content: 'version';
+      font-size: .625rem;
+      font-weight: normal;
+    }
+  }
+}

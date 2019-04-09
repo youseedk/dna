@@ -3,7 +3,7 @@
 @import '../tools/ys-mixins';
 @import '../tools/ys-functions';
 
-.ys-flow-steps {
+html:not(#ys-specificity) .ys-flow-steps {
   color: $ys-color-grey-28;
 
   &__list {
@@ -22,6 +22,7 @@
     padding-top: rem(34);
     font-size: rem(14);
     counter-increment: progress-bullet;
+    list-style-type: none;
 
     @media screen and (min-width: $ys-breakpoint-md) {
       padding-top: rem(42);

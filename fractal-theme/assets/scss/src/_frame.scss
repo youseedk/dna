@@ -1,8 +1,10 @@
-.Frame-inner {
+.Frame-panel--main .Frame-inner {
   background-color: #fff;
+  border-radius: 4px;
 }
 
 .Frame-body {
+  background-color: #f0f0f0;
 
   // Make sure nav is always visible on desktop sized screens
   @media screen and (min-width: 1024px) {
@@ -10,3 +12,4 @@
     margin-right: 0!important;
   }
 }
+

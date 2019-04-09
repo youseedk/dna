@@ -4,7 +4,7 @@
 @import '../tools/ys-functions';
 
 /* stylelint-disable no-descending-specificity */
-.ys-radio-button {
+html:not(#ys-specificity) .ys-radio-button {
 
   &__label {
     position: relative;

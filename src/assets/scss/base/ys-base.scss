@@ -2,9 +2,9 @@
 @import '../settings/ys-settings';
 @import '../tools/ys-mixins';
 
-[class^='ys-'],
-[class^='ys-']::before,
-[class^='ys-']::after {
+html:not(#ys-specificity) [class^='ys'],
+html:not(#ys-specificity) [class^='ys']::before,
+html:not(#ys-specificity) [class^='ys']::after {
   box-sizing: border-box;
   font-family: $ys-basefont-stack;
 }
@@ -12,7 +12,7 @@
 // UTILITY CLASSES
 
 /* Hide content visually */
-.ys-u-visuallyhidden {
+html:not(#ys-specificity) .ys-u-visuallyhidden {
   clip: rect(1px 1px 1px 1px);
   clip: rect(1px, 1px, 1px, 1px);
   height: 1px;
@@ -24,56 +24,56 @@
 }
 
 /* screen width utility classes */
-.ys-u-until-sm {
+html:not(#ys-specificity) .ys-u-until-sm {
   // 0 - 575px
   @media screen and (min-width: $ys-breakpoint-sm) {
     display: none;
   }
 }
 
-.ys-u-until-md {
+html:not(#ys-specificity) .ys-u-until-md {
   // 0 - 767px
   @media screen and (min-width: $ys-breakpoint-md) {
     display: none;
   }
 }
 
-.ys-u-until-lg {
+html:not(#ys-specificity) .ys-u-until-lg {
   // 0 - 991px
   @media screen and (min-width: $ys-breakpoint-lg) {
     display: none;
   }
 }
 
-.ys-u-until-xl {
+html:not(#ys-specificity) .ys-u-until-xl {
   // 0 - 1199px
   @media screen and (min-width: $ys-breakpoint-xl) {
     display: none;
   }
 }
 
-.ys-u-from-sm {
+html:not(#ys-specificity) .ys-u-from-sm {
   // 576px -
   @media screen and (max-width: $ys-breakpoint-sm) {
     display: none;
   }
 }
 
-.ys-u-from-md {
+html:not(#ys-specificity) .ys-u-from-md {
   // 768px -
   @media screen and (max-width: $ys-breakpoint-md) {
     display: none;
   }
 }
 
-.ys-u-from-lg {
+html:not(#ys-specificity) .ys-u-from-lg {
   // 992px -
   @media screen and (max-width: $ys-breakpoint-lg) {
     display: none;
   }
 }
 
-.ys-u-from-xl {
+html:not(#ys-specificity) .ys-u-from-xl {
   // 1200px -
   @media screen and (max-width: $ys-breakpoint-xl) {
     display: none;
