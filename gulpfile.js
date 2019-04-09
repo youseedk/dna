@@ -101,12 +101,12 @@ gulp.task('css', () => {
     }).on('error', plugins.sass.logError))
     .pipe(plugins.postcss(processors))
     // rename bootstrap classes
-    .pipe(plugins.replace('.container','.ys-container'))
-    .pipe(plugins.replace('.row','.ys-row'))
-    .pipe(plugins.replace('.col','.ys-col'))
-    .pipe(plugins.replace('.order-','.ys-order-'))
-    .pipe(plugins.replace('.offset-','.ys-offset-'))
-    .pipe(plugins.replace('.no-gutters','.ys-no-gutters'))
+    .pipe(plugins.replace('.container','html:not(#ys-specificity) .ys-container'))
+    .pipe(plugins.replace('.row','html:not(#ys-specificity) .ys-row'))
+    .pipe(plugins.replace('.col','html:not(#ys-specificity) .ys-col'))
+    .pipe(plugins.replace('.order-','html:not(#ys-specificity) .ys-order-'))
+    .pipe(plugins.replace('.offset-','html:not(#ys-specificity) .ys-offset-'))
+    .pipe(plugins.replace('.no-gutters','html:not(#ys-specificity) .ys-no-gutters'))
     .pipe(gulp.dest(paths.destination.css))
     .pipe(plugins.postcss(minifying))
     .pipe(plugins.rename({
@@ -122,12 +122,12 @@ gulp.task('css', () => {
     }).on('error', plugins.sass.logError))
     .pipe(plugins.postcss(processors))
     // rename bootstrap classes
-    .pipe(plugins.replace('.container','.ys-container'))
-    .pipe(plugins.replace('.row','.ys-row'))
-    .pipe(plugins.replace('.col','.ys-col'))
-    .pipe(plugins.replace('.order-','.ys-order-'))
-    .pipe(plugins.replace('.offset-','.ys-offset-'))
-    .pipe(plugins.replace('.no-gutters','.ys-no-gutters'))
+    .pipe(plugins.replace('.container','html:not(#ys-specificity) .ys-container'))
+    .pipe(plugins.replace('.row','html:not(#ys-specificity) .ys-row'))
+    .pipe(plugins.replace('.col','html:not(#ys-specificity) .ys-col'))
+    .pipe(plugins.replace('.order-','html:not(#ys-specificity) .ys-order-'))
+    .pipe(plugins.replace('.offset-','html:not(#ys-specificity) .ys-offset-'))
+    .pipe(plugins.replace('.no-gutters','html:not(#ys-specificity) .ys-no-gutters'))
     .pipe(plugins.postcss(minifying))
     .pipe(gulp.dest(paths.destination.css));
 
