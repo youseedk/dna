@@ -103,7 +103,7 @@ gulp.task('css', () => {
     // rename bootstrap classes
     .pipe(plugins.replace('.container','.ys-container'))
     .pipe(plugins.replace('.row','.ys-row'))
-    .pipe(plugins.replace('.col-','.ys-col-'))
+    .pipe(plugins.replace('.col','.ys-col'))
     .pipe(plugins.replace('.order-','.ys-order-'))
     .pipe(plugins.replace('.offset-','.ys-offset-'))
     .pipe(plugins.replace('.no-gutters','.ys-no-gutters'))
@@ -124,7 +124,7 @@ gulp.task('css', () => {
     // rename bootstrap classes
     .pipe(plugins.replace('.container','.ys-container'))
     .pipe(plugins.replace('.row','.ys-row'))
-    .pipe(plugins.replace('.col-','.ys-col-'))
+    .pipe(plugins.replace('.col','.ys-col'))
     .pipe(plugins.replace('.order-','.ys-order-'))
     .pipe(plugins.replace('.offset-','.ys-offset-'))
     .pipe(plugins.replace('.no-gutters','.ys-no-gutters'))
