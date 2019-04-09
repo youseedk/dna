@@ -103,7 +103,7 @@ gulp.task('css', () => {
     // rename bootstrap classes
     .pipe(plugins.replace('.container','html:not(#ys-specificity) .ys-container'))
     .pipe(plugins.replace('.row','html:not(#ys-specificity) .ys-row'))
-    .pipe(plugins.replace('.col-','html:not(#ys-specificity) .ys-col-'))
+    .pipe(plugins.replace('.col','html:not(#ys-specificity) .ys-col'))
     .pipe(plugins.replace('.order-','html:not(#ys-specificity) .ys-order-'))
     .pipe(plugins.replace('.offset-','html:not(#ys-specificity) .ys-offset-'))
     .pipe(plugins.replace('.no-gutters','html:not(#ys-specificity) .ys-no-gutters'))
@@ -124,7 +124,7 @@ gulp.task('css', () => {
     // rename bootstrap classes
     .pipe(plugins.replace('.container','html:not(#ys-specificity) .ys-container'))
     .pipe(plugins.replace('.row','html:not(#ys-specificity) .ys-row'))
-    .pipe(plugins.replace('.col-','html:not(#ys-specificity) .ys-col-'))
+    .pipe(plugins.replace('.col','html:not(#ys-specificity) .ys-col'))
     .pipe(plugins.replace('.order-','html:not(#ys-specificity) .ys-order-'))
     .pipe(plugins.replace('.offset-','html:not(#ys-specificity) .ys-offset-'))
     .pipe(plugins.replace('.no-gutters','html:not(#ys-specificity) .ys-no-gutters'))

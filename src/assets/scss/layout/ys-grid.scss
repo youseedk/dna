@@ -39,7 +39,6 @@ $grid-gutter-width: $grid-column-padding;
   box-sizing: border-box;
 }
 
-
 // Custom modifications to BS Grid
 .container,
 .container-fluid {
@@ -164,4 +163,9 @@ $grid-gutter-width: $grid-column-padding;
   *[class*='col-'] {
     margin-top: 6*$ys-fraction-unit; //48px;
   }
+}
+
+// grid utility class to "break" — similar to bootstrap's .w-100 class
+.ys-grid-breaker {
+  width: 100%;
 }
