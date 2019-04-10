@@ -2,7 +2,7 @@
 title: CSS & SCSS Guidelines
 ---
 
-The CSS codebase is a Sass solution (we use the SCSS syntax) with BEM as naming convention. For a quick intro to BEM, please read this excellent article by Harry Roberts: MindBEMding – getting your head ’round BEM syntax
+The CSS codebase is a Sass solution (we use the SCSS syntax) with BEM as naming convention. For a quick intro to BEM, please read this excellent article by Harry Roberts: [MindBEMding – getting your head ’round BEM syntax](https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/).
 
 We use stylelint to test for possible errors and formatting issues. You can install tools like stylelint for Visual Studio Code to give you instant feedback on your code. You may also run the gulp task "stylelint" to test your scss code for errors.
 
@@ -53,6 +53,8 @@ Never remove the `:focus` style completely. If you remove the default `outline`,
 ## YS class names
 - All classes distributed in the YouSee DNA are prefixed with `ys-`. This is to avoid naming conflicts and inheritance issues.
 - `ys-`-classes may _never_ be overwritten or modified.
+
+All `ys-` selectors are also preceded by `html:not(#ys-specificity)` which is added to heighten specificity on the selector. This is done to avoid other CSS from "bleeding" into the DNA components — ie. some projects who include DNA might not be using strict BEM (or similar), and if they have styling on elements there is no way to prevent those styles from being inherited by DNA components, so we have to do our best to have a higher specificity than those rules.
 
 ## Comments
 
