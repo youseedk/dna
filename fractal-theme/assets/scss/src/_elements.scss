@@ -18,7 +18,7 @@
 
     &__inner {
       padding: 1em;
-      max-height: 240px;
+      max-height: 500px;
       overflow-y: scroll;
     }
 
@@ -48,12 +48,18 @@
     }
 
     /* EXAMPLES for code */
+    /* Grid */
     [class*='ys-col'] {
       padding: .5rem;
       background-color: #dbdbdb;
       border: 1px solid #ccc;
       text-align: center;
       font-size: 1rem;
+    }
+
+    /* Card */
+    .ys-card {
+      min-height: 300px;
     }
 
   }
