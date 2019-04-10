@@ -53,13 +53,13 @@
 {{render '@typography--body-text'}}
 ```
 
-## Legal text
+## Small text
 <div class="element-preview">
-  <div class="element-preview__inner">{{render '@typography--legal-text'}}</div>
+  <div class="element-preview__inner">{{render '@typography--small-text'}}</div>
 </div>
 
 ```html
-{{render '@typography--legal-text'}}
+{{render '@typography--small-text'}}
 ```
 
 ## Unordered list
