@@ -25,9 +25,9 @@ html:not(#ys-specificity) {
     @include ys-body-text;
   }
 
-.ys-small-text {
-  @include ys-small-text;
-}
+  .ys-small-text {
+    @include ys-small-text;
+  }
 
   .ys-list {
     @include ys-list;
