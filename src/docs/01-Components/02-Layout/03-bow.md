@@ -11,18 +11,14 @@ Use the Curved Horizon as a breaker or to introduce the next block of content. I
 
 # Examples
 ## Bow
-<div class="element-preview">
-  <div class="element-preview__inner">{{render '@bow'}}</div>
-</div>
+As the bow is only available in 100% of the viewport width, it is not possible to preview it "inline" — please see a [full screen preview](/components/preview/bow)
 
 ```html
 {{render '@bow'}}
 ```
 
 ## Bow, midnight green
-<div class="element-preview">
-  <div class="element-preview__inner">{{render '@bow--midnight-green'}}</div>
-</div>
+As the bow is only available in 100% of the viewport width, it is not possible to preview it "inline" — please see a [full screen preview](/components/preview/bow--midnight-green)
 
 ```html
 {{render '@bow--midnight-green'}}
