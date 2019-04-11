@@ -67,7 +67,7 @@
       }
     }
 
-    & > * {
+    & > *:not(.frctl-example) {
       max-width: 70ch;
     }
 
