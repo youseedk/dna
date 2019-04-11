@@ -17,6 +17,6 @@ module.exports = {
     }
 	],
 	"context": {
-    "inlineCss": "body{padding:0;}"
+    "inlineCss": "body{padding:0;margin:0}"
 	}
 };
