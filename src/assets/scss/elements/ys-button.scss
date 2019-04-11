@@ -140,11 +140,8 @@ html:not(#ys-specificity) .ys-button {
   // Button with icon
   &--icon {
 
-    .ys-button__icon:first-child {
-      margin-right: rem(16);
-    }
-
-    .ys-button__icon:last-child {
+    .ys-button__text + .ys-button__icon,
+    .ys-button__icon + .ys-button__text {
       margin-left: rem(16);
     }
   }
