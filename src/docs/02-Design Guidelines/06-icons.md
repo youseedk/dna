@@ -1,4 +1,3 @@
-# Icons
 Icons are the visual expression of a brand’s products, services, and tools. Simple, bold, and friendly, they communicate the core idea and intent of a product. While each product icon is visually distinct, all product icons for a given brand should be unified through concept and execution.
 
 Use these guidelines as a starting point to ensure that the products icon colors and key elements reflect the brand’s identity.
