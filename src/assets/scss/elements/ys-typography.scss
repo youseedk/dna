@@ -36,7 +36,7 @@ html:not(#ys-specificity) {
       @include ys-list-item;
 
       // make sure items have the right top margin
-      & + & {
+      & + .ys-list__item {
         margin-top: rem(24);
       }
     }
@@ -49,15 +49,15 @@ html:not(#ys-specificity) {
       @include ys-list-item-ordered;
     }
 
-    &:not(.ys-list--ordered) &__item::before {
+    &:not(.ys-list--ordered) .ys-list__item::before {
       @include ys-list-item-unordered;
     }
 
-    &--ordered &__item &__item::before {
+    &--ordered .ys-list__item .ys-list__item::before {
       @include ys-list-item-ordered-indented;
     }
 
-    &:not(.ys-list--ordered) &__item &__item::before {
+    &:not(.ys-list--ordered) .ys-list__item .ys-list__item::before {
       @include ys-list-item-unordered-indented;
     }
   }
