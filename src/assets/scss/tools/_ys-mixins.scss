@@ -148,6 +148,7 @@
   text-align: right;
   font-weight: 600;
   padding-left: rem(4);
+  list-style-type: none;
 }
 
 @mixin ys-list-item-ordered-indented() {

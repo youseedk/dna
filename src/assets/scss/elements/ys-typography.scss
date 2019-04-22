@@ -45,8 +45,12 @@ html:not(#ys-specificity) {
       padding-top: rem(24);
     }
 
-    &--ordered .ys-list__item::before {
-      @include ys-list-item-ordered;
+    &--ordered .ys-list__item {
+      list-style-type: none;
+
+      &::before {
+        @include ys-list-item-ordered;
+      }
     }
 
     &:not(.ys-list--ordered) &__item::before {
