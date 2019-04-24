@@ -56,7 +56,7 @@ html:not(#ys-specificity) .ys-notification {
   &__text {
     margin: 0;
 
-    & + & {
+    & + .ys-notification__text {
       margin-top: rem(16);
     }
   }

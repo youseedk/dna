@@ -22,7 +22,7 @@ html:not(#ys-specificity) .ys-tooltip {
     padding: 0;
 
     // lobotimized owl selector to ensure margin between elements
-    & + & {
+    & + .ys-tooltip__content {
       margin-top: rem(16);
     }
   }
