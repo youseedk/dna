@@ -84,6 +84,8 @@ All of the above can be include an icon, ie. the *default* button:
 {{render '@button--with-icon'}}
 ```
 
+In some cases it makes sense to place the icon before the text (e.g. a back button) which is also supported.
+
 ## Icon only button
 All button colorways can be displayed with an icon only, ie. the *default* button:
 <div class="element-preview">

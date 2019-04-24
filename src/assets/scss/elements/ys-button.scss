@@ -141,7 +141,7 @@ html:not(#ys-specificity) .ys-button {
   &--icon {
 
     .ys-button__text + .ys-button__icon,
-    .ys-button__text + .ys__button__text {
+    .ys-button__icon + .ys-button__text {
       margin-left: rem(16);
     }
   }
