@@ -15,8 +15,8 @@
     // Navigation item
     .Tree-collectionLabel,
     a.Tree-entityLink {
-      font-weight: light;
-      font-size: 1.25rem;
+      font-weight: 100;
+      font-size: 1rem;
       color: #484848;
       position: relative;
       padding-left: 0;
@@ -37,15 +37,15 @@
 
     // Level 1
     .Tree-depth-1 > .Tree-item > a {
-      padding-left: 2rem;
-      padding-right: 2rem;
-      font-weight: bold;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      font-weight: 600;
     }
 
     .Tree-depth-2 > .Tree-collectionLabel > span {
-      padding-left: 2rem;
-      padding-right: 2rem;
-      font-weight: bold;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      font-weight: 600;
     }
 
     // Level 2
@@ -63,7 +63,7 @@
     .Tree-depth-3 > .Tree-collectionItems > .Tree-item > a {
       padding: .25rem 2rem .25rem 5.5rem;
       font-size: 1rem;
-      line-height: 1.25;
+      line-height: 2;
     }
 
     .Tree-depth-3 > .Tree-collectionItems {

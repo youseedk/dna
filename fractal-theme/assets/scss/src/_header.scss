@@ -1,11 +1,11 @@
 .Header {
-  background-color: #f0f0f0;
-  box-shadow: none;
-  color: #484848;
+  background-color: #002219;
+  //box-shadow: none;
+  //color: #484848;
 }
 
 .Header-button {
-  background-color: #000;
+  //background-color: #000;
 
   @media screen and (min-width: 768px) {
     height: 4rem;
@@ -19,7 +19,7 @@
   }
 
   &:hover {
-    background-color: #111;
+   // background-color: #111;
   }
 }
 
@@ -28,8 +28,7 @@
   line-height: 1;
 
   @media screen and (min-width: 1024px) {
-    padding: 0 32px;
-    margin: 32px 0;
+    padding: 0 22px;
   }
 }
 
@@ -38,10 +37,6 @@
 
   @media screen and (min-width: 768px) {
     width: 150px;
-  }
-
-  @media screen and (min-width: 1024px) {
-    width: 220px;
   }
 }
 
@@ -68,11 +63,11 @@
 }
 
 .Header-menu a {
-  color: #484848;
+  color: #fff;
   text-decoration: none;
 
   &:hover {
-    color: #191919;
+    color: #fff;
   }
 }
 
@@ -107,3 +102,4 @@
     }
   }
 }
+
