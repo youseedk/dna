@@ -15,7 +15,6 @@
     // Navigation item
     .Tree-collectionLabel,
     a.Tree-entityLink {
-      font-weight: 100;
       font-size: 1rem;
       color: #484848;
       position: relative;
@@ -37,7 +36,7 @@
 
     // Level 1
     .Tree-depth-1 > .Tree-item > a {
-      padding-left: 1rem;
+      padding-left: 3rem;
       padding-right: 1rem;
       font-weight: 600;
     }
@@ -50,12 +49,12 @@
 
     // Level 2
     .Tree-depth-2 > .Tree-collectionItems > .Tree-item > a {
-      padding-left: 3.5rem;
+      padding-left: 4rem;
       padding-right: 2rem;
     }
 
     .Tree-depth-3 > .Tree-collectionLabel > span {
-      padding-left: 3.5rem;
+      padding-left: 3rem;
       padding-right: 2rem;
     }
 
