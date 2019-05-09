@@ -130,10 +130,6 @@
   height: rem(8);
   background-color: currentColor;
   border-radius: 50%;
-
-  @media screen and (min-width: $ys-breakpoint-lg) {
-    left: rem(16);
-  }
 }
 
 @mixin ys-list-item-unordered-indented() {
