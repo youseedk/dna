@@ -113,6 +113,7 @@
   position: relative;
   padding-left: rem(24);
   line-height: 1.5;
+  list-style: none;
   counter-increment: list-item;
 
   @media screen and (min-width: $ys-breakpoint-lg) {
@@ -129,10 +130,6 @@
   height: rem(8);
   background-color: currentColor;
   border-radius: 50%;
-
-  @media screen and (min-width: $ys-breakpoint-lg) {
-    left: rem(16);
-  }
 }
 
 @mixin ys-list-item-unordered-indented() {
