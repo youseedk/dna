@@ -1,8 +1,16 @@
 [dir="ltr"] {
 
   .Prose {
-    font-size: 1.25rem;
     max-width: 100%;
+
+    > p,
+    > blockquote,
+    > ul,
+    > ol,
+    .element-navigation {
+      // Use specific selectors to avoid cascading to `.element-preview`
+      font-size: 1.25rem;
+    }
 
     > h1,
     > h2,
