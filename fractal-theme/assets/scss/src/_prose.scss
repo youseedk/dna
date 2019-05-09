@@ -9,7 +9,7 @@
     > ol,
     .element-navigation {
       // Use specific selectors to avoid cascading to `.element-preview`
-      font-size: 1.25rem;
+      font-size: 1.125rem;
     }
 
     > h1,
@@ -47,7 +47,12 @@
     }
 
     > p {
-      margin-top: 1.5em;
+      margin-top: .75em;
+    }
+
+    > ul,
+    > ol {
+      margin-top: .75em;
     }
 
     > ul li,

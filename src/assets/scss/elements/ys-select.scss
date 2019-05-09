@@ -31,7 +31,8 @@ html:not(#ys-specificity) .ys-select {
 
     &:not(.ys-select__wrapper--disabled):not(.ys-select__wrapper--alternative):hover,
     &:not(.ys-select__wrapper--disabled):not(.ys-select__wrapper--alternative):focus-within {
-      @include inputFieldShadow(hover); }
+      @include inputFieldShadow(hover);
+    }
 
     // lobotimized owl selector for flexibility — makes sure that any element that is inserted gets a margin
     & > *[class^='ys-'] + *[class^='ys-'] {
@@ -83,10 +84,10 @@ html:not(#ys-specificity) .ys-select {
       box-shadow: 0 0 0 0 transparent;
       cursor: not-allowed;
     }
+  }
 
-    .ys-select__wrapper--light.ys-select__wrapper--alternative & {
-      background-image: url('data:image/svg+xml,%3Csvg viewBox%3d%220 -3 16 16%22 xmlns%3d%22http://www.w3.org/2000/svg%22%3E%3Cpath fill%3d%22%23fff%22 fill-rule%3d%22evenodd%22 d%3d%22M7.973 7.29884l6.0772-5.98225c.42883-.42212 1.12409-.42212 1.5529 0l.07528.0741a1.069 1.069 0 0 1 0 1.52864L8.844 9.64693a1.149 1.149 0 0 1-.0604.06524c-.44258.44259-1.16015.44259-1.60273 0L.35925 2.89057c-.44258-.4426-.44258-1.16016 0-1.60274.44259-.44259 1.16016-.44259 1.60274 0l6.01101 6.011z%22/%3E%3C/svg%3E'), linear-gradient(to bottom, transparent 0%, transparent 100%);
-    }
+  &__option {
+    color: $ys-color-grey-28;
   }
 
   &__guidance {
@@ -100,5 +101,9 @@ html:not(#ys-specificity) .ys-select {
 
   &--light {
     color: $ys-color-grey-98;
+  }
+
+  &__wrapper--light.ys-select__wrapper--alternative .ys-select__control {
+    background-image: url('data:image/svg+xml,%3Csvg viewBox%3d%220 -3 16 16%22 xmlns%3d%22http://www.w3.org/2000/svg%22%3E%3Cpath fill%3d%22%23fff%22 fill-rule%3d%22evenodd%22 d%3d%22M7.973 7.29884l6.0772-5.98225c.42883-.42212 1.12409-.42212 1.5529 0l.07528.0741a1.069 1.069 0 0 1 0 1.52864L8.844 9.64693a1.149 1.149 0 0 1-.0604.06524c-.44258.44259-1.16015.44259-1.60273 0L.35925 2.89057c-.44258-.4426-.44258-1.16016 0-1.60274.44259-.44259 1.16016-.44259 1.60274 0l6.01101 6.011z%22/%3E%3C/svg%3E'), linear-gradient(to bottom, transparent 0%, transparent 100%);
   }
 }
