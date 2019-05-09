@@ -1,7 +1,7 @@
 [dir="ltr"] {
 
   .Prose {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     max-width: 100%;
 
     > h1,
@@ -39,7 +39,12 @@
     }
 
     > p {
-      margin-top: 1.5em;
+      margin-top: .75em;
+    }
+
+    > ul,
+    > ol {
+      margin-top: .75em;
     }
 
     > ul li,

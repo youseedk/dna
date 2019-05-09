@@ -7,24 +7,30 @@ module.exports = {
   variants: [
 		{
       name: "default",
-      label: "Information"
+      label: "Information",
+      context: {
+        info: 'true'
+      }
     },
 		{
       name: "Warning",
       context: {
-        modifierClass: 'ys-notification--warning'
+        modifierClass: 'ys-notification--warning',
+        warning: 'true'
       }
     },
     {
       name: "Success",
       context: {
-        modifierClass: 'ys-notification--success'
+        modifierClass: 'ys-notification--success',
+        success: 'true'
       }
     },
     {
       name: "Error",
       context: {
-        modifierClass: 'ys-notification--error'
+        modifierClass: 'ys-notification--error',
+        warning: 'true'
       }
     }
 	],
