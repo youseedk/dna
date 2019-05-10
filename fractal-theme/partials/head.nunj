@@ -10,7 +10,7 @@
 
 {% include 'partials/stylesheets.nunj' %}
 
-{% if page.title == "Welcome" %} {# <-- This needs to match the homepage title #}
+{% if page.title == "Welcome to YouSee DNA" %} {# <-- This needs to match the homepage title #}
     <title>{{ frctl.get('project.title') }}</title>
 {% else %}
     <title>{% if page.title %}{{ page.title }} | {% endif %}{{ frctl.get('project.title') }}</title>
