@@ -1,7 +1,9 @@
 function linkPrettifier() {
-  const link = [...document.querySelectorAll('.Tree-entityLink span')];
+  const domEntityLink = [...document.querySelectorAll('.Tree-entityLink span')];
+  const domCollectionLabel = [...document.querySelectorAll('.Tree-collectionLabel span')];
+  const domLinks = [...domEntityLink, ...domCollectionLabel];
 
-  link.forEach(function(el) {
+  domLinks.forEach(function(el) {
    el.textContent = el.textContent.replace('And ', '& ');
   });
 }
