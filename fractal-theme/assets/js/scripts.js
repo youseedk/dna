@@ -3,6 +3,7 @@ import changeLog from './src/changelog';
 import linkPrettifier from './src/navigation';
 import createContributors from './src/contributors';
 import codePreview from './src/code-preview';
+import lastBuild from './src/lastbuild';
 
 const modules = [
   {selector: '.colors', init: colorConverter},
@@ -10,6 +11,7 @@ const modules = [
   {selector: '.Navigation', init: linkPrettifier},
   {selector: '.contributors', init: createContributors},
   {selector: '.Prose', init: codePreview},
+  {selector: '.prose-build-time', init: lastBuild},
 ];
 
 modules.forEach((module) => {
