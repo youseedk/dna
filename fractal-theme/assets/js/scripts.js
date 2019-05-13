@@ -11,7 +11,7 @@ const modules = [
   {selector: '.Navigation', init: linkPrettifier},
   {selector: '.contributors', init: createContributors},
   {selector: '.Prose', init: codePreview},
-  {selector: '.prose-build-time', init: lastBuild},
+  {selector: '.prose-build', init: lastBuild},
 ];
 
 modules.forEach((module) => {

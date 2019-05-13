@@ -15,7 +15,7 @@ function lastBuild() {
 
   const buildDate = lastModified.toLocaleDateString('da-dk', dateOptions);
   const buildTime = lastModified.toLocaleTimeString('da-dk', timeOptions);
-  lastFractalBuild.innerHTML = `${buildDate} at ${buildTime}`;
+  lastFractalBuild.innerHTML = `<span class="prose-build-text">${buildDate}</span> at <span class="prose-build-text">${buildTime}</span>`;
 }
 
 export default lastBuild;
