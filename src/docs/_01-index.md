@@ -1,7 +1,7 @@
 ---
 title: Welcome to YouSee DNA
 ---
-<p>Last deployment was at <time>{{moment "now" "HH:mm"}}</time> on {{moment "now" "D"}}. {{moment "now" "MMMM"}}, {{date "now" "YYYY"}}</p>
+<p class="prose-build">Last deployment: <time class="prose-build-time"></time></p>
 
 ## YouSee DNA is our design system.
 A comprehensive guide and resource library that contains everything you’ll need to design with us, including our core principles, visual design, interface components, branding, and resources to help make your work faster and our pages more consistent.

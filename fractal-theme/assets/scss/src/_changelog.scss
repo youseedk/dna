@@ -5,6 +5,7 @@
     &__item {
       position: relative;
       border: 1px solid #ccc;
+      border-radius: 5px;
 
       & + .changelog__item {
         margin-top: 24px;
