@@ -15,6 +15,7 @@ html:not(#ys-specificity) .ys-shortcut {
     width: rem(72);
     height: rem(72);
     position: relative;
+    margin: 0;
 
     &::after {
       content: '';
