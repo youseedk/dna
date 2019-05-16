@@ -101,12 +101,12 @@ gulp.task('css', () => {
     }).on('error', plugins.sass.logError))
     .pipe(plugins.postcss(processors))
     // rename bootstrap classes
-    .pipe(plugins.replace('.container','.ys-container'))
-    .pipe(plugins.replace('.row','.ys-row'))
-    .pipe(plugins.replace('.col','.ys-col'))
-    .pipe(plugins.replace('.order-','.ys-order-'))
-    .pipe(plugins.replace('.offset-','.ys-offset-'))
-    .pipe(plugins.replace('.no-gutters','.ys-no-gutters'))
+    .pipe(plugins.replace('.container', '.ys-container'))
+    .pipe(plugins.replace('.row', '.ys-row'))
+    .pipe(plugins.replace('.col', '.ys-col'))
+    .pipe(plugins.replace('.order-', '.ys-order-'))
+    .pipe(plugins.replace('.offset-', '.ys-offset-'))
+    .pipe(plugins.replace('.no-gutters', '.ys-no-gutters'))
     .pipe(gulp.dest(paths.destination.css))
     .pipe(plugins.postcss(minifying))
     .pipe(plugins.rename({
@@ -122,12 +122,12 @@ gulp.task('css', () => {
     }).on('error', plugins.sass.logError))
     .pipe(plugins.postcss(processors))
     // rename bootstrap classes
-    .pipe(plugins.replace('.container','html:not(#ys-specificity) .ys-container'))
-    .pipe(plugins.replace('.row','html:not(#ys-specificity) .ys-row'))
-    .pipe(plugins.replace('.col','html:not(#ys-specificity) .ys-col'))
-    .pipe(plugins.replace('.order-','html:not(#ys-specificity) .ys-order-'))
-    .pipe(plugins.replace('.offset-','html:not(#ys-specificity) .ys-offset-'))
-    .pipe(plugins.replace('.no-gutters','html:not(#ys-specificity) .ys-no-gutters'))
+    .pipe(plugins.replace('.container', 'html:not(#ys-specificity) .ys-container'))
+    .pipe(plugins.replace('.row', 'html:not(#ys-specificity) .ys-row'))
+    .pipe(plugins.replace('.col', 'html:not(#ys-specificity) .ys-col'))
+    .pipe(plugins.replace('.order-', 'html:not(#ys-specificity) .ys-order-'))
+    .pipe(plugins.replace('.offset-', 'html:not(#ys-specificity) .ys-offset-'))
+    .pipe(plugins.replace('.no-gutters', 'html:not(#ys-specificity) .ys-no-gutters'))
     .pipe(plugins.postcss(minifying))
     .pipe(gulp.dest(paths.destination.css));
 
@@ -279,7 +279,7 @@ gulp.task('icon-set', () => {
   const copyTask = gulp
     .src(`${paths.assetsSource.svg}/${spriteSrc}/*.svg`)
     .pipe(plugins.newer(`${paths.destination.svg}/${spriteSrc}`))
-    .pipe(plugins.rename( (path) => {
+    .pipe(plugins.rename((path) => {
       path.basename = path.basename.replace('_', '');
     }))
     .pipe(gulp.dest(`${paths.destination.svg}/${spriteSrc}`));
@@ -292,7 +292,7 @@ gulp.task('icon-set', () => {
  * Prepare and copy files to npm distribution folder
  *
  */
-gulp.task('build-package', () => {
+gulp.task('build-package', ['copy-colors-to-npm'], () => {
   // copy package.json file and remove dependencies and devDepencies
   const packageJsonFile = gulp
     .src('package.json')
@@ -307,7 +307,7 @@ gulp.task('build-package', () => {
 
   // copy scss files with settings
   const scssFiles = gulp
-    .src([`${paths.assetsSource.scss}/settings/_ys-settings.scss`, `${paths.assetsSource.scss}/generated/_ys-colors.scss`])
+    .src(`${paths.assetsSource.scss}/settings/_ys-settings.scss`)
     .pipe(gulp.dest(`${paths.npmDestination}scss`));
 
   // copy generated css files and rename generated folder
@@ -324,9 +324,9 @@ gulp.task('build-package', () => {
     .pipe(plugins.replace('/*', '\n  /*'))
     .pipe(plugins.insert.prepend(':root {\n'))
     .pipe(plugins.insert.append('\n}'))
-    .pipe(plugins.rename( (path) => {
+    .pipe(plugins.rename((path) => {
       path.basename = path.basename.replace('_', ''),
-      path.extname = '.css'
+        path.extname = '.css'
     }))
     .pipe(gulp.dest(`${paths.npmDestination}css/settings`));
 
@@ -356,10 +356,14 @@ gulp.task('build-package', () => {
   return merge(packageJsonFile, readMeFile, scssFiles, cssFiles, cssSettings, fontFiles, svgFiles, svgSprites, bundleFiles);
 });
 
+gulp.task('copy-colors-to-npm', () => {
+  return gulp
+    .src(`${paths.assetsSource.scss}/generated/_ys-colors.scss`)
+    .pipe(gulp.dest(`${paths.npmDestination}scss`));
+});
+
 gulp.task('npm-dist', () => {
-  runSequence(['compile-assets'],
-    'build-package'
-  );
+  runSequence('compile-assets', 'build-package');
 });
 
 /**
@@ -382,9 +386,9 @@ gulp.task('default', (cb) => {
 });
 
 
- /* BUILD */
- // CAUTION: Used by TRAVIS CI for automatic build and deployment - change only this task if you know what you are doing */
- gulp.task('build', (cb) => {
+/* BUILD */
+// CAUTION: Used by TRAVIS CI for automatic build and deployment - change only this task if you know what you are doing */
+gulp.task('build', (cb) => {
   runSequence(['json-to-scss'], 'icons', 'fractal-assets', 'css', 'fractal:build', 'cname', cb);
 });
 
@@ -463,10 +467,10 @@ gulp.task('fractal-js', () => {
   const babelify = require("babelify");
   const sourcefile = `${paths.fractal.js}/scripts.js`;
   return browserify({
-      entries: [sourcefile]
-    }).transform('babelify', {
-      presets: ['@babel/preset-env']
-    })
+    entries: [sourcefile]
+  }).transform('babelify', {
+    presets: ['@babel/preset-env']
+  })
     .bundle()
     .pipe(source('scripts.js'))
     .pipe(gulp.dest(`${paths.destination.theme}/js`));
