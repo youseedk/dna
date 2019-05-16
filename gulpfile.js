@@ -321,6 +321,7 @@ gulp.task('build-package', () => {
   const cssSettings = gulp
     .src([`${paths.assetsSource.scss}/generated/_ys-colors.scss`, `${paths.assetsSource.scss}/settings/_ys-settings.scss`])
     .pipe(plugins.replace('$', '  --'))
+    .pipe(plugins.replace('/*', '\n  /*'))
     .pipe(plugins.insert.prepend(':root {\n'))
     .pipe(plugins.insert.append('\n}'))
     .pipe(plugins.rename( (path) => {
