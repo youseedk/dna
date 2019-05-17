@@ -26,7 +26,7 @@ Semantic HTML provides:
 
 ## Indentation
 
-Indent by 4 spaces at all time. Don’t use tabs or mix tabs and spaces for indentation.
+Indent by 4 spaces at all time. Don’t use tabs or mix tabs and spaces for indentation. Plese note that this rule does not apply for HTML used inside .js or .jsx files. Here you should follow the JS linting rules.
 
 **Bad example**
 
@@ -65,6 +65,7 @@ Always use lowercase for elements and attributes. It looks cleaner and improves 
 ## Quote attribute values
 
 HTML attributes must always use double quotes (").
+Plese note that this rule does not apply for HTML used inside .js or .jsx files. Here you should follow the JS linting rules.
 
 **Bad example**
 

@@ -410,7 +410,7 @@ Please nest all media queries directly in to the class it affects. Make sure the
       min-width: rem(80);
     }
 
-    @include mq($from: s-screen) {
+    @media (min-width: 768px)
 
       .classname {
         min-width: rem(128);
@@ -423,7 +423,7 @@ Please nest all media queries directly in to the class it affects. Make sure the
       margin: rem(16);
       min-width: rem(80);
 
-      @include media-breakpoint-up(lg) {
+      @media (min-width: 768px) {
         min-width: rem(128);
       }
     }
@@ -437,7 +437,7 @@ Always declare your CSS rules for smallest screen possible. Then use breakpoints
     .classname {
       display: flex;
 
-      @include media-breakpoint-down(lg) {
+      @media (max-width: 768px) {
         display: block;
       }
     }
@@ -448,15 +448,14 @@ Always declare your CSS rules for smallest screen possible. Then use breakpoints
     .classname {
       display: block;
 
-      @include media-breakpoint-up(lg) {
+      @media (min-width: 768px) {
         display: flex;
       }
     }
 
 ### Responsive breakpoints
 
-We have decided to use the same breakpoints as Bootstrap does. This make sense since Bootstrap is developed to be mobile first and we use the library for other helpful features such as grid and utility classes.
-Bootstrap uses the following media queries.
+YouSee DNA and Bootstrap use the same media queries. This is because the grid in YouSee DNA is build on top of Bootstrap.
 
 **Breakpoints**
 
@@ -466,12 +465,12 @@ Bootstrap uses the following media queries.
     lg = Large ≥ 992px
     xl = Extra large ≥ 1200px
 
-If you have installed Bootstrap you can use these helpful SCSS mixins:
+If you have installed YouSee DNA you can/should write your media queries like this:
 
-    @include media-breakpoint-up(sm) { ... }
-    @include media-breakpoint-up(md) { ... }
-    @include media-breakpoint-up(lg) { ... }
-    @include media-breakpoint-up(xl) { ... }
+    @media (min-width: $ys-breakpoint-sm) { ... }
+    @media (min-width: $ys-breakpoint-md) { ... }
+    @media (min-width: $ys-breakpoint-lg) { ... }
+    @media (min-width: $ys-breakpoint-xl) { ... }
 
 ## Vendor-specific prefixes
 

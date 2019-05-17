@@ -3,7 +3,7 @@ title: Installation & Usage
 ---
 
 ## Install
-- Install with [npm](https://www.npmjs.com/): `npm install @youseedk/dna`
+- Install with [npm](https://www.npmjs.com/): `npm i @youseedk/dna`
 - Install with [yarn](https://yarnpkg.com/): `yarn add @youseedk/dna`
 
 ## Usage
