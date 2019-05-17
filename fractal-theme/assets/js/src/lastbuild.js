@@ -1,6 +1,7 @@
 function lastBuild() {
   const lastFractalBuild = document.querySelector('.prose-build-time');
   const lastModified = new Date(document.lastModified);
+  const documentHeader = document.querySelector('.Document-header');
 
   const dateOptions = {
     year: 'numeric',
@@ -15,7 +16,9 @@ function lastBuild() {
 
   const buildDate = lastModified.toLocaleDateString('da-dk', dateOptions);
   const buildTime = lastModified.toLocaleTimeString('da-dk', timeOptions);
-  lastFractalBuild.innerHTML = `<span class="prose-build-text">${buildDate}</span> at <span class="prose-build-text">${buildTime}</span>`;
+  const buildTimeFormatted = buildTime.replace('.', ':');
+  lastFractalBuild.innerHTML = `<span class="prose-build-text">${buildDate}</span> at <span class="prose-build-text">${buildTimeFormatted}</span>`;
+  documentHeader.classList.add('prose-build-helper');
 }
 
 export default lastBuild;
