@@ -3,62 +3,59 @@
 @import '../tools/ys-mixins';
 @import '../tools/ys-functions';
 
-html:not(#ys-specificity) {
+.ys-main-title {
+  @include ys-main-title;
+}
 
-  .ys-main-title {
-    @include ys-main-title;
-  }
+.ys-primary-title {
+  @include ys-primary-title;
+}
 
-  .ys-primary-title {
-    @include ys-primary-title;
-  }
+.ys-secondary-title {
+  @include ys-secondary-title;
+}
 
-  .ys-secondary-title {
-    @include ys-secondary-title;
-  }
+.ys-subtitle {
+  @include ys-subtitle;
+}
 
-  .ys-subtitle {
-    @include ys-subtitle;
-  }
+.ys-body-text {
+  @include ys-body-text;
+}
 
-  .ys-body-text {
-    @include ys-body-text;
-  }
+.ys-small-text {
+  @include ys-small-text;
+}
 
-  .ys-small-text {
-    @include ys-small-text;
+.ys-list {
+  @include ys-list;
+
+  &__item {
+    @include ys-list-item;
+
+    // make sure items have the right top margin
+    & + & {
+      margin-top: rem(24);
+    }
   }
 
   .ys-list {
-    @include ys-list;
+    padding-top: rem(24);
+  }
 
-    &__item {
-      @include ys-list-item;
+  &--ordered &__item::before {
+    @include ys-list-item-ordered;
+  }
 
-      // make sure items have the right top margin
-      & + .ys-list__item {
-        margin-top: rem(24);
-      }
-    }
+  &:not(.ys-list--ordered) &__item::before {
+    @include ys-list-item-unordered;
+  }
 
-    .ys-list {
-      padding-top: rem(24);
-    }
+  &--ordered &__item &__item::before {
+    @include ys-list-item-ordered-indented;
+  }
 
-    &--ordered .ys-list__item::before {
-      @include ys-list-item-ordered;
-    }
-
-    &:not(.ys-list--ordered) .ys-list__item::before {
-      @include ys-list-item-unordered;
-    }
-
-    &--ordered .ys-list__item .ys-list__item::before {
-      @include ys-list-item-ordered-indented;
-    }
-
-    &:not(.ys-list--ordered) .ys-list__item .ys-list__item::before {
-      @include ys-list-item-unordered-indented;
-    }
+  &:not(.ys-list--ordered) &__item &__item::before {
+    @include ys-list-item-unordered-indented;
   }
 }

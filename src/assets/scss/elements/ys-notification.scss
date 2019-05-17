@@ -3,7 +3,7 @@
 @import '../tools/ys-mixins';
 @import '../tools/ys-functions';
 
-html:not(#ys-specificity) .ys-notification {
+.ys-notification {
   display: flex;
   border-radius: 8px;
   padding: rem(24) rem(36) rem(24) rem(24);
@@ -61,7 +61,7 @@ html:not(#ys-specificity) .ys-notification {
   &__text {
     margin: 0;
 
-    & + .ys-notification__text {
+    & + & {
       margin-top: rem(16);
     }
   }

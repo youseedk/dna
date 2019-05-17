@@ -1,36 +1,3 @@
-// *************************************
-//
-//   Gulpfile
-//
-// *************************************
-//
-// Available tasks:
-//   `gulp css`
-//   `gulp lint-scss``
-//   `gulp json-to-scss`
-//   `gulp images`
-//   `gulp fonts`
-//   `gulp icons`
-//   `gulp ui-icons`
-//   `gulp build-package`
-//   `gulp npm-dist`
-//   `gulp compile-assets`
-//   `gulp`
-//   `gulp build`
-//   `gulp watch`
-//   `gulp fractal:start`
-//   `gulp fractal:build`
-//   `gulp fractal-scss`
-//   `gulp fractal-js`
-//   `gulp fractal-images`
-//   `gulp fractal-favicon`
-//   `gulp cname`
-//   `gulp fractal-assets`
-//
-// *************************************
-
-'use strict';
-
 const gulp = require('gulp');
 
 const plugins = require('gulp-load-plugins')({
@@ -46,6 +13,7 @@ const browserify = require('browserify');
 const svgSprite = require('gulp-svg-sprite');
 const runSequence = require('run-sequence');
 const merge = require('merge-stream');
+const prefixer = require('postcss-prefix-selector');
 
 const paths = {
   componentsSource: 'src/components/',
@@ -93,6 +61,12 @@ gulp.task('css', () => {
     })
   ];
 
+  const cssprefixer = [
+    prefixer({
+      prefix: 'html:not(#ys-specificity)'
+    })
+  ];
+
   const ysBundle = gulp
     .src(`${paths.assetsSource.scss}/*.scss`)
     .pipe(plugins.sass({
@@ -107,6 +81,7 @@ gulp.task('css', () => {
     .pipe(plugins.replace('.order-', '.ys-order-'))
     .pipe(plugins.replace('.offset-', '.ys-offset-'))
     .pipe(plugins.replace('.no-gutters', '.ys-no-gutters'))
+    .pipe(plugins.postcss(cssprefixer))
     .pipe(gulp.dest(paths.destination.css))
     .pipe(plugins.postcss(minifying))
     .pipe(plugins.rename({
@@ -128,6 +103,7 @@ gulp.task('css', () => {
     .pipe(plugins.replace('.order-', 'html:not(#ys-specificity) .ys-order-'))
     .pipe(plugins.replace('.offset-', 'html:not(#ys-specificity) .ys-offset-'))
     .pipe(plugins.replace('.no-gutters', 'html:not(#ys-specificity) .ys-no-gutters'))
+    .pipe(plugins.postcss(cssprefixer))
     .pipe(plugins.postcss(minifying))
     .pipe(gulp.dest(paths.destination.css));
 
@@ -149,7 +125,6 @@ gulp.task('lint-scss', () => {
       }]
     }));
 });
-
 
 /**
  *

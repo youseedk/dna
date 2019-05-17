@@ -3,7 +3,7 @@
 @import '../tools/ys-mixins';
 @import '../tools/ys-functions';
 
-html:not(#ys-specificity) .ys-link {
+.ys-link {
   color: $ys-color-digital-grass;
   text-decoration: underline;
 

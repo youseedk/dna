@@ -4,7 +4,7 @@
 @import '../tools/ys-functions';
 
 // Default button is transparent with a dark border
-html:not(#ys-specificity) .ys-button {
+.ys-button {
   display: inline-flex;
   align-items: center;
   flex-flow: row nowrap;
