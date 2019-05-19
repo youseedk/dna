@@ -23,66 +23,19 @@
 - Install with [yarn](https://yarnpkg.com/): `yarn add @youseedk/dna`
 
 ## Contents
-In the downloaded package (found in `node_modules/@youseedk/`) you'll find the following directories and files:
+In the downloaded package (found in `node_modules/@youseedk/`) you'll find the following directories:
 
-```text
+```plaintext
 dna/
 ├── css/
 │   ├── base
-│   │   ├── ys-base.css
-│   │   └── ys-webfonts.css
 │   ├── elements
-│   │   ├── ys-bow.css
-│   │   ├── ys-button.css
-│   │   ├── ys-card.css
-│   │   ├── ys-checkbox.css
-│   │   ├── ys-flow-steps.css
-│   │   ├── ys-input-field.css
-│   │   ├── ys-link.css
-│   │   ├── ys-logo.css
-│   │   ├── ys-notification.css
-│   │   ├── ys-progress.css
-│   │   ├── ys-radio-button.css
-│   │   ├── ys-rich-text.css
-│   │   ├── ys-select.css
-│   │   ├── ys-slider.css
-│   │   ├── ys-splash.css
-│   │   ├── ys-tabs.css
-│   │   ├── ys-tag.css
-│   │   ├── ys-textarea.css
-│   │   ├── ys-toggle-switch.css
-│   │   ├── ys-tooltip.css
-│   │   └── ys-typography.css
 │   ├── icons
-│   │   └── ys-icons.css
 │   ├── layout
-│   │   └── ys-grid.css
 │   ├── settings
-│   │   ├── ys-colors.css
-│   │   └── ys-settings.css
 ├── fonts/
-│   ├── ltf_etica_bold-webfont.woff
-│   ├── ltf_etica_bold-webfont.woff2
-│   ├── ltf_etica_light-webfont.woff
-│   ├── ltf_etica_light-webfont.woff2
-│   ├── ltf_etica_reg-webfont.woff
-│   ├── ltf_etica_reg-webfont.woff2
-│   ├── ltf_etica_semibold-webfont.woff
-│   └── ltf_etica_semibold-webfont.woff2
 ├── scss/
-│   ├── _ys-colors.scss
-│   └── _ys-settings.scss
 ├── svg/
-│   ├── icon-set
-│   │   ├── 10s-back.svg
-│   │   ├── ...
-│   │   └── yousee-more.svg
-│   ├── ui-icons
-│   │   ├── arrow-down.svg
-│   │   ├── ...
-│   │   └── plus.svg
-│   ├── icon-set-sprite.svg
-│   ├── ui-icons-sprite.svg
 ├── ys-bundle.css
 └── ys-bundle.min.css
 ```

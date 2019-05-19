@@ -15,7 +15,11 @@
       border: 0;
 
       & + .Document-content {
-        margin-top: 60px;
+        margin-top: 40px;
+
+        @media screen and (min-width: 768px) {
+          margin-top: 60px;
+        }
       }
     }
 
