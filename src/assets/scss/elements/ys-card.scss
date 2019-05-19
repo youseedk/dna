@@ -3,7 +3,7 @@
 @import '../tools/ys-mixins';
 @import '../tools/ys-functions';
 
-html:not(#ys-specificity) .ys-card {
+.ys-card {
   display: block;
   background-color: $ys-color-white;
   border-radius: rem(16);

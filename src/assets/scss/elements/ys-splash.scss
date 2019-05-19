@@ -3,7 +3,7 @@
 @import '../tools/ys-mixins';
 @import '../tools/ys-functions';
 
-html:not(#ys-specificity) .ys-splash {
+.ys-splash {
   display: inline-flex;
   flex-flow: column;
   justify-content: center;

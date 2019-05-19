@@ -3,7 +3,7 @@
 @import '../tools/ys-mixins';
 @import '../tools/ys-functions';
 
-html:not(#ys-specificity) .ys-textarea {
+.ys-textarea {
   position: relative;
   min-height: rem(80);
   color: $ys-color-grey-46;

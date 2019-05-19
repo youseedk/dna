@@ -3,7 +3,7 @@
 @import '../tools/ys-mixins';
 @import '../tools/ys-functions';
 
-html:not(#ys-specificity) .ys-shortcut {
+.ys-shortcut {
   display: flex;
   flex-flow: column wrap;
   align-items: center;
