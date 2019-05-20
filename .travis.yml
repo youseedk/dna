@@ -14,13 +14,12 @@ deploy:
     on:
       branch: master
   - provider: npm
-    email: mgb@tdc.dk
+    email: "mgb@tdc.dk"
     api_key: "$NPM_TOKEN"
     skip_cleanup: true
     on:
       tags: true
       repo: youseedk/dna
-      all_branches: true
 notifications:
   email:
     on_success: never
