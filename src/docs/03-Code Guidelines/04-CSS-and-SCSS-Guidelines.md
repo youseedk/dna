@@ -55,7 +55,6 @@ Never remove the `:focus` style completely. If you remove the default `outline`,
 - `ys-`-classes may _never_ be overwritten or modified.
 
 All `ys-` selectors are also preceded by `html:not(#ys-specificity)` which is added to heighten specificity on the selector. This is done to avoid other CSS from "bleeding" into the DNA components — ie. some projects who include DNA might not be using strict BEM (or similar), and if they have styling on elements there is no way to prevent those styles from being inherited by DNA components, so we have to do our best to have a higher specificity than those rules.
-The only expection to this rule is the bootstrap grid. These selectors will have default bootstrap specificity
 
 ## Comments
 
