@@ -12,9 +12,10 @@
   transition: box-shadow .2s ease-out;
 }
 
-// Label Text for input field, select and textarea
+// Label Text for input field, select, textarea and slider
 @mixin labelText() {
   display: block;
+  color: $ys-color-grey-46;
   margin-bottom: rem(8);
   font-weight: 600;
   text-transform: uppercase;
