@@ -1,3 +1,11 @@
+---
+title: Splash
+url: /docs/components/badges/splash
+category: component
+primaryKeywords: ys-splash css badgde price
+secondaryKeywords: highlight blue yellow offer
+---
+
 Splashes are elements often used to display prices, to highlight a benefit or display some kind of advantage.
 
 <nav class="element-navigation">

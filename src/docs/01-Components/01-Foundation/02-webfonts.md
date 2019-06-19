@@ -1,3 +1,11 @@
+---
+title: Web fonts
+url: /docs/components/foundation/webfonts
+category: component
+primaryKeywords: css foundation LTF Etica
+secondaryKeywords: font-face font-weight font-display font-family
+---
+
 The YouSee brand font is LTF Etica and it's loaded using the `@font-face` strategy. It comes in four different weights:
 - light (200)
 - regular (400)

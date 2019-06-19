@@ -1,3 +1,11 @@
+---
+title: Introduction
+url: /docs/design-guidelines/introduction
+category: design-guidelines
+primaryKeywords: design manifestation digital cvi system
+secondaryKeywords: offline online
+---
+
 ## Why a Design System
 It helps creating a consistent and distinctive brand experience
 

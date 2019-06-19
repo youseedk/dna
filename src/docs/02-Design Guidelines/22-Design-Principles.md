@@ -1,3 +1,11 @@
+---
+title: Design Principles
+url: /docs/design-guidelines/design-principles
+category: design-guidelines
+primaryKeywords: recognizable iconic alive consistent
+secondaryKeywords: associate brand interact digital environment
+---
+
 The Design Principles are the set of qualities that we want customers to associate with the brand every time they interact with it in a digital environment.
 
 ## Alive

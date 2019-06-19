@@ -1,3 +1,11 @@
+---
+title: Bow
+url: /docs/components/layout/bow
+category: component
+primaryKeywords: ys-bow css layout curved horizon
+secondaryKeywords: block content seperator
+---
+
 Use the Curved Horizon as a breaker or to introduce the next block of content. It consists of a circle inside a mask.
 
 <nav class="element-navigation">

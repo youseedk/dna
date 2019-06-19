@@ -1,3 +1,11 @@
+---
+title: Tabs
+url: /docs/components/interactions/tabs
+category: component
+primaryKeywords: ys-tabs css interaction
+secondaryKeywords: menu navigation tablist list
+---
+
 <nav class="element-navigation">
   <dl class="element-navigation__list">
     <dt class="element-navigation__title">Table of contents</dt>

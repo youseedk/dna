@@ -1,3 +1,11 @@
+---
+title: Link
+url: /docs/components/text/link
+category: component
+primaryKeywords: ys-link text css hover
+secondaryKeywords: primary visited active
+---
+
 <nav class="element-navigation">
   <dl class="element-navigation__list">
     <dt class="element-navigation__title">Table of contents</dt>

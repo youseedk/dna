@@ -1,3 +1,11 @@
+---
+title: Shortcut
+url: /docs/components/icons-and-images/shortcut
+category: component
+primaryKeywords: ys-shortcut css icon image svg css
+secondaryKeywords: ikon genvej
+---
+
 <nav class="element-navigation">
   <dl class="element-navigation__list">
     <dt class="element-navigation__title">Table of contents</dt>

@@ -1,7 +1,5 @@
 .Header {
   background-color: #002219;
-  //box-shadow: none;
-  //color: #484848;
 }
 
 .Header-button {
@@ -16,10 +14,6 @@
   @media screen and (min-width: 1024px) {
     width: 0;
     overflow: hidden;
-  }
-
-  &:hover {
-   // background-color: #111;
   }
 }
 
@@ -84,8 +78,6 @@
       content: 'v';
     }
   }
-
-
 
   @media screen and (min-width: 1024px) {
     line-height: 1rem;

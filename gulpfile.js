@@ -5,9 +5,9 @@ const plugins = require('gulp-load-plugins')({
   replaceString: /\bgulp[\-.]/
 });
 
-const cssnext = require('postcss-cssnext');
+const postcssPresetEnv = require('postcss-preset-env');
 const cssnano = require('cssnano');
-const jsonSass = require('gulp-json-scss'); // add to plugins
+const jsonSass = require('gulp-json-scss');
 const source = require('vinyl-source-stream');
 const browserify = require('browserify');
 const svgSprite = require('gulp-svg-sprite');
@@ -16,7 +16,6 @@ const merge = require('merge-stream');
 const prefixer = require('postcss-prefix-selector');
 
 const paths = {
-  componentsSource: 'src/components/',
   assetsSource: {
     fonts: 'src/assets/fonts/',
     images: 'src/assets/images/',
@@ -47,10 +46,8 @@ const paths = {
  */
 gulp.task('css', () => {
   const processors = [
-    cssnext({
-      features: {
-        calc: false
-      }
+    postcssPresetEnv({
+      stage: 3,
     })
   ];
 
@@ -347,24 +344,18 @@ gulp.task('npm-dist', () => {
  *
  */
 gulp.task('compile-assets', () => {
-  runSequence(['json-to-scss'],
-    'css', 'images', 'icons', 'fonts', 'fractal-assets'
-  );
+  runSequence('json-to-scss', 'css', 'icons', 'fonts', 'fractal-assets');
 });
 
-//Default
+// Default
 gulp.task('default', (cb) => {
-  runSequence('icons', 'json-to-scss',
-    ['fractal-assets', 'css', 'images', 'watch'],
-    'fractal:start'
-  );
+  runSequence('icons', 'json-to-scss', 'fractal-assets', 'css', 'fractal:start', 'watch', cb);
 });
-
 
 /* BUILD */
 // CAUTION: Used by TRAVIS CI for automatic build and deployment - change only this task if you know what you are doing */
 gulp.task('build', (cb) => {
-  runSequence(['json-to-scss'], 'icons', 'fractal-assets', 'css', 'fractal:build', 'cname', cb);
+  runSequence('icons', 'json-to-scss', 'fractal-assets', 'css', 'fractal:build', 'cname', cb);
 });
 
 /**
@@ -374,7 +365,6 @@ gulp.task('build', (cb) => {
  */
 gulp.task('watch', () => {
   gulp.watch([`${paths.assetsSource.scss}/**/*.scss`], ['css']);
-  gulp.watch([`${paths.componentsSource}**/*.scss`], ['css']);
   gulp.watch([`${paths.assetsSource.images}/**`], ['images']);
   gulp.watch([`${paths.assetsSource.svg}/**`], ['icons']);
   gulp.watch([`${paths.fractal.scss}/**/*.scss`], ['fractal-scss']);
@@ -396,7 +386,7 @@ const logger = fractal.cli.console; // keep a reference to the fractal CLI conso
  *
  * This task will also log any errors to the console.
  */
-gulp.task('fractal:start', ['compile-assets'], () => {
+gulp.task('fractal:start', () => {
   const server = fractal.web.server({
     sync: true
   });
@@ -463,6 +453,56 @@ gulp.task('fractal-favicon', () => {
     .pipe(gulp.dest(`${paths.destination.theme}/favicon`));
 });
 
+// Building an search API based on front matter in markdown files
+gulp.task('fractal-search-api-generate', ['fractal-search-api-copy'], (cb) => {
+  const fs = require('fs');
+  const path = require('path');
+  const walk = require('walk');
+  const matter = require('gray-matter');
+  const dirname = './src/docs';
+  const destFile = './public/assets/theme/js/search.json';
+  const walker = walk.walk(dirname);
+  let prefix = ""
+
+  fs.unlink(destFile, (err) => {
+    if (err && err.code == 'ENOENT') {
+      // file doesn't exist
+      console.info("Didnøt find a search.json file. Trying to build it from scratch");
+    } else if (err) {
+      // other errors, e.g. maybe we don't have enough permission
+      console.error("Error occurred while trying to build search.json");
+    } else {
+      console.info('Found a search.json file and adding front-matter from markdown-files');
+    }
+  });
+
+  const stream = fs.createWriteStream(destFile, { flags: 'a' });
+  stream.write("[\n");
+  walker.on("file", (root, fileStats, next) => {
+    const str = fs.readFileSync(path.join(root, fileStats.name), 'utf8');
+    stream.write(prefix);
+    stream.write(JSON.stringify(matter(str), null, 4));
+    prefix = ","
+    next();
+  });
+
+  walker.on("errors", (root, nodeStatsArray, next) => {
+    next();
+  });
+
+  walker.on("end", () => {
+    stream.write("\n]");
+    stream.end();
+  });
+  cb();
+});
+
+gulp.task('fractal-search-api-copy', () => {
+  return gulp
+    .src('./fractal-theme/assets/js/src/search.json')
+    .pipe(gulp.dest('./public/assets/theme/js'));
+});
+
 /* Used for making custom domain "dna.yousee.dk" work with github pages */
 gulp.task('cname', () => {
   gulp
@@ -470,4 +510,6 @@ gulp.task('cname', () => {
     .pipe(gulp.dest('dist-site'));
 });
 
-gulp.task('fractal-assets', ['fractal-scss', 'fractal-js', 'fractal-images', 'fractal-favicon']);
+gulp.task('fractal-assets', (cb) => {
+  runSequence('fractal-search-api-generate', ['fractal-scss', 'fractal-images', 'fractal-favicon'], 'fractal-js', cb);
+});

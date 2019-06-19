@@ -1,3 +1,11 @@
+---
+title: Grid
+url: /docs/design-guidelines/grid
+category: design-guidelines
+primaryKeywords: design layout row column gutter vertical spacing
+secondaryKeywords: consistent aesthetic 12 column 8 pixels
+---
+
 ## 8 Pixel Grid for Vertical Spacing
 Uses increments of 8 to size and space out the elements on a page. This means that any defined height or width, margin or padding will be an increment of 8 (pixels).
 

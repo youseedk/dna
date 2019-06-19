@@ -1,3 +1,11 @@
+---
+title: Animations
+url: x/docs/design-guidelines/animationxx
+category: design-guidelines
+primaryKeywords: micro interaction design transition
+secondaryKeywords: fast nimble
+---
+
 Microinteractions are the controls that set a website in motion. They also improve usability and make simple tasks – like turning the sound on or off, liking a status update, or sharing a post – not only easy, but also engaging. They blend into a user’s experience naturally.
 
 > “Microinteractions happen through the functional, interactive details of a product, and details... aren’t just the details; they are the design.” - Dan Saffer

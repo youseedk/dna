@@ -1,3 +1,11 @@
+---
+title: Icons
+url: /docs/components/icons-and-images/icon-set
+category: component
+primaryKeywords: ys-icon yousee icon-set images sprite svg css
+secondaryKeywords: brand png
+---
+
 <nav class="element-navigation">
   <dl class="element-navigation__list">
     <dt class="element-navigation__title">Table of contents</dt>

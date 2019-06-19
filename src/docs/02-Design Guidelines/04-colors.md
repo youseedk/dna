@@ -1,3 +1,11 @@
+---
+title: Colors
+url: /docs/design-guidelines/colors
+category: design-guidelines
+primaryKeywords: design colour palette primary secondary midnight spring digital
+secondaryKeywords: hex rgb hsl red yellow orange blue grey black green
+---
+
 A colour palette comprises primary and accent colours that can be used for illustration or to develop your brand colors. They’ve been designed to work harmoniously with each other. The colour palette starts with primary colours and secondary colours in a meaningful hierachy that conveys specific meanings.
 
 > The following colour hierarchy was created to address some branding needs and also to keep it clear to users what is more important in the flow.

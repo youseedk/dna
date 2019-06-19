@@ -1,3 +1,11 @@
+---
+title: Support
+url: /docs/support
+category: page
+primaryKeywords: issue bug contact kontakt contributor license
+secondaryKeywords: github npm
+---
+
 ## Bugs
 If you see any issues with this site or package please let us know by creating an issue on [GitHub](https://github.com/youseedk/dna/issues/new).
 

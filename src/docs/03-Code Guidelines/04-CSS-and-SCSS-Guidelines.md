@@ -1,5 +1,9 @@
 ---
 title: CSS & SCSS Guidelines
+url: /docs/code-guidelines/css-and-scss-guidelines
+category: code-guidelines
+primaryKeywords: code bem sass stylelint class selector media query
+secondaryKeywords: cursor mobile first shorthand pseudo element !important important ys
 ---
 
 The CSS codebase is a Sass solution (we use the SCSS syntax) with BEM as naming convention. For a quick intro to BEM, please read this excellent article by Harry Roberts: [MindBEMding – getting your head ’round BEM syntax](https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/).

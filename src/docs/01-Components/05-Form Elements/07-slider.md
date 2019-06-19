@@ -1,3 +1,11 @@
+---
+title: Slider
+url: /docs/components/form-elements/slider
+category: component
+primaryKeywords: ys-slider css form range
+secondaryKeywords: label input data
+---
+
 <nav class="element-navigation">
   <dl class="element-navigation__list">
     <dt class="element-navigation__title">Table of contents</dt>

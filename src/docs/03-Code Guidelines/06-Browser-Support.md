@@ -1,3 +1,11 @@
+---
+title: Browser Support
+url: /docs/code-guidelines/browser-support
+category: code-guidelines
+primaryKeywords: code partial supported chrome ie internet explorer ie11 edge firefox opera safari
+secondaryKeywords: device desktop phone tablet ios bugs windows mac
+---
+
 All contents in YouSee DNA is build for and tested in the browsers below. Any YouSee site or web application must be tested in the same browsers.
 
 ## Desktop

@@ -1,3 +1,11 @@
+---
+title: Checkbox
+url: /docs/components/form-elements/checkbox
+category: component
+primaryKeywords: ys-checkbox css form check
+secondaryKeywords: label dissallow agree thanks yes no ja tak input
+---
+
 <nav class="element-navigation">
   <dl class="element-navigation__list">
     <dt class="element-navigation__title">Table of contents</dt>

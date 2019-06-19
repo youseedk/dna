@@ -1,3 +1,11 @@
+---
+title: Grid
+url: /docs/components/layout/grid
+category: component
+primaryKeywords: ys-grid css layout bootstrap row column gutter
+secondaryKeywords: mobile first flexbox
+---
+
 The grid system supplied with DNA is a fork of Bootstrap's ([v4.3](https://getbootstrap.com/docs/4.3/layout/grid/)) grid, which means that it's:
 - mobile first
 - flexbox based

@@ -1,3 +1,11 @@
+---
+title: Progress Bar
+url: /docs/components/feedback/progress-bar
+category: component
+primaryKeywords: ys-progress css feedback steps
+secondaryKeywords: minvalue maxvalue
+---
+
 <nav class="element-navigation">
   <dl class="element-navigation__list">
     <dt class="element-navigation__title">Table of contents</dt>

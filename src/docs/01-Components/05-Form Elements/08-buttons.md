@@ -1,3 +1,11 @@
+---
+title: Button
+url: /docs/components/form-elements/buttons
+category: component
+primaryKeywords: ys-button css form link submit click hover cta
+secondaryKeywords: cancel call to action disabled
+---
+
 Buttons are used to make common actions immediately visible and easy to perform with one click, tap, or keypress. Users can use them to navigate or to take action.
 
 <nav class="element-navigation">
