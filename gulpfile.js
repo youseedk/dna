@@ -467,7 +467,7 @@ gulp.task('fractal-search-api-generate', ['fractal-search-api-copy'], (cb) => {
   fs.unlink(destFile, (err) => {
     if (err && err.code == 'ENOENT') {
       // file doesn't exist
-      console.info("Didnøt find a search.json file. Trying to build it from scratch");
+      console.info("Didn't find a search.json file. Trying to build it from scratch");
     } else if (err) {
       // other errors, e.g. maybe we don't have enough permission
       console.error("Error occurred while trying to build search.json");
