@@ -1,3 +1,11 @@
+---
+title: Select
+url: /docs/components/form-elements/select
+category: component
+primaryKeywords: ys-select css form
+secondaryKeywords: option label disabled
+---
+
 <nav class="element-navigation">
   <dl class="element-navigation__list">
     <dt class="element-navigation__title">Table of contents</dt>

@@ -1,3 +1,11 @@
+---
+title: Accessibility Guidelines
+url: /docs/code-guidelines/accessibility-guidelines
+category: code-guidelines
+primaryKeywords: code html css aria a11y focus keyboard navigation html5 semantic
+secondaryKeywords: form label low contrast landmark wai w3
+---
+
 We want to make sure our products can be used by all users. This mean we have a responsibility to make our websites accessible too. To ensure this all YouSee sites and web applications must adhere to the [WCAG 2.1 AA guidelines](https://www.w3.org/TR/WCAG21/).
 
 ## Common Failures

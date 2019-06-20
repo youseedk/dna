@@ -1,3 +1,11 @@
+---
+title: Media Queries
+url: /docs/components/helper-classes/media-queries
+category: component
+primaryKeywords: ys-u-until- ys-u-from- helper class css max-width min-width
+secondaryKeywords: showing hiding content viewport
+---
+
 DNA provides some simple helper classes for showing/hiding elements depending on the viewport width.
 
 ## Styling on max-width

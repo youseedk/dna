@@ -1,3 +1,11 @@
+---
+title: HTML Guidelines
+url: /docs/code-guidelines/html-guidelines
+category: code-guidelines
+primaryKeywords: code accessibility semantic html5 encoding a11y
+secondaryKeywords: break spaces attributes
+---
+
 -  [HTML5 standards](#html5-standards)
 -  [Semantic HTML](#semanticHTML)
 -  [Indentation](#indentation)

@@ -1,3 +1,11 @@
+---
+title: YouSee Logo
+url: /docs/components/icons-and-images/logo
+category: component
+primaryKeywords: ys-icon yousee css icon image svg
+secondaryKeywords: brand cvi
+---
+
 <nav class="element-navigation">
   <dl class="element-navigation__list">
     <dt class="element-navigation__title">Table of contents</dt>

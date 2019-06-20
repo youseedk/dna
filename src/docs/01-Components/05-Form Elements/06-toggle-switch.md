@@ -1,3 +1,11 @@
+---
+title: Toggle Switch
+url: /docs/components/form-elements/toggle-switch
+category: component
+primaryKeywords: ys-toggle-switch css form checkbox
+secondaryKeywords: switch input label on off
+---
+
 <nav class="element-navigation">
   <dl class="element-navigation__list">
     <dt class="element-navigation__title">Table of contents</dt>

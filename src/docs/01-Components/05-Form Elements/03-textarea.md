@@ -1,3 +1,11 @@
+---
+title: Textarea
+url: /docs/components/form-elements/textarea
+category: component
+primaryKeywords: ys-textarea css form
+secondaryKeywords: label tekst block input
+---
+
 <nav class="element-navigation">
   <dl class="element-navigation__list">
     <dt class="element-navigation__title">Table of contents</dt>

@@ -1,3 +1,11 @@
+---
+title: Bow
+url: /docs/design-guidelines/bow
+category: design-guidelines
+primaryKeywords: design curved horizon breaker block of content
+secondaryKeywords: separation bue
+---
+
 Use the Curved Horizon (Bow) as a breaker or to introduce the next block of content. It consists of a circle inside a mask.
 
 ## When to use the bow

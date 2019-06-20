@@ -1,3 +1,11 @@
+---
+title: Flow Steps
+url: /docs/components/feedback/flow-steps
+category: component
+primaryKeywords: ys-flow-steps css feedback progressbar
+secondaryKeywords: minvalue maxvalue valuemax valuemin
+---
+
 <nav class="element-navigation">
   <dl class="element-navigation__list">
     <dt class="element-navigation__title">Table of contents</dt>

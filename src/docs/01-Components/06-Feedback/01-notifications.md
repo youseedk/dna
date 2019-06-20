@@ -1,3 +1,11 @@
+---
+title: Notifications
+url: /docs/components/feedback/notifications
+category: component
+primaryKeywords: ys-notification css feedback info
+secondaryKeywords: critical warning error success box
+---
+
 <nav class="element-navigation">
   <dl class="element-navigation__list">
     <dt class="element-navigation__title">Table of contents</dt>

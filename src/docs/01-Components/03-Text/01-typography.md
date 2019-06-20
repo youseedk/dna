@@ -1,3 +1,11 @@
+---
+title: Typography
+url: /docs/components/text/typography
+category: component
+primaryKeywords: css text ys-main-title ys-primary-title ys-secondary-title ys-subtitle ys-body-text ys-small-text ys-list
+secondaryKeywords: grey-28 484848
+---
+
 <nav class="element-navigation">
   <dl class="element-navigation__list">
     <dt class="element-navigation__title">Table of contents</dt>

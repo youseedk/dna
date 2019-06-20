@@ -4,6 +4,8 @@ import linkPrettifier from './src/navigation';
 import createContributors from './src/contributors';
 import codePreview from './src/code-preview';
 import lastBuild from './src/lastbuild';
+import fractalSearch from './src/search';
+import fractalSearchResults from './src/search-results';
 
 const modules = [
   {selector: '.colors', init: colorConverter},
@@ -12,6 +14,8 @@ const modules = [
   {selector: '.contributors', init: createContributors},
   {selector: '.Prose', init: codePreview},
   {selector: '.prose-build', init: lastBuild},
+  {selector: '#searchInput', init: fractalSearch},
+  {selector: '#searchPageInput', init: fractalSearchResults}
 ];
 
 modules.forEach((module) => {

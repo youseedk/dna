@@ -1,3 +1,11 @@
+---
+title: Cards
+url: /docs/components/layout/card
+category: component
+primaryKeywords: ys-card css layout box-shadow
+secondaryKeywords: stack
+---
+
 In the physical world, objects can be stacked or affixed to one another, but cannot pass through each other. Objects also cast shadows and reflect light. Cards behave like objects so they should respect the same rules as objects.
 
 Cards may contain a photo, text, and a link about a single subject. They may display content containing elements of varying size, such as photos with captions of variable length. A card collection is a layout of cards on the same plane.

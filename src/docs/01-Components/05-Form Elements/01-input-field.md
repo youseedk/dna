@@ -1,3 +1,11 @@
+---
+title: Input Field
+url: /docs/components/form-elements/input-field
+category: component
+primaryKeywords: ys-input-field css form label
+secondaryKeywords: enter information guidance icon invalid
+---
+
 Input fields should always follow these requirements:
 - Identifiable Using a tappable touch target, text fields should indicate that users can enter information.
 - Findable It should be easy to find a text field among other elements.

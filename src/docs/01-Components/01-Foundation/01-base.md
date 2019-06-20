@@ -1,3 +1,11 @@
+---
+title: Base
+url: /docs/components/foundation/base
+category: component
+primaryKeywords: css foundation box-sizing border-box etica
+secondaryKeywords: required minimum styles
+---
+
 Base contains the required minimum styles needed to include any of the components.
 
 ## Box sizing and font family

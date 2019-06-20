@@ -1,3 +1,11 @@
+---
+title: Rich Text
+url: /docs/components/text/rich-text
+category: component
+primaryKeywords: ys-rich-text css html cms content
+secondaryKeywords: sitecore container editor wysiwyg
+---
+
 Rich Text is used for content provided by editors in Content Management Systems. These systems usually output a big chunk of HTML without classes, so DNA provides a container (`ys-rich-text`), which adds styling similar to the typography styles to the corresponding HTML elements.
 
 <nav class="element-navigation">

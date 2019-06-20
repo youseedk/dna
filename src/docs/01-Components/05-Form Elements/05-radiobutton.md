@@ -1,3 +1,11 @@
+---
+title: Radiobutton
+url: /docs/components/form-elements/radiobutton
+category: component
+primaryKeywords: ys-radio-button css form option
+secondaryKeywords: select deselect yes no input
+---
+
 <nav class="element-navigation">
   <dl class="element-navigation__list">
     <dt class="element-navigation__title">Table of contents</dt>

@@ -1,5 +1,9 @@
 ---
 title: Installation & Usage
+url: /docs/code-guidelines/installation-and-usage
+category: code-guidelines
+primaryKeywords: code npm install gulp css framework cdn
+secondaryKeywords: github
 ---
 
 ## Install

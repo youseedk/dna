@@ -1,0 +1,29 @@
+<form method="GET" name="search" class="search" action="" id="searchForm">
+    <label class="ys-u-visuallyhidden" for="searchInput">Search for a page or component</label>
+    <input name="q" id="searchInput" type="search" value="" class="search__input" placeholder="Search..." autocomplete="off" list="searchSuggestions">
+    <button type="submit" id="SearchButton" class="search__button">
+        <span class="ys-u-visuallyhidden">Søg</span>
+    </button>
+    <ul id="searchSuggestions" class="search__suggestions"></ul>
+</form>
+
+<div class="search-color-meaning">
+    <p class="search-color-meaning__text">Color explanation</p>
+    <ul>
+        <li class="search-color-meaning__item search-color-meaning__item--component">Component</li>
+        <li class="search-color-meaning__item search-color-meaning__item--design-guidelines">Design guidelines</li>
+        <li class="search-color-meaning__item search-color-meaning__item--code-guidelines">Code guidelines</li>
+        <li class="search-color-meaning__item search-color-meaning__item--page">Page</li>
+    </ul>
+    <button type="button" class="search-color-meaning__close">
+        <span class="ys-u-visuallyhidden">Søg</span>
+    </button>
+</div>
+
+<nav class="Navigation">
+    {% for navPartial in frctl
+        .theme
+        .get('nav') %}
+        {% include 'partials/navigation/' + navPartial + '.nunj' %}
+    {% endfor %}
+</nav>

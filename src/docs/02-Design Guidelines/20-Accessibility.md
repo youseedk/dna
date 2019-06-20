@@ -1,3 +1,11 @@
+---
+title: Accessibility
+url: /docs/design-guidelines/accessibility
+category: design-guidelines
+primaryKeywords: WCAG AA color contrast requirement
+secondaryKeywords: aria assistive technology screen reader visual auditory motor cognitive impairments a11y
+---
+
 Recently YouSee Digital First Tribe decided to go for a better Global Accessibility Rating, The WCAG AA rating. For too long, accessibility has been misunderstood as building sites for a small group of users of assistive technology — a blind person using a screen reader for example — and far too often dismissed as too complex, too time-consuming, or “not our customers.” Accessibility, however, is not just for a single, small group, but for an estimated 15% of people worldwide who have some level of temporary visual, auditory, motor, and cognitive impairments.
 
 ## How to test your content

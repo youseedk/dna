@@ -1,6 +1,11 @@
 ---
 title: Welcome to YouSee DNA
+url: /
+category: page
+primaryKeywords: homepage home frontpage
+secondaryKeywords: start index
 ---
+
 <p class="prose-build">Last deployment: <time class="prose-build-time"></time></p>
 
 ## YouSee DNA is our design system.
