@@ -60,9 +60,9 @@ function fractalSearch() {
       });
 
       // Method for navigating with key up and key down in search suggestions
-      document.onkeydown = function (e) {
-        switch (e.keyCode) {
-          case 38:
+      document.addEventListener('keydown', (e) => {
+        switch (e.key) {
+          case 'ArrowUp':
             e.preventDefault();
             if (document.activeElement === searchInput) {
               break;
@@ -74,7 +74,7 @@ function fractalSearch() {
               document.activeElement.parentNode.previousElementSibling.firstElementChild.focus();
             }
             break;
-          case 40:
+          case 'ArrowDown':
             e.preventDefault();
             if (document.activeElement === searchInput) {
               searchSuggestions.firstElementChild.firstElementChild.focus();
@@ -87,7 +87,7 @@ function fractalSearch() {
             }
             break;
         }
-      }
+      });
     })
     // If an error occurs we will not show the search feature at all
     .catch(err => {
