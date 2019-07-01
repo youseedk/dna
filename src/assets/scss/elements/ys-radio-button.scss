@@ -39,16 +39,12 @@
     &:focus {
 
       & + .ys-radio-button__label {
-        @include customOutline;
+        outline: none;
 
         &::before {
           border-color: $ys-color-digital-grass;
         }
       }
-    }
-
-    &:focus:not(:focus-visible) + .ys-radio-button__label {
-      outline: 0;
     }
 
     &:focus-visible {

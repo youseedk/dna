@@ -44,8 +44,16 @@
       cursor: not-allowed;
     }
 
-    &:focus,
-    &:not(:disabled):not([readonly]):hover {
+    &:focus {
+      outline: none;
+    }
+
+    &:not(:disabled):not([readonly]):focus-visible {
+      @include customOutline;
+    }
+
+    &:not(:disabled):not([readonly]):hover,
+    &:not(:disabled):not([readonly]):focus {
       @include inputFieldShadow(hover);
     }
   }
