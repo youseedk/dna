@@ -454,7 +454,7 @@ gulp.task('fractal-favicon', () => {
 });
 
 // Building an search API based on front matter in markdown files
-gulp.task('fractal-search-api-generate', ['fractal-search-api-copy'], (cb) => {
+gulp.task('fractal-search-api-generate', ['fractal-json-copy'], (cb) => {
   const fs = require('fs');
   const path = require('path');
   const walk = require('walk');
@@ -497,9 +497,9 @@ gulp.task('fractal-search-api-generate', ['fractal-search-api-copy'], (cb) => {
   cb();
 });
 
-gulp.task('fractal-search-api-copy', () => {
+gulp.task('fractal-json-copy', () => {
   return gulp
-    .src('./fractal-theme/assets/js/src/search.json')
+    .src(['./fractal-theme/assets/js/json/search.json', './fractal-theme/assets/js/json/browsers.json'])
     .pipe(gulp.dest('./public/assets/theme/js'));
 });
 
