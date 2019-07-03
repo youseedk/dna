@@ -52,6 +52,7 @@
     background: transparent; // Otherwise white in Chrome
     min-height: rem(30);
     cursor: ew-resize;
+    outline: none;
 
     &::-webkit-slider-thumb {
       @include ys-slider-thumb;
@@ -104,6 +105,10 @@
     &::-ms-fill-upper {
       background-color: $ys-color-grey-85;
       border-radius: 2px;
+    }
+
+    &:focus-visible {
+      @include customOutline;
     }
   }
 

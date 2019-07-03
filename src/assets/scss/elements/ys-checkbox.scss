@@ -9,18 +9,14 @@
   &__control {
 
     &:focus {
+      outline: none;
 
       & + .ys-checkbox__label {
-        @include customOutline;
 
         &::before {
           border-color: $ys-color-digital-grass;
         }
       }
-    }
-
-    &:focus:not(:focus-visible) + .ys-checkbox__label {
-      outline: 0;
     }
 
     &:focus-visible {
