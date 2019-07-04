@@ -91,6 +91,7 @@ function fractalSearch() {
     })
     // If an error occurs we will not show the search feature at all
     .catch(err => {
+      console.log('error occured with the search feature in navigation');
       searchForm.remove();
     })
 
@@ -98,7 +99,7 @@ function fractalSearch() {
   searchForm.onsubmit = (e) => {
     e.preventDefault();
     searchElement.classList.remove('search-is-active');
-    location.href = `//${location.host}/docs/search?q=${encodeURIComponent(searchInput.value)}`;
+    location.href = `//${location.host}/docs/search-results?q=${encodeURIComponent(searchInput.value)}`;
   };
 
   searchExplanationClose.addEventListener('click', () => {
