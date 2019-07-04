@@ -68,6 +68,7 @@ function fractalSearchResults() {
     })
     // If an error occurs we will not show the search feature at all
     .catch(err => {
+      console.log('error occured with the search feature in results page');
       searchComponent.remove();
     })
 }
