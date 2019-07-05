@@ -2,21 +2,19 @@
 title: Support
 url: /docs/support
 category: page
-primaryKeywords: issue bug contact kontakt contributor license
+primaryKeywords: kontakt contact mail email
 secondaryKeywords: github npm
 ---
 
-## Bugs
-If you see any issues with this site or package please let us know by creating an issue on [GitHub](https://github.com/youseedk/dna/issues/new).
+## How to contribute
+If you have suggestions for this site or you want file a bug please see [how to contribute](/docs/contributing).
 
-## Contributors
-If you want to contribute to this framework, you're a hero! Please fork our [repository](https://github.com/youseedk/dna/) on GitHub and create a pull request. We want your help! Please remember to read our code guidelines first.
-
-Current contributors to YouSee DNA:
-<div class="contributors">
-    <p>See a <a href="https://github.com/youseedk/dna/graphs/contributors">complete list of contributors</a> on GitHub.</p>
-</div>
-
+## Contact persons
+If you need to get in touch with us please come and find us in the Digital Warehouse.
+-	Michael Grandorf (Tech Lead)
+-   Magnus Havgry (Front-end Developer)
+-	Daniel Simon Dos Santos (Lead Digital Designer)
+-	Nicolai Fogh (UX Lead)
 
 ## License
-See [LICENSE.md](https://raw.githubusercontent.com/youseedk/dna/master/LICENSE) for more information on our MIT license.
+See [LICENSE.md](https://raw.githubusercontent.com/youseedk/dna/master/LICENSE.md) for more information on our MIT license.
