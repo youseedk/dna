@@ -25,6 +25,15 @@ secondaryKeywords: grey-28 484848
 {{render '@typography--default'}}
 ```
 
+## Main title (light)
+<div class="element-preview element-preview--dark">
+  <div class="element-preview__inner">{{render '@typography--main-title-light'}}</div>
+</div>
+
+```html
+{{render '@typography--main-title-light'}}
+```
+
 ## Primary title
 <div class="element-preview">
   <div class="element-preview__inner">{{render '@typography--primary-title'}}</div>
@@ -32,6 +41,15 @@ secondaryKeywords: grey-28 484848
 
 ```html
 {{render '@typography--primary-title'}}
+```
+
+## Primary title (light)
+<div class="element-preview element-preview--dark">
+  <div class="element-preview__inner">{{render '@typography--primary-title-light'}}</div>
+</div>
+
+```html
+{{render '@typography--primary-title-light'}}
 ```
 
 ## Secondary title
@@ -43,6 +61,15 @@ secondaryKeywords: grey-28 484848
 {{render '@typography--secondary-title'}}
 ```
 
+## Secondary title (light)
+<div class="element-preview element-preview--dark">
+  <div class="element-preview__inner">{{render '@typography--secondary-title-light'}}</div>
+</div>
+
+```html
+{{render '@typography--secondary-title-light'}}
+```
+
 ## Subtitle
 <div class="element-preview">
   <div class="element-preview__inner">{{render '@typography--subtitle'}}</div>
@@ -50,6 +77,15 @@ secondaryKeywords: grey-28 484848
 
 ```html
 {{render '@typography--subtitle'}}
+```
+
+## Subtitle (light)
+<div class="element-preview element-preview--dark">
+  <div class="element-preview__inner">{{render '@typography--subtitle-light'}}</div>
+</div>
+
+```html
+{{render '@typography--subtitle-light'}}
 ```
 
 ## Body text
@@ -61,6 +97,15 @@ secondaryKeywords: grey-28 484848
 {{render '@typography--body-text'}}
 ```
 
+## Body text (light)
+<div class="element-preview element-preview--dark">
+  <div class="element-preview__inner">{{render '@typography--body-text-light'}}</div>
+</div>
+
+```html
+{{render '@typography--body-text-light'}}
+```
+
 ## Small text
 <div class="element-preview">
   <div class="element-preview__inner">{{render '@typography--small-text'}}</div>
@@ -68,6 +113,15 @@ secondaryKeywords: grey-28 484848
 
 ```html
 {{render '@typography--small-text'}}
+```
+
+## Small text (light)
+<div class="element-preview element-preview--dark">
+  <div class="element-preview__inner">{{render '@typography--small-text-light'}}</div>
+</div>
+
+```html
+{{render '@typography--small-text-light'}}
 ```
 
 ## Unordered list
@@ -79,6 +133,15 @@ secondaryKeywords: grey-28 484848
 {{render '@typography--unordered-list'}}
 ```
 
+## Unordered list (light)
+<div class="element-preview element-preview--dark">
+  <div class="element-preview__inner">{{render '@typography--unordered-list-light'}}</div>
+</div>
+
+```html
+{{render '@typography--unordered-list-light'}}
+```
+
 ## Ordered list
 <div class="element-preview">
   <div class="element-preview__inner">{{render '@typography--ordered-list'}}</div>
@@ -86,6 +149,15 @@ secondaryKeywords: grey-28 484848
 
 ```html
 {{render '@typography--ordered-list'}}
+```
+
+## Ordered list (light)
+<div class="element-preview element-preview--dark">
+  <div class="element-preview__inner">{{render '@typography--ordered-list-light'}}</div>
+</div>
+
+```html
+{{render '@typography--ordered-list-light'}}
 ```
 
 # HTML Guidelines
