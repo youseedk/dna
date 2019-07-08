@@ -15,7 +15,7 @@
 // Label Text for input field, select, textarea and slider
 @mixin labelText() {
   display: block;
-  color: $ys-color-grey-46;
+  color: inherit;
   margin-bottom: rem(8);
   font-weight: 600;
   text-transform: uppercase;
@@ -32,7 +32,7 @@
   line-height: 1.5;
 
   &--error {
-    color: $ys-color-error-red;
+    color: $ys-color-error-red !important; /* stylelint-disable-line declaration-no-important */
   }
 }
 
