@@ -1,15 +1,9 @@
----
-title: How to Contribute
-url: /docs/contributing
-category: page
-primaryKeywords: issue bug contributions feature github npm pull request
-secondaryKeywords: gitflow test gulp fork repository
----
+#How to contribute
 
-## Reporting ssues
+## Reporting issues
 Should you run into any issues with the documentation site, or npm package, please don't hesitate to let us know by filling an [issue](https://github.com/youseedk/dna/issues/new).
 It is important that the issue is well described and a screenshot is added. Also, if you are filling in a bug please remember to add your browser version and steps in how to reproduce the issue.
-Please don't assign anybody to the task. The contributors will automatically get a notification when your issue is created.
+Please don't assign anybody to the task. The contributors will automatically get a notification when your issue is created and will assign themselve when they have time to work on the issue.
 
 ## Branching strategy
 We use [Gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow). This means instead of a single master branch, this workflow uses two branches to record the history of the project. The `master` branch stores the official releases, and the `develop` branch serves as an integration branch for features.
@@ -30,18 +24,16 @@ Please run:
 - `gulp`
 
 ## Running tests
-This is only a CSS framework and a documentation site. We don't have automatic tests (except Travis CI testing the build and if your pull request is safe to merge).
-However, if you add a new component to the site or make severe changes to an exsiting one we require that you test it in all our [supported browsers](/docs/code-guidelines/browser-support). 
+We don't have automatic tests except Travis CI testing the build. However, if you add a new component to the site or make severe changes to an exsiting one we require that you test it in all our [supported browsers](/docs/code-guidelines/browser-support). 
 
+## Updating the NPM package and version number
+This will be handled by somebody else when merging/deploying code to master/producton.
+We use `semver` for versioning. Basically, we have to decide if the code changes in the develop branch is a patch, minor or major update.
 
 ## Releasing the latest version
 This will be handled by somebody else when merging/deploying code to master/producton.
 
-## Updating the NPM package and version number
-This will be handled by somebody else when merging/deploying code to master/producton.
-
 ## Current contributors
-This is the current contributors to YouSee DNA
 <div class="contributors">
     <p>See a <a href="https://github.com/youseedk/dna/graphs/contributors">complete list of contributors</a> on GitHub.</p>
 </div>
