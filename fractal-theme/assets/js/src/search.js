@@ -71,7 +71,7 @@ function fractalSearch() {
   searchForm.onsubmit = (e) => {
     e.preventDefault();
     searchElement.classList.remove('search-is-active');
-    location.href = `//${location.host}/docs/search?q=${encodeURIComponent(searchInput.value)}`;
+    location.href = `//${location.host}/docs/search-results?q=${encodeURIComponent(searchInput.value)}`;
   };
 
   searchExplanationClose.addEventListener('click', () => {
