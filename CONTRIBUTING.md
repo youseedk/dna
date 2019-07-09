@@ -1,4 +1,4 @@
-#How to contribute
+# How to contribute
 
 ## Reporting issues
 Should you run into any issues with the documentation site, or npm package, please don't hesitate to let us know by filling an [issue](https://github.com/youseedk/dna/issues/new).
