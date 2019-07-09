@@ -531,7 +531,7 @@ secondaryKeywords: gitflow test gulp fork repository
 `
   gulp
     .src('./CONTRIBUTING.md')
-    .pipe(plugins.replace('#How to contribute', ''))
+    .pipe(plugins.replace('# How to contribute', ''))
     .pipe(plugins.insert.prepend(frontmatter))
     .pipe(plugins.rename('07-Contributors.md'))
     .pipe(gulp.dest('./src/docs'));
