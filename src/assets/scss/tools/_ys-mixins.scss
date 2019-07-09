@@ -45,7 +45,6 @@
 // Typography rules - reused for classes and rich text stuff
 @mixin ys-main-title() {
   margin: 0;
-  color: $ys-color-grey-28;
   font-size: rem(40);
   line-height: 1.2;
   font-weight: 700;
@@ -58,7 +57,6 @@
 
 @mixin ys-primary-title() {
   margin: 0;
-  color: $ys-color-grey-28;
   font-size: rem(32);
   line-height: 1.25;
   font-weight: 700;
@@ -71,7 +69,6 @@
 
 @mixin ys-secondary-title() {
   margin: 0;
-  color: $ys-color-grey-28;
   font-size: rem(24);
   line-height: 1.33;
   font-weight: 700;
@@ -83,7 +80,6 @@
 
 @mixin ys-subtitle() {
   margin: 0;
-  color: $ys-color-grey-28;
   font-size: rem(24);
   line-height: 1.25;
   font-weight: 200;
@@ -95,7 +91,6 @@
 
 @mixin ys-body-text() {
   margin: 0;
-  color: $ys-color-grey-28;
   font-size: rem(16);
   line-height: 1.5;
   font-weight: 400;
@@ -103,7 +98,6 @@
 
 @mixin ys-small-text() {
   margin: 0;
-  color: $ys-color-grey-28;
   font-size: rem(12);
   line-height: 1.25;
   font-weight: 400;
@@ -120,7 +114,6 @@
 @mixin ys-list-item() {
   position: relative;
   padding-left: rem(24);
-  color: $ys-color-grey-28;
   line-height: 1.5;
   list-style: none;
   counter-increment: list-item;

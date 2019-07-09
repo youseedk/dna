@@ -5,30 +5,61 @@
 
 .ys-main-title {
   @include ys-main-title;
+  color: $ys-color-grey-28;
+
+  &--light {
+    color: $ys-color-grey-98;
+  }
 }
 
 .ys-primary-title {
   @include ys-primary-title;
+  color: $ys-color-grey-28;
+
+  &--light {
+    color: $ys-color-grey-98;
+  }
 }
 
 .ys-secondary-title {
   @include ys-secondary-title;
+  color: $ys-color-grey-28;
+
+  &--light {
+    color: $ys-color-grey-98;
+  }
 }
 
 .ys-subtitle {
   @include ys-subtitle;
+  color: $ys-color-grey-28;
+
+  &--light {
+    color: $ys-color-grey-98;
+  }
 }
 
 .ys-body-text {
   @include ys-body-text;
+  color: $ys-color-grey-28;
+
+  &--light {
+    color: $ys-color-grey-98;
+  }
 }
 
 .ys-small-text {
   @include ys-small-text;
+  color: $ys-color-grey-28;
+
+  &--light {
+    color: $ys-color-grey-98;
+  }
 }
 
 .ys-list {
   @include ys-list;
+  color: $ys-color-grey-28;
 
   &__item {
     @include ys-list-item;
@@ -37,6 +68,10 @@
     & + & {
       margin-top: rem(24);
     }
+  }
+
+  &--light {
+    color: $ys-color-grey-98;
   }
 
   .ys-list {

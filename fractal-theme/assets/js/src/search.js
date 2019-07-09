@@ -61,37 +61,38 @@ function fractalSearch() {
 
       // Method for navigating with key up and key down in search suggestions
       document.addEventListener('keydown', (e) => {
-        switch (e.key) {
-          case 'ArrowUp':
-            e.preventDefault();
-            if (document.activeElement === searchInput) {
+        if (document.querySelectorAll('.search :focus').length) {
+          switch (e.key) {
+            case 'ArrowUp':
+              e.preventDefault();
+              if (document.activeElement === searchInput) {
+                break;
+              }
+              else if (!document.activeElement.parentNode.previousElementSibling) {
+                searchSuggestions.lastElementChild.firstElementChild.focus();
+              }
+              else {
+                document.activeElement.parentNode.previousElementSibling.firstElementChild.focus();
+              }
               break;
-            }
-            else if (!document.activeElement.parentNode.previousElementSibling) {
-              searchSuggestions.lastElementChild.firstElementChild.focus();
-            }
-            else {
-              document.activeElement.parentNode.previousElementSibling.firstElementChild.focus();
-            }
-            break;
-          case 'ArrowDown':
-            e.preventDefault();
-            if (document.activeElement === searchInput) {
-              searchSuggestions.firstElementChild.firstElementChild.focus();
-            }
-            else if (!document.activeElement.parentNode.nextElementSibling) {
-              searchSuggestions.firstElementChild.firstElementChild.focus();
-            }
-            else {
-              document.activeElement.parentNode.nextElementSibling.firstElementChild.focus();
-            }
-            break;
+            case 'ArrowDown':
+              e.preventDefault();
+              if (document.activeElement === searchInput) {
+                searchSuggestions.firstElementChild.firstElementChild.focus();
+              }
+              else if (!document.activeElement.parentNode.nextElementSibling) {
+                searchSuggestions.firstElementChild.firstElementChild.focus();
+              }
+              else {
+                document.activeElement.parentNode.nextElementSibling.firstElementChild.focus();
+              }
+              break;
+          }
         }
       });
     })
     // If an error occurs we will not show the search feature at all
     .catch(err => {
-      console.log('error occured with the search feature in navigation');
       searchForm.remove();
     })
 
