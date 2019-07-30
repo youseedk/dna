@@ -8,7 +8,7 @@ const variants = iconset.reduce((acc, item, index) => {
     name: itemName,
     label: item,
     context: {
-      svgId: 'ys-icons-' + item
+      svgId: 'ys-icon-' + item
     },
   });
 

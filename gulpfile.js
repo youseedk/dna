@@ -195,7 +195,7 @@ gulp.task('icons', () => {
         namespaceIDs: true
       }
     }))
-    .pipe(plugins.replace('id="', 'id="ys-icons-'))
+    .pipe(plugins.replace('id="', 'id="ys-icon-'))
     .pipe(gulp.dest(paths.destination.svg));
 
   // create json file lists

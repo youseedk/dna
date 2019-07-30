@@ -1,9 +1,9 @@
 ---
-title: Shortcut
-url: /docs/components/icons-and-images/shortcut
+title: YouSee Logo
+url: /docs/components/icons-and-logo/logo
 category: component
-primaryKeywords: ys-shortcut css icon image svg css
-secondaryKeywords: ikon genvej
+primaryKeywords: ys-icon yousee css icon image svg
+secondaryKeywords: brand cvi
 ---
 
 <nav class="element-navigation">
@@ -16,16 +16,14 @@ secondaryKeywords: ikon genvej
 </nav>
 
 # Examples
-## Single shortcut
+## Logo
 <div class="element-preview">
-  <div class="element-preview__inner">{{render '@shortcut'}}</div>
+  <div class="element-preview__inner">{{render '@logo'}}</div>
 </div>
 
 ```html
-{{render '@shortcut'}}
+{{render '@logo'}}
 ```
-
-For a full overview of all available icons in the icon set, please refer to [Icon Set documentation in Design Guidelines](/docs/design-guidelines/icons).
 
 # HTML Guidelines
 Remember to change the path of the SVG Sprite so the `xlink:href` attribute points to the sprite on your own server.
@@ -33,4 +31,3 @@ Remember to change the path of the SVG Sprite so the `xlink:href` attribute poin
 For IE11 support of SVG Sprites please include [SVG for Everybody](https://github.com/jonathantneal/svg4everybody).
 
 # UX and Design Guidelines
-
