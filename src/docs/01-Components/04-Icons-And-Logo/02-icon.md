@@ -38,4 +38,4 @@ Icons are the visual expression of a brand’s products, services, and tools. Si
 Use these guidelines as a starting point to ensure that the products icon colors and key elements reflect the brand’s identity.
 
 ## Icon style
-All icons are drawn with a 2 pixel line thickness and occational small filled shapes. All icons should be in **ys-color-grey-28** or **ys-color-white** ([See color definitions](colors)) when used on dark backgrounds. Icons should reflect the text colour.
+All icons are drawn with a 2 pixel line thickness and occational small filled shapes. All icons should be in **ys-color-grey-28** or **ys-color-white** ([See color definitions](/docs/design-guidelines/colors)) when used on dark backgrounds. Icons should reflect the text colour.

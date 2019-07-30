@@ -25,6 +25,15 @@ secondaryKeywords: brand cvi
 {{render '@logo'}}
 ```
 
+## Logo on dark background
+<div class="element-preview element-preview--dark">
+  <div class="element-preview__inner">{{render '@logo--light'}}</div>
+</div>
+
+```html
+{{render '@logo--light'}}
+```
+
 # HTML Guidelines
 Remember to change the path of the SVG Sprite so the `xlink:href` attribute points to the sprite on your own server.
 
