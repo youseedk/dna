@@ -1,8 +1,8 @@
 ---
-title: Icons
-url: /docs/components/icons-and-images/icon-set
+title: Icon
+url: /docs/components/icons-and-images/icons
 category: component
-primaryKeywords: ys-icon yousee icon-set images sprite svg css
+primaryKeywords: ys-icon yousee icons images sprite svg css
 secondaryKeywords: brand png
 ---
 
@@ -18,11 +18,11 @@ secondaryKeywords: brand png
 # Examples
 ## Single icon
 <div class="element-preview">
-  <div class="element-preview__inner">{{render '@icon-set'}}</div>
+  <div class="element-preview__inner">{{render '@icon}}</div>
 </div>
 
 ```html
-{{render '@icon-set'}}
+{{render '@icon'}}
 ```
 
 For a full overview of all available icons in the icon set, please refer to [Icon Set documentation in Design Guidelines](/docs/design-guidelines/icons).

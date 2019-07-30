@@ -13,7 +13,7 @@ Use these guidelines as a starting point to ensure that the products icon colors
 ## Icon style
 All icons are drawn with a 2 pixel line thickness and occational small filled shapes. All icons are either **ys-color-grey-28** or **ys-color-white** ([See color definitions](colors)) when used on darker backgrounds. Icons should always reflect the text colour.
 
-> If you are a developer and looking for an easy way to implement these, you may want to go to <a href="/components/detail/icon-set">Icon Set</a> or <a href="/components/detail/ui-icons">UI Icons</a> instead. Here you will find code examples.
+> If you are a developer and looking for an easy way to implement these, you may want to go to <a href="/components/detail/icons">Icon Set</a> or <a href="/components/detail/icons">UI Icons</a> instead. Here you will find code examples.
 
 ## YouSee Icon Set
 <div class="frctl-example">
@@ -23,11 +23,11 @@ All icons are drawn with a 2 pixel line thickness and occational small filled sh
                 <figcaption class="icons__name">{{@this}}</figcaption>
                 <figure class="icons__icon">
                     <svg xmlns="http://www.w3.org/2000/svg" class="ys-icon">
-                        <use xlink:href="/assets/svg/sprite/icon-set.svg#ys-icon-set-{{@this}}"></use>
+                        <use xlink:href="/assets/svg/sprite/icons.svg#ys-icons-{{@this}}"></use>
                     </svg>
                 </figure>
                 <div class="icons__download">
-                    <a class="icons__download-link" href="/assets/svg/icon-set/{{@this}}.svg" target="_blank" download aria-label="Download {{@this}}.svg">Download SVG</a>
+                    <a class="icons__download-link" href="/assets/svg/icons/{{@this}}.svg" target="_blank" download aria-label="Download {{@this}}.svg">Download SVG</a>
                 </div>
             </div>
         {{/each}}
