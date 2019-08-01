@@ -13,7 +13,7 @@ Use these guidelines as a starting point to ensure that the products icon colors
 ## Icon style
 All icons are drawn with a 2 pixel line thickness and occational small filled shapes. All icons should be in **ys-color-grey-28** or **ys-color-white** ([See color definitions](colors)) when used on dark backgrounds. Icons should reflect the text colour.
 
-> If you are a developer and looking for code examples to implement the SVG icons, please go to Components > Icons & Logo > [Icons](/docs/components/icons-and-images/icon).
+> If you are a developer and looking for code examples to implement the SVG icons, please go to Components > Icons & Logo > [Icon](/docs/components/icons-and-logo/icon).
 
 ## YouSee Icon Set
 <div class="frctl-example">

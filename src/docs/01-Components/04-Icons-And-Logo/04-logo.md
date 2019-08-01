@@ -35,8 +35,7 @@ secondaryKeywords: brand cvi
 ```
 
 # HTML Guidelines
-Remember to change the path of the SVG Sprite so the `xlink:href` attribute points to the sprite on your own server.
-
-For IE11 support of SVG Sprites please include [SVG for Everybody](https://github.com/jonathantneal/svg4everybody).
+Copy the code directly into your soluton. Screenreaders will read "yousee" unless you add `aria-hidden="true"` to the SVG element.
 
 # UX and Design Guidelines
+Please respect the colors of the logo. Don't change the color of the logo on yousee.dk.
