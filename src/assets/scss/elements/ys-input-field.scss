@@ -57,6 +57,7 @@
     width: 100%;
     height: rem(48);
     font-size: rem(16);
+    font-weight: 600;
     line-height: rem(24);
     background-color: transparent;
     color: $ys-color-grey-28;
@@ -64,15 +65,18 @@
     &::placeholder {
       color: $ys-color-grey-64;
       opacity: 1;
+      font-weight: 400;
     }
 
     // stylelint-disable
     &:-ms-input-placeholder {
       color: $ys-color-grey-64;
+      font-weight: 400;
     }
 
     &::ms-input-placeholder {
       color: $ys-color-grey-64;
+      font-weight: 400;
     }
     // stylelint-enable
 
@@ -87,6 +91,7 @@
 
     &:focus {
       outline: none;
+      font-weight: 400;
     }
 
     .ys-input-field__wrapper--error & {
