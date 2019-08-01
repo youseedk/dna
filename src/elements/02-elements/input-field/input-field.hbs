@@ -7,13 +7,7 @@
                 {{ render '@icon-set--mail' }}
             </span>
             {{/if}}
-            <input type="text" class="ys-input-field__control"
-            {{#unless isDisabled}}placeholder="Placeholder text"{{/unless}}
-            {{#if isDisabled}} disabled{{/if}}
-            {{#if isReadonly}} readonly value="Non-editable text"{{/if}}
-            {{#if isValid}} value="Valid input"{{/if}}
-            {{#if isInvalid}} value="Invalid input"{{/if}}
-            {{#if hasGuidance}} aria-labelledby="input-guidance-id"{{/if}} />
+            <input type="text" class="ys-input-field__control"{{#if isDisabled}} disabled{{/if}}{{#if isReadonly}} readonly value="Non-editable text"{{/if}}{{#if isValid}} value="Valid input"{{/if}}{{#if isInvalid}} value="Invalid input"{{/if}}{{#if hasGuidance}} aria-labelledby="input-guidance-id"{{/if}}/>
             {{#if hasIconPost}}
             <span class="ys-input-field__icon{{#if isValid}} ys-input-field__icon--valid{{/if}}{{#if isInvalid}} ys-input-field__icon--invalid{{/if}}">
                 {{#if isValid}}{{ render '@ui-icons--check-mark' }}{{/if}}{{#if isInvalid}}{{ render '@ui-icons--exclamation-mark' }}{{/if}}
