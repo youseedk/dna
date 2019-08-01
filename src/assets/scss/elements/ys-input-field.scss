@@ -101,6 +101,10 @@
     &:not(.ys-input-field__wrapper--readonly):not(.ys-input-field__wrapper--disabled):focus-visible {
       @include customOutline;
     }
+
+    &[readonly]:focus {
+      font-weight: 600;
+    }
   }
 
   &__icon {
