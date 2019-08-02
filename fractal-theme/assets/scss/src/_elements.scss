@@ -67,6 +67,18 @@
       min-height: 300px;
     }
 
+    /* Link */
+    .ys-link {
+
+      &:visited {
+        color: #1fab2e !important; //used to not show purple links on documentation site
+      }
+
+      &:hover {
+        color: #484848 !important; //used to not show purple links on documentation site
+      }
+    }
+
     /* UI icons */
     .icons-preview {
       display: flex;
