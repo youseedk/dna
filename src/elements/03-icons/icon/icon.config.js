@@ -17,7 +17,7 @@ const variants = iconset.reduce((acc, item, index) => {
 
 module.exports = {
   status: "wip",
-  preview: "@icon-preview",
+  preview: "@element-preview",
   context: {
   },
   collated: true,
