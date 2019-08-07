@@ -4,13 +4,18 @@
         <span class="ys-input-field__wrapper{{#if isReadonly}} ys-input-field__wrapper--readonly{{/if}}{{#if isInvalid}} ys-input-field__wrapper--error{{/if}}{{#if isDisabled}} ys-input-field__wrapper--disabled{{/if}}">
             {{#if hasIconPre}}
             <span class="ys-input-field__icon">
-                {{ render '@icon-set--mail' }}
+                {{ render '@icon--profile' }}
             </span>
             {{/if}}
             <input type="text" class="ys-input-field__control" {{#unless isDisabled}}placeholder="Placeholder text"{{/unless}}{{#if isDisabled}} disabled{{/if}}{{#if isReadonly}} readonly value="Non-editable text"{{/if}}{{#if isInvalid}} value="Invalid input"{{/if}}{{#if hasGuidance}} aria-labelledby="input-guidance-id"{{/if}} />
             {{#if hasIconPost}}
             <span class="ys-input-field__icon{{#if isValid}} ys-input-field__icon--valid{{/if}}{{#if isInvalid}} ys-input-field__icon--invalid{{/if}}">
-                {{#if isValid}}{{ render '@ui-icons--check-mark' }}{{/if}}{{#if isInvalid}}{{ render '@ui-icons--exclamation-mark' }}{{/if}}
+            {{#if isValid}}
+                <svg xmlns="http://www.w3.org/2000/svg" class="ys-icon" viewBox="0 0 12 10"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1.5 5.124L5.01 8.75l5.49-7.5"/></svg>
+            {{/if}}
+            {{#if isInvalid}}
+                <svg xmlns="http://www.w3.org/2000/svg" class="ys-icon" viewBox="0 0 2 12"><g fill="none" fill-rule="evenodd"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1v6"/><path fill="currentColor" d="M2 11a1 1 0 11-2 0 1 1 0 012 0"/></g></svg>
+            {{/if}}
             </span>
             {{/if}}
         </span>

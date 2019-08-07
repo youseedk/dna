@@ -51,8 +51,8 @@
 
   // icon size is the same in both buttons that contain icons
   &__icon {
-    width: rem(16);
-    height: rem(16);
+    width: rem(24);
+    height: rem(24);
 
     > * {
       display: block;
@@ -142,13 +142,14 @@
 
     .ys-button__text + .ys-button__icon,
     .ys-button__icon + .ys-button__text {
-      margin-left: rem(16);
+      margin-left: rem(12);
     }
   }
 
   // Button that only DISPLAYS an icon - text is hidden using the ys-u-visuallyhidden class
   &--icon-only {
-    padding: 0 rem(16);
+    padding: 0;
+    width: rem(48);
   }
 
   &__text {

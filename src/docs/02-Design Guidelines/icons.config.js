@@ -1,5 +1,5 @@
 module.exports = {
   context: {
-    icons: require('../../tokens/generated/icon-set.json')
+    icons: require('../../tokens/generated/icons.json')
   }
 };

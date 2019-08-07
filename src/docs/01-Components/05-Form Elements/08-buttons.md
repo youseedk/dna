@@ -113,6 +113,10 @@ Important: Never leave out the `<span class="ys-button__text">` element, as this
 ## Disabled buttons
 The button will change it's visual appearance if you add the `ys-button--disabled` class or if you use the HTML attribute `disabled`. The latter is recommended as it provides default browser behaviour and functionality.
 
+## Buttons with icons
+If you can't get the button to display an icon please read the HTML instructions under Components > Icons & Logo > [Icon](/docs/components/icons-and-logo/icon)
+
+
 # UX and Design Guidelines
 ## CTA Usage
 The **CTA** button should only be used for the MAIN or IMPORTANT calls to action on a page.
