@@ -1,4 +1,4 @@
-const iconset = require('../../../tokens/generated/icon-set.json');
+const iconset = require('../../../tokens/generated/icons.json');
 
 const variants = iconset.reduce((acc, item, index) => {
   itemName = index == 0 ? 'default' : item;
@@ -8,7 +8,7 @@ const variants = iconset.reduce((acc, item, index) => {
     name: itemName,
     label: item,
     context: {
-      svgId: 'ys-icon-set-' + item
+      svgId: 'ys-icon-' + item
     },
   });
 
@@ -17,7 +17,7 @@ const variants = iconset.reduce((acc, item, index) => {
 
 module.exports = {
   status: "wip",
-  preview: "@icon-preview",
+  preview: "@element-preview",
   context: {
   },
   collated: true,

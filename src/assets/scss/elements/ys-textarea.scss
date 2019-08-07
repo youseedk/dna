@@ -27,6 +27,7 @@
     background-color: $ys-color-white;
     color: $ys-color-grey-28;
     font-size: rem(16);
+    font-weight: 600;
     line-height: 1.5;
     resize: vertical;
     @include inputFieldShadow;
@@ -46,6 +47,7 @@
 
     &:focus {
       outline: none;
+      font-weight: 400;
     }
 
     &:not(:disabled):not([readonly]):focus-visible {

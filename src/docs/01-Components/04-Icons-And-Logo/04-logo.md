@@ -1,6 +1,6 @@
 ---
 title: YouSee Logo
-url: /docs/components/icons-and-images/logo
+url: /docs/components/icons-and-logo/logo
 category: component
 primaryKeywords: ys-icon yousee css icon image svg
 secondaryKeywords: brand cvi
@@ -25,9 +25,17 @@ secondaryKeywords: brand cvi
 {{render '@logo'}}
 ```
 
-# HTML Guidelines
-Remember to change the path of the SVG Sprite so the `xlink:href` attribute points to the sprite on your own server.
+## Logo on dark background
+<div class="element-preview element-preview--dark">
+  <div class="element-preview__inner">{{render '@logo--light'}}</div>
+</div>
 
-For IE11 support of SVG Sprites please include [SVG for Everybody](https://github.com/jonathantneal/svg4everybody).
+```html
+{{render '@logo--light'}}
+```
+
+# HTML Guidelines
+Copy the code directly into your soluton. Screenreaders will read "yousee" unless you add `aria-hidden="true"` to the SVG element.
 
 # UX and Design Guidelines
+Please respect the colors of the logo. Don't change the color of the logo on yousee.dk.

@@ -178,20 +178,16 @@ gulp.task('fonts', () => {
  * Copy SVG files to public
  *
  */
-gulp.task('icons', (cb) => {
-  runSequence('ui-icons', 'icon-set', cb);
-});
 
-gulp.task('ui-icons', () => {
-  const spriteSrc = 'ui-icons';
+gulp.task('icons', () => {
   const spriteCreation = gulp
-    .src(`${paths.assetsSource.svg}/${spriteSrc}/*.svg`)
+    .src(`${paths.assetsSource.svg}/*.svg`)
     .pipe(svgSprite({
       mode: {
         symbol: {
           dest: 'sprite',
           prefix: 'ys-',
-          sprite: spriteSrc + '.svg'
+          sprite: 'icons.svg'
         }
       },
       svg: {
@@ -199,62 +195,25 @@ gulp.task('ui-icons', () => {
         namespaceIDs: true
       }
     }))
-    .pipe(plugins.replace('id="', `id="ys-${spriteSrc}-`))
+    .pipe(plugins.replace('id="', 'id="ys-icon-'))
     .pipe(gulp.dest(paths.destination.svg));
 
   // create json file lists
   const fileList = gulp
-    .src(`${paths.assetsSource.svg}/${spriteSrc}/*.svg`)
-    .pipe(plugins.filelist(`${spriteSrc}.json`))
-    .pipe(plugins.replace(`src/assets/svg/${spriteSrc}/`, ''))
+    .src(`${paths.assetsSource.svg}/*.svg`)
+    .pipe(plugins.filelist('icons.json'))
+    .pipe(plugins.replace(`src/assets/svg/`, ''))
     .pipe(plugins.replace('.svg', ''))
     .pipe(gulp.dest(`${paths.tokensSource}generated`));
 
   // copy svg files to public
   const copyTask = gulp
-    .src(`${paths.assetsSource.svg}/${spriteSrc}/*.svg`)
-    .pipe(plugins.newer(`${paths.destination.svg}/${spriteSrc}`))
-    .pipe(gulp.dest(`${paths.destination.svg}/${spriteSrc}`));
-
-  return merge(spriteCreation, fileList, copyTask);
-});
-
-gulp.task('icon-set', () => {
-  const spriteSrc = 'icon-set';
-  const spriteCreation = gulp
-    .src([`${paths.assetsSource.svg}/${spriteSrc}/*.svg`, `!${paths.assetsSource.svg}/${spriteSrc}/_*.svg`])
-    .pipe(svgSprite({
-      mode: {
-        symbol: {
-          dest: 'sprite',
-          prefix: 'ys-',
-          sprite: spriteSrc + '.svg'
-        }
-      },
-      svg: {
-        xmlDeclaration: false,
-        namespaceIDs: true
-      }
-    }))
-    .pipe(plugins.replace('id="', `id="ys-${spriteSrc}-`))
-    .pipe(gulp.dest(paths.destination.svg));
-
-  // create json file lists
-  const fileList = gulp
-    .src([`${paths.assetsSource.svg}/${spriteSrc}/*.svg`, `!${paths.assetsSource.svg}/${spriteSrc}/_*.svg`])
-    .pipe(plugins.filelist(`${spriteSrc}.json`))
-    .pipe(plugins.replace(`src/assets/svg/${spriteSrc}/`, ''))
-    .pipe(plugins.replace('.svg', ''))
-    .pipe(gulp.dest(`${paths.tokensSource}generated`));
-
-  // copy svg files to public
-  const copyTask = gulp
-    .src(`${paths.assetsSource.svg}/${spriteSrc}/*.svg`)
-    .pipe(plugins.newer(`${paths.destination.svg}/${spriteSrc}`))
+    .src(`${paths.assetsSource.svg}/*.svg`)
+    .pipe(plugins.newer(`${paths.destination.svg}`))
     .pipe(plugins.rename((path) => {
       path.basename = path.basename.replace('_', '');
     }))
-    .pipe(gulp.dest(`${paths.destination.svg}/${spriteSrc}`));
+    .pipe(gulp.dest(`${paths.destination.svg}`));
 
   return merge(spriteCreation, fileList, copyTask);
 });
