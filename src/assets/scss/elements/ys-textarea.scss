@@ -50,6 +50,10 @@
       font-weight: 400;
     }
 
+    &[readonly]:focus {
+      font-weight: 600;
+    }
+
     &:not(:disabled):not([readonly]):focus-visible {
       @include customOutline;
     }

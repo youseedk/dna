@@ -7,7 +7,7 @@ secondaryKeywords: github npm
 ---
 
 ## How to contribute
-If you have suggestions for this site or you want file a bug please see [how to contribute](/docs/contributing).
+If you have suggestions for this site or you want file a bug please see [how to contribute](/docs/contributors).
 
 ## Contact persons
 If you need to get in touch with us please come and find us in the Digital Warehouse.
