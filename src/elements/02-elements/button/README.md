@@ -22,7 +22,7 @@ Furthermore there is also the option of making the button 100% wide relative to 
  Lastly there is the **Neutral Button**, which has no visual appearance at all — this is meant for those cases where you want to display a clickable icon without any other design. Please be careful when using this, as it should be obvious for any user what's clickable. This button has no size by nature but will size itself according to the content.
 
 ### Disabled buttons
-The button will change it's visual appearance if you add the `ys-button--disabled` class or if you use the HTML attribute `disabled`.
+Use the HTML attribute `disabled` as it will provide default browser behaviour and functionality.
 
 ## UX and Design Guidelines
 ### CTA Usage

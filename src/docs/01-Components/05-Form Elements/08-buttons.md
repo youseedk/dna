@@ -111,7 +111,7 @@ Important: Never leave out the `<span class="ys-button__text">` element, as this
  - Remember to specify the `type` attribute when using a `button` element. The default is `submit` but in most cases you probably want to use `type="button"`
 
 ## Disabled buttons
-The button will change it's visual appearance if you add the `ys-button--disabled` class or if you use the HTML attribute `disabled`. The latter is recommended as it provides default browser behaviour and functionality.
+Use the HTML attribute `disabled` as it will provide default browser behaviour and functionality.
 
 ## Buttons with icons
 If you can't get the button to display an icon please read the HTML instructions under Components > Icons & Logo > [Icon](/docs/components/icons-and-logo/icon)
