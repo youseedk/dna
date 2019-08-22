@@ -1,6 +1,6 @@
 module.exports = {
 	status: "ready",
-  preview: "@element-preview",
+    preview: "@element-preview",
 	label: "Button",
 	modifierClass: null,
 	hasIcon: false,
