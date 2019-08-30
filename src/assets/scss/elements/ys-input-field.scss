@@ -102,6 +102,10 @@
       @include customOutline;
     }
 
+    &:required {
+      box-shadow: none;
+    }
+
     &[readonly]:focus {
       font-weight: 600;
     }
