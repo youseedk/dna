@@ -134,6 +134,11 @@
   br + br {
     display: none;
   }
+
+  // Links inside the rich-text element should behave as regular links. The optional property is because the extension is not from a class within this file.
+  a:not([class]) {
+    @extend .ys-link !optional;
+  }
 }
 
 /* stylelint-enable */
