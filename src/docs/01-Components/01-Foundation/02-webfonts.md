@@ -10,7 +10,7 @@ The YouSee brand font is LTF Etica and it's loaded using the `@font-face` strate
 - light (200)
 - regular (400)
 - semibold (600)
-- bold (800)
+- bold (700)
 
 ### CSS
 <div class="element-preview">
