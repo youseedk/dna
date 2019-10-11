@@ -43,6 +43,10 @@
   @include ys-body-text;
   color: $ys-color-grey-28;
 
+  &--large {
+    font-size: rem(20);
+  }
+
   &--light {
     color: $ys-color-grey-98;
   }
