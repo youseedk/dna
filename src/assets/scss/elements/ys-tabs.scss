@@ -22,8 +22,7 @@
     font-weight: 600;
   }
 
-  &__tab[aria-selected='true'],
-  &__tab--active {
+  &__tab[aria-selected='true'] {
     background-color: $ys-color-white;
     color: $ys-color-digital-grass;
     box-shadow: 0 4px 16px 0 rgba(0, 0, 0, .16);
