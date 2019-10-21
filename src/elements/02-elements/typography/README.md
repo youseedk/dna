@@ -4,7 +4,7 @@ All main text on YouSee sites is set with the **LTF Etica** webfont, which is pr
 * light (200)
 * Regular (400)
 * Semibold (600)
-* Bold (800)
+* Bold (700)
 
 The default font size on YouSee sites is 16px.
 
