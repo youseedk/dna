@@ -9,11 +9,11 @@ module.exports = {
 	variants: [
 		{
 			name: "default",
-			label: "Main Title",
+			label: "Main title",
 			context: {
 				tagName: "h1",
 				className: "ys-main-title",
-				textContent: "Main Title"
+				textContent: "Lorem ipsum"
 			}
 		},
 		{
@@ -21,7 +21,7 @@ module.exports = {
 			context: {
 				tagName: "h1",
 				className: "ys-main-title ys-main-title--light",
-				textContent: "Main Title"
+				textContent: "Lorem ipsum"
 			}
 		},
 		{
@@ -29,7 +29,7 @@ module.exports = {
 			context: {
 				tagName: "h2",
 				className: "ys-primary-title",
-				textContent: "Primary Title",
+				textContent: "Lorem ipsum",
 			}
 		},
 		{
@@ -37,7 +37,7 @@ module.exports = {
 			context: {
 				tagName: "h2",
 				className: "ys-primary-title ys-primary-title--light",
-				textContent: "Primary Title",
+				textContent: "Lorem ipsum",
 			}
 		},
 		{
@@ -45,7 +45,7 @@ module.exports = {
 			context: {
 				tagName: "h3",
 				className: "ys-secondary-title",
-				textContent: "Secondary Title"
+				textContent: "Lorem ipsum"
 			}
 		},
 		{
@@ -53,7 +53,7 @@ module.exports = {
 			context: {
 				tagName: "h3",
 				className: "ys-secondary-title ys-secondary-title--light",
-				textContent: "Secondary Title"
+				textContent: "Lorem ipsum"
 			}
 		},
 		{
@@ -61,7 +61,7 @@ module.exports = {
 			context: {
 				tagName: "h4",
 				className: "ys-subtitle",
-				textContent: "Subtitle"
+				textContent: "Lorem ipsum"
 			}
 		},
 		{
@@ -69,7 +69,7 @@ module.exports = {
 			context: {
 				tagName: "h4",
 				className: "ys-subtitle ys-subtitle--light",
-				textContent: "Subtitle"
+				textContent: "Lorem ipsum"
 			}
 		},
 		{
@@ -77,7 +77,7 @@ module.exports = {
 			context: {
 				tagName: "p",
 				className: "ys-body-text",
-				textContent: "Body Text"
+				textContent: "Lorem ipsum (16px)"
 			}
 		},
 		{
@@ -85,7 +85,23 @@ module.exports = {
 			context: {
 				tagName: "p",
 				className: "ys-body-text ys-body-text--light",
-				textContent: "Body Text"
+				textContent: "Lorem ipsum (16px)"
+			}
+		},
+		{
+			name: 'Body Text Large',
+			context: {
+				tagName: "p",
+				className: "ys-body-text ys-body-text--large",
+				textContent: "Lorem ipsum (20px)"
+			}
+		},
+		{
+			name: 'Body Text Large Light',
+			context: {
+				tagName: "p",
+				className: "ys-body-text ys-body-text--large ys-body-text--light",
+				textContent: "Lorem ipsum (20px)"
 			}
 		},
 		{
@@ -93,7 +109,7 @@ module.exports = {
 			context: {
 				tagName: "p",
 				className: "ys-small-text",
-				textContent: "Small Text"
+				textContent: "Lorem ipsum (12px)"
 			}
 		},
 		{
@@ -101,7 +117,7 @@ module.exports = {
 			context: {
 				tagName: "p",
 				className: "ys-small-text ys-small-text--light",
-				textContent: "Small Text"
+				textContent: "Lorem ipsum (12px)"
 			}
 		},
 		{

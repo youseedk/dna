@@ -106,6 +106,24 @@ secondaryKeywords: grey-28 484848
 {{render '@typography--body-text-light'}}
 ```
 
+## Body text large
+<div class="element-preview">
+  <div class="element-preview__inner">{{render '@typography--body-text-large'}}</div>
+</div>
+
+```html
+{{render '@typography--body-text-large'}}
+```
+
+## Body text large (light)
+<div class="element-preview element-preview--dark">
+  <div class="element-preview__inner">{{render '@typography--body-text-large-light'}}</div>
+</div>
+
+```html
+{{render '@typography--body-text-large-light'}}
+```
+
 ## Small text
 <div class="element-preview">
   <div class="element-preview__inner">{{render '@typography--small-text'}}</div>
