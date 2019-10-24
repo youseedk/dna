@@ -34,7 +34,8 @@
     &:not(.ys-input-field__wrapper--readonly):not(.ys-input-field__wrapper--disabled):hover,
     &:not(.ys-input-field__wrapper--readonly):not(.ys-input-field__wrapper--disabled):focus-within,
     &:not(.ys-input-field__wrapper--readonly):not(.ys-input-field__wrapper--disabled):focus {
-      @include inputFieldShadow(hover); }
+      @include inputFieldShadow(hover);
+    }
 
     &--error {
       background-color: $ys-color-error-red-10;
@@ -89,7 +90,8 @@
       cursor: not-allowed;
     }
 
-    &:focus {
+    &:focus,
+    &:hover {
       outline: none;
       font-weight: 400;
     }
@@ -98,12 +100,12 @@
       color: $ys-color-error-red;
     }
 
-    &:not(.ys-input-field__wrapper--readonly):not(.ys-input-field__wrapper--disabled):focus-visible {
-      @include customOutline;
-    }
-
     &:required {
       box-shadow: none;
+    }
+
+    &:not(.ys-input-field__wrapper--readonly):not(.ys-input-field__wrapper--disabled):focus-visible {
+      @include customOutline;
     }
 
     &[readonly]:focus {
