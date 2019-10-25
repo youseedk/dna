@@ -1,6 +1,6 @@
 ---
 title: Icon
-url: /docs/components/icons-and-logo/icons
+url: /docs/components/icons-and-logo/icon
 category: component
 primaryKeywords: ys-icon yousee icons images sprite svg css
 secondaryKeywords: brand png
@@ -24,7 +24,7 @@ secondaryKeywords: brand png
 {{render '@icon--plus'}}
 ```
 
-# HTML Guidelines 
+# HTML Guidelines
 1. Make sure you change the path in the `xlink:href` attribute to match your own SVG file. Copy the file from DNA (the node_modules folder) to your own solution. This is something you need to do automatically through webpack, gulp or another task-runner everytime you build your solution. Please don't copy it manually because then it can get outdated.
 
 2. Change the ID of the icon to match the one you want to use. E.g. `#ys-icon-wifi` would give you the wifi icon.

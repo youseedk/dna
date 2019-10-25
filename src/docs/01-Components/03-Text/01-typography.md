@@ -2,7 +2,7 @@
 title: Typography
 url: /docs/components/text/typography
 category: component
-primaryKeywords: css text ys-main-title ys-primary-title ys-secondary-title ys-subtitle ys-body-text ys-small-text ys-list
+primaryKeywords: font css text ys-main-title ys-primary-title ys-secondary-title ys-subtitle ys-body-text ys-small-text ys-list
 secondaryKeywords: grey-28 484848
 ---
 
