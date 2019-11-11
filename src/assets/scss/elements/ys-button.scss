@@ -117,15 +117,8 @@
     }
   }
 
-  // block takes up 100% width of it's container
   &--block {
     min-width: 100%;
-
-    &::before,
-    &::after {
-      content: '';
-      flex: 0 0 rem(48);
-    }
   }
 
   // Button with icon
