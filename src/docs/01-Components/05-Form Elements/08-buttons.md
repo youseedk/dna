@@ -105,6 +105,15 @@ All button colorways can be displayed with an icon only, ie. the *default* butto
 ```
 Important: Never leave out the `<span class="ys-button__text">` element, as this is included for accessibility purposes.
 
+## Full width button
+<div class="element-preview">
+  <div class="element-preview__inner">{{render '@button--block'}}</div>
+</div>
+
+```html
+{{render '@button--block'}}
+```
+
 
 # HTML Guidelines
  - Only `<a>` and `<button>` elements are allowed to use the `.button` class
