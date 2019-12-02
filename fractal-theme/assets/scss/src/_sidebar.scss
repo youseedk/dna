@@ -123,4 +123,8 @@
   .Navigation .Status {
     display: none;
   }
+
+  .Tree-depth-1 > .Tree-item:last-child {
+    display: none;
+  }
 }
