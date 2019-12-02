@@ -1,6 +1,6 @@
 ---
 title: Animations
-url: x/docs/design-guidelines/animationxx
+url: /docs/design-guidelines/animation
 category: design-guidelines
 primaryKeywords: micro interaction design transition
 secondaryKeywords: fast nimble

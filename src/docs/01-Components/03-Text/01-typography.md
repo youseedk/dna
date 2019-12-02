@@ -3,7 +3,7 @@ title: Typography
 url: /docs/components/text/typography
 category: component
 primaryKeywords: font css text ys-main-title ys-primary-title ys-secondary-title ys-subtitle ys-body-text ys-small-text ys-list
-secondaryKeywords: grey-28 484848
+secondaryKeywords: grey-28 484848 100 200 400 700 800 900
 ---
 
 <nav class="element-navigation">

@@ -2,7 +2,7 @@
 title: Web fonts
 url: /docs/components/foundation/webfonts
 category: component
-primaryKeywords: css foundation LTF Etica
+primaryKeywords: css foundation LTF Etica 100 200 400 700 800 900
 secondaryKeywords: font-face font-weight font-display font-family
 ---
 
