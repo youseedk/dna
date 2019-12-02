@@ -1,6 +1,6 @@
 <form method="GET" name="search" class="search" action="" id="searchForm">
     <label class="ys-u-visuallyhidden" for="searchInput">Search for a page or component</label>
-    <input name="q" id="searchInput" type="search" value="" class="search__input" placeholder="Search..." autocomplete="off" list="searchSuggestions" autofocus>
+    <input name="q" id="searchInput" type="search" value="" class="search__input" placeholder="Search..." autocomplete="off" list="searchSuggestions" pattern="^[a-zA-Z][a-zA-Z0-9-_\.\s]{1,65}" autofocus>
     <button type="submit" id="SearchButton" class="search__button">
         <span class="ys-u-visuallyhidden">Søg</span>
     </button>

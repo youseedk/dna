@@ -1,4 +1,4 @@
-import Fuse from 'fuse.js'
+import Fuse from 'fuse.js';
 
 function fractalSearchResults() {
   const searchComponent = document.querySelector('.search');
@@ -8,28 +8,36 @@ function fractalSearchResults() {
 
   // Search options
   const searchOptions = {
-    keys: [{
-      name: 'data.title',
-      weight: 0.5
-    }, {
-      name: 'data.primaryKeywords',
-      weight: 0.4
-    }, {
-      name: 'data.secondaryKeywords',
-      weight: 0.1
-    }]
+    keys: [
+      {
+        name: 'data.title',
+        weight: 0.5
+      },
+      {
+        name: 'data.primaryKeywords',
+        weight: 0.4
+      },
+      {
+        name: 'data.secondaryKeywords',
+        weight: 0.1
+      }
+    ]
   };
 
   // Fetch endpoint
   fetch(SearchApi)
     .then(response => {
-      return response.json()
+      return response.json();
     })
     // Search init
     .then(search => {
-      const fuse = new Fuse(search, searchOptions)
+      const fuse = new Fuse(search, searchOptions);
       const getSearchParams = new URLSearchParams(location.search);
-      const searchString = getSearchParams.get('q');
+      function allow_chars_and_nums_only(str) {
+        str = str.replace(/[^\w\s]/gi, '');
+        return str.slice(0, 65);
+      }
+      const searchString = allow_chars_and_nums_only(getSearchParams.get('q'));
       searchInput.value = searchString;
       searchInput.focus();
 
@@ -46,7 +54,7 @@ function fractalSearchResults() {
       });
 
       // On input
-      searchInput.addEventListener('input', (e) => {
+      searchInput.addEventListener('input', e => {
         searchResults.innerHTML = '';
         const searchValueFuse = fuse.search(e.srcElement.value);
         if (e.srcElement.value) {
@@ -70,7 +78,7 @@ function fractalSearchResults() {
     .catch(err => {
       console.log('error occured with the search feature in results page');
       searchComponent.remove();
-    })
+    });
 }
 
 export default fractalSearchResults;
