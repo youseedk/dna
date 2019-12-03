@@ -14,7 +14,7 @@ deploy:
     on:
       branch: master
   - provider: npm
-    email: "mgb@tdc.dk"
+    email: "mgb@grandorf.dk"
     api_key: "$NPM_TOKEN"
     skip_cleanup: true
     on:
