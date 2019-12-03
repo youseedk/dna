@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-- '10'
+- '12'
 script:
 - npm run build
 - npm run build:npm
@@ -22,5 +22,5 @@ deploy:
       repo: youseedk/dna
 notifications:
   email:
-    on_success: never
+    on_success: always
     on_failure: always
