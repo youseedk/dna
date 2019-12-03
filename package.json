@@ -55,7 +55,6 @@
     "gulp-stylelint": "^8.0.0",
     "gulp-svg-sprite": "^1.5.0",
     "gulp-uglify": "^3.0.2",
-    "gulp4-run-sequence": "^1.0.0",
     "newer": "^0.1.5",
     "path": "^0.12.7",
     "postcss": "^7.0.23",

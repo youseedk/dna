@@ -460,7 +460,7 @@ gulp.task('fractal-search-api-generate', gulp.series('fractal-json-copy'), (cb) 
 
 /* Used for making custom domain "dna.yousee.dk" work with github pages */
 gulp.task('cname', () => {
-  gulp
+ return gulp
     .src('config/CNAME')
     .pipe(gulp.dest('dist-site'));
 });
@@ -473,7 +473,7 @@ gulp.task('fractal-assets', (cb) => {
 */
 
 // Creating src/docs/07-Contributors.md automaically based on ./CONTRIBUTING.md
-gulp.task('fractal:contributing', (cb) => {
+gulp.task('fractal:contributing', () => {
   const frontmatter = `---
 title: How to Contribute
 url: /docs/contributing
@@ -487,13 +487,12 @@ secondaryKeywords: gitflow test gulp fork repository
 <!-- ***** If you need to change its content please do it in ./CONTRIBUTING.md' ***** -->
 <!-- ******************************************************************************** -->
 `
-  gulp
+  return gulp
     .src('./CONTRIBUTING.md')
     .pipe(plugins.replace('# How to contribute', ''))
     .pipe(plugins.insert.prepend(frontmatter))
     .pipe(plugins.rename('07-Contributors.md'))
     .pipe(gulp.dest('./src/docs'));
-    cb();
 });
 
 
