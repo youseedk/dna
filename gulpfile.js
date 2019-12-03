@@ -11,7 +11,6 @@ const jsonSass = require('gulp-json-scss');
 const source = require('vinyl-source-stream');
 const browserify = require('browserify');
 const svgSprite = require('gulp-svg-sprite');
-const runSequence = require('run-sequence');
 const merge = require('merge-stream');
 const prefixer = require('postcss-prefix-selector');
 
