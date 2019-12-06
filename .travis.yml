@@ -20,7 +20,7 @@ deploy:
     on:
       tags: true
       repo: youseedk/dna
-      branch: master
+      all_branches: true
 notifications:
   email:
     on_success: always
