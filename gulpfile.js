@@ -38,11 +38,7 @@ const paths = {
   }
 };
 
-/**
- *
- * Create CSS files from SCSS files
- *
- */
+ // Create CSS files from SCSS files
 gulp.task('css', () => {
   const processors = [
     postcssPresetEnv({
@@ -106,11 +102,7 @@ gulp.task('css', () => {
   return merge(ysBundle, ysParts);
 });
 
-/**
- *
- *	Lint scss files
- *
- */
+ // Lint scss files
 gulp.task('lint-scss', () => {
   return gulp
     .src(['src/**/*.scss', '!src/**/generated/**/*.scss'])
@@ -128,11 +120,7 @@ gulp.task('copy-colors-to-npm', () => {
     .pipe(gulp.dest(`${paths.npmDestination}scss`));
 });
 
-/**
- *
- *	Convert colors.json file to .scss-file
- *
- */
+ //	Convert colors.json file to .scss-file
 gulp.task('json-to-scss', () => {
   return gulp
     .src([`${paths.tokensSource}colors.json`])
@@ -151,11 +139,7 @@ gulp.task('json-to-scss', () => {
     .pipe(gulp.dest(`${paths.assetsSource.scss}/generated`))
 });
 
-/**
- *
- * Images
- *
- */
+// Images
 gulp.task('images', () => {
   return gulp
     .src(`${paths.assetsSource.images}/**`)
@@ -164,12 +148,9 @@ gulp.task('images', () => {
     .pipe(gulp.dest(paths.destination.images));
 });
 
-/**
- *
- * Fonts
- *
- */
-gulp.task('fonts', () => {
+
+// Fonts
+ gulp.task('fonts', () => {
   return gulp
     .src(`${paths.assetsSource.fonts}/**`)
     .pipe(plugins.newer(paths.destination.fonts))
@@ -298,25 +279,7 @@ gulp.task('build-package', gulp.series('copy-colors-to-npm'), () => {
   return merge(packageJsonFile, readMeFile, scssFiles, cssFiles, cssSettings, fontFiles, svgFiles, svgSprites, bundleFiles);
 });
 
-
-/*
-gulp.task('default', (cb) => {
-  runSequence('fractal:contributing', 'icons', 'json-to-scss', 'fractal-assets', 'css', 'fractal:start', 'watch', cb);
-});
-*/
-
-
-/*
-gulp.task('build', (cb) => {
-  runSequence('fractal:contributing', 'icons', 'json-to-scss', 'fractal-assets', 'css', 'fractal:build', 'cname', cb);
-});
-*/
-
-/**
- *
- * Watch for changes
- *
- */
+// Watch for changes
 gulp.task('watch', () => {
   gulp.watch([`${paths.assetsSource.scss}/**/*.scss`], gulp.series('css'));
   gulp.watch([`${paths.assetsSource.images}/**`], gulp.series('images'));
@@ -325,9 +288,7 @@ gulp.task('watch', () => {
   gulp.watch([`${paths.fractal.js}/**/*.js`], gulp.series('fractal-js'));
 });
 
-/*
- * Configure a Fractal instance.
- */
+// Configure a Fractal instance.
 const fractal = require('./config/fractal-config');
 const logger = fractal.cli.console; // keep a reference to the fractal CLI console utility
 
@@ -370,11 +331,8 @@ gulp.task('fractal:build', () => {
   });
 });
 
-/**
- *
- * Build Fractal theme assets
- *
- */
+
+ // Build Fractal theme assets
 gulp.task('fractal-scss', () => {
   return gulp
     .src(`${paths.fractal.scss}styles.scss`)
@@ -414,7 +372,7 @@ gulp.task('fractal-json-copy', () => {
     .pipe(gulp.dest('./public/assets/theme/js'));
 });
 
-// Building an search API based on front matter in markdown files
+// Build a search API based on front matter in markdown files
 gulp.task('fractal-search-api-generate', gulp.series('fractal-json-copy'), (cb) => {
   const fs = require('fs');
   const path = require('path');
@@ -458,19 +416,12 @@ gulp.task('fractal-search-api-generate', gulp.series('fractal-json-copy'), (cb) 
   cb();
 });
 
-/* Used for making custom domain "dna.yousee.dk" work with github pages */
+// Used for making custom domain "dna.yousee.dk" work with github pages
 gulp.task('cname', () => {
  return gulp
     .src('config/CNAME')
     .pipe(gulp.dest('dist-site'));
 });
-
-
-/*
-gulp.task('fractal-assets', (cb) => {
-  runSequence('fractal-search-api-generate', ['fractal-scss', 'fractal-images', 'fractal-favicon'], 'fractal-js', cb);
-});
-*/
 
 // Creating src/docs/07-Contributors.md automaically based on ./CONTRIBUTING.md
 gulp.task('fractal:contributing', () => {
@@ -496,6 +447,7 @@ secondaryKeywords: gitflow test gulp fork repository
 });
 
 
+// Main gulp tasks
 gulp.task('fractal-assets', gulp.series('fractal-search-api-generate', 'fractal-scss', 'fractal-images', 'fractal-favicon', 'fractal-js'), () => {});
 
 gulp.task('compile-assets', gulp.series('json-to-scss', 'css', 'icons', 'fonts', 'fractal-assets'), () => {});
@@ -504,6 +456,5 @@ gulp.task('npm-dist', gulp.series('compile-assets', 'build-package'), () => {});
 
 gulp.task('default', gulp.series('fractal:contributing', 'icons', 'json-to-scss', 'fractal-assets', 'css', 'fractal:start', 'watch'), () => {});
 
-/* BUILD */
-// CAUTION: Used by TRAVIS CI for automatic build and deployment - change only this task if you know what you are doing */
+// CAUTION: Build task is used by TRAVIS CI for automatic build and deployment - change only this task if you know what you are doing */
 gulp.task('build', gulp.series('fractal:contributing', 'icons', 'json-to-scss', 'fractal-assets', 'css', 'fractal:build', 'cname'), () => {});
