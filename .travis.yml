@@ -18,8 +18,9 @@ deploy:
     api_key: "$NPM_TOKEN"
     skip_cleanup: true
     on:
+      tags: true
       repo: youseedk/dna
-      all_branches: true
+      branch: master
 notifications:
   email:
     on_success: always
