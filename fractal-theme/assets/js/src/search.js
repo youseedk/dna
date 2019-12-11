@@ -94,6 +94,7 @@ function fractalSearch() {
     // If an error occurs we will not show the search feature at all
     .catch(err => {
       searchForm.remove();
+      console.log('Could not load the JSON files used for search. Removing the feature from leftmenu');
     })
 
   // On submit show the search page

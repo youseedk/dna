@@ -367,15 +367,8 @@ gulp.task('fractal-favicon', () => {
     .pipe(gulp.dest(`${paths.destination.theme}/favicon`));
 });
 
-
-gulp.task('fractal-json-copy', () => {
-  return gulp
-    .src(['./fractal-theme/assets/js/json/search.json', './fractal-theme/assets/js/json/browsers.json'])
-    .pipe(gulp.dest('./public/assets/theme/js'));
-});
-
 // Build a search API based on front matter in markdown files
-gulp.task('fractal-search-api-generate', gulp.series('fractal-json-copy'), (cb) => {
+function fractalSearchApiGenerate(cb) {
   const fs = require('fs');
   const path = require('path');
   const walk = require('walk');
@@ -416,6 +409,14 @@ gulp.task('fractal-search-api-generate', gulp.series('fractal-json-copy'), (cb) 
     stream.end();
   });
   cb();
+};
+
+exports.fractalSearchApiGenerate = fractalSearchApiGenerate;
+
+gulp.task('fractal-json-copy', () => {
+  return gulp
+    .src(['./fractal-theme/assets/js/json/search.json', './fractal-theme/assets/js/json/browsers.json'])
+    .pipe(gulp.dest('./public/assets/theme/js'));
 });
 
 // Used for making custom domain "dna.yousee.dk" work with github pages
@@ -429,7 +430,7 @@ gulp.task('cname', () => {
 gulp.task('fractal:contributing', () => {
   const frontmatter = `---
 title: How to Contribute
-url: /docs/contributing
+url: /docs/contributors
 category: page
 primaryKeywords: issue bug contributions feature github npm pull request
 secondaryKeywords: gitflow test gulp fork repository
@@ -450,7 +451,7 @@ secondaryKeywords: gitflow test gulp fork repository
 
 
 // Main gulp tasks
-gulp.task('fractal-assets', gulp.series('fractal-search-api-generate', 'fractal-scss', 'fractal-images', 'fractal-favicon', fractalJs), () => {});
+gulp.task('fractal-assets', gulp.series('fractal-json-copy', fractalSearchApiGenerate, 'fractal-scss', 'fractal-images', 'fractal-favicon', fractalJs), () => {});
 
 gulp.task('compile-assets', gulp.series('json-to-scss', 'css', 'icons', 'fonts', 'fractal-assets'), () => {});
 
