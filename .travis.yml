@@ -19,7 +19,6 @@ deploy:
     skip_cleanup: true
     on:
       tags: true
-      repo: youseedk/dna
       all_branches: true
 notifications:
   email:
