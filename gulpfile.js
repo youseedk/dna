@@ -279,14 +279,14 @@ gulp.task('build-package', gulp.series('copy-colors-to-npm'), () => {
   return merge(packageJsonFile, readMeFile, scssFiles, cssFiles, cssSettings, fontFiles, svgFiles, svgSprites, bundleFiles);
 });
 
-// Watch for changes
-gulp.task('watch', () => {
-  gulp.watch([`${paths.assetsSource.scss}/**/*.scss`], gulp.series('css'));
-  gulp.watch([`${paths.assetsSource.images}/**`], gulp.series('images'));
-  gulp.watch([`${paths.assetsSource.svg}/**`], gulp.series('icons'));
-  gulp.watch([`${paths.fractal.scss}/**/*.scss`], gulp.series('fractal-scss'));
-  gulp.watch([`${paths.fractal.js}/**/*.js`], gulp.series('fractal-js'));
-});
+function watch(){
+  gulp.watch(`${paths.fractal.js}**/*.js`, gulp.series(fractalJs));
+  gulp.watch(`${paths.fractal.scss}**/*.scss`, gulp.series('fractal-scss'));
+  gulp.watch(`${paths.assetsSource.scss}**/*.scss`, gulp.series('css'));
+  gulp.watch(`${paths.assetsSource.svg}/**`, gulp.series('icons'));
+}
+
+exports.watch = watch;
 
 // Configure a Fractal instance.
 const fractal = require('./config/fractal-config');
@@ -340,7 +340,7 @@ gulp.task('fractal-scss', () => {
     .pipe(gulp.dest(`${paths.destination.theme}/css`));
 });
 
-gulp.task('fractal-js', () => {
+const fractalJs = () => {
   const babelify = require("babelify");
   const sourcefile = `${paths.fractal.js}/scripts.js`;
   return browserify({
@@ -351,7 +351,9 @@ gulp.task('fractal-js', () => {
     .bundle()
     .pipe(source('scripts.js'))
     .pipe(gulp.dest(`${paths.destination.theme}/js`));
-});
+};
+exports.fractalJs = fractalJs
+
 
 gulp.task('fractal-images', () => {
   return gulp
@@ -448,13 +450,13 @@ secondaryKeywords: gitflow test gulp fork repository
 
 
 // Main gulp tasks
-gulp.task('fractal-assets', gulp.series('fractal-search-api-generate', 'fractal-scss', 'fractal-images', 'fractal-favicon', 'fractal-js'), () => {});
+gulp.task('fractal-assets', gulp.series('fractal-search-api-generate', 'fractal-scss', 'fractal-images', 'fractal-favicon', fractalJs), () => {});
 
 gulp.task('compile-assets', gulp.series('json-to-scss', 'css', 'icons', 'fonts', 'fractal-assets'), () => {});
 
 gulp.task('npm-dist', gulp.series('compile-assets', 'build-package'), () => {});
 
-gulp.task('default', gulp.series('fractal:contributing', 'icons', 'json-to-scss', 'fractal-assets', 'css', 'fractal:start', 'watch'), () => {});
+gulp.task('default', gulp.series('fractal:contributing', 'icons', 'json-to-scss', 'fractal-assets', 'css', 'fractal:start', watch), () => {});
 
 // CAUTION: Build task is used by TRAVIS CI for automatic build and deployment - change only this task if you know what you are doing */
 gulp.task('build', gulp.series('fractal:contributing', 'icons', 'json-to-scss', 'fractal-assets', 'css', 'fractal:build', 'cname'), () => {});
