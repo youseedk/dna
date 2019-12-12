@@ -214,7 +214,7 @@ gulp.task('icons', () => {
  * Prepare and copy files to npm distribution folder
  *
  */
-gulp.task('build-package', gulp.series('copy-colors-to-npm'), () => {
+gulp.task('build-package', () => {
 //gulp.task('build-package', ['copy-colors-to-npm'], () => {
   // copy package.json file and remove dependencies and devDepencies
   const packageJsonFile = gulp
@@ -453,9 +453,7 @@ secondaryKeywords: gitflow test gulp fork repository
 // Main gulp tasks
 gulp.task('fractal-assets', gulp.series('fractal-json-copy', fractalSearchApiGenerate, 'fractal-scss', 'fractal-images', 'fractal-favicon', fractalJs), () => {});
 
-gulp.task('compile-assets', gulp.series('json-to-scss', 'css', 'icons', 'fonts', 'fractal-assets'), () => {});
-
-gulp.task('npm-dist', gulp.series('compile-assets', 'build-package'), () => {});
+gulp.task('npm-dist', gulp.series('json-to-scss', 'css', 'icons', 'fonts', 'fractal-assets', 'copy-colors-to-npm', 'build-package'), () => {});
 
 gulp.task('default', gulp.series('fractal:contributing', 'icons', 'json-to-scss', 'fractal-assets', 'css', 'fractal:start', watch), () => {});
 
