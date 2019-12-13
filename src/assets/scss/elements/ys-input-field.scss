@@ -5,11 +5,6 @@
 
 .ys-input-field {
 
-  &__label {
-    font-size: rem(12);
-    line-height: 1.33;
-  }
-
   &__label-text {
     @include labelText;
   }
