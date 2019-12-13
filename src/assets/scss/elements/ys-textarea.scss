@@ -25,14 +25,12 @@
     font-weight: 600;
     line-height: 1.5;
     resize: vertical;
-    @include inputFieldShadow;
-    @include shadowTransition;
+    @include input-border-regular;
 
     &:disabled,
     &[readonly] {
       background-color: $ys-color-grey-94;
       color: $ys-color-grey-64;
-      box-shadow: 0 0 0 0 transparent;
       resize: none;
     }
 
@@ -55,7 +53,8 @@
 
     &:not(:disabled):not([readonly]):hover,
     &:not(:disabled):not([readonly]):focus {
-      @include inputFieldShadow(hover);
+      @include input-border-fat();
+      padding: rem(10) rem(22);
     }
   }
 

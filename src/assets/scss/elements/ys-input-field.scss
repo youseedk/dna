@@ -18,8 +18,7 @@
     padding: rem(0) rem(24);
     border-radius: rem(24);
     border: 0;
-    @include inputFieldShadow;
-    @include shadowTransition;
+    @include input-border-regular;
 
     // lobotimized owl selector for flexibility — makes sure that any element that is inserted gets a margin
     & > *[class^='ys-'] + *[class^='ys-'] {
@@ -29,7 +28,9 @@
     &:not(.ys-input-field__wrapper--readonly):not(.ys-input-field__wrapper--disabled):hover,
     &:not(.ys-input-field__wrapper--readonly):not(.ys-input-field__wrapper--disabled):focus-within,
     &:not(.ys-input-field__wrapper--readonly):not(.ys-input-field__wrapper--disabled):focus {
-      @include inputFieldShadow(hover);
+      @include input-border-fat();
+      padding-left: rem(22);
+      padding-right: rem(22);
     }
 
     &--error {
@@ -39,7 +40,6 @@
     &--disabled,
     &--readonly {
       background-color: $ys-color-grey-94;
-      box-shadow: 0 0 0 0 transparent;
     }
 
     &--disabled {
@@ -95,10 +95,6 @@
       color: $ys-color-error-red;
     }
 
-    &:required {
-      box-shadow: none;
-    }
-
     &:not(.ys-input-field__wrapper--readonly):not(.ys-input-field__wrapper--disabled):focus-visible {
       @include customOutline;
     }
@@ -132,19 +128,8 @@
     }
   }
 
-  // stylelint-disable no-descending-specificity
   &--light {
     color: $ys-color-grey-98;
-
-    .ys-input-field__wrapper {
-      box-shadow: 0 0 0 0 $ys-color-white;
-
-      &:not(.ys-input-field__wrapper--readonly):not(.ys-input-field__wrapper--disabled):hover,
-      &:not(.ys-input-field__wrapper--readonly):not(.ys-input-field__wrapper--disabled):focus-within {
-        box-shadow: 0 0 0 2px $ys-color-white;
-      }
-    }
   }
 
-  // stylelint-enable
 }

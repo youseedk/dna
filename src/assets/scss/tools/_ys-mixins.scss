@@ -1,15 +1,10 @@
-// Shadows for input fields, textareas, selects
-@mixin inputFieldShadow($type: default) {
-  @if ($type == default) {
-    box-shadow: 0 1px 4px 0 rgba($ys-color-black, .4);
-  } @else {
-    box-shadow: 0 4px 16px 0 rgba($ys-color-black, .24);
-  }
+// Borders for input fields, textareas, selects
+@mixin input-border-regular() {
+  border: 1px solid $ys-color-grey-28;
 }
 
-// Small UI transition on shadow
-@mixin shadowTransition() {
-  transition: box-shadow .2s ease-out;
+@mixin input-border-fat() {
+  border: 3px solid $ys-color-digital-grass;
 }
 
 // Label Text for input field, select, textarea and slider
