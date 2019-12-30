@@ -98,13 +98,24 @@
     display: flex;
     width: rem(24);
     height: rem(24);
+    color: $ys-color-white;
+    border-radius: 50%;
+    padding: rem(6);
+
+    &:first-child {
+      margin-left: rem(-10);
+    }
+
+    &:last-child {
+      margin-right: rem(-10);
+    }
 
     &--valid {
-      color: $ys-color-digital-grass;
+      background-color: $ys-color-digital-grass;
     }
 
     &--invalid {
-      color: $ys-color-error-red;
+      background-color: $ys-color-error-red;
     }
   }
 
