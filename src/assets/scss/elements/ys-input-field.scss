@@ -98,16 +98,20 @@
     display: flex;
     width: rem(24);
     height: rem(24);
-    color: $ys-color-white;
-    border-radius: 50%;
-    padding: rem(6);
 
-    &:first-child {
-      margin-left: rem(-10);
-    }
+    &--valid,
+    &--invalid {
+      color: $ys-color-white;
+      border-radius: 50%;
+      padding: rem(6);
 
-    &:last-child {
-      margin-right: rem(-10);
+      &:first-child {
+        margin-left: rem(-10);
+      }
+
+      &:last-child {
+        margin-right: rem(-10);
+      }
     }
 
     &--valid {
