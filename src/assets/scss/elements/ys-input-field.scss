@@ -120,7 +120,6 @@
   }
 
   &__guidance {
-    color: $ys-color-grey-28;
     @include guidanceText;
 
     .ys-input-field--light & {

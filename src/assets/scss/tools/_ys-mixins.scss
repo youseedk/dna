@@ -21,8 +21,8 @@
   padding: rem(8) rem(24) 0;
   color: $ys-color-grey-28;
   font-size: rem(14);
-  font-weight: 200;
   line-height: 1.5;
+  font-style: italic;
 
   &--error {
     color: $ys-color-error-red !important; /* stylelint-disable-line declaration-no-important */
