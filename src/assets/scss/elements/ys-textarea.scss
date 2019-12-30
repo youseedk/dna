@@ -29,8 +29,8 @@
     &:disabled,
     &[readonly] {
       background-color: $ys-color-grey-94;
-      color: $ys-color-grey-64;
       resize: none;
+      border-color: $ys-color-grey-94;
     }
 
     &:disabled {
