@@ -48,15 +48,6 @@ Input fields should always follow these requirements:
 {{render '@input-field--input-with-guidance-text'}}
 ```
 
-## Input field with icon
-<div class="element-preview">
-  <div class="element-preview__inner">{{render '@input-field--input-with-icon'}}</div>
-</div>
-
-```html
-{{render '@input-field--input-with-icon'}}
-```
-
 ## Input field with valid input
 <div class="element-preview">
   <div class="element-preview__inner">{{render '@input-field--input-with-valid-input'}}</div>
