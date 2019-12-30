@@ -27,14 +27,15 @@
 
     &:not(.ys-input-field__wrapper--readonly):not(.ys-input-field__wrapper--disabled):hover,
     &:not(.ys-input-field__wrapper--readonly):not(.ys-input-field__wrapper--disabled):focus-within,
-    &:not(.ys-input-field__wrapper--readonly):not(.ys-input-field__wrapper--disabled):focus {
-      @include input-border-fat();
+    &:not(.ys-input-field__wrapper--readonly):not(.ys-input-field__wrapper--disabled):focus,
+    &--error {
+      @include input-border-fat;
       padding-left: rem(22);
       padding-right: rem(22);
     }
 
     &--error {
-      background-color: $ys-color-error-red-10;
+      border-color: $ys-color-error-red;
     }
 
     &--disabled,
@@ -84,10 +85,6 @@
 
     &:focus {
       outline: none;
-    }
-
-    .ys-input-field__wrapper--error & {
-      color: $ys-color-error-red;
     }
 
     &:not(.ys-input-field__wrapper--readonly):not(.ys-input-field__wrapper--disabled):focus-visible {

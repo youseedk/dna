@@ -47,7 +47,7 @@
 
     &:not(:disabled):not([readonly]):hover,
     &:not(:disabled):not([readonly]):focus {
-      @include input-border-fat();
+      @include input-border-fat;
       padding: rem(10) rem(22);
     }
   }

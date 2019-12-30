@@ -21,7 +21,7 @@
 
     &:not(.ys-select__wrapper--disabled):not(.ys-select__wrapper--alternative):hover,
     &:not(.ys-select__wrapper--disabled):not(.ys-select__wrapper--alternative):focus-within {
-      @include input-border-fat();
+      @include input-border-fat;
       padding-left: rem(22);
       padding-right: rem(22);
     }
