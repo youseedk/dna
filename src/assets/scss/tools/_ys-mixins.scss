@@ -1,6 +1,7 @@
 // Borders for input fields, textareas, selects
 @mixin input-border-regular() {
   border: 1px solid $ys-color-grey-28;
+  transition: border .2s ease, padding .2s ease;
 }
 
 @mixin input-border-fat() {
