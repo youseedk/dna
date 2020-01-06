@@ -5,11 +5,6 @@
 
 .ys-select {
 
-  &__label {
-    font-size: rem(12);
-    line-height: 1.33;
-  }
-
   &__label-text {
     @include labelText;
   }
@@ -22,15 +17,13 @@
     border-radius: rem(24);
     background-color: $ys-color-white;
     color: $ys-color-grey-28;
-
-    &:not(.ys-select__wrapper--alternative) {
-      @include inputFieldShadow;
-      @include shadowTransition;
-    }
+    @include input-border-regular;
 
     &:not(.ys-select__wrapper--disabled):not(.ys-select__wrapper--alternative):hover,
     &:not(.ys-select__wrapper--disabled):not(.ys-select__wrapper--alternative):focus-within {
-      @include inputFieldShadow(hover);
+      @include input-border-fat;
+      padding-left: rem(22);
+      padding-right: rem(22);
     }
 
     // lobotimized owl selector for flexibility — makes sure that any element that is inserted gets a margin
@@ -39,8 +32,8 @@
     }
 
     &--disabled {
-      box-shadow: 0 0 0 0 transparent;
       background-color: $ys-color-grey-94;
+      border-color: $ys-color-grey-94;
     }
 
     &--alternative:not(.ys-select__wrapper--disabled) {
@@ -79,8 +72,6 @@
 
     &:disabled {
       background-image: url('data:image/svg+xml,%3Csvg viewBox%3d%220 -3 16 16%22 xmlns%3d%22http://www.w3.org/2000/svg%22%3E%3Cpath fill%3d%22%23a2a2a2%22 fill-rule%3d%22evenodd%22 d%3d%22M7.973 7.29884l6.0772-5.98225c.42883-.42212 1.12409-.42212 1.5529 0l.07528.0741a1.069 1.069 0 0 1 0 1.52864L8.844 9.64693a1.149 1.149 0 0 1-.0604.06524c-.44258.44259-1.16015.44259-1.60273 0L.35925 2.89057c-.44258-.4426-.44258-1.16016 0-1.60274.44259-.44259 1.16016-.44259 1.60274 0l6.01101 6.011z%22/%3E%3C/svg%3E'), linear-gradient(to bottom, transparent 0%, transparent 100%);
-      color: $ys-color-grey-64;
-      box-shadow: 0 0 0 0 transparent;
       cursor: not-allowed;
     }
 
@@ -98,7 +89,6 @@
   }
 
   &__guidance {
-    color: $ys-color-grey-28;
     @include guidanceText;
 
     .ys-select--light & {

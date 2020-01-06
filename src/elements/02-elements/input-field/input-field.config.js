@@ -32,13 +32,6 @@ module.exports = {
         hasGuidance: true
       }
     },
-		{
-      name: "Input with icon",
-      context: {
-        hasIconPre: true,
-        placeHolder: "With icon to show input type"
-      }
-    },
     {
       name: "Input with valid input",
       context: {

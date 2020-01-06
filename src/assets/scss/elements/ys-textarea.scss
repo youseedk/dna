@@ -7,11 +7,6 @@
   position: relative;
   min-height: rem(80);
 
-  &__label {
-    font-size: rem(12);
-    line-height: 1.33;
-  }
-
   &__label-text {
     @include labelText;
   }
@@ -27,18 +22,15 @@
     background-color: $ys-color-white;
     color: $ys-color-grey-28;
     font-size: rem(16);
-    font-weight: 600;
     line-height: 1.5;
     resize: vertical;
-    @include inputFieldShadow;
-    @include shadowTransition;
+    @include input-border-regular;
 
     &:disabled,
     &[readonly] {
       background-color: $ys-color-grey-94;
-      color: $ys-color-grey-64;
-      box-shadow: 0 0 0 0 transparent;
       resize: none;
+      border-color: $ys-color-grey-94;
     }
 
     &:disabled {
@@ -47,11 +39,6 @@
 
     &:focus {
       outline: none;
-      font-weight: 400;
-    }
-
-    &[readonly]:focus {
-      font-weight: 600;
     }
 
     &:not(:disabled):not([readonly]):focus-visible {
@@ -60,12 +47,12 @@
 
     &:not(:disabled):not([readonly]):hover,
     &:not(:disabled):not([readonly]):focus {
-      @include inputFieldShadow(hover);
+      @include input-border-fat;
+      padding: rem(10) rem(22);
     }
   }
 
   &__guidance {
-    color: $ys-color-grey-28;
     @include guidanceText;
 
     .ys-textarea--light & {

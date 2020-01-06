@@ -1,15 +1,11 @@
-// Shadows for input fields, textareas, selects
-@mixin inputFieldShadow($type: default) {
-  @if ($type == default) {
-    box-shadow: 0 1px 4px 0 rgba($ys-color-black, .4);
-  } @else {
-    box-shadow: 0 4px 16px 0 rgba($ys-color-black, .24);
-  }
+// Borders for input fields, textareas, selects
+@mixin input-border-regular() {
+  border: 1px solid $ys-color-grey-28;
+  transition: border .2s ease, padding .2s ease;
 }
 
-// Small UI transition on shadow
-@mixin shadowTransition() {
-  transition: box-shadow .2s ease-out;
+@mixin input-border-fat() {
+  border: 3px solid $ys-color-digital-grass;
 }
 
 // Label Text for input field, select, textarea and slider
@@ -18,8 +14,6 @@
   color: inherit;
   margin-bottom: rem(8);
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 2px;
 }
 
 // Guidance Text for input field, select and textarea
@@ -28,8 +22,8 @@
   padding: rem(8) rem(24) 0;
   color: $ys-color-grey-28;
   font-size: rem(14);
-  font-weight: 200;
   line-height: 1.5;
+  font-style: italic;
 
   &--error {
     color: $ys-color-error-red !important; /* stylelint-disable-line declaration-no-important */
