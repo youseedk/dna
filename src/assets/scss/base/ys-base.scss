@@ -79,3 +79,14 @@
     display: none;
   }
 }
+
+// Force next columns to break to new line
+// Breaking columns to a new line in flexbox requires a small hack. Add an element with width: 100% wherever you want to wrap your columns to a new line.
+.ys-u-w-100 {
+  width: 100%;
+}
+
+// Flexbox utility class to center flexbox items
+.ys-u-justify-content-center {
+  justify-content: center;
+}
