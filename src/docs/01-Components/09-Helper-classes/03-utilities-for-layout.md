@@ -2,8 +2,8 @@
 title: Utilities classes for layout
 url: /docs/components/helper-classes/utilities-for-layout
 category: component
-primaryKeywords: ys-u-justify-content-center ys-u-grid-breaker center align css helper class
-secondaryKeywords: show hide assistive technologies a11y
+primaryKeywords: ys-u-justify-content-center ys-u-grid-breaker center
+secondaryKeywords: align css helper class
 ---
 
 **Please notice**: If you installed YouSee DNA with npm, be aware that all utility classes are part of the basic `base.css`-file if you add css-files individually.
