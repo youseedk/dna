@@ -2,15 +2,15 @@
 title: Utilities classes for layout
 url: /docs/components/helper-classes/utilities-for-layout
 category: component
-primaryKeywords: ys-u-justify-content-center ys-u-grid-breaker center
-secondaryKeywords: align css helper class
+primaryKeywords: helper utility ys-u-justify-content-center ys-u-w-100 layout
+secondaryKeywords: align center break
 ---
 
-**Please notice**: If you installed YouSee DNA with npm, be aware that all utility classes are part of the basic `base.css`-file if you add css-files individually.
+**Please notice**: If you installed YouSee DNA with npm, be aware that all utility classes are part of the basic `ys-base.css`-file if you add css-files individually.
 
 
 ### ys-u-justify-content-center
-The `ys-u-grid-breaker` utility class can be used to to center flexbox items.
+The `ys-u-justify-content-center` utility class can be used to to center flexbox items.
 <div class="element-preview">
   <div class="element-preview__inner" hidden>
     html:not(#ys-specificity) .ys-u-justify-content-center {
