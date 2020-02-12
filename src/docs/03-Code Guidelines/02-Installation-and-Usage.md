@@ -14,9 +14,7 @@ secondaryKeywords: github
 The package is designed for two use cases:
 
 1. "As is" — you use ys-bundle.min.css which contains all YouSee elements and layout settings. That file is available both in the NPM package and on the CDN.
-2. "Custom" - you pick and mix what elements, svg files, font files etc. are needed and include them in a setup of your own choosing.
-
-If you choose option 2, "Custom", please be aware that it is required that you include ys-base.css before including any other elements.
+2. "Custom" - you only import the necessary files in your setup. Please note that you need to import ys-base.css, before including any other files from DNA.
 
 ### Requirements
 - Due to accessibility reasons, all font sizing is set using the `rem` unit — however, this requires that the font size on the `html` element is set to `16px` (default in all modern browsers).
@@ -51,7 +49,7 @@ dna/
 └── ys-bundle.min.css
 ```
 
-The files in the root (`ys-bundle.css` and `ys-bundle.min.css`) is all you need if you don't want include all of the elements in YouSee DNA. This is the quick and easy option, but it might not be preferable in some use cases. In those use cases the subfolders contain what's needed for building a custom stylesheet that only contains the needed elements.
+The bundle files  (`ys-bundle.css` or `ys-bundle.min.css`) is the only file you need to import if you want to add all elements from YouSee DNA. This is the quick and easy option, but it might not be preferable in some use cases. In those use cases the subfolders contain what's needed for building a custom stylesheet that only contains the needed elements.
 
 ### css
 The `css` folder contains minified css-files that can be imported into any build step.
