@@ -32,6 +32,3 @@ We provide the building blocks to assemble consistent user interfaces.
 Developers can take advantage of the "Components" section to see how certain designs are achieved.
 
 To start developing, please see [Installation and Usage](/docs/code-guidelines/installation-and-usage).
-
-#### React
-If you are looking for React components please look at [DNA React](https://github.com/youseedk/dna-react) which is a React implementation of YouSee DNA.
