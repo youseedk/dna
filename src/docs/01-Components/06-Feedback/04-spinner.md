@@ -1,9 +1,9 @@
 ---
-title: Notifications
-url: /docs/components/feedback/notifications
+title: Spinner
+url: /docs/components/feedback/spinner
 category: component
-primaryKeywords: ys-notification css feedback info
-secondaryKeywords: critical warning error success box
+primaryKeywords: ys-spinner css feedback loading
+secondaryKeywords: indicator spin interaction rotate
 ---
 
 <nav class="element-navigation">
