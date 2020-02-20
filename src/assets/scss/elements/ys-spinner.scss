@@ -1,0 +1,43 @@
+@import '../generated/ys-colors';
+@import '../settings/ys-settings';
+@import '../tools/ys-mixins';
+@import '../tools/ys-functions';
+
+.ys-spinner {
+  width: rem(64);
+  height: rem(64);
+  animation: rotate 1.4s linear infinite;
+
+  &__circle {
+    stroke: $ys-color-digital-grass;
+    stroke-linecap: round;
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+    animation: dash 1.4s ease-in-out infinite;
+  }
+
+  @keyframes rotate {
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes dash {
+
+    0% {
+      stroke-dasharray: 1, 150;
+      stroke-dashoffset: 0;
+    }
+
+    50% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -35;
+    }
+
+    100% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -124;
+    }
+  }
+}
