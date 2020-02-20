@@ -114,6 +114,15 @@ Important: Never leave out the `<span class="ys-button__text">` element, as this
 {{render '@button--block'}}
 ```
 
+## Small button
+<div class="element-preview">
+  <div class="element-preview__inner">{{render '@button--small'}}</div>
+</div>
+
+```html
+{{render '@button--small'}}
+```
+
 
 # HTML Guidelines
  - Only `<a>` and `<button>` elements are allowed to use the `.button` class
