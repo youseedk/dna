@@ -139,4 +139,9 @@
   &__text {
     white-space: nowrap;
   }
+
+  &--small {
+    font-size: rem(16);
+    padding: 0 rem(24);
+  }
 }
