@@ -68,6 +68,13 @@ module.exports = {
 				modifierClass: "ys-button--block",
 
 			}
+		},
+		{
+			name: 'small',
+			context: {
+				modifierClass: "ys-button--small",
+
+			}
 		}
 	],
 	"context": {
