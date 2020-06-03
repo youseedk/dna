@@ -35,5 +35,4 @@ If only a portion of a page is displaying new content or being updated, place th
 
 If you are unsure where to place the spinner, place it where you want the user's attention to be when loading is finished.
 Only show a spinner if the expected wait time is more than a second.
-Add a minimum of 100s of delay to mitigate lots of unnecessary spinners showing up at the same time.
 
