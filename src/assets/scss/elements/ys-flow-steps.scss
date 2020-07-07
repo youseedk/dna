@@ -17,7 +17,6 @@
     padding: 0;
     list-style: none;
     display: flex;
-    flex-flow: row;
     counter-reset: progress-bullet;
     text-align: center;
 
@@ -29,7 +28,7 @@
 
   &__item {
     position: relative;
-    flex: 1 0 10px;
+    flex: 1 0;
     padding-top: rem($bullet-size-px);
     font-size: rem(14);
     counter-increment: progress-bullet;
