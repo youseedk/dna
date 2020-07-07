@@ -25,6 +25,15 @@ secondaryKeywords: minvalue maxvalue valuemax valuemin
 {{render '@flow-steps'}}
 ```
 
+## Vertical flow steps
+<div class="element-preview">
+  <div class="element-preview__inner">{{render '@flow-steps--vertical'}}</div>
+</div>
+
+```html
+{{render '@flow-steps--vertical'}}
+```
+
 # HTML Guidelines
 
 # UX and Design Guidelines
