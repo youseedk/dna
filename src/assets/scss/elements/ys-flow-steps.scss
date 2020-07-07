@@ -4,7 +4,13 @@
 @import '../tools/ys-functions';
 
 .ys-flow-steps {
+  $variant-vertical-ref: 0;
+  $bullet-size-px: 34;
   color: $ys-color-grey-28;
+
+  &--vertical {
+    $variant-vertical-ref: &;
+  }
 
   &__list {
     margin: 0;
@@ -14,18 +20,31 @@
     flex-flow: row;
     counter-reset: progress-bullet;
     text-align: center;
+
+    #{$variant-vertical-ref} & {
+      flex-direction: column;
+      text-align: left;
+    }
   }
 
   &__item {
     position: relative;
     flex: 1 0 10px;
-    padding-top: rem(34);
+    padding-top: rem($bullet-size-px);
     font-size: rem(14);
     counter-increment: progress-bullet;
     list-style-type: none;
 
     @media screen and (min-width: $ys-breakpoint-md) {
       padding-top: rem(42);
+    }
+
+    #{$variant-vertical-ref} & {
+      display: flex;
+      padding-top: 0;
+      padding-left: rem(46);
+      align-items: center;
+      min-height: rem(50);
     }
 
     // ::before is the line in the bg
@@ -38,6 +57,13 @@
       height: rem(2);
       width: 100%;
       background-color: $ys-color-digital-moss;
+
+      #{$variant-vertical-ref} & {
+        height: 100%;
+        width: rem(2);
+        top: -50%;
+        left: rem($bullet-size-px / 2 - 1);
+      }
     }
 
     &:first-child::before {
@@ -46,13 +72,14 @@
 
     // ::after is the actual "bullets"
     &::after {
+      $bullet-center-point: calc(50% - #{rem($bullet-size-px / 2)});
       content: '';
       position: absolute;
       z-index: 1;
       top: 0;
-      left: calc(50% - #{rem(17)});
-      width: rem(34);
-      height: rem(34);
+      left: $bullet-center-point;
+      width: rem($bullet-size-px);
+      height: rem($bullet-size-px);
       border-radius: 50%;
       background: $ys-color-digital-moss url('data:image/svg+xml,%3Csvg viewBox%3d%22-1 -2 16 16%22 xmlns%3d%22http://www.w3.org/2000/svg%22%3E%3Cpath fill%3d%22none%22 fill-rule%3d%22evenodd%22 stroke%3d%22%23fff%22 stroke-linecap%3d%22round%22 stroke-linejoin%3d%22round%22 stroke-width%3d%222%22 d%3d%22M1 6.16534L5.68013 11 13 1%22/%3E%3C/svg%3E') no-repeat center;
       background-size: 14px 14px;
@@ -61,6 +88,11 @@
       font-size: rem(16);
       line-height: rem(30);
       font-weight: 600;
+
+      #{$variant-vertical-ref} & {
+        left: 0;
+        top: $bullet-center-point;
+      }
     }
 
     &--active {
@@ -93,7 +125,9 @@
   &__label {
     font-weight: 600;
     line-height: rem(20);
+  }
 
+  &:not(#{$variant-vertical-ref}) &__label {
     @media screen and (max-width: $ys-breakpoint-md) {
       display: none;
     }
