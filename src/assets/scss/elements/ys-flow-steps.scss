@@ -95,6 +95,7 @@
     }
 
     &--active {
+      $active-item-ref: &;
 
       // Change color of line
       & ~ .ys-flow-steps__item::before {
@@ -111,7 +112,7 @@
       }
 
       // "Bullets" after the active "bullet"
-      & ~ .ys-flow-steps__item::after {
+      & ~ .ys-flow-steps__item:not(#{$active-item-ref})::after {
         content: counter(progress-bullet);
         background-color: $ys-color-white;
         background-image: none;
