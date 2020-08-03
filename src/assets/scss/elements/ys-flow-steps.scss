@@ -4,7 +4,7 @@
 @import '../tools/ys-functions';
 
 .ys-flow-steps {
-  $variant-vertical-ref: 0;
+  $variant-vertical-ref: &;
   $bullet-size-px: 34;
   color: $ys-color-grey-28;
 
@@ -41,9 +41,9 @@
     #{$variant-vertical-ref} & {
       display: flex;
       padding-top: 0;
-      padding-left: rem(46);
+      padding-left: rem(48);
       align-items: center;
-      min-height: rem(50);
+      min-height: rem(48);
     }
 
     // ::before is the line in the bg
