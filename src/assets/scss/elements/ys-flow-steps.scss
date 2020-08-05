@@ -4,13 +4,8 @@
 @import '../tools/ys-functions';
 
 .ys-flow-steps {
-  $variant-vertical-ref: &;
   $bullet-size-px: 34;
   color: $ys-color-grey-28;
-
-  &--vertical {
-    $variant-vertical-ref: &;
-  }
 
   &__list {
     margin: 0;
@@ -20,7 +15,7 @@
     counter-reset: progress-bullet;
     text-align: center;
 
-    #{$variant-vertical-ref} & {
+    .ys-flow-steps--vertical & {
       flex-direction: column;
       text-align: left;
     }
@@ -38,7 +33,7 @@
       padding-top: rem(42);
     }
 
-    #{$variant-vertical-ref} & {
+    .ys-flow-steps--vertical & {
       display: flex;
       padding-top: 0;
       padding-left: rem(48);
@@ -57,7 +52,7 @@
       width: 100%;
       background-color: $ys-color-digital-moss;
 
-      #{$variant-vertical-ref} & {
+      .ys-flow-steps--vertical & {
         height: 100%;
         width: rem(2);
         top: -50%;
@@ -88,15 +83,13 @@
       line-height: rem(30);
       font-weight: 600;
 
-      #{$variant-vertical-ref} & {
+      .ys-flow-steps--vertical & {
         left: 0;
         top: $bullet-center-point;
       }
     }
 
     &--active {
-      $active-item-ref: &;
-
       // Change color of line
       & ~ .ys-flow-steps__item::before {
         background-color: $ys-color-grey-28;
@@ -112,7 +105,7 @@
       }
 
       // "Bullets" after the active "bullet"
-      & ~ .ys-flow-steps__item:not(#{$active-item-ref})::after {
+      & ~ .ys-flow-steps__item:not(.ys-flow-steps__item--active)::after {
         content: counter(progress-bullet);
         background-color: $ys-color-white;
         background-image: none;
@@ -127,7 +120,7 @@
     line-height: rem(20);
   }
 
-  &:not(#{$variant-vertical-ref}) &__label {
+  &:not(.ys-flow-steps--vertical) &__label {
     @media screen and (max-width: $ys-breakpoint-md) {
       display: none;
     }
