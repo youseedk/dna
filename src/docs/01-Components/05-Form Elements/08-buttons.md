@@ -125,7 +125,7 @@ Important: Never leave out the `<span class="ys-button__text">` element, as this
 
 
 # HTML Guidelines
- - Only `<a>` and `<button>` elements are allowed to use the `.button` class
+ - Only `<a>` and `<button>` elements are allowed to use the `.ys-button` class
  - Remember to specify the `type` attribute when using a `button` element. The default is `submit` but in most cases you probably want to use `type="button"`
 
 ## Disabled buttons
