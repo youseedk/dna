@@ -72,6 +72,10 @@
     &::ms-input-placeholder {
       color: $ys-color-grey-64;
     }
+
+    &:-webkit-autofill {
+      -webkit-background-clip: text;
+    }
     // stylelint-enable
 
     &:disabled,
