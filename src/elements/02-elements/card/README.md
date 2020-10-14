@@ -17,6 +17,9 @@ Cards come in two different colors:
 ## Background Image
 A Card can also contain a background image for visual purposes, but in this case no content is allowed, and it should only be used as decoration.
 
+## Shadow
+A Card can hide its shadow.
+
 ## UX and Design Guidelines
 ### When to use a card
 - Collection or gallery comprises multiple data types, such as images, movies, text.

@@ -28,6 +28,14 @@ Cards may contain a photo, text, and a link about a single subject. They may dis
 ```html
 {{render '@card'}}
 ```
+## Card with no shadow
+<div class="element-preview">
+  <div class="element-preview__inner">{{render '@card--card-with-no-shadow'}}</div>
+</div>
+
+```html
+{{render '@card--card-with-no-shadow'}}
+```
 
 ## Card, dark
 <div class="element-preview element-preview--dark">
