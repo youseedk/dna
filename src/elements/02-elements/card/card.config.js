@@ -11,6 +11,12 @@ module.exports = {
       label: "Light Card"
 		},
 		{
+			name: "Card with no shadow",
+			context: {
+        modifierClass: "ys-card--no-shadow",
+			}
+    },
+    {
 			name: "Dark Card",
 			context: {
         modifierClass: "ys-card--dark",
