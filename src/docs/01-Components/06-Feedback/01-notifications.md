@@ -52,6 +52,15 @@ secondaryKeywords: critical warning error success box
 {{render '@notification--error'}}
 ```
 
+## Notification with no shadow (info)
+<div class="element-preview">
+  <div class="element-preview__inner">{{render '@notification--with-no-shadow'}}</div>
+</div>
+
+```html
+{{render '@notification--with-no-shadow'}}
+```
+
 
 # HTML Guidelines
 
