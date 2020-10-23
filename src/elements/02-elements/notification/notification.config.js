@@ -32,7 +32,14 @@ module.exports = {
         modifierClass: 'ys-notification--error',
         warning: 'true'
       }
-    }
+    },
+		{
+			name: "With no shadow",
+			context: {
+        modifierClass: "ys-notification--no-shadow",
+        info: 'true'
+			}
+    },
 	],
 	"context": {
 	}
