@@ -6,7 +6,7 @@
       "black": "#000"
     },
     "typography": {
-      "grey-28": "#484848"
+      "grey-10": "#191919"
     },
     "ui-details": {
       "midnight-green": "#002219",
@@ -29,8 +29,8 @@
       "digital-grass-10": "#ebf9ec"
     },
     "accent-greys": {
-      "grey-10": "#191919",
       "grey-22": "#383838",
+      "grey-28": "#484848",
       "grey-46": "#767676",
       "grey-57": "#929292",
       "grey-64": "#a2a2a2",
