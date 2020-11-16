@@ -13,7 +13,7 @@
   height: rem(48);
   padding: 0 rem(48);
 
-  font-size: rem(20);
+  font-size: rem(16);
   font-weight: 600;
   line-height: 1.5;
   text-decoration: none;
@@ -30,6 +30,10 @@
   box-shadow: inset 0 0 0 2px currentColor;
 
   transition: all .25s ease-out;
+
+  @media (min-width: $ys-breakpoint-sm) {
+    font-size: rem(20);
+  }
 
   &:focus:not(:focus-visible) {
     outline: 0; // disable the focus ring when the button is clicked with a mouse
