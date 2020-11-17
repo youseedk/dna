@@ -16,7 +16,7 @@
   "main": "ys-bundle.min.css",
   "style": "ys-bundle.min.css",
   "engines": {
-    "node": "^12"
+    "node": ">=12"
   },
   "scripts": {
     "start": "gulp",
