@@ -5,15 +5,17 @@
 
 // Default button is transparent with a dark border
 .ys-button {
+  $very-small-screens: 375px;  // custom breakpoint for very small screens: https://github.com/youseedk/dna/issues/268
+
   display: inline-flex;
   align-items: center;
   flex-flow: row nowrap;
   justify-content: center;
 
   height: rem(48);
-  padding: 0 rem(48);
+  padding: 0 rem(24);
 
-  font-size: rem(20);
+  font-size: rem(16);
   font-weight: 600;
   line-height: 1.5;
   text-decoration: none;
@@ -30,6 +32,11 @@
   box-shadow: inset 0 0 0 2px currentColor;
 
   transition: all .25s ease-out;
+
+  @media (min-width: $very-small-screens) {
+    font-size: rem(20);
+    padding: 0 rem(48);
+  }
 
   &:focus:not(:focus-visible) {
     outline: 0; // disable the focus ring when the button is clicked with a mouse
@@ -63,9 +70,13 @@
 
   // Green CTA button
   &--cta {
-    background-color: $ys-color-digital-grass;
+    background-color: $ys-color-digital-dark-grass;
     color: $ys-color-white;
     box-shadow: inset 0 0 0 0 transparent, 0 0 0 0 transparent;
+
+    @media (min-width: $very-small-screens) {
+      background-color: $ys-color-digital-grass;
+    }
 
     &:not(:disabled):hover {
       color: $ys-color-white;
