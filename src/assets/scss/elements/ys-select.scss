@@ -16,7 +16,7 @@
     padding: rem(0) rem(24);
     border-radius: rem(24);
     background-color: $ys-color-white;
-    color: $ys-color-grey-28;
+    color: $ys-color-grey-10;
     @include input-border-regular;
 
     &:not(.ys-select__wrapper--disabled):not(.ys-select__wrapper--alternative):hover,
@@ -37,7 +37,7 @@
     }
 
     &--alternative:not(.ys-select__wrapper--disabled) {
-      border: 2px solid $ys-color-grey-28;
+      border: 2px solid $ys-color-grey-10;
     }
 
     &--alternative.ys-select__wrapper--light:not(.ys-select__wrapper--disabled) {
@@ -85,7 +85,7 @@
   }
 
   &__option {
-    color: $ys-color-grey-28;
+    color: $ys-color-grey-10;
   }
 
   &__guidance {

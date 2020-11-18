@@ -187,6 +187,6 @@ Please be aware that the color of the text is not set in the CSS classes and sho
 For accessibility reasons we should aim for a line-height adhering to the 8 point grid, which means rounding up numbers to meet the grid specs.
 
 ## Color
-All fonts on the website should use the specified grey called “grey-28” (#484848). Exceptions are:
+All fonts on the website should use the specified grey called “grey-10” (#191919). Exceptions are:
 - When used on dark background. In this case use white (#fff) instead
 - Special cases

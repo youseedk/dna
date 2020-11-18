@@ -10,7 +10,7 @@ The default font size on YouSee sites is 16px.
 
 ## UX and Design Guidelines
 ### Color
-All fonts on the website should use the specified grey called "typography-grey" (#484848). Exceptions are:
+All fonts on the website should use the specified grey called "typography-grey" (#191919). Exceptions are:
 - When used on dark background. In this case use white (#fff) instead.
 - Legal text and other small print, which uses "grey-57" (#929292).
 - Special cases.

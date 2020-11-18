@@ -55,7 +55,7 @@
     font-size: rem(16);
     line-height: 1.5;
     margin-top: rem(1);
-    color: $ys-color-grey-28;
+    color: $ys-color-grey-10;
 
     @media screen and (min-width: $ys-breakpoint-lg) {
       margin-top: rem(5);
@@ -71,7 +71,7 @@
   }
 
   &__inline-link {
-    color: $ys-color-grey-28;
+    color: $ys-color-grey-10;
   }
 
   &--warning {

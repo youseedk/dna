@@ -121,7 +121,7 @@
   &__minmax-label {
     font-weight: 400;
     line-height: 1.5;
-    color: $ys-color-grey-28;
+    color: $ys-color-grey-10;
   }
 
   &__data-set {
@@ -137,7 +137,7 @@
     text-align: center;
     font-size: rem(12);
     font-weight: 400;
-    color: $ys-color-grey-28;
+    color: $ys-color-grey-10;
 
     // hide visual labels on small screens
     @media screen and (max-width: $ys-breakpoint-sm) {

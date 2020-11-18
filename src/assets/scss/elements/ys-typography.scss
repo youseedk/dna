@@ -5,7 +5,7 @@
 
 .ys-main-title {
   @include ys-main-title;
-  color: $ys-color-grey-28;
+  color: $ys-color-grey-10;
 
   &--light {
     color: $ys-color-grey-98;
@@ -14,7 +14,7 @@
 
 .ys-primary-title {
   @include ys-primary-title;
-  color: $ys-color-grey-28;
+  color: $ys-color-grey-10;
 
   &--light {
     color: $ys-color-grey-98;
@@ -23,7 +23,7 @@
 
 .ys-secondary-title {
   @include ys-secondary-title;
-  color: $ys-color-grey-28;
+  color: $ys-color-grey-10;
 
   &--light {
     color: $ys-color-grey-98;
@@ -32,7 +32,7 @@
 
 .ys-subtitle {
   @include ys-subtitle;
-  color: $ys-color-grey-28;
+  color: $ys-color-grey-10;
 
   &--light {
     color: $ys-color-grey-98;
@@ -41,7 +41,7 @@
 
 .ys-body-text {
   @include ys-body-text;
-  color: $ys-color-grey-28;
+  color: $ys-color-grey-10;
 
   &--large {
     font-size: rem(20);
@@ -54,7 +54,7 @@
 
 .ys-small-text {
   @include ys-small-text;
-  color: $ys-color-grey-28;
+  color: $ys-color-grey-10;
 
   &--light {
     color: $ys-color-grey-98;
@@ -63,7 +63,7 @@
 
 .ys-list {
   @include ys-list;
-  color: $ys-color-grey-28;
+  color: $ys-color-grey-10;
 
   &__item {
     @include ys-list-item;
