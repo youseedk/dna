@@ -40,6 +40,6 @@ All text-links should have an underline to clearly show the users that the eleme
 ## Colors
 All text-links should follow below rules:
 1. The default state has hex-color <span style="background-color: #1fab2e; color: #fff; padding: 2px 6px;">#1fab2e</span> with color-code `$ys-color-digital-grass`
-2. The hover state has hex-color <span style="background-color: #484848; color: #fff; padding: 2px 6px;">#484848</span> with color-code `$ys-color-grey-28`
+2. The hover state has hex-color <span style="background-color: #191919; color: #fff; padding: 2px 6px;">#191919</span> with color-code `$ys-color-grey-10`
 3. The visited state has hex-color <span style="background-color: #609; color: #fff; padding: 2px 6px;">#609;</span> with no color-code
-4. The active state has hex-color <span style="background-color: #484848; color: #fff; padding: 2px 6px;">#484848</span> with color-code `$ys-color-grey-28`
+4. The active state has hex-color <span style="background-color: #191919; color: #fff; padding: 2px 6px;">#191919</span> with color-code `$ys-color-grey-10`

@@ -1,6 +1,6 @@
 // Borders for input fields, textareas, selects
 @mixin input-border-regular() {
-  border: 1px solid $ys-color-grey-28;
+  border: 1px solid $ys-color-grey-10;
   transition: border .2s ease, padding .2s ease;
 }
 
@@ -20,7 +20,7 @@
 @mixin guidanceText() {
   margin: 0;
   padding: rem(8) rem(24) 0;
-  color: $ys-color-grey-28;
+  color: $ys-color-grey-10;
   font-size: rem(14);
   line-height: 1.5;
   font-style: italic;

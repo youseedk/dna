@@ -13,7 +13,7 @@
     display: flex;
     align-items: center;
     background-color: $ys-color-white;
-    color: $ys-color-grey-28;
+    color: $ys-color-grey-10;
     height: rem(48);
     padding: rem(0) rem(24);
     border-radius: rem(24);
@@ -57,7 +57,7 @@
     font-size: rem(16);
     line-height: rem(24);
     background-color: transparent;
-    color: $ys-color-grey-28;
+    color: $ys-color-grey-10;
 
     &::placeholder {
       color: $ys-color-grey-64;

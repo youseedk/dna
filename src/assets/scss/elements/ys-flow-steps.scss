@@ -5,7 +5,7 @@
 
 .ys-flow-steps {
   $bullet-size-px: 34;
-  color: $ys-color-grey-28;
+  color: $ys-color-grey-10;
 
   &__list {
     margin: 0;
@@ -92,7 +92,7 @@
     &--active {
       // Change color of line
       & ~ .ys-flow-steps__item::before {
-        background-color: $ys-color-grey-28;
+        background-color: $ys-color-grey-10;
       }
 
       // Active "bullet"
@@ -109,8 +109,8 @@
         content: counter(progress-bullet);
         background-color: $ys-color-white;
         background-image: none;
-        border-color: $ys-color-grey-28;
-        color: $ys-color-grey-28;
+        border-color: $ys-color-grey-10;
+        color: $ys-color-grey-10;
       }
     }
   }
