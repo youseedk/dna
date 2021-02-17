@@ -6,7 +6,7 @@ function lastBuild() {
   const dateOptions = {
     year: 'numeric',
     month: '2-digit',
-    day: '2-digit'
+    day: '2-digdfdfit'
   };
 
   const timeOptions = {
