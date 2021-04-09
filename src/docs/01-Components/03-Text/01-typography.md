@@ -144,7 +144,6 @@ secondaryKeywords: grey-28 484848 100 200 400 700 800 900
 {{render '@typography--body-text-large-bold'}}
 ```
 
-
 ## Small text
 <div class="element-preview">
   <div class="element-preview__inner">{{render '@typography--small-text'}}</div>
