@@ -16,7 +16,9 @@ secondaryKeywords: grey-28 484848 100 200 400 700 800 900
 </nav>
 
 # Examples
+
 ## Main title
+
 <div class="element-preview">
   <div class="element-preview__inner">{{render '@typography--default'}}</div>
 </div>
@@ -26,6 +28,7 @@ secondaryKeywords: grey-28 484848 100 200 400 700 800 900
 ```
 
 ## Main title (light)
+
 <div class="element-preview element-preview--dark">
   <div class="element-preview__inner">{{render '@typography--main-title-light'}}</div>
 </div>
@@ -35,6 +38,7 @@ secondaryKeywords: grey-28 484848 100 200 400 700 800 900
 ```
 
 ## Primary title
+
 <div class="element-preview">
   <div class="element-preview__inner">{{render '@typography--primary-title'}}</div>
 </div>
@@ -44,6 +48,7 @@ secondaryKeywords: grey-28 484848 100 200 400 700 800 900
 ```
 
 ## Primary title (light)
+
 <div class="element-preview element-preview--dark">
   <div class="element-preview__inner">{{render '@typography--primary-title-light'}}</div>
 </div>
@@ -53,6 +58,7 @@ secondaryKeywords: grey-28 484848 100 200 400 700 800 900
 ```
 
 ## Secondary title
+
 <div class="element-preview">
   <div class="element-preview__inner">{{render '@typography--secondary-title'}}</div>
 </div>
@@ -62,6 +68,7 @@ secondaryKeywords: grey-28 484848 100 200 400 700 800 900
 ```
 
 ## Secondary title (light)
+
 <div class="element-preview element-preview--dark">
   <div class="element-preview__inner">{{render '@typography--secondary-title-light'}}</div>
 </div>
@@ -71,6 +78,7 @@ secondaryKeywords: grey-28 484848 100 200 400 700 800 900
 ```
 
 ## Subtitle
+
 <div class="element-preview">
   <div class="element-preview__inner">{{render '@typography--subtitle'}}</div>
 </div>
@@ -80,6 +88,7 @@ secondaryKeywords: grey-28 484848 100 200 400 700 800 900
 ```
 
 ## Subtitle (light)
+
 <div class="element-preview element-preview--dark">
   <div class="element-preview__inner">{{render '@typography--subtitle-light'}}</div>
 </div>
@@ -89,6 +98,7 @@ secondaryKeywords: grey-28 484848 100 200 400 700 800 900
 ```
 
 ## Body text
+
 <div class="element-preview">
   <div class="element-preview__inner">{{render '@typography--body-text'}}</div>
 </div>
@@ -98,6 +108,7 @@ secondaryKeywords: grey-28 484848 100 200 400 700 800 900
 ```
 
 ## Body text (light)
+
 <div class="element-preview element-preview--dark">
   <div class="element-preview__inner">{{render '@typography--body-text-light'}}</div>
 </div>
@@ -107,6 +118,7 @@ secondaryKeywords: grey-28 484848 100 200 400 700 800 900
 ```
 
 ## Body text large
+
 <div class="element-preview">
   <div class="element-preview__inner">{{render '@typography--body-text-large'}}</div>
 </div>
@@ -116,6 +128,7 @@ secondaryKeywords: grey-28 484848 100 200 400 700 800 900
 ```
 
 ## Body text large (light)
+
 <div class="element-preview element-preview--dark">
   <div class="element-preview__inner">{{render '@typography--body-text-large-light'}}</div>
 </div>
@@ -124,7 +137,18 @@ secondaryKeywords: grey-28 484848 100 200 400 700 800 900
 {{render '@typography--body-text-large-light'}}
 ```
 
+## Body text large bold
+
+<div class="element-preview">
+  <div class="element-preview__inner">{{render '@typography--body-text-large-bold'}}</div>
+</div>
+
+```html
+{{render '@typography--body-text-large-bold'}}
+```
+
 ## Small text
+
 <div class="element-preview">
   <div class="element-preview__inner">{{render '@typography--small-text'}}</div>
 </div>
@@ -134,6 +158,7 @@ secondaryKeywords: grey-28 484848 100 200 400 700 800 900
 ```
 
 ## Small text (light)
+
 <div class="element-preview element-preview--dark">
   <div class="element-preview__inner">{{render '@typography--small-text-light'}}</div>
 </div>
@@ -143,6 +168,7 @@ secondaryKeywords: grey-28 484848 100 200 400 700 800 900
 ```
 
 ## Unordered list
+
 <div class="element-preview">
   <div class="element-preview__inner">{{render '@typography--unordered-list'}}</div>
 </div>
@@ -152,6 +178,7 @@ secondaryKeywords: grey-28 484848 100 200 400 700 800 900
 ```
 
 ## Unordered list (light)
+
 <div class="element-preview element-preview--dark">
   <div class="element-preview__inner">{{render '@typography--unordered-list-light'}}</div>
 </div>
@@ -161,6 +188,7 @@ secondaryKeywords: grey-28 484848 100 200 400 700 800 900
 ```
 
 ## Ordered list
+
 <div class="element-preview">
   <div class="element-preview__inner">{{render '@typography--ordered-list'}}</div>
 </div>
@@ -170,6 +198,7 @@ secondaryKeywords: grey-28 484848 100 200 400 700 800 900
 ```
 
 ## Ordered list (light)
+
 <div class="element-preview element-preview--dark">
   <div class="element-preview__inner">{{render '@typography--ordered-list-light'}}</div>
 </div>
@@ -179,14 +208,18 @@ secondaryKeywords: grey-28 484848 100 200 400 700 800 900
 ```
 
 # HTML Guidelines
+
 Always mark up text semantically, ie. only use one `<h1>` per page, even if the design shows two “Main Title” elements. The visual representation is handled by CSS and not the HTML.
 
 Please be aware that the color of the text is not set in the CSS classes and should be set on the parent element.
 
 # UX and Design Guidelines
+
 For accessibility reasons we should aim for a line-height adhering to the 8 point grid, which means rounding up numbers to meet the grid specs.
 
 ## Color
+
 All fonts on the website should use the specified grey called “grey-10” (#191919). Exceptions are:
+
 - When used on dark background. In this case use white (#fff) instead
 - Special cases
