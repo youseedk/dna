@@ -104,6 +104,22 @@ module.exports = {
 				textContent: "Lorem ipsum (20px)"
 			}
 		},
+    {
+      name: 'Body Text Large Bold',
+      context: {
+        tagName: "p",
+        className: "ys-body-text ys-body-text--large ys-body-text--bold",
+        textContent: "Lorem ipsum (20px)",
+      },
+    },
+    {
+      name: 'Body Text Large Bold Light',
+      context: {
+        tagName: "p",
+        className: "ys-body-text ys-body-text--large ys-body-text--light ys-body-text--bold",
+        textContent: "Lorem ipsum (20px)",
+      },
+    },
 		{
 			name: 'Small Text',
 			context: {

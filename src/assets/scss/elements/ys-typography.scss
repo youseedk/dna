@@ -47,6 +47,10 @@
     font-size: rem(20);
   }
 
+  &--bold {
+    font-weight: 700;
+  }
+
   &--light {
     color: $ys-color-grey-98;
   }
