@@ -259,7 +259,7 @@ gulp.task('build-package', () => {
     .src(`${paths.destination.css}/*.css`)
     .pipe(gulp.dest(`${paths.npmDestination}`));
 
-  return merge(packageJsonFile, readMeFile, scssFiles, cssFiles, cssSettings, fontFiles, svgFiles, svgSprites, bundleFiles);
+  return merge(packageJsonFile, readMeFile, scssFiles, cssFiles, cssSettings, svgFiles, svgSprites, bundleFiles);
 });
 
 function watch(){
