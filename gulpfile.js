@@ -16,7 +16,6 @@ const prefixer = require('postcss-prefix-selector');
 
 const paths = {
   assetsSource: {
-    fonts: 'src/assets/fonts/',
     images: 'src/assets/images/',
     scss: 'src/assets/scss/',
     svg: 'src/assets/svg/'
@@ -24,7 +23,6 @@ const paths = {
   tokensSource: 'src/tokens/',
   destination: {
     css: 'public/assets/css/',
-    fonts: 'public/assets/fonts/',
     images: 'public/assetsimages/',
     svg: 'public/assets/svg/',
     theme: 'public/assets/theme/'
@@ -149,16 +147,6 @@ gulp.task('images', () => {
 });
 
 
-// Fonts
- gulp.task('fonts', () => {
-  return gulp
-    .src(`${paths.assetsSource.fonts}/**`)
-    .pipe(plugins.newer(paths.destination.fonts))
-    .pipe(gulp.dest(paths.destination.fonts));
-});
-
-
-
 /**
  *
  * Create SVG Sprites
@@ -252,11 +240,6 @@ gulp.task('build-package', () => {
         path.extname = '.css'
     }))
     .pipe(gulp.dest(`${paths.npmDestination}css/settings`));
-
-  // copy font files
-  const fontFiles = gulp
-    .src(`${paths.assetsSource.fonts}/**/*`)
-    .pipe(gulp.dest(`${paths.npmDestination}/fonts`));
 
   // copy svg files
   const svgFiles = gulp
@@ -453,7 +436,7 @@ secondaryKeywords: gitflow test gulp fork repository
 // Main gulp tasks
 gulp.task('fractal-assets', gulp.series('fractal-json-copy', fractalSearchApiGenerate, 'fractal-scss', 'fractal-images', 'fractal-favicon', fractalJs), () => {});
 
-gulp.task('npm-dist', gulp.series('json-to-scss', 'css', 'icons', 'fonts', 'fractal-assets', 'copy-colors-to-npm', 'build-package'), () => {});
+gulp.task('npm-dist', gulp.series('json-to-scss', 'css', 'icons', 'fractal-assets', 'copy-colors-to-npm', 'build-package'), () => {});
 
 gulp.task('default', gulp.series('fractal:contributing', 'icons', 'json-to-scss', 'fractal-assets', 'css', 'fractal:start', watch), () => {});
 
