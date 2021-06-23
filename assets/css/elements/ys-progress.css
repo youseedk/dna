@@ -1,0 +1,1 @@
+html:not(#ys-specificity) .ys-progress{color:#191919}html:not(#ys-specificity) .ys-progress__bar,html:not(#ys-specificity) .ys-progress__progress{height:.25rem;background-color:#d9d9d9;border-radius:4px}html:not(#ys-specificity) .ys-progress__progress{background-color:#1fab2e}html:not(#ys-specificity) .ys-progress--light .ys-progress__bar{background-color:#767676}

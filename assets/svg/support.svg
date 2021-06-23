@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+  <g fill="none" fill-rule="evenodd">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="bevel" stroke-width="2" d="M28.223 4c6.187 2.95 9.037 9.394 7.1 15.41-.639 1.98-3.119 6.423-3.551 6.632 0 0 1.972 7.869 1.907 7.906-2.95 1.66-14.909 4.414-16.021 4.414-.507 0-1.457-3.517-1.822-4.333-.695-.925-5.843.794-7.537-1.273-1.224-1.493 0-5.273-.436-5.964-.568-.9-2.863-1.08-2.863-2.164 0-1.945 2.942-4.126 2.829-6.307-.396-7.589 4.982-13.707 8.007-14.114"/>
+    <circle cx="23.25" cy="16.25" r="4.25" stroke="currentColor" stroke-width="2"/>
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M23 11.5l-1-9"/>
+    <path stroke="currentColor" stroke-width="2" d="M23.02 21c-.409 1.378-1.338 2.62-2.34 3.646-1.003 1.027-2.316 1.877-3.68 2.516"/>
+    <circle cx="16.5" cy="25.5" r="2.5" fill="currentColor"/>
+  </g>
+</svg>

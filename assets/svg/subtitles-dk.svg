@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+  <g fill="none" fill-rule="evenodd">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12.86 31.36h14.9"/>
+    <rect width="35.38" height="20.43" x="2.62" y="7.21" stroke="currentColor" stroke-width="2" rx="1.87"/>
+    <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M6.35 20.21h18.62M6.35 23.93h27.93"/>
+    <path fill="currentColor" d="M29.22 18.3h-.47v2.28h.47c.67 0 .98-.38.98-1.15 0-.74-.31-1.13-.98-1.13zm-1.46-.87h1.46c1.34 0 2.01.79 2.01 1.94 0 1.44-.7 2.07-2.16 2.07h-1.3v-4.01zm3.98 4v-4h1v1.59h.42l.85-1.6h1.1L34 19.42l1.21 2.03h-1.14l-.93-1.62h-.42v1.62h-.99z"/>
+  </g>
+</svg>

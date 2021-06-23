@@ -1,0 +1,104 @@
+[
+    {
+        "browser": "Samsung Internet",
+        "device": "Tablet",
+        "os": "Android",
+        "note": "Samsung Internet is the new wildcard in the browser realm, luckily based on Chromium, however possibly never updated by the consumer. As a result, only the latest release can be supported."
+    },
+    {
+        "browser": "Samsung Internet",
+        "device": "Phone",
+        "os": "Android",
+        "note": "Samsung Internet is the new wildcard in the browser realm, luckily based on Chromium, however possibly never updated by the consumer. As a result, only the latest release can be supported."
+    },
+    {
+        "browser": "Internet Explorer 11",
+        "device": "Desktop",
+        "os": "Windows",
+        "note": "Partial supported only. Small visual bugs are acceptable, given that you can read and interact with the content"
+    },
+    {
+        "browser": "Microsoft Edge",
+        "device": "Desktop",
+        "os": "Windows",
+        "note": "Full support"
+    },
+    {
+        "browser": "Chrome",
+        "device": "Desktop",
+        "os": "MacOS",
+        "note": "Full support"
+    },
+    {
+        "browser": "Chrome",
+        "device": "Desktop",
+        "os": "Windows",
+        "note": "Full support"
+    },
+    {
+        "browser": "Chrome",
+        "device": "Desktop",
+        "os": "Linux",
+        "note": "Full support"
+    },
+    {
+        "browser": "Chrome",
+        "device": "Ipad",
+        "os": "iOS",
+        "note": "Full support"
+    },
+    {
+        "browser": "Chrome",
+        "device": "Iphone",
+        "os": "iOS",
+        "note": "Full support"
+    },
+    {
+        "browser": "Chrome",
+        "device": "Tablet",
+        "os": "Android",
+        "note": "Full support"
+    },
+    {
+        "browser": "Chrome",
+        "device": "Phone",
+        "os": "Android",
+        "note": "Full support"
+    },
+    {
+        "browser": "Safari",
+        "device": "Iphone",
+        "os": "iOS",
+        "note": "Full support"
+    },
+    {
+        "browser": "Safari",
+        "device": "Ipad",
+        "os": "iOS",
+        "note": "Full support"
+    },
+    {
+        "browser": "Safari",
+        "device": "Desktop",
+        "os": "MacOS",
+        "note": "Full support"
+    },
+    {
+        "browser": "Firefox",
+        "device": "Desktop",
+        "os": "MacOS",
+        "note": "Full support"
+    },
+    {
+        "browser": "Firefox",
+        "device": "Desktop",
+        "os": "Windows",
+        "note": "Full support"
+    },
+    {
+        "browser": "Firefox",
+        "device": "Desktop",
+        "os": "Linux",
+        "note": "Full support"
+    }
+]
