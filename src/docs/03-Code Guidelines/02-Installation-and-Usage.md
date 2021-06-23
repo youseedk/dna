@@ -42,7 +42,6 @@ dna/
 │   ├── icons
 │   ├── layout
 │   ├── settings
-├── fonts/
 ├── scss/
 ├── svg/
 ├── ys-bundle.css
