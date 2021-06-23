@@ -63,9 +63,6 @@ The `css` folder contains minified css-files that can be imported into any build
 
 `css/settings` includes CSS Custom Properties (also known as CSS variables) for colors, breakpoints etc.
 
-### fonts
-`fonts` includes the LTF Etica font used by YouSee — it's provided in four weights and two different file types (woff and woff2).
-
 ### scss
 The `scss` folder contains scss-variables for colors, breakpoints etc.
 
