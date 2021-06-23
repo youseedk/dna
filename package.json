@@ -57,7 +57,7 @@
     "gulp-uglify": "3.0.2",
     "newer": "^0.1.5",
     "path": "^0.12.7",
-    "postcss": "7.0.17",
+    "postcss": "7.0.36",
     "postcss-prefix-selector": "^1.7.2",
     "postcss-preset-env": "6.6.0",
     "postcss-scss": "^2.0.0",
